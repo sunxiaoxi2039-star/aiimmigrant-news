@@ -513,6 +513,21 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     var a = fmtAgo(Date.now() - g.getTime());
     els.upd.textContent = '最后更新：' + a.text + '（' + fmtFullBJ(g) + ' 北京时间）' + (a.stale ? ' · 数据可能已停滞' : '');
     els.upd.className = 'upd' + (a.stale ? ' stale' : '');
+    /* 双心跳之一：引擎心跳（雷达心跳=数据新鲜度已在上方；引擎状态附加显示，取不到静默跳过） */
+    try {
+      fetch('data/%E5%BC%95%E6%93%8E%E5%BF%83%E8%B7%B3.json', { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (hb) {
+          if (!hb || !els.upd || els.upd.textContent.indexOf('引擎') >= 0) return;
+          var t = parseUTC(hb.generated_at_utc || hb.when || hb.ts);
+          var s = hb.status || 'ok';
+          var extra = s !== 'ok'
+            ? ' · 引擎告警(' + s + ')'
+            : ' · 引擎' + (t ? '心跳' + fmtAgo(Date.now() - t.getTime()).text : '心跳在位');
+          els.upd.textContent += extra;
+        })
+        .catch(function () {});
+    } catch (e) {}
   }
 
   function bind() {
