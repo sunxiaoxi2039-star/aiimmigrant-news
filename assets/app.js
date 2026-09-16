@@ -49,6 +49,9 @@
 
   function itemTime(it) { return parseUTC(it.published_utc || it.first_seen_utc); }
 
+  /* 标题回退链：title_zh → title_src → 跳过不渲染 */
+  function hasTitle(it) { return !!(it.title_zh || it.title_src); }
+
   function sortItems(items) {
     return items.slice().sort(function (a, b) {
       var ta = itemTime(a), tb = itemTime(b);
@@ -123,7 +126,7 @@
   }
 
   function buildViewModel(seed, view, category) {
-    var all = sortItems((seed && seed.items) || []);
+    var all = sortItems(((seed && seed.items) || []).filter(hasTitle));
     var now = new Date();
     var todayKey = bjDayKey(now);
     var yesterdayKey = bjDayKey(new Date(now.getTime() - 24 * 3600 * 1000));
@@ -170,11 +173,15 @@
     h += '<span class="' + cats.join(' ') + '">' + esc(it.category || '行业') + '</span>';
     if (showStar && it.selected && !it.big_fish_pending) h += '<span class="star" title="值得细看">★</span>';
     if (it.big_fish_pending) h += '<span class="badge pending">待复核</span>';
-    if (it.beat_hours != null && it.beat_hours !== '' && !isNaN(Number(it.beat_hours))) {
-      h += '<span class="badge beat" title="雷达捕捉到一手源的时间，早于中文二手扩散">比二手扩散早 ' + esc(fmtBeat(Number(it.beat_hours))) + ' 小时</span>';
-    }
+    /* 抢跑徽标暂停显示：beat_hours=检测延迟（first_seen−published），语义与「早于二手扩散」不符，
+       对账首轮（评审/2026-09-16-抢跑对账-首轮.md）判为虚假宣传；待 D2 重设计指标后再恢复 */
     h += '</div>';
-    h += '<h3 class="ctitle"><a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' + esc(it.title_zh) + '</a></h3>';
+    /* 标题回退链：中文标题 → 原文标题（降级样式+「原文题」小标）→ 无题不渲染 */
+    if (!it.title_zh && !it.title_src) return '';
+    var useSrcTitle = !it.title_zh && !!it.title_src;
+    h += '<h3 class="ctitle' + (useSrcTitle ? ' ctitle-src' : '') + '">';
+    if (useSrcTitle) h += '<span class="badge srconly" title="中文加工未完成的降级条目，显示原文标题">原文题</span> ';
+    h += '<a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' + esc(it.title_zh || it.title_src) + '</a></h3>';
     if (it.one_liner_zh) h += '<p class="oneliner">' + esc(it.one_liner_zh) + '</p>';
     h += '<div class="facts">';
     h += '<span class="src">' + esc(it.source_name || '未知来源') + '<b class="tier ' + tierClass(it.source_tier) + '">' + esc(it.source_tier || 'T2') + '</b></span>';
@@ -231,7 +238,7 @@
       var active = state.view === p[0];
       p[1].setAttribute('aria-pressed', active ? 'true' : 'false');
     });
-    var selCount = applyView(sortItems(seed.items || []), 'selected').length;
+    var selCount = applyView(sortItems((seed.items || []).filter(hasTitle)), 'selected').length;
     els.viewSelected.innerHTML = '精选<span class="n">' + selCount + '</span>';
     els.viewAll.innerHTML = '全部<span class="n">' + vm.total + '</span>';
 
@@ -269,7 +276,7 @@
       var ol = document.createElement('ol');
       ol.className = 'cards';
       var showStar = state.view !== 'selected';
-      ol.innerHTML = day.items.map(function (it) { return '<li>' + cardHTML(it, showStar) + '</li>'; }).join('');
+      ol.innerHTML = day.items.filter(hasTitle).map(function (it) { return '<li>' + cardHTML(it, showStar) + '</li>'; }).join('');
       h.container = null;
       var wrap = document.createElement('section');
       wrap.appendChild(h);
@@ -333,7 +340,7 @@
     applyView: applyView, applyCategory: applyCategory,
     countsByCategory: countsByCategory, groupByDay: groupByDay,
     fmtAgo: fmtAgo, fmtBeat: fmtBeat, clampHeat: clampHeat,
-    buildViewModel: buildViewModel, cardHTML: cardHTML
+    buildViewModel: buildViewModel, cardHTML: cardHTML, hasTitle: hasTitle
   };
 
   if (typeof document !== 'undefined') {
