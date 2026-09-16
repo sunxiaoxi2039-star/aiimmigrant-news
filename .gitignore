@@ -1,0 +1,21 @@
+# 白名单门禁：默认挡住一切，逐个显式放行（建站规格书 v2 §6）
+/*
+!/index.html
+!/about.html
+!/404.html
+!/CNAME
+!/README.md
+!/.gitignore
+!/assets/
+/assets/*
+!/assets/style.css
+!/assets/app.js
+!/data/
+/data/*
+!/data/精选库.json
+!/generator/
+/generator/*
+!/generator/build.py
+!/generator/README.md
+
+# 任何新文件想进仓，必须先在上面加一行白名单并确认无敏感内容
