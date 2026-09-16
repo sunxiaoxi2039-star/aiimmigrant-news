@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 资讯时间线 · 每天扫上百条，只留值得看的</title>
+<meta name="description" content="给中文读者的 AI 时间线：模型 / 产品 / 研究 / 行业，按北京时间排列，标注抢跑时长与多源报道，每条卡片可展开核对英文原文引句。">
+<link rel="canonical" href="https://news.aiimmigrant.de/">
+<meta property="og:site_name" content="AI 资讯时间线">
+<meta property="og:title" content="AI 资讯时间线 · 每天扫上百条，只留值得看的">
+<meta property="og:description" content="给中文读者的 AI 时间线：模型 / 产品 / 研究 / 行业，按北京时间排列，标注抢跑时长与多源报道，每条卡片可展开核对英文原文引句。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site container">
+  <div>
+    <h1>AI 资讯时间线</h1>
+    <p class="tagline">每天扫上百条，只留值得看的</p>
+  </div>
+  <nav><a href="about.html">关于</a></nav>
+</header>
+
+<div class="container">
+  <p id="summary" class="summary" aria-live="polite">正在载入时间线…</p>
+</div>
+
+<div class="toolbar" id="toolbar" hidden>
+  <div class="container tb-inner">
+    <div class="seg" role="group" aria-label="视图切换">
+      <button type="button" id="view-selected" class="seg-btn" aria-pressed="true">精选</button>
+      <button type="button" id="view-all" class="seg-btn" aria-pressed="false">全部</button>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="分类筛选"></div>
+  </div>
+</div>
+
+<main class="container" id="main">
+  <div id="timeline"></div>
+</main>
+
+<footer>
+  <div class="container">
+    <span id="last-updated" class="upd">…</span>
+    <div class="links">AI 资讯时间线 · <a href="about.html">关于 · 免责 · 纠错</a> · 筛选与翻译由 AI 辅助完成，人工复核中</div>
+  </div>
+</footer>
+
+<noscript><div class="container"><div class="noscript-box">浏览时间线需要启用 JavaScript。原始数据可查看 <a href="data/%E7%B2%BE%E9%80%89%E5%BA%93.json">data/精选库.json</a>。</div></div></noscript>
+
+<script type="application/json" id="seed-data">{"generated_at_utc":"2026-09-16T06:21:15Z","items":[]}</script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
