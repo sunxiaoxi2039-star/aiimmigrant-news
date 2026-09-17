@@ -175,6 +175,26 @@ header.site { padding: 18px 0 10px; display: flex; justify-content: space-betwee
 .cluster a { font-size: 12.5px; overflow-wrap: anywhere; }
 .tiny { font-size: 11.5px; color: var(--faint); margin: 8px 0 0; }
 
+/* D7 goal 第四刀：今日热点（多源簇排行，clusters 多源数据；无数据隐藏） */
+.hotbox {
+  background: #fff8ec;
+  border: 1px solid #f6dca0;
+  border-radius: 10px;
+  padding: 10px 12px 12px;
+  margin: 10px 0;
+}
+.hotbox h2 {
+  font-size: 14px; margin: 0 0 6px; letter-spacing: .2px;
+  display: flex; align-items: center; gap: 6px;
+}
+.hotbox h2 .badge { background: var(--heat-a); color: #fff; padding: 1px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.hotbox ol { margin: 0; padding-left: 22px; }
+.hotbox li { font-size: 13.5px; line-height: 1.55; padding: 2px 0; }
+.hotbox li .n { display: inline-block; min-width: 26px; color: var(--heat-b); font-weight: 700; }
+.hotbox li a { color: var(--ink); text-decoration: none; }
+.hotbox li a:hover { color: var(--accent); text-decoration: underline; }
+.hotbox li .meta { color: var(--sub); font-size: 11.5px; margin-left: 4px; }
+
 /* 空态与页脚 */
 .empty-state {
   border: 1px dashed var(--line); border-radius: 12px; background: var(--card);
@@ -615,6 +635,10 @@ INDEX_TMPL = HEAD_TMPL + """
   <p id="summary" class="summary" aria-live="polite">正在载入时间线…</p>
 </div>
 
+<div class="container">
+  {{HOTBOX_HTML}}
+</div>
+
 <div class="toolbar" id="toolbar" hidden>
   <div class="container tb-inner">
     <div class="seg" role="group" aria-label="视图切换">
@@ -768,6 +792,89 @@ def normalize_seed(seed):
     return clean, dropped
 
 
+def compute_hotbox(items, max_n=5):
+    """D7 goal 第四刀：「今日热点 N 家源在报」服务端渲染。
+    规则：
+    - 多源簇条目（clusters 长度 > 0，n_sources ≥ 2）
+    - published 在 24h 内（按当前时刻算）
+    - 按簇源数降序 + published 越新越前
+    - 取 top max_n
+    返回 (html, n_hot) — n_hot=0 时 html=""（build 时该 div 自动隐藏）。
+    """
+    from datetime import datetime, timezone, timedelta
+    now = datetime.now(timezone.utc)
+    hot = []
+    for it in items:
+        clusters = it.get("clusters") or []
+        n_src = int(it.get("n_sources") or len(clusters) + 1)
+        if n_src < 2 or not clusters:
+            continue
+        pub = it.get("published_utc") or ""
+        try:
+            pub_dt = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+        except Exception:
+            continue
+        age_h = (now - pub_dt).total_seconds() / 3600
+        if age_h < 0 or age_h > 24:
+            continue
+        title = (it.get("title_zh") or it.get("title_src") or "").strip()
+        url = it.get("url", "").strip()
+        if not (title and url):
+            continue
+        # 收集所有报道源（自身 + clusters）；source_name 重复或太笼统时退回 host 二级域
+        def _display_source(rec, fallback_url):
+            sn = (rec.get("source_name") or "").strip()
+            if sn and sn not in ("", "官方RSS", "官方博客"):  # 太笼统的退回 host
+                return sn
+            # 从 URL 抽 host 二级域（如 ithome.com / qbitai.com）
+            import re as _re
+            m = _re.search(r"https?://(?:www\.)?([^/]+)", fallback_url or "")
+            if not m:
+                return sn or "源"
+            host = m.group(1).lower().split(":")[0]
+            # 短化常见源名
+            short_map = {
+                "ithome.com": "IT之家", "qbitai.com": "量子位", "leiphone.com": "雷峰网",
+                "infoq.cn": "InfoQ中国", "ifanr.com": "爱范儿", "tmtpost.com": "钛媒体",
+                "theverge.com": "TheVerge", "theregister.com": "TheRegister",
+                "golem.de": "Golem", "t3n.de": "t3n", "heise.de": "heise",
+                "tech.eu": "Tech.eu", "faz.net": "FAZ", "github.blog": "GitHub官方博客",
+                "blog.google": "Google博客", "openai.com": "OpenAI官网",
+                "anthropic.com": "Anthropic官网", "deepmind.google": "DeepMind",
+                "huggingface.co": "HuggingFace", "news.ycombinator.com": "HN",
+            }
+            return short_map.get(host, host)
+        src_names = [_display_source(it, it.get("url", ""))]
+        for c in clusters:
+            sn = _display_source(c, c.get("url", ""))
+            if sn and sn not in src_names:
+                src_names.append(sn)
+        hot.append({"title": title, "url": url, "n_sources": n_src,
+                    "age_h": age_h, "src_names": src_names,
+                    "selected": bool(it.get("selected"))})
+    hot.sort(key=lambda x: (-x["n_sources"], x["age_h"]))
+    hot = hot[:max_n]
+    if not hot:
+        return "", 0
+    rows = []
+    for i, h in enumerate(hot, 1):
+        src_summary = "、".join(h["src_names"][:4])
+        if len(h["src_names"]) > 4:
+            src_summary += f" 等 {len(h['src_names'])} 家"
+        meta = f" · {h['n_sources']} 家源在报（{src_summary}）"
+        rows.append(
+            f'<li><span class="n">#{i}</span> '
+            f'<a href="{hesc(h["url"])}" target="_blank" rel="noopener">{hesc(h["title"])}</a>'
+            f'<span class="meta">{hesc(meta)}</span></li>'
+        )
+    html = (
+        '<section class="hotbox" aria-label="今日热点">'
+        '<h2>今日热点 <span class="badge">' + str(len(hot)) + ' 事件</span></h2>'
+        '<ol>' + "".join(rows) + '</ol></section>'
+    )
+    return html, len(hot)
+
+
 def main(argv):
     here = pathlib.Path(__file__).resolve().parent        # .../发布/generator
     repo = here.parent                                     # .../发布
@@ -779,6 +886,11 @@ def main(argv):
     if dropped:
         sys.stderr.write("[build] 警告：丢弃 %d 条缺 title_zh/url 的条目\n" % dropped)
 
+    # D7 goal 第四刀：「今日热点 N 家源在报」服务端计算（无数据时 HOTBOX_HTML 为空串）
+    hotbox_html, n_hot = compute_hotbox(items)
+    if n_hot:
+        sys.stderr.write("[build] 今日热点 %d 事件已渲染\n" % n_hot)
+
     m = {
         "SITE_NAME": hesc(CONFIG["SITE_NAME"]),
         "SITE_TAGLINE": hesc(CONFIG["SITE_TAGLINE"]),
@@ -787,6 +899,7 @@ def main(argv):
         "ISSUES_URL": hesc(CONFIG["ISSUES_URL"]),
         "TITLE": hesc(CONFIG["SITE_NAME"] + " · " + CONFIG["SITE_TAGLINE"]),
         "SEED_JSON": json_island(seed),
+        "HOTBOX_HTML": hotbox_html or "",
     }
 
     pages = {
