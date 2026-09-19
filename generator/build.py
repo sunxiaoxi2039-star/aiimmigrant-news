@@ -98,6 +98,9 @@ header.site { padding: 18px 0 10px; display: flex; justify-content: space-betwee
   padding: 8px 0;
 }
 .tb-inner { display: flex; flex-direction: column; gap: 7px; }
+.seg-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.why { font-size: 13.5px; color: var(--sub); border-left: 3px solid var(--accent-line); padding: 2px 0 2px 10px; margin: 8px 0; }
+.why b { color: var(--accent); font-weight: 600; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--card); width: max-content; }
 .seg-btn {
   appearance: none; border: 0; background: none; cursor: pointer;
@@ -287,6 +290,24 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   /* 标题回退链：title_zh → title_src → 跳过不渲染 */
   function hasTitle(it) { return !!(it.title_zh || it.title_src); }
 
+  /* 三语回退链（2026-09-19 军令：中/德/英 三版+原文）：
+     所选语言缺 → 中文 → 另一语 → 原文（title_src）；任何条目永不空卡 */
+  var LANG_FIELDS = {
+    title: { zh: 'title_zh', de: 'title_de', en: 'title_en' },
+    liner: { zh: 'one_liner_zh', de: 'one_liner_de', en: 'one_liner_en' },
+    why: { zh: 'why_zh', de: 'why_de', en: 'why_en' }
+  };
+  function pickLang(it, kind, lang) {
+    var f = LANG_FIELDS[kind];
+    var order = [f[lang], f.zh, (lang === 'de' ? f.en : f.de)];
+    if (kind === 'title') order.push('title_src');
+    for (var i = 0; i < order.length; i++) {
+      var k = order[i];
+      if (k && it[k]) return { text: it[k], isSrc: (k === 'title_src') };
+    }
+    return { text: '', isSrc: false };
+  }
+
   function sortItems(items) {
     return items.slice().sort(function (a, b) {
       var ta = itemTime(a), tb = itemTime(b);
@@ -411,13 +432,15 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     /* 抢跑徽标暂停显示：beat_hours=检测延迟（first_seen−published），语义与「早于二手扩散」不符，
        对账首轮（评审/2026-09-16-抢跑对账-首轮.md）判为虚假宣传；待 D2 重设计指标后再恢复 */
     h += '</div>';
-    /* 标题回退链：中文标题 → 原文标题（降级样式+「原文题」小标）→ 无题不渲染 */
-    if (!it.title_zh && !it.title_src) return '';
-    var useSrcTitle = !it.title_zh && !!it.title_src;
+    /* 三语标题回退链：所选语言 → 中文 → 另一语 → 原文标题（降级样式+「原文题」小标）→ 无题不渲染 */
+    var tp = pickLang(it, 'title', state.lang);
+    if (!tp.text) return '';
+    var useSrcTitle = tp.isSrc;
     h += '<h3 class="ctitle' + (useSrcTitle ? ' ctitle-src' : '') + '">';
-    if (useSrcTitle) h += '<span class="badge srconly" title="中文加工未完成的降级条目，显示原文标题">原文题</span> ';
-    h += '<a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' + esc(it.title_zh || it.title_src) + '</a></h3>';
-    if (it.one_liner_zh) h += '<p class="oneliner">' + esc(it.one_liner_zh) + '</p>';
+    if (useSrcTitle) h += '<span class="badge srconly" title="加工未完成的降级条目，显示原文标题">原文题</span> ';
+    h += '<a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' + esc(tp.text) + '</a></h3>';
+    var lp = pickLang(it, 'liner', state.lang);
+    if (lp.text) h += '<p class="oneliner">' + esc(lp.text) + '</p>';
     h += '<div class="facts">';
     h += '<span class="src">' + esc(it.source_name || '未知来源') + '<b class="tier ' + tierClass(it.source_tier) + '">' + esc(it.source_tier || 'T2') + '</b></span>';
     var heat = clampHeat(it.heat);
@@ -425,6 +448,8 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     h += '</div>';
     h += '<button type="button" class="toggle" aria-expanded="false">展开原文引句与多源</button>';
     h += '<div class="detail">';
+    var wp = pickLang(it, 'why', state.lang);
+    if (wp.text && it.selected) h += '<p class="why"><b>值得细看</b> · ' + esc(wp.text) + '</p>';
     if (it.quote_en) h += '<blockquote class="quote">' + esc(it.quote_en) + '</blockquote>';
     var clusters = Array.isArray(it.clusters) ? it.clusters.filter(function (c) { return c && c.url; }) : [];
     if (clusters.length) {
@@ -454,7 +479,8 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     catch (e) { return { items: [] }; }
   }
 
-  var state = { view: 'selected', category: '全部' };
+  /* 2026-09-19 军令：默认「全部」视图——当日时间线 ≥100 条滚动是主角，精选仍可一键切 */
+  var state = { view: 'all', category: '全部', lang: 'zh' };
   var seed = null;
   var els = {};
 
@@ -472,6 +498,10 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     [['selected', els.viewSelected], ['all', els.viewAll]].forEach(function (p) {
       var active = state.view === p[0];
       p[1].setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    // 2b) 三语切换（中/德/英；缺译条目走回退链不空卡）
+    [['zh', els.langZh], ['de', els.langDe], ['en', els.langEn]].forEach(function (p) {
+      if (p[1]) p[1].setAttribute('aria-pressed', state.lang === p[0] ? 'true' : 'false');
     });
     var selCount = applyView(sortItems((seed.items || []).filter(hasTitle)), 'selected').length;
     els.viewSelected.innerHTML = '精选<span class="n">' + selCount + '</span>';
@@ -553,6 +583,9 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   function bind() {
     els.viewSelected.addEventListener('click', function () { state.view = 'selected'; paint(); });
     els.viewAll.addEventListener('click', function () { state.view = 'all'; paint(); });
+    [['zh', els.langZh], ['de', els.langDe], ['en', els.langEn]].forEach(function (p) {
+      if (p[1]) p[1].addEventListener('click', function () { state.lang = p[0]; paint(); });
+    });
     els.timeline.addEventListener('click', function (ev) {
       var t = ev.target;
       if (t && t.classList && t.classList.contains('toggle')) {
@@ -572,6 +605,9 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     els.toolbar = document.getElementById('toolbar');
     els.viewSelected = document.getElementById('view-selected');
     els.viewAll = document.getElementById('view-all');
+    els.langZh = document.getElementById('lang-zh');
+    els.langDe = document.getElementById('lang-de');
+    els.langEn = document.getElementById('lang-en');
     els.chips = document.getElementById('chips');
     els.timeline = document.getElementById('timeline');
     els.upd = document.getElementById('last-updated');
@@ -581,6 +617,15 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     bind();
     updateFooter();
     setInterval(updateFooter, 30000);
+    /* 每小时滚动（2026-09-19 军令）：每 20 分钟查一次契约版本，变了自动刷新拿新数据 */
+    setInterval(function () {
+      fetch('data/%E7%B2%BE%E9%80%89%E5%BA%93.json', { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (d && d.generated_at_utc && seed && seed.generated_at_utc
+              && d.generated_at_utc !== seed.generated_at_utc) location.reload();
+        }).catch(function () {});
+    }, 1200000);
   }
 
   /* 导出纯函数层供 Node 单测 */
@@ -590,7 +635,8 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     applyView: applyView, applyCategory: applyCategory,
     countsByCategory: countsByCategory, groupByDay: groupByDay,
     fmtAgo: fmtAgo, fmtBeat: fmtBeat, clampHeat: clampHeat,
-    buildViewModel: buildViewModel, cardHTML: cardHTML, hasTitle: hasTitle
+    buildViewModel: buildViewModel, cardHTML: cardHTML, hasTitle: hasTitle,
+    pickLang: pickLang
   };
 
   if (typeof document !== 'undefined') {
@@ -641,9 +687,16 @@ INDEX_TMPL = HEAD_TMPL + """
 
 <div class="toolbar" id="toolbar" hidden>
   <div class="container tb-inner">
-    <div class="seg" role="group" aria-label="视图切换">
-      <button type="button" id="view-selected" class="seg-btn" aria-pressed="true">精选</button>
-      <button type="button" id="view-all" class="seg-btn" aria-pressed="false">全部</button>
+    <div class="seg-row">
+      <div class="seg" role="group" aria-label="视图切换">
+        <button type="button" id="view-selected" class="seg-btn" aria-pressed="false">精选</button>
+        <button type="button" id="view-all" class="seg-btn" aria-pressed="true">全部</button>
+      </div>
+      <div class="seg" role="group" aria-label="语言 Sprache Language">
+        <button type="button" id="lang-zh" class="seg-btn" aria-pressed="true">中文</button>
+        <button type="button" id="lang-de" class="seg-btn" aria-pressed="false">DE</button>
+        <button type="button" id="lang-en" class="seg-btn" aria-pressed="false">EN</button>
+      </div>
     </div>
     <div class="chips" id="chips" role="group" aria-label="分类筛选"></div>
   </div>
