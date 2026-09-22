@@ -199,6 +199,32 @@ header.site { padding: 18px 0 10px; display: flex; justify-content: space-betwee
 .hotbox li a { color: var(--ink); text-decoration: none; }
 .hotbox li a:hover { color: var(--accent); text-decoration: underline; }
 .hotbox li .meta { color: var(--sub); font-size: 11.5px; margin-left: 4px; }
+/* 2026-09-22 P3 热度地图 */
+.heatmap { margin-top: 10px; }
+.heatmap h2 { flex-wrap: wrap; }
+.hm-sub { color: var(--sub); font-size: 11.5px; font-weight: 400; letter-spacing: 0; }
+.hm-wrap { overflow-x: auto; }
+.hm { border-collapse: separate; border-spacing: 3px; font-size: 11.5px; }
+.hm th[scope="col"] { color: var(--faint); font-weight: 500; font-size: 11px; padding: 0 0 2px; }
+.hm th[scope="row"] { color: var(--sub); font-weight: 600; text-align: right; padding-right: 6px; white-space: nowrap; }
+.hm-c { width: 34px; height: 24px; border-radius: 4px; text-align: center; vertical-align: middle; cursor: default; }
+.hm-c span { font-size: 11px; font-weight: 600; }
+.hm-0 { background: var(--line); }
+.hm-1 { background: #ffe9c7; color: #8a5a00; }
+.hm-2 { background: #ffd08a; color: #7a4a00; }
+.hm-3 { background: var(--heat-a); color: #fff; }
+.hm-4 { background: #ef6d26; color: #fff; }
+.hm-5 { background: var(--heat-b); color: #fff; }
+.hm-legend { display: flex; align-items: center; gap: 3px; margin-top: 7px; color: var(--faint); font-size: 11px; }
+.hm-legend i { width: 15px; height: 10px; border-radius: 2px; display: inline-block; }
+.hm-tz { margin-left: auto; }
+.hm-bars { list-style: none; margin: 9px 0 0; padding: 8px 0 0; border-top: 1px solid var(--line); }
+.hm-bars li { display: flex; align-items: center; gap: 7px; padding: 2px 0; font-size: 12px; }
+.hm-bl { min-width: 30px; color: var(--sub); font-weight: 600; }
+.hm-bt { flex: 0 0 90px; height: 7px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.hm-bt i { display: block; height: 100%; background: linear-gradient(90deg, var(--heat-a), var(--heat-b)); }
+.hm-bn { color: var(--faint); font-size: 11px; min-width: 34px; }
+.hm-bd { color: var(--sub); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* 空态与页脚 */
 .empty-state {
@@ -745,6 +771,7 @@ INDEX_TMPL = HEAD_TMPL + """
 
 <div class="container">
   {{HOTBOX_HTML}}
+  {{HEATMAP_HTML}}
 </div>
 
 <div class="toolbar" id="toolbar" hidden>
@@ -988,6 +1015,153 @@ def compute_hotbox(items, max_n=5):
         '<ol>' + "".join(rows) + '</ol></section>'
     )
     return html, len(hot)
+
+
+# ---------------------------------------------------------------------------
+# 2026-09-22 P3：热度地图 v0（AIradar-heatmap 式选题入口）
+# 只吃现成数据——精选库里已有的 category / heat / clusters / 时间戳，
+# 不新造任何模型调用。日期按 Europe/Berlin 切，跟前端同一套时区口径。
+# ---------------------------------------------------------------------------
+HEAT_DAYS = 7          # 格子图横轴天数
+HEAT_LEVELS = 5        # 色阶档数（0 档=空格）
+
+
+def _berlin_day(dt):
+    """UTC aware datetime → 柏林当地 date。时区库缺席时退回 UTC，不抛。"""
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.astimezone(ZoneInfo("Europe/Berlin")).date()
+    except Exception:
+        return dt.date()
+
+
+def _item_time(it):
+    """发布时间优先，缺了退回首见时间——787/1278 条没有 published_utc，
+    只认 published 会让地图丢掉六成数据。两个都没有就放弃这条。"""
+    for k in ("published_utc", "first_seen_utc"):
+        dt = parse_iso(it.get(k) or "")
+        if dt:
+            return dt
+    return None
+
+
+def compute_heatmap(items, days=HEAT_DAYS):
+    """主题 × 日期 热度格子图 + 近 24h 主题条。
+
+    格子强度取该格 heat 之和（不是条数）：20 条边角料不该盖过 3 条多源大新闻。
+    多源簇按源数加权，簇越多越烫——这正是「值得写」的信号。
+    返回 (html, n_cells) ；无可用数据时 ("", 0)，模板里该块自动消失。
+    """
+    from datetime import datetime, timezone, timedelta
+    now = datetime.now(timezone.utc)
+    today = _berlin_day(now)
+    day_keys = [today - timedelta(days=i) for i in range(days - 1, -1, -1)]
+    day_pos = {d: i for i, d in enumerate(day_keys)}
+    cats = list(CONFIG["CATEGORIES"])
+
+    # cell[(cat, day)] = {"score": float, "n": int, "titles": [..], "clusters": int}
+    cell = {}
+    last24 = {c: {"score": 0.0, "n": 0, "titles": []} for c in cats}
+    for it in items:
+        cat = (it.get("category") or "").strip()
+        if cat not in cats:
+            continue
+        dt = _item_time(it)
+        if not dt:
+            continue
+        d = _berlin_day(dt)
+        if d not in day_pos:
+            continue
+        try:
+            heat = float(it.get("heat") or 0.0)
+        except (TypeError, ValueError):
+            heat = 0.0
+        n_src = len(it.get("clusters") or [])
+        # 多源加权：每多一家源在报，权重 +35%
+        w = heat * (1.0 + 0.35 * n_src)
+        title = (it.get("title_zh") or it.get("title_src") or "").strip()
+        rec = cell.setdefault((cat, d), {"score": 0.0, "n": 0, "titles": [], "clusters": 0})
+        rec["score"] += w
+        rec["n"] += 1
+        rec["clusters"] += 1 if n_src else 0
+        if title:
+            rec["titles"].append((w, title))
+        if (now - dt).total_seconds() <= 24 * 3600:
+            last24[cat]["score"] += w
+            last24[cat]["n"] += 1
+            if title:
+                last24[cat]["titles"].append((w, title))
+
+    if not cell:
+        return "", 0
+
+    top = max(r["score"] for r in cell.values()) or 1.0
+
+    def level(score):
+        if score <= 0:
+            return 0
+        # 开方压一下长尾：否则一条爆款把整张图压成全灰
+        import math
+        frac = math.sqrt(score / top)
+        return max(1, min(HEAT_LEVELS, int(math.ceil(frac * HEAT_LEVELS))))
+
+    # ---- 格子图 ----
+    head = "".join(
+        '<th scope="col"><span>%s</span></th>' % hesc("%d/%d" % (d.month, d.day))
+        for d in day_keys
+    )
+    rows = []
+    for cat in cats:
+        tds = []
+        for d in day_keys:
+            r = cell.get((cat, d))
+            if not r:
+                tds.append('<td class="hm-c hm-0" title="%s"></td>'
+                           % hesc("%s · %d/%d · 无条目" % (cat, d.month, d.day)))
+                continue
+            lv = level(r["score"])
+            tips = [t for _, t in sorted(r["titles"], reverse=True)[:3]]
+            tip = "%s · %d/%d · %d 条 · 热度 %d" % (cat, d.month, d.day, r["n"], round(r["score"]))
+            if r["clusters"]:
+                tip += " · %d 条多源在报" % r["clusters"]
+            for t in tips:
+                tip += "\n— " + (t[:42] + "…" if len(t) > 42 else t)
+            tds.append('<td class="hm-c hm-%d" title="%s"><span>%d</span></td>'
+                       % (lv, hesc(tip), r["n"]))
+        rows.append('<tr><th scope="row">%s</th>%s</tr>' % (hesc(cat), "".join(tds)))
+
+    # ---- 近 24h 主题条 ----
+    mx = max((v["score"] for v in last24.values()), default=0.0) or 1.0
+    bars = []
+    for cat, v in sorted(last24.items(), key=lambda kv: -kv[1]["score"]):
+        if v["n"] == 0:
+            continue
+        pct = max(3, round(v["score"] / mx * 100))
+        lead = ""
+        if v["titles"]:
+            t = sorted(v["titles"], reverse=True)[0][1]
+            lead = t[:34] + "…" if len(t) > 34 else t
+        bars.append(
+            '<li><span class="hm-bl">%s</span>'
+            '<span class="hm-bt"><i style="width:%d%%"></i></span>'
+            '<span class="hm-bn">%d 条</span>'
+            '<span class="hm-bd">%s</span></li>'
+            % (hesc(cat), pct, v["n"], hesc(lead))
+        )
+    bar_html = ('<ol class="hm-bars">%s</ol>' % "".join(bars)) if bars else ''
+
+    legend = "".join('<i class="hm-%d"></i>' % i for i in range(HEAT_LEVELS + 1))
+    html = (
+        '<section class="hotbox heatmap" aria-label="热度地图">'
+        '<h2>热度地图 <span class="badge">近 %d 天</span>'
+        '<span class="hm-sub">格子越烫＝该主题当天越值得写（热度分×多源加权，鼠标悬停看标题）</span></h2>'
+        '<div class="hm-wrap"><table class="hm"><thead><tr><td></td>%s</tr></thead>'
+        '<tbody>%s</tbody></table></div>'
+        '<div class="hm-legend"><span>冷</span>%s<span>烫</span>'
+        '<span class="hm-tz">日期按柏林时间切</span></div>'
+        '%s</section>'
+    ) % (days, head, "".join(rows), legend, bar_html)
+    return html, len(cell)
 
 
 # ---------------------------------------------------------------------------
@@ -1310,6 +1484,8 @@ def main(argv):
 
     # D7 goal 第四刀：「今日热点 N 家源在报」服务端计算（无数据时 HOTBOX_HTML 为空串）
     hotbox_html, n_hot = compute_hotbox(items)
+    # 2026-09-22 P3：热度地图（同一份数据，零额外调用）
+    heatmap_html, n_cells = compute_heatmap(items)
     if n_hot:
         sys.stderr.write("[build] 今日热点 %d 事件已渲染\n" % n_hot)
 
@@ -1322,6 +1498,7 @@ def main(argv):
         "TITLE": hesc(CONFIG["SITE_NAME"] + " · " + CONFIG["SITE_TAGLINE"]),
         "SEED_JSON": json_island(seed),
         "HOTBOX_HTML": hotbox_html or "",
+        "HEATMAP_HTML": heatmap_html or "",
         "UPDATE_NOTE": hesc(UPDATE_NOTE),
         "LICENSE_NOTE": hesc(LICENSE_NOTE),
     }
