@@ -593,8 +593,30 @@ def run_pipeline(args):
     entries.sort(key=lambda e: -(e["score"] - (PATCH_SORT_PENALTY if e["patch_card"] else 0)))
     log(f"组装完成：{len(entries)} 条进站条目（补丁卡 {sum(1 for e in entries if e['patch_card'])} 张降权排序）")
 
+    # 6.0 老卡复用（2026-09-22 P0 省钱刀）：加工+翻译是全站唯一的大额开销，而 id=url_id(url)
+    #     跨轮稳定——上一轮已过闸全绿的卡直接搬过来，钱只花在「新面孔」上。额度换覆盖面，
+    #     不重复买同一条的中文。AI_NEWS_REUSE_CARDS=0 关掉（整轮重做）；--process-limit 仍是硬上限。
+    CARD_FIELDS = ("title_zh", "one_liner_zh", "why_zh", "quote_en",
+                   "title_en", "title_de", "one_liner_en", "one_liner_de", "why_en", "why_de")
+    old_cards = {}
+    if not args.quick and os.environ.get("AI_NEWS_REUSE_CARDS", "1") != "0":
+        try:
+            with open(os.path.join(DATA_DIR, "精选库.json"), encoding="utf-8") as f:
+                for it in json.load(f).get("items", []):
+                    # 只搬全绿卡：降级/未加工的旧卡不搬（本轮有额度就重做，没额度就退原文标题）
+                    if it.get("id") and it.get("title_zh") and gates_all_green(it.get("gates")):
+                        old_cards[it["id"]] = {k: it.get(k, "") for k in CARD_FIELDS}
+                        old_cards[it["id"]]["gates"] = it.get("gates") or {}
+        except Exception as ex:
+            log(f"  老卡复用跳过（旧契约读不了：{ex}）")
+
     # 6. 中文加工（四道闸）
-    to_process = entries if args.process_limit <= 0 else entries[:args.process_limit]
+    fresh = [e for e in entries if e["id"] not in old_cards]
+    to_process = fresh if args.process_limit <= 0 else fresh[:args.process_limit]
+    if old_cards:
+        n_reuse = len(entries) - len(fresh)
+        log(f"老卡复用：{n_reuse} 条搬旧卡（不调模型）；本轮加工 {len(to_process)}/{len(fresh)} 条新面孔"
+            + (f"（上限 {args.process_limit}）" if args.process_limit > 0 else ""))
     processed, degrade_log = {}, []
     gate_fail_log = []   # 结构化留痕：{id, gate, detail}
     if args.quick:
@@ -704,6 +726,13 @@ def run_pipeline(args):
             e["quote_en"] = (加工层.quote_exit_gate(p["quote"], e.get("body", ""), e["title_src"])
                              if gates_all_green(p.get("gates")) else "")
             e["gates"] = p.get("gates", {})
+        elif e["id"] in old_cards:
+            oc = old_cards[e["id"]]
+            for k in CARD_FIELDS:
+                if oc.get(k):
+                    e[k] = oc[k]
+            e.setdefault("title_zh", ""); e.setdefault("one_liner_zh", ""); e.setdefault("quote_en", "")
+            e["gates"] = dict(oc["gates"], reused=True)   # 闸记录照搬＋标记来源，证据可追
         else:
             e["title_zh"], e["one_liner_zh"], e["quote_en"] = "", "", ""
             e["gates"] = {"unprocessed": True}

@@ -68,8 +68,10 @@ def our_inventory():
     src = open(RADAR_PY, encoding="utf-8").read()
     rss = [{"name": n, "url": u, "tag": t} for n, u, t in _literal(src, "RSS_FEEDS")]
     html = [{"name": n, "url": u} for n, u, _re in _literal(src, "HTML_CHANNELS")]
-    x_handles = sorted({h.lower() for h in re.findall(r"from%3A([A-Za-z0-9_]+)",
-                                                      _literal(src, "X_OFFICIAL_QUERY"))})
+    # 2026-09-22：雷达的 X 查询从单条常量改成「核心恒在 + 轮播按小时切片」，
+    # 清点口径跟着改成两个池子的并集——轮播账号也是已接，只是分批出现在查询里。
+    x_handles = sorted({h.lower() for h in
+                        _literal(src, "X_CORE") + _literal(src, "X_ROTATION")})
     try:
         wechat = [a for a, _q in _literal(open(WECHAT_PY, encoding="utf-8").read(), "ACCOUNTS")]
     except (OSError, KeyError, ValueError):
@@ -90,6 +92,11 @@ def our_inventory():
 # 非 X / 非公众号的条目按别名表判定（逐条人工核过，可审计）。值 = (status, lane, note)
 ALIAS = {
     "IT之家（RSS）": ("connected", "雷达 RSS·IT之家", ""),
+    # 试过接不上，如实留待接（2026-09-22 实测）：
+    #   Epoch AI：blog/rss.xml、rss.xml、feed.xml 全 404——站点没有公开 RSS，要接得写网页差分
+    #   LangChain：blog.langchain.dev/rss/ 301 → www.langchain.com/blog/rss，新址 TLS 拒握手（curl 也 35）
+    #   LlamaIndex：/blog/feed、/rss.xml 404 + TLS 拒握手
+    #   Midjourney：/rss 403（风控）
     "TechCrunch：AI（RSS）": ("connected", "雷达 RSS·TechCrunch-AI", ""),
     "MarkTechPost（RSS）": ("connected", "雷达 RSS·MarkTechPost", ""),
     "The Verge：AI（RSS）": ("connected", "雷达 RSS·TheVerge-AI", ""),
@@ -107,17 +114,17 @@ ALIAS = {
     "HuggingFace Daily Papers（社区热门论文）": ("connected", "雷达·HF Papers API", ""),
     "Hacker News 热门（buzzing.cc 中文翻译）": ("connected", "雷达·HN 热议", "我们取英文原帖，不走中文翻译站"),
     "Hacker News：AI 热帖": ("connected", "雷达·HN 热议", ""),
-    "Apple Machine Learning Research（RSS）": ("pending", "雷达 RSS（待加）", "我们只有 Apple Newsroom；机器学习研究页另有 RSS，可加"),
-    "Gary Marcus：The Road to AI We Can Trust（RSS）": ("pending", "雷达 RSS（待加）", "Substack RSS 可达，评论型内容待定级"),
+    "Apple Machine Learning Research（RSS）": ("connected", "雷达 RSS·AppleML研究", "9-22 接入，台账 10 条"),
+    "Gary Marcus：The Road to AI We Can Trust（RSS）": ("connected", "雷达 RSS·GaryMarcus", "9-22 接入，台账 15 条；评论型靠打分降噪"),
     "Epoch AI：研究、数据与评测": ("pending", "雷达 RSS（待加）", "epoch.ai 有 RSS，属数据/评测一手源"),
     "LangChain：Blog（RSS）": ("pending", "雷达 RSS（待加）", "blog.langchain.dev 有 RSS"),
     "LlamaIndex：产品、工程与评测": ("pending", "雷达 RSS（待加）", "官方博客有 RSS"),
     "Midjourney：Updates（RSS）": ("pending", "雷达 RSS（待加）", ""),
-    "404 Media（RSS）": ("pending", "雷达 RSS（待加）", "部分内容付费墙，只收摘要"),
-    "Newcomer 新闻长文（RSS）": ("pending", "雷达 RSS（待加）", "Substack，长文为主"),
-    "Trail of Bits：AI安全研究": ("pending", "雷达 RSS（待加）", "blog.trailofbits.com 有 RSS"),
+    "404 Media（RSS）": ("connected", "雷达 RSS·404Media", "9-22 接入，台账 16 条；部分付费墙只收摘要"),
+    "Newcomer 新闻长文（RSS）": ("connected", "雷达 RSS·Newcomer", "9-22 接入，台账 15 条"),
+    "Trail of Bits：AI安全研究": ("connected", "雷达 RSS·TrailofBits", "9-22 接入，台账 16 条"),
     "Sakana AI：Blog（网页）": ("pending", "雷达 HTML 差分（待加）", "无 RSS，需写卡片正则"),
-    "Artificial Intelligence News（网页）": ("pending", "雷达 RSS（待加）", "artificialintelligence-news.com 有 RSS"),
+    "Artificial Intelligence News（网页）": ("connected", "雷达 RSS·AINews", "9-22 接入走 RSS 不做网页差分；该站 TLS 偶发拒握手，失手即跳过"),
     "elsewhere：文章（RSS）": ("pending", "雷达 RSS（待加）", "聚合站，等级待评"),
 }
 

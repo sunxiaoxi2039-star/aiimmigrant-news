@@ -49,9 +49,11 @@ def translate_entries(entries, now, degrade_log=None):
     """对 36h 内 ∪ 精选条目补 title_en/title_de/one_liner_en/one_liner_de（精选加 why_en/why_de）。
     返回翻译成功条数。模型不可用时整层跳过（字段留空，不阻塞管线）。"""
     from 共用 import ModelUnavailable
+    # 2026-09-22：已带 en+de 的条目（老卡复用搬过来的）不再重翻——翻译是按条计费的
     targets = [e for e in entries
                if (e.get("selected") or _in_window(e, now))
-               and (e.get("title_zh") or e.get("title_src"))]
+               and (e.get("title_zh") or e.get("title_src"))
+               and not (e.get("title_en") and e.get("title_de"))]
     if not targets:
         return 0
     ok = 0
