@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agents / API · AI 资讯时间线</title>
+<meta name="description" content="AI 资讯时间线 给 LLM 与 agent 的接口：RSS、JSON API、llms.txt，无需鉴权。">
+<link rel="canonical" href="https://news.aiimmigrant.de/agents/">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="AI 资讯时间线" href="/feed.xml">
+<style>
+.api table { width:100%; border-collapse:collapse; font-size:14px; margin:10px 0 22px; }
+.api th,.api td { text-align:left; padding:8px 10px; border-bottom:1px solid rgba(128,128,128,.25); vertical-align:top; }
+.api code, .api pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; }
+.api pre { padding:12px 14px; border-radius:8px; overflow-x:auto; background:rgba(128,128,128,.12); }
+.api h2 { margin-top:30px; }
+</style>
+</head>
+<body>
+<header class="site container">
+  <div>
+    <h1>Agents / API</h1>
+    <p class="tagline">给机器读者的入口 · 无鉴权 · 版本号进路径</p>
+  </div>
+  <nav><a href="/">时间线</a> · <a href="/about.html">关于</a></nav>
+</header>
+
+<main class="container api" id="main">
+  <p>AI 资讯时间线 首先是给机器读的。下面五个地址随引擎每轮更新，直接 <code>curl</code> 即可，
+  不需要 key、不需要 UA 伪装。<strong>接口一旦公布就不破坏</strong>：只增字段，要改就开 <code>/api/v2/</code>。</p>
+
+  <h2>五个地址</h2>
+  <table>
+    <tr><th>地址</th><th>是什么</th><th>格式</th></tr>
+    <tr><td><a href="/api/v1/latest.json"><code>/api/v1/latest.json</code></a></td>
+        <td>精选 + 24h 全量，三语标题 / 一句话 / 为什么重要，含抢跑时长与多源簇</td><td>JSON</td></tr>
+    <tr><td><a href="/api/v1/sources.json"><code>/api/v1/sources.json</code></a></td>
+        <td>信源登记表：我们接了哪些源、哪些待接，以及与对标清单的当日差别</td><td>JSON</td></tr>
+    <tr><td><a href="/api/v1/heartbeat.json"><code>/api/v1/heartbeat.json</code></a></td>
+        <td>引擎心跳：上轮何时跑、成功与否、出了几条精选（判新鲜度看它）</td><td>JSON</td></tr>
+    <tr><td><a href="/feed.xml"><code>/feed.xml</code></a></td>
+        <td>RSS 2.0，中文标题 + 原文链接，三语摘要在 <code>content:encoded</code></td><td>XML</td></tr>
+    <tr><td><a href="/llms.txt"><code>/llms.txt</code></a></td>
+        <td>本页的机器版：字段说明与取数口径</td><td>Markdown</td></tr>
+  </table>
+
+  <h2>一行接入</h2>
+  <p>Claude Code / Codex / Cursor 里直接让它去读：</p>
+  <pre>把 https://news.aiimmigrant.de/api/v1/latest.json 拉下来，按 selected 挑今天值得看的 AI 新闻，
+每条给我中文一句话 + 原文链接，再说说为什么重要（字段 why_it_matters.zh）。</pre>
+  <p>命令行：</p>
+  <pre>curl -s https://news.aiimmigrant.de/api/v1/latest.json | jq '.selected[] | {title: .title.zh, url, why: .why_it_matters.zh}'
+curl -s https://news.aiimmigrant.de/api/v1/heartbeat.json | jq '{when, status, selected}'
+curl -s https://news.aiimmigrant.de/feed.xml | head -40</pre>
+  <p>MCP / RSS 阅读器：把 <code>https://news.aiimmigrant.de/feed.xml</code> 加进订阅即可，
+  <code>&lt;category&gt;精选&lt;/category&gt;</code> 是我们当轮挑出来的那几条。</p>
+
+  <h2>字段口径</h2>
+  <table>
+    <tr><th>字段</th><th>含义</th></tr>
+    <tr><td><code>title.{zh,en,de}</code> / <code>one_liner.*</code> / <code>why_it_matters.*</code></td>
+        <td>三语标题、一句话摘要、为什么重要。AI 生成，可能有误。</td></tr>
+    <tr><td><code>quote_en</code></td><td>英文原文引句，用来核对我们有没有写歪。</td></tr>
+    <tr><td><code>scoop_hours</code></td><td>我们比同题报道早多少小时发现；负数表示落后。</td></tr>
+    <tr><td><code>n_sources</code> / <code>also_reported_by</code></td><td>同一事件有几家在报、分别是谁。</td></tr>
+    <tr><td><code>published_utc</code> / <code>first_seen_utc</code></td><td>原文发布时间 / 我们首次捕获时间，均为 UTC。</td></tr>
+    <tr><td><code>source.tier</code></td><td>信源等级：T1 一手官方 / T2 专业媒体 / T3 聚合。</td></tr>
+  </table>
+
+  <h2>更新频率与许可</h2>
+  <p>引擎每小时一轮（launchd :07），精选库随轮更新；接口无鉴权、无频控，请自觉别超过 1 次/分钟。</p>
+  <p>摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；原文版权归各信源所有，请始终带上 url 回链原文。</p>
+  <p style="margin-top:30px"><a href="/">← 回到时间线</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="links">AI 资讯时间线 · <a href="/">时间线</a> · <a href="/about.html">关于</a> · <a href="/llms.txt">llms.txt</a></div>
+  </div>
+</footer>
+</body>
+</html>

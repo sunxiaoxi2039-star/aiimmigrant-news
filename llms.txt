@@ -1,0 +1,35 @@
+# AI 资讯时间线
+
+> 给中文读者的 AI 时间线：模型 / 产品 / 研究 / 行业，按北京时间排列，标注抢跑时长与多源报道，每条卡片可展开核对英文原文引句。
+
+本站为机器读者（LLM / agent / 爬虫）提供稳定接口，**无需鉴权**。引擎每小时一轮（launchd :07），精选库随轮更新；接口无鉴权、无频控，请自觉别超过 1 次/分钟。
+
+## 接口（版本号进路径，公布即不破坏）
+
+- [https://news.aiimmigrant.de/api/v1/latest.json](https://news.aiimmigrant.de/api/v1/latest.json)：精选 3 条 + 24h 全量 148 条。
+  每条含 id、url、三语标题 title.{zh,en,de}、三语一句话 one_liner.{zh,en,de}、
+  三语「为什么重要」why_it_matters.{zh,en,de}、category、source.{name,tier}、
+  published_utc、first_seen_utc、scoop_hours（抢跑时长）、score/heat、
+  n_sources 与 also_reported_by（多源报道簇）、quote_en（英文原文引句）。
+- [https://news.aiimmigrant.de/api/v1/sources.json](https://news.aiimmigrant.de/api/v1/sources.json)：信源登记表 —— 已接 76 / 待接 22 / 不可接 0（共 98 项对标信源）。
+- [https://news.aiimmigrant.de/api/v1/heartbeat.json](https://news.aiimmigrant.de/api/v1/heartbeat.json)：引擎心跳（when/status/selected/total），
+  判断数据是否新鲜先看这个。
+- [https://news.aiimmigrant.de/feed.xml](https://news.aiimmigrant.de/feed.xml)：RSS 2.0，中文标题 + 原文链接，三语摘要在 content:encoded；
+  `<category>` 分「精选」与「24h」两档。
+- [https://news.aiimmigrant.de/data/%E7%B2%BE%E9%80%89%E5%BA%93.json](https://news.aiimmigrant.de/data/%E7%B2%BE%E9%80%89%E5%BA%93.json)：
+  完整精选库原始契约（字段最全，含评分闸门细节）。
+
+## 怎么读
+
+- 时间一律 UTC（字段后缀 `_utc`），页面展示按北京时间。
+- `selected=true` 是当轮人工口径的精选；`fresh_24h` 是 24 小时内所有捕获。
+- `scoop_hours` 是我们比同题报道早多少小时发现，负数表示落后。
+- 摘要为 AI 生成，可能有误；`quote_en` 给的是英文原文引句，供你核对。
+
+## 许可
+
+摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；原文版权归各信源所有，请始终带上 url 回链原文。
+
+## 人读版
+
+[https://news.aiimmigrant.de/agents/](https://news.aiimmigrant.de/agents/)　|　站点首页 [https://news.aiimmigrant.de/](https://news.aiimmigrant.de/)
