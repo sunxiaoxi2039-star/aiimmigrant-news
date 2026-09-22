@@ -14,7 +14,7 @@
     feed.xml / llms.txt / agents/index.html                      （2026-09-22 P1：agent 可接入）
     api/v1/latest.json / api/v1/sources.json / api/v1/heartbeat.json
 
-数据契约见项目根《建站规格书》。时间在数据里一律 UTC，页面渲染统一 UTC+8（由 app.js 完成）。
+数据契约见项目根《建站规格书》。时间在数据里一律 UTC，页面渲染统一 Europe/Berlin（由 app.js 用 Intl 完成，自动跟随夏令时）。
 """
 
 import json
@@ -29,7 +29,7 @@ CONFIG = {
     "SITE_NAME": "AI 资讯时间线",
     "SITE_TAGLINE": "每天扫上百条，只留值得看的",
     "SITE_DESCRIPTION": (
-        "给中文读者的 AI 时间线：模型 / 产品 / 研究 / 行业，按北京时间排列，"
+        "给中文读者的 AI 时间线：模型 / 产品 / 研究 / 行业，按柏林时间排列，"
         "标注抢跑时长与多源报道，每条卡片可展开核对英文原文引句。"
     ),
     "DOMAIN": "news.aiimmigrant.de",
@@ -245,7 +245,8 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   var CATEGORIES = ['模型', '产品', '研究', '行业'];
   var WEEKDAYS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   var STALE_MINUTES = 180;
-  var BJ_OFFSET_MS = 8 * 3600 * 1000;
+  var SITE_TZ = 'Europe/Berlin';   // 2026-09-22 章程「风格：再欧洲一点」——站点时间口径改欧洲
+  var SITE_TZ_LABEL = '柏林时间';
 
   /* ---------- 纯函数层（Node 可测） ---------- */
 
@@ -260,20 +261,43 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
 
   function pad2(n) { return n < 10 ? '0' + n : '' + n; }
 
-  function bjParts(d) {
-    var t = new Date(d.getTime() + BJ_OFFSET_MS); // 中国无夏令时，固定 +8
+  /* 站点时区拆分。德国有夏令时（CET/CEST 来回切），绝不能像上一版那样写死固定偏移——
+     用 Intl 按 IANA 时区取真值，换季自动跟上。Intl 缺席（老浏览器）时退回 UTC 而不是猜偏移：
+     宁可显示 UTC，也不显示错一小时的「柏林时间」。 */
+  var _tzFmt = null;
+  try {
+    _tzFmt = new Intl.DateTimeFormat('en-GB', {
+      timeZone: SITE_TZ, hour12: false,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', weekday: 'short'
+    });
+  } catch (e) { _tzFmt = null; }
+  var _WD_SHORT = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+  function zoneParts(d) {
+    if (!_tzFmt) {
+      return {
+        y: d.getUTCFullYear(), m: d.getUTCMonth() + 1, d: d.getUTCDate(),
+        hh: d.getUTCHours(), mm: d.getUTCMinutes(), wd: d.getUTCDay()
+      };
+    }
+    var got = {};
+    _tzFmt.formatToParts(d).forEach(function (part) { got[part.type] = part.value; });
+    // 24 小时制下午夜可能给出 "24"，归一到 0（Intl 实现差异，别让它跳到下一天）
+    var hh = +got.hour % 24;
     return {
-      y: t.getUTCFullYear(), m: t.getUTCMonth() + 1, d: t.getUTCDate(),
-      hh: t.getUTCHours(), mm: t.getUTCMinutes(), wd: t.getUTCDay()
+      y: +got.year, m: +got.month, d: +got.day,
+      hh: hh, mm: +got.minute,
+      wd: _WD_SHORT[got.weekday] != null ? _WD_SHORT[got.weekday] : d.getUTCDay()
     };
   }
 
-  function bjDayKey(d) { var p = bjParts(d); return p.y + '-' + pad2(p.m) + '-' + pad2(p.d); }
+  function zoneDayKey(d) { var p = zoneParts(d); return p.y + '-' + pad2(p.m) + '-' + pad2(p.d); }
 
-  function fmtHM(d) { var p = bjParts(d); return pad2(p.hh) + ':' + pad2(p.mm); }
+  function fmtHM(d) { var p = zoneParts(d); return pad2(p.hh) + ':' + pad2(p.mm); }
 
-  function fmtFullBJ(d) {
-    var p = bjParts(d);
+  function fmtFullLocal(d) {
+    var p = zoneParts(d);
     return p.y + '-' + pad2(p.m) + '-' + pad2(p.d) + ' ' + pad2(p.hh) + ':' + pad2(p.mm);
   }
 
@@ -348,7 +372,7 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     sortItems(items).forEach(function (it) {
       var d = itemTime(it);
       if (!d) { unknown.push(it); return; }
-      var k = bjDayKey(d);
+      var k = zoneDayKey(d);
       if (!Object.prototype.hasOwnProperty.call(buckets, k)) { buckets[k] = []; order.push(k); }
       buckets[k].push(it);
     });
@@ -386,13 +410,13 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   function buildViewModel(seed, view, category) {
     var all = sortItems(((seed && seed.items) || []).filter(hasTitle));
     var now = new Date();
-    var todayKey = bjDayKey(now);
-    var yesterdayKey = bjDayKey(new Date(now.getTime() - 24 * 3600 * 1000));
+    var todayKey = zoneDayKey(now);
+    var yesterdayKey = zoneDayKey(new Date(now.getTime() - 24 * 3600 * 1000));
     var viewed = applyView(all, view);
     var filtered = applyCategory(viewed, category);
     var todays = all.filter(function (it) {
       var d = itemTime(it);
-      return d && bjDayKey(d) === todayKey;
+      return d && zoneDayKey(d) === todayKey;
     });
     var worthy = todays.filter(function (it) { return it.selected && !it.big_fish_pending; });
     return {
@@ -465,9 +489,9 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
       h += '<div class="cluster"><h4>单一信源</h4></div>';
     }
     var tiny = [];
-    if (d) tiny.push('发布 ' + fmtFullBJ(d) + '（北京时间）');
+    if (d) tiny.push('发布 ' + fmtFullLocal(d) + '（' + SITE_TZ_LABEL + '）');
     var fs = parseUTC(it.first_seen_utc);
-    if (fs) tiny.push('雷达捕捉 ' + fmtFullBJ(fs));
+    if (fs) tiny.push('雷达捕捉 ' + fmtFullLocal(fs));
     if (it.score != null && it.score !== '') tiny.push('综合评分 ' + esc(it.score));
     if (tiny.length) h += '<p class="tiny">' + tiny.join(' · ') + '</p>';
     h += '</div></article>';
@@ -481,8 +505,40 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     catch (e) { return { items: [] }; }
   }
 
+  /* 2026-09-22 章程「风格：再欧洲一点」：初始语言按浏览器语言挑，不再一律中文。
+     读者自己点过语言段控就以他的选择为准（存 localStorage），下次进来不被浏览器覆盖。
+     三语之外的浏览器语言（法语、荷兰语…）落到 en——英文比中文更可能读得懂。 */
+  var LANGS = { zh: 1, de: 1, en: 1 };
+
+  function initialLang() {
+    try {
+      var saved = window.localStorage.getItem('lang');
+      if (saved && LANGS[saved]) return saved;
+    } catch (e) { /* 隐私模式禁 localStorage：忽略，退回浏览器语言 */ }
+    var cands = [];
+    /* navigator 整个取不到时（极老浏览器 / 非浏览器宿主）这里会抛，必须连 .language 一起兜住：
+       state 在模块加载期就调本函数，漏一个 ReferenceError 整站白屏。 */
+    try {
+      if (navigator.languages && navigator.languages.length) {
+        cands = Array.prototype.slice.call(navigator.languages);
+      }
+      if (navigator.language) cands.push(navigator.language);
+    } catch (e) { /* 忽略：cands 为空 → 落回 zh */ }
+    for (var i = 0; i < cands.length; i++) {
+      var tag = String(cands[i] || '').toLowerCase();
+      if (tag.indexOf('zh') === 0) return 'zh';
+      if (tag.indexOf('de') === 0) return 'de';
+      if (tag.indexOf('en') === 0) return 'en';
+    }
+    return cands.length ? 'en' : 'zh';
+  }
+
+  function rememberLang(lang) {
+    try { window.localStorage.setItem('lang', lang); } catch (e) { /* 存不下不影响本次浏览 */ }
+  }
+
   /* 2026-09-19 军令：默认「全部」视图——当日时间线 ≥100 条滚动是主角，精选仍可一键切 */
-  var state = { view: 'all', category: '全部', lang: 'zh' };
+  var state = { view: 'all', category: '全部', lang: initialLang() };
   var seed = null;
   var els = {};
 
@@ -563,7 +619,7 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     var g = parseUTC(seed.generated_at_utc);
     if (!g) { els.upd.textContent = '最后更新时间未知'; els.upd.className = 'upd'; return; }
     var a = fmtAgo(Date.now() - g.getTime());
-    els.upd.textContent = '最后更新：' + a.text + '（' + fmtFullBJ(g) + ' 北京时间）' + (a.stale ? ' · 数据可能已停滞' : '');
+    els.upd.textContent = '最后更新：' + a.text + '（' + fmtFullLocal(g) + ' ' + SITE_TZ_LABEL + '）' + (a.stale ? ' · 数据可能已停滞' : '');
     els.upd.className = 'upd' + (a.stale ? ' stale' : '');
     /* 双心跳之一：引擎心跳（雷达心跳=数据新鲜度已在上方；引擎状态附加显示，取不到静默跳过） */
     try {
@@ -586,7 +642,9 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     els.viewSelected.addEventListener('click', function () { state.view = 'selected'; paint(); });
     els.viewAll.addEventListener('click', function () { state.view = 'all'; paint(); });
     [['zh', els.langZh], ['de', els.langDe], ['en', els.langEn]].forEach(function (p) {
-      if (p[1]) p[1].addEventListener('click', function () { state.lang = p[0]; paint(); });
+      if (p[1]) p[1].addEventListener('click', function () {
+        state.lang = p[0]; rememberLang(p[0]); paint();
+      });
     });
     els.timeline.addEventListener('click', function (ev) {
       var t = ev.target;
@@ -632,13 +690,13 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
 
   /* 导出纯函数层供 Node 单测 */
   root.TL = {
-    parseUTC: parseUTC, bjDayKey: bjDayKey, bjParts: bjParts, fmtHM: fmtHM,
-    fmtFullBJ: fmtFullBJ, dayLabel: dayLabel, sortItems: sortItems,
+    parseUTC: parseUTC, zoneDayKey: zoneDayKey, zoneParts: zoneParts, fmtHM: fmtHM,
+    fmtFullLocal: fmtFullLocal, dayLabel: dayLabel, sortItems: sortItems,
     applyView: applyView, applyCategory: applyCategory,
     countsByCategory: countsByCategory, groupByDay: groupByDay,
     fmtAgo: fmtAgo, fmtBeat: fmtBeat, clampHeat: clampHeat,
     buildViewModel: buildViewModel, cardHTML: cardHTML, hasTitle: hasTitle,
-    pickLang: pickLang
+    pickLang: pickLang, initialLang: initialLang
   };
 
   if (typeof document !== 'undefined') {
@@ -736,7 +794,7 @@ ABOUT_TMPL = HEAD_TMPL + """
 
 <main class="prose">
   <h2>这是什么</h2>
-  <p>这是一张给中文读者的 AI 时间线。每天从上百条原始信号里，按一套固定的打分规则做筛选，只留下真正值得看的几条，按<strong>北京时间</strong>排列成按天分组的时间线。覆盖四个分类：<strong>模型、产品、研究、行业</strong>。</p>
+  <p>这是一张给中文读者的 AI 时间线。每天从上百条原始信号里，按一套固定的打分规则做筛选，只留下真正值得看的几条，按<strong>柏林时间</strong>（Europe/Berlin，含夏令时）排列成按天分组的时间线。覆盖四个分类：<strong>模型、产品、研究、行业</strong>。</p>
   <ul>
     <li><strong>精选 / 全部双视图</strong>：默认只看精选（宁缺毋滥），可一键切到全部。</li>
     <li><strong>抢跑标注</strong>：带「比二手扩散早 X 小时」徽标的条目，是我们的雷达在一手信源上捕捉到、领先于中文二手转载的时间差。</li>
@@ -1137,7 +1195,7 @@ def build_llms_txt(seed, items, sources):
 
 ## 怎么读
 
-- 时间一律 UTC（字段后缀 `_utc`），页面展示按北京时间。
+- 时间一律 UTC（字段后缀 `_utc`），页面展示按柏林时间（Europe/Berlin，Intl 自动跟夏令时）。
 - `selected=true` 是当轮人工口径的精选；`fresh_24h` 是 24 小时内所有捕获。
 - `scoop_hours` 是我们比同题报道早多少小时发现，负数表示落后。
 - 摘要为 AI 生成，可能有误；`quote_en` 给的是英文原文引句，供你核对。
