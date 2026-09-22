@@ -238,6 +238,35 @@ def gate_data(contract, heartbeat):
     return rows, n_sel
 
 
+def purely_ahead(ahead, behind):
+    """本地是否「纯领先」origin（上轮 push 失败遗留的 commit，本轮可一并 ff 推出）。
+
+    git rev-list --count 返回的是字符串，behind="0" 在 Python 里为真值——旧代码
+    `if ahead and not behind` 对纯领先永远取假，自愈分支实际从未可达，一次网络抖动
+    就把发布永久钉死（2026-09-22 实测：ahead=1 behind=0 被当成分叉拦下）。
+    这里转 int 再判；转不出数视为未知，按不对齐处理（fail-closed）。"""
+    try:
+        ahead_n, behind_n = int(ahead), int(behind)
+    except (TypeError, ValueError):
+        return False
+    return ahead_n > 0 and behind_n == 0
+
+
+def should_backfill_push(staged, pending_ahead):
+    """本轮没有新数据（staged 为空）时，是否仍要把本地遗留提交补推出去。
+
+    上轮 push 失败前已把新数据原子换入本地，所以下轮重建出的 staging 与线上文件
+    逐字节相同 → staged 为空。若此时直接判 noop 返回，遗留提交永远推不出去，站点
+    被钉死在旧版而台账只记 noop（2026-09-22 实测：36be66b 被扣住两轮）。
+    真 noop = 无新数据 ∧ 无待推提交。"""
+    if staged:
+        return False
+    try:
+        return int(pending_ahead) > 0
+    except (TypeError, ValueError):
+        return False
+
+
 # ---------- git 状态闸（Fable ⑤-①） ----------
 def gate_git():
     """fetch → pull --ff-only → 工作树除 data/ 外干净 → HEAD 与 origin 对齐（或本地领先待带出）。
@@ -273,13 +302,7 @@ def gate_git():
         # 本地领先（上轮 push 失败遗留的 commit）：允许继续，本轮 push 一并带出（仍是 ff）
         ahead = sh(["git", "rev-list", "--count", f"{origin}..{head}"], check=False).stdout.strip()
         behind = sh(["git", "rev-list", "--count", f"{head}..{origin}"], check=False).stdout.strip()
-        # 计数是字符串，"0" 为真值——必须转成数再判，否则纯领先永远落进 GateFail（上轮 push
-        # 失败后自愈路径被这一处堵死，2026-09-22 实测）。转不出数视为未知，按不对齐拦下。
-        try:
-            ahead_n, behind_n = int(ahead), int(behind)
-        except ValueError:
-            ahead_n, behind_n = -1, -1
-        if ahead_n > 0 and behind_n == 0:
+        if purely_ahead(ahead, behind):
             rows.append(f"本地领先 origin {ahead} 个提交（上轮 push 遗留，本轮一并 ff 推出）")
         else:
             raise GateFail(f"HEAD 与 origin/main 未对齐且非纯领先（ahead={ahead} behind={behind}）")
@@ -496,10 +519,10 @@ def run(job, contract_path=None, dry_run=False):
         # 已经把新数据换入过本地，下轮重建 staged 为空 → 旧代码在此直接 return，遗留 commit 永远
         # 推不出去，站点被钉死在旧版（9-22 实测：36be66b 带今天数据，重跑两次都走 noop）。
         # 所以「无新数据」与「无待推提交」要分开判：只有两者都成立才是真 noop。
-        pending_ahead = int(sh(["git", "rev-list", "--count", "origin/main..HEAD"],
-                               check=False).stdout.strip() or 0)
+        pending_ahead = sh(["git", "rev-list", "--count", "origin/main..HEAD"],
+                           check=False).stdout.strip() or "0"
         if not staged:
-            if pending_ahead <= 0:
+            if not should_backfill_push(staged, pending_ahead):
                 print("[发布链] 数据与上轮完全一致，无可提交内容（不产生空提交）")
                 append_pub_ledger({"when_utc": t0.isoformat(timespec="seconds"), "job": job,
                                    "result": "noop", "gates": gate_rows})

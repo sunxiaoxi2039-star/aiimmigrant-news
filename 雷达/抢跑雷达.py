@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 【CI 副本】2026-09-21 快照自 ~/ai-radar/抢跑雷达.py（原件零触碰——雷达组地盘纪律）
+# 【CI 副本】2026-09-22 快照自 ~/ai-radar/抢跑雷达.py（原件零触碰——雷达组地盘纪律）
 # 与原件的 delta（仅 3 处，env 门控/纯路径调整，抓取逻辑零改动）：
 #   ① DATA 支持 AI_RADAR_DATA 覆盖（CI 指到仓内 data/雷达/）
 #   ② OUTDIR 支持 AI_RADAR_OUT 覆盖，缺省挪到 DATA 下（CI 里雷达输出不落仓根碍 git 状态闸）
@@ -81,6 +81,15 @@ RSS_FEEDS = [
     ("GoogleResearch", "https://research.google/blog/rss/", "AI"),
     ("AWS-ML博客", "https://aws.amazon.com/blogs/machine-learning/feed/", "AI"),
     ("AppleNewsroom", "https://www.apple.com/newsroom/rss-feed.rss", "AI"),  # 对账点名：Apple 事件此前只有德媒二手
+    # —— 9-22 信源对账：对标公开清单里能接的 RSS（逐条 curl 实测 200 且出条目才进表）——
+    # 实测接不上、登记「待接/不可接」的：Midjourney Updates 403、AI News 403（Cloudflare）、
+    # Epoch AI 与 LlamaIndex 无公开 RSS 路径（/rss.xml /feed.xml 皆 404）、LangChain Blog 本机 SSL 不通。
+    ("AppleML研究", "https://machinelearning.apple.com/rss.xml", "AI"),
+    ("GaryMarcus", "https://garymarcus.substack.com/feed", "AI"),          # 评论型，降噪靠打分
+    ("TrailofBits", "https://blog.trailofbits.com/feed/", "AI"),           # AI 安全研究一手
+    ("404Media", "https://www.404media.co/rss", "AI"),
+    ("Newcomer", "https://www.newcomer.co/feed", "AI"),                    # 创投长文
+    ("AINews", "https://www.artificialintelligence-news.com/feed/", "AI"),  # curl 验证 200/12 条；该站 TLS 偶发拒握手，失手就跳过
 ]
 HTML_CHANNELS = [  # (名字, URL, 卡片链接正则)
     ("Anthropic", "https://www.anthropic.com/news", r'href="(/news/[a-z0-9-]+)"'),
@@ -93,7 +102,7 @@ HTML_CHANNELS = [  # (名字, URL, 卡片链接正则)
     # —— 9-16 信源追赶日：对账点名官方博客（无 RSS，走 HTML 差分）——
     ("Fireworks", "https://fireworks.ai/blog", r'href="(/blog/[a-z0-9-]+)"'),
     ("Suno", "https://suno.com/blog", r'href="(/blog/[a-z0-9-]+)"'),
-    # —— goal 第二刀：Claude Blog（goal 第二刀已点名，9-16 加过 Anthropic）、xAI News ——
+    # —— goal 第二刀：Claude Blog（goal 第二刀已点名，9-16 加过 Anthropic）、xAI News —— 
     # xAI News: Cloudflare 403 常见，加 User-Agent fallback；抓不到静默跳过
     ("xAI News", "https://x.ai/news", r'href="(/news/[a-z0-9-]+)"'),
 ]
@@ -101,13 +110,36 @@ CN_HF_AUTHORS = ["deepseek-ai", "Qwen", "zai-org", "moonshotai", "MiniMaxAI",
                  "Tencent-Hunyuan", "ByteDance-Seed"]
 GH_ORGS = ["zai-org", "Tencent-Hunyuan", "deepseek-ai", "moonshotai", "MiniMaxAI"]
 
-X_OFFICIAL_QUERY = ("from%3AOpenAI%20OR%20from%3AAnthropicAI%20OR%20from%3AGoogleDeepMind%20OR%20"
-                    "from%3Axai%20OR%20from%3AMistralAI%20OR%20from%3Adeepseek_ai%20OR%20"
-                    "from%3AAlibabaQwen%20OR%20from%3AMiniMaxAI%20OR%20"
-                    "from%3Arohanpaul_ai%20OR%20from%3Atestingcatalog%20OR%20"
-                    "from%3AArtificialAnlys%20OR%20from%3AClementDelangue%20OR%20"
-                    "from%3Aemollick%20OR%20from%3ASemiAnalysis_%20OR%20"
-                    "from%3AOpenBMB%20OR%20from%3Aalibaba_cloud")  # 9-3 养分吸收：+emollick/SemiAnalysis/OpenBMB/阿里云
+X_CORE = ["OpenAI", "AnthropicAI", "GoogleDeepMind", "xai", "MistralAI", "deepseek_ai",
+          "AlibabaQwen", "MiniMaxAI", "rohanpaul_ai", "testingcatalog", "ArtificialAnlys",
+          "ClementDelangue", "emollick", "SemiAnalysis_", "OpenBMB", "alibaba_cloud"]
+# 9-22 信源对账：对标公开清单里我们没接的 X 账号（按它出现频次排），轮播接入。
+# 为什么轮播而不是一股脑塞进一条查询：from_x_official 只取搜索页前 12 条 article，
+# 账号越多，一线实验室的首发越容易被个人号挤出窗口——核心恒在、其余每轮换一批，覆盖不牺牲抢跑。
+X_ROTATION = ["alexandr_wang", "kimmonismus", "omarsar0", "mark_k", "dexhorthy", "haider1",
+              "karminski3", "AISafetyMemes", "EMostaque", "natolambert", "AYi_AInotes",
+              "dongxi_nlp", "dair_ai", "frxiaobei", "completeskeptic", "elonmusk",
+              "ericzakariasson", "fchollet", "gdb", "poteto", "finkd", "OpenRouter",
+              "XiaomiMiMo", "typesafeai", "arena", "cohere", "EpochAIResearch", "MeshyAI",
+              "PeterMcCrory", "steipete", "PixVerse", "ZHO_ZHO_ZHO", "cb_doge",
+              "AIatMeta", "sama", "AravSrinivas", "OfficialLoganK", "Thom_Wolf",
+              "Baidu_Inc", "HuaweiCloud1", "Kling_ai", "Replit", "runwayml"]
+X_ROTATE_N = 8          # 每轮带几个轮播账号
+
+
+def x_query(hour=None):
+    """核心账号恒在 + 轮播账号按 UTC 小时切片 → x.com 搜索用的 URL 编码查询串。
+    43 个轮播账号 ÷ 每轮 8 个 ≈ 6 轮跑完一圈（雷达每小时一轮，半天覆盖全清单）。"""
+    if hour is None:
+        hour = datetime.now(timezone.utc).hour
+    picked = list(X_CORE)
+    if X_ROTATION:
+        start = (hour * X_ROTATE_N) % len(X_ROTATION)
+        picked += [X_ROTATION[(start + k) % len(X_ROTATION)]
+                   for k in range(min(X_ROTATE_N, len(X_ROTATION)))]
+    return "%20OR%20".join("from%3A" + h for h in picked)
+
+
 
 
 def http(url, timeout=25):
@@ -376,6 +408,10 @@ def from_rss():
                     score = 2
             out.append({"src": "官方RSS", "sector": sector, "title": f"[{name}] " + re.sub(r"\s+", " ", title).strip(),
                         "url": u, "score": score,
+                        # 2026-09-22 修：这里以前不带 pub，解析出来的 pubDate 只用来算 fresh 就扔了，
+                        # 于是台账里 RSS 条目 pub 全空 → 引擎 published_utc=None（管线明令不拿 first_seen 顶替）
+                        # →「24h 内 published 0 条」，站点与 /api 的 24h 档恒空。带上即修。
+                        "pub": dt.isoformat() if dt else None,
                         "note": f"{name}官方" + ("" if fresh else "（历史条目）")})
         time.sleep(0.4)
     return out
@@ -452,11 +488,11 @@ def from_org_releases():
 
 
 def from_x_official():
-    """X 官方账号哨（可选）：借 Chrome 登录态扫 x.com 搜索，Chrome 没开就跳过（CI 不加 --x，天然关）"""
+    """X 官方账号哨（可选）：借 Chrome 登录态扫 x.com 搜索，Chrome 没开就跳过"""
     out = []
     try:
         r = subprocess.run(["opencli", "browser", "x", "open",
-                            f"https://x.com/search?q={X_OFFICIAL_QUERY}&f=live"],
+                            f"https://x.com/search?q={x_query()}&f=live"],
                            capture_output=True, text=True, timeout=40)
         m = re.search(r'"page"\s*:\s*"([0-9A-F]+)"', r.stdout or "")
         if not m:
@@ -489,7 +525,11 @@ def from_x_official():
 
 
 def from_x_sample_file():
-    """X 哨兵采样器输出读取（goal 第二刀新源）——CI 里样本文件不存在=返回空（天然关）"""
+    """X 哨兵采样器输出读取（goal 第二刀新源）——
+    X采样器.py 跑出的 data/X样本.jsonl 转 signals 进台账。
+    数据流：X采样器.py（浏览器抓 17 个 handle，超时硬杀）
+    → data/X样本.jsonl → 本函数 → 雷达台账 items → 引擎。
+    不重复抓 X（避免双源打架）；X样本.jsonl 由 cron/手跑定期刷新。"""
     out = []
     path = os.path.join(DATA, "X样本.jsonl")
     if not os.path.exists(path):
@@ -535,7 +575,11 @@ def from_x_sample_file():
 
 
 def from_wechat_mp():
-    """公众号桥输出读取（goal 第二刀新源）——CI 里样本文件不存在=返回空（天然关）"""
+    """公众号桥输出读取（goal 第二刀新源）——
+    公众号桥.py 跑出的 data/公众号样本.jsonl 转 signals 进台账。
+    数据流：公众号桥.py（搜狗搜索元数据，硬频控 + 总时长封顶 + 失败冷却）
+    → data/公众号样本.jsonl → 本函数 → 雷达台账 items → 引擎。
+    只取搜索元数据，不批量抓正文（防搜狗封 IP 连带断 X 会话）。"""
     out = []
     path = os.path.join(DATA, "公众号样本.jsonl")
     if not os.path.exists(path):
