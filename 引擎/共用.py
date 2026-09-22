@@ -128,6 +128,17 @@ def to_beijing(dt):
         return ""
     return dt.astimezone(CST).strftime("%Y-%m-%d %H:%M")
 
+def to_berlin(dt):
+    """aware datetime → 'YYYY-MM-DD HH:MM'（站点口径，Europe/Berlin）。
+    德国有夏令时，必须走 IANA 时区而不是固定偏移；zoneinfo 缺席时退回 UTC 并标注，不抛。"""
+    if dt is None:
+        return ""
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.astimezone(ZoneInfo("Europe/Berlin")).strftime("%Y-%m-%d %H:%M")
+    except Exception:
+        return dt.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M") + " UTC"
+
 def beijing_day(dt):
     """aware datetime → 北京日期 'YYYY-MM-DD'（按天分组用）。"""
     if dt is None:
@@ -682,6 +693,9 @@ def write_engine_heartbeat(job="manual", status="ok", exit_code=0, duration_s=No
     hb = {
         "when": now.isoformat(timespec="seconds"),
         "when_beijing": to_beijing(now),
+        # 2026-09-22 P3：站点时间口径改柏林。when_beijing 是已公布字段，按 /api/v1
+        # 「只增不删、不改含义」的承诺原样留着，柏林时间另起新字段。
+        "when_berlin": to_berlin(now),
         "job": job,
         "status": status,
         "exit_code": exit_code,

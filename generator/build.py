@@ -1174,7 +1174,9 @@ FEED_MAX = 60          # RSS 条数上限（精选恒在，余额按 24h 新鲜�
 FRESH_HOURS = 24       # 「24h 全量」档口径
 LICENSE_NOTE = ("摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；"
                 "原文版权归各信源所有，请始终带上 url 回链原文。")
-UPDATE_NOTE = "引擎每小时一轮（launchd :07），精选库随轮更新；接口无鉴权、无频控，请自觉别超过 1 次/分钟。"
+UPDATE_NOTE = ("精选库随引擎轮次更新（常态每小时一轮，launchd :07）；"
+               "2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。"
+               "接口无鉴权、无频控，请自觉别超过 1 次/分钟。")
 
 _MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 _DAYS = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
