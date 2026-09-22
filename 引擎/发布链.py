@@ -273,7 +273,13 @@ def gate_git():
         # 本地领先（上轮 push 失败遗留的 commit）：允许继续，本轮 push 一并带出（仍是 ff）
         ahead = sh(["git", "rev-list", "--count", f"{origin}..{head}"], check=False).stdout.strip()
         behind = sh(["git", "rev-list", "--count", f"{head}..{origin}"], check=False).stdout.strip()
-        if ahead and not behind:
+        # 计数是字符串，"0" 为真值——必须转成数再判，否则纯领先永远落进 GateFail（上轮 push
+        # 失败后自愈路径被这一处堵死，2026-09-22 实测）。转不出数视为未知，按不对齐拦下。
+        try:
+            ahead_n, behind_n = int(ahead), int(behind)
+        except ValueError:
+            ahead_n, behind_n = -1, -1
+        if ahead_n > 0 and behind_n == 0:
             rows.append(f"本地领先 origin {ahead} 个提交（上轮 push 遗留，本轮一并 ff 推出）")
         else:
             raise GateFail(f"HEAD 与 origin/main 未对齐且非纯领先（ahead={ahead} behind={behind}）")
