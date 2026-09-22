@@ -52,7 +52,9 @@ def _deepseek_key():
 # 2026-09-22 小茜军令「¥49.91 是全部预算」：每轮跑前查余额，低于地板只发心跳不调模型。
 # 钥匙在进程内取（_deepseek_key），余额只记金额不记钥匙——日志/心跳/仓里永不出现 key。
 DEEPSEEK_BALANCE_URL = os.environ.get("AI_NEWS_DEEPSEEK_BALANCE_URL", "https://api.deepseek.com/user/balance")
-BUDGET_FLOOR_CNY = float(os.environ.get("AI_NEWS_BUDGET_FLOOR_CNY", "10"))
+# 2026-09-22 无人值守规则原话：「余额 < ¥40 就不调模型只发心跳」。
+# 先前实现是 10，会比军令多烧约 ¥38 才刹车——按执行单改回 40。env 可覆盖。
+BUDGET_FLOOR_CNY = float(os.environ.get("AI_NEWS_BUDGET_FLOOR_CNY", "40"))
 
 
 def deepseek_balance(timeout=20):
