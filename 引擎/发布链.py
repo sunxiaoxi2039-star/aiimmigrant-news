@@ -56,7 +56,12 @@ MIN_SELECTED = 3
 INDEX_SIZE_FLOOR = 0.70     # 产物闸：新 index ≥上轮 70%
 SELECTED_DROP_MAX = 2       # 产物闸：精选卡数 ≥上轮-2
 KEEP_ROLLBACKS = 20         # 本地归档保留版数
-LIVE_FILES = ("index.html", "about.html", "404.html", "assets/style.css", "assets/app.js")
+# 2026-09-22 P1：agent 可接入层四件（feed/llms/agents 页/api 三件）随 LIVE 一起换入、归档、
+# 进 staged 范围闸——「版本号进路径，接口一旦公布不破坏」，所以路径写死在这里，改要开 v2。
+LIVE_FILES = ("index.html", "about.html", "404.html", "assets/style.css", "assets/app.js",
+              "agents/index.html", "feed.xml", "llms.txt",
+              "api/v1/latest.json", "api/v1/sources.json", "api/v1/heartbeat.json")
+SRC_SOURCES = os.path.join(DATA_DIR, "信源登记.json")   # 信源对账.py 产出，build 的旁料（不换入）
 SITE_DOMAIN = "news.aiimmigrant.de"   # M3（Fable 9-21 v2 审）：push 前断言 HEAD 树 CNAME 必等于此常量，不读 env
 
 # ---------- Actions 云端化 · CI 模式（Fable 审 §7-1 GO + S4，2026-09-17） ----------
@@ -353,8 +358,8 @@ def archive_current(ts):
 
 def git_restore_live():
     """build/commit 失败复位（Fable ⑤-③：否则下轮带脏）：checkout 恢复已换入的线上文件。"""
-    sh(["git", "checkout", "--", "index.html", "about.html", "404.html",
-        "assets/style.css", "assets/app.js", "data/精选库.json", "data/引擎心跳.json"], check=False)
+    sh(["git", "checkout", "--"] + list(LIVE_FILES)
+       + ["data/精选库.json", "data/引擎心跳.json"], check=False)
 
 
 # ---------- 主链 ----------
@@ -404,6 +409,10 @@ def run(job, contract_path=None, dry_run=False):
         shutil.copyfile(contract_path, os.path.join(staging, "data", "精选库.json"))
         with open(os.path.join(staging, "data", "引擎心跳.json"), "w", encoding="utf-8") as f:
             json.dump(heartbeat, f, ensure_ascii=False, indent=1)
+        if os.path.exists(SRC_SOURCES):
+            shutil.copyfile(SRC_SOURCES, os.path.join(staging, "data", "信源登记.json"))
+        else:
+            gate_rows.append("信源登记=缺（/api/v1/sources.json 降级为 pending）")
         r = sh([PY, BUILD, os.path.join(staging, "data", "精选库.json"), staging],
                cwd=PUB, timeout=300, check=False)
         if r.returncode != 0:
@@ -418,11 +427,20 @@ def run(job, contract_path=None, dry_run=False):
             raise GateFail(f"产物闸：index {sz}B < 上轮 {prev_sz}B 的 {int(INDEX_SIZE_FLOOR*100)}%")
         if n_sel < prev_sel - SELECTED_DROP_MAX:
             raise GateFail(f"产物闸：精选 {n_sel} < 上轮 {prev_sel}-{SELECTED_DROP_MAX}")
-        leaks = scan_secrets([st_index,
-                              os.path.join(staging, "data", "精选库.json"),
-                              os.path.join(staging, "data", "引擎心跳.json")])
+        scan_targets = [st_index,
+                        os.path.join(staging, "data", "精选库.json"),
+                        os.path.join(staging, "data", "引擎心跳.json")] + [
+            os.path.join(staging, rel) for rel in LIVE_FILES
+            if rel not in ("index.html",) and os.path.exists(os.path.join(staging, rel))]
+        leaks = scan_secrets(scan_targets)
         if leaks:
             raise GateFail(f"产物闸：本机路径/密钥泄漏 {leaks[:3]}")
+        # 品牌闸②（2026-09-22）：agent 层产物也对外，逐件查一遍对标站字样
+        for rel in ("api/v1/sources.json", "llms.txt", "agents/index.html", "feed.xml"):
+            f = os.path.join(staging, rel)
+            if os.path.exists(f) and brand_violation(open(f, encoding="utf-8").read()):
+                raise GateFail(f"品牌闸命中（{rel} 含对标站字样）")
+        gate_rows.append("品牌闸②=过（agent 层 4 件）")
         gate_rows += [f"index={sz}B（≥上轮{int(INDEX_SIZE_FLOOR*100)}%={int(prev_sz*INDEX_SIZE_FLOOR)}B）",
                       f"精选={n_sel}（≥上轮-{SELECTED_DROP_MAX}={prev_sel-SELECTED_DROP_MAX}）",
                       "无本机路径/密钥=过（心跳已脱敏相对化）"]

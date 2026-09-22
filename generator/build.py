@@ -11,6 +11,8 @@
 
 产物（全部在 .gitignore 白名单内）：
     index.html / about.html / 404.html / assets/style.css / assets/app.js
+    feed.xml / llms.txt / agents/index.html                      （2026-09-22 P1：agent 可接入）
+    api/v1/latest.json / api/v1/sources.json / api/v1/heartbeat.json
 
 数据契约见项目根《建站规格书》。时间在数据里一律 UTC，页面渲染统一 UTC+8（由 app.js 完成）。
 """
@@ -664,6 +666,8 @@ HEAD_TMPL = """<!doctype html>
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{SITE_DESCRIPTION}}">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="{{SITE_NAME}}" href="/feed.xml">
+<link rel="alternate" type="application/json" title="{{SITE_NAME}} · API v1" href="/api/v1/latest.json">
 </head>
 <body>
 """
@@ -674,7 +678,7 @@ INDEX_TMPL = HEAD_TMPL + """
     <h1>{{SITE_NAME}}</h1>
     <p class="tagline">{{SITE_TAGLINE}}</p>
   </div>
-  <nav><a href="about.html">关于</a></nav>
+  <nav><a href="agents/">Agents / API</a> · <a href="about.html">关于</a></nav>
 </header>
 
 <div class="container">
@@ -709,7 +713,7 @@ INDEX_TMPL = HEAD_TMPL + """
 <footer>
   <div class="container">
     <span id="last-updated" class="upd">…</span>
-    <div class="links">{{SITE_NAME}} · <a href="about.html">关于 · 免责 · 纠错</a> · 筛选与翻译由 AI 辅助完成，人工复核中</div>
+    <div class="links">{{SITE_NAME}} · <a href="about.html">关于 · 免责 · 纠错</a> · <a href="agents/">Agents / API</a> · <a href="feed.xml">RSS</a> · 筛选与翻译由 AI 辅助完成，人工复核中</div>
   </div>
 </footer>
 
@@ -928,6 +932,313 @@ def compute_hotbox(items, max_n=5):
     return html, len(hot)
 
 
+# ---------------------------------------------------------------------------
+# 2026-09-22 P1：agent 可接入层（RSS / JSON API / llms.txt / agents 页）
+# 章程「重点保证」：网站首先要机器能直接吃。**版本号进路径，接口一旦公布不破坏**：
+# 只增字段不删字段、不改字段含义；要改就开 /api/v2/。
+# ---------------------------------------------------------------------------
+API_VERSION = "v1"
+FEED_MAX = 60          # RSS 条数上限（精选恒在，余额按 24h 新鲜度补）
+FRESH_HOURS = 24       # 「24h 全量」档口径
+LICENSE_NOTE = ("摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；"
+                "原文版权归各信源所有，请始终带上 url 回链原文。")
+UPDATE_NOTE = "引擎每小时一轮（launchd :07），精选库随轮更新；接口无鉴权、无频控，请自觉别超过 1 次/分钟。"
+
+_MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+_DAYS = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+
+
+def parse_iso(v):
+    """宽松解析 ISO8601 → aware datetime；不可解析返回 None（不抛，build 绝不因脏数据崩）。"""
+    from datetime import datetime, timezone
+    if not isinstance(v, str) or not v.strip():
+        return None
+    try:
+        dt = datetime.fromisoformat(v.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+
+def rfc822(dt):
+    """RFC 822 GMT（RSS pubDate 要求）；locale 无关，手写月份/星期名。"""
+    from datetime import timezone
+    d = dt.astimezone(timezone.utc)
+    return "%s, %02d %s %04d %02d:%02d:%02d GMT" % (
+        _DAYS[d.weekday()], d.day, _MONTHS[d.month - 1], d.year, d.hour, d.minute, d.second)
+
+
+def public_item(it):
+    """契约条目 → 对外稳定子集。字段名即公开契约，只增不改。"""
+    return {
+        "id": it.get("id"),
+        "url": it.get("url"),
+        "title": {"zh": it.get("title_zh"), "en": it.get("title_en"),
+                  "de": it.get("title_de"), "src": it.get("title_src")},
+        "one_liner": {"zh": it.get("one_liner_zh"), "en": it.get("one_liner_en"),
+                      "de": it.get("one_liner_de")},
+        "why_it_matters": {"zh": it.get("why_zh"), "en": it.get("why_en"), "de": it.get("why_de")},
+        "category": it.get("category"),
+        "source": {"name": it.get("source_name"), "tier": it.get("source_tier")},
+        "published_utc": it.get("published_utc"),
+        "first_seen_utc": it.get("first_seen_utc"),
+        "scoop_hours": it.get("scoop_hours"),
+        "selected": bool(it.get("selected")),
+        "score": it.get("score"),
+        "heat": it.get("heat"),
+        "n_sources": int(it.get("n_sources") or len(it.get("clusters") or []) + 1),
+        "also_reported_by": [{"name": c.get("source_name"), "url": c.get("url")}
+                             for c in (it.get("clusters") or []) if isinstance(c, dict)],
+        "quote_en": it.get("quote_en"),
+    }
+
+
+def split_items(items, now=None):
+    """→ (精选, 24h 内全量)。两档口径固定，供 API 与 RSS 共用。"""
+    from datetime import datetime, timezone, timedelta
+    now = now or datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=FRESH_HOURS)
+    selected, fresh = [], []
+    for it in items:
+        if it.get("selected"):
+            selected.append(it)
+        pub = parse_iso(it.get("published_utc")) or parse_iso(it.get("first_seen_utc"))
+        if pub and pub >= cutoff:
+            fresh.append(it)
+    key = lambda x: parse_iso(x.get("published_utc")) or parse_iso(x.get("first_seen_utc")) \
+        or datetime(1970, 1, 1, tzinfo=timezone.utc)
+    selected.sort(key=key, reverse=True)
+    fresh.sort(key=key, reverse=True)
+    return selected, fresh
+
+
+def build_latest_json(seed, items):
+    selected, fresh = split_items(items)
+    return {
+        "api_version": API_VERSION,
+        "generated_at_utc": seed.get("generated_at_utc"),
+        "site": {"name": CONFIG["SITE_NAME"], "url": "https://" + CONFIG["DOMAIN"],
+                 "tagline": CONFIG["SITE_TAGLINE"]},
+        "license": LICENSE_NOTE,
+        "update": UPDATE_NOTE,
+        "counts": {"selected": len(selected), "fresh_24h": len(fresh), "total_pool": len(items)},
+        "categories": CONFIG["CATEGORIES"],
+        "selected": [public_item(i) for i in selected],
+        "fresh_24h": [public_item(i) for i in fresh[:200]],
+    }
+
+
+def build_sources_json(registry):
+    """信源登记表 → /api/v1/sources.json。registry 缺失时给出诚实的占位，不编数。"""
+    if not isinstance(registry, dict) or not registry.get("sources"):
+        return {"api_version": API_VERSION, "status": "pending",
+                "note": "信源登记表尚未生成（引擎侧 引擎/信源对账.py 每日产出）",
+                "counts": {}, "sources": []}
+    out = dict(registry)
+    out["api_version"] = API_VERSION
+    out["license"] = LICENSE_NOTE
+    out["note"] = ("我们与对标公开清单的逐项对账：status=connected 已接 / pending 待接 / "
+                   "blocked 不可接。diff_vs_benchmark 是当日条目级差别。")
+    return out
+
+
+def build_feed_xml(seed, items):
+    """RSS 2.0：精选恒在（category=精选），其余按 24h 新鲜度补足到 FEED_MAX（category=24h）。
+    三语摘要走 content:encoded；中文标题 + 原文链接。"""
+    from datetime import datetime, timezone
+    selected, fresh = split_items(items)
+    picked, seen = [], set()
+    for it in selected:
+        picked.append((it, "精选"))
+        seen.add(it.get("url"))
+    for it in fresh:
+        if len(picked) >= FEED_MAX:
+            break
+        if it.get("url") in seen:
+            continue
+        picked.append((it, "24h"))
+        seen.add(it.get("url"))
+    gen = parse_iso(seed.get("generated_at_utc")) or datetime.now(timezone.utc)
+    site = "https://" + CONFIG["DOMAIN"]
+    rows = []
+    for it, lane in picked:
+        title = (it.get("title_zh") or it.get("title_src") or "").strip()
+        url = (it.get("url") or "").strip()
+        if not (title and url):
+            continue
+        pub = parse_iso(it.get("published_utc")) or parse_iso(it.get("first_seen_utc")) or gen
+        parts = []
+        for lang, label in (("zh", "中文"), ("en", "English"), ("de", "Deutsch")):
+            one = (it.get("one_liner_" + lang) or "").strip()
+            why = (it.get("why_" + lang) or "").strip()
+            if one or why:
+                parts.append("<p><strong>%s</strong>：%s%s</p>" % (
+                    hesc(label), hesc(one), ("<br>" + hesc(why)) if why else ""))
+        src = it.get("source_name") or ""
+        parts.append('<p>来源：%s　等级 %s　<a href="%s">原文</a></p>' % (
+            hesc(src), hesc(it.get("source_tier") or "-"), hesc(url)))
+        body = "".join(parts).replace("]]>", "]]&gt;")
+        cats = "".join("<category>%s</category>" % hesc(c)
+                       for c in (lane, it.get("category") or "") if c)
+        rows.append(
+            "<item>"
+            "<title>%s</title><link>%s</link>"
+            '<guid isPermaLink="false">%s</guid>'
+            "<pubDate>%s</pubDate>%s"
+            "<description>%s</description>"
+            "<content:encoded><![CDATA[%s]]></content:encoded>"
+            "<source url=\"%s/feed.xml\">%s</source>"
+            "</item>" % (
+                hesc(title), hesc(url), hesc(it.get("id") or url), rfc822(pub), cats,
+                hesc((it.get("one_liner_zh") or title).strip()), body,
+                hesc(site), hesc(CONFIG["SITE_NAME"])))
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" '
+        'xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n'
+        "<title>%s</title>\n<link>%s/</link>\n<description>%s</description>\n"
+        '<language>zh-CN</language>\n<lastBuildDate>%s</lastBuildDate>\n'
+        '<atom:link href="%s/feed.xml" rel="self" type="application/rss+xml"/>\n'
+        "<docs>https://www.rssboard.org/rss-specification</docs>\n"
+        "<generator>%s build.py</generator>\n"
+        "<copyright>%s</copyright>\n%s\n</channel>\n</rss>\n" % (
+            hesc(CONFIG["SITE_NAME"]), hesc(site), hesc(CONFIG["SITE_DESCRIPTION"]),
+            rfc822(gen), hesc(site), hesc(CONFIG["SITE_NAME"]), hesc(LICENSE_NOTE),
+            "\n".join(rows)))
+
+
+def build_llms_txt(seed, items, sources):
+    selected, fresh = split_items(items)
+    site = "https://" + CONFIG["DOMAIN"]
+    sc = (sources or {}).get("counts") or {}
+    src_line = ("已接 %s / 待接 %s / 不可接 %s（共 %s 项对标信源）" % (
+        sc.get("connected", "?"), sc.get("pending", "?"), sc.get("blocked", "?"),
+        sc.get("total", "?"))) if sc else "登记表生成中"
+    return """# %(name)s
+
+> %(desc)s
+
+本站为机器读者（LLM / agent / 爬虫）提供稳定接口，**无需鉴权**。%(update)s
+
+## 接口（版本号进路径，公布即不破坏）
+
+- [%(site)s/api/%(v)s/latest.json](%(site)s/api/%(v)s/latest.json)：精选 %(nsel)d 条 + 24h 全量 %(nfresh)d 条。
+  每条含 id、url、三语标题 title.{zh,en,de}、三语一句话 one_liner.{zh,en,de}、
+  三语「为什么重要」why_it_matters.{zh,en,de}、category、source.{name,tier}、
+  published_utc、first_seen_utc、scoop_hours（抢跑时长）、score/heat、
+  n_sources 与 also_reported_by（多源报道簇）、quote_en（英文原文引句）。
+- [%(site)s/api/%(v)s/sources.json](%(site)s/api/%(v)s/sources.json)：信源登记表 —— %(src)s。
+- [%(site)s/api/%(v)s/heartbeat.json](%(site)s/api/%(v)s/heartbeat.json)：引擎心跳（when/status/selected/total），
+  判断数据是否新鲜先看这个。
+- [%(site)s/feed.xml](%(site)s/feed.xml)：RSS 2.0，中文标题 + 原文链接，三语摘要在 content:encoded；
+  `<category>` 分「精选」与「24h」两档。
+- [%(site)s/data/%%E7%%B2%%BE%%E9%%80%%89%%E5%%BA%%93.json](%(site)s/data/%%E7%%B2%%BE%%E9%%80%%89%%E5%%BA%%93.json)：
+  完整精选库原始契约（字段最全，含评分闸门细节）。
+
+## 怎么读
+
+- 时间一律 UTC（字段后缀 `_utc`），页面展示按北京时间。
+- `selected=true` 是当轮人工口径的精选；`fresh_24h` 是 24 小时内所有捕获。
+- `scoop_hours` 是我们比同题报道早多少小时发现，负数表示落后。
+- 摘要为 AI 生成，可能有误；`quote_en` 给的是英文原文引句，供你核对。
+
+## 许可
+
+%(lic)s
+
+## 人读版
+
+[%(site)s/agents/](%(site)s/agents/)　|　站点首页 [%(site)s/](%(site)s/)
+""" % {"name": CONFIG["SITE_NAME"], "desc": CONFIG["SITE_DESCRIPTION"], "site": site,
+       "v": API_VERSION, "nsel": len(selected), "nfresh": len(fresh),
+       "lic": LICENSE_NOTE, "update": UPDATE_NOTE, "src": src_line}
+
+
+AGENTS_TMPL = """<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agents / API · {{SITE_NAME}}</title>
+<meta name="description" content="{{SITE_NAME}} 给 LLM 与 agent 的接口：RSS、JSON API、llms.txt，无需鉴权。">
+<link rel="canonical" href="https://{{DOMAIN}}/agents/">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="{{SITE_NAME}}" href="/feed.xml">
+<style>
+.api table { width:100%; border-collapse:collapse; font-size:14px; margin:10px 0 22px; }
+.api th,.api td { text-align:left; padding:8px 10px; border-bottom:1px solid rgba(128,128,128,.25); vertical-align:top; }
+.api code, .api pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; }
+.api pre { padding:12px 14px; border-radius:8px; overflow-x:auto; background:rgba(128,128,128,.12); }
+.api h2 { margin-top:30px; }
+</style>
+</head>
+<body>
+<header class="site container">
+  <div>
+    <h1>Agents / API</h1>
+    <p class="tagline">给机器读者的入口 · 无鉴权 · 版本号进路径</p>
+  </div>
+  <nav><a href="/">时间线</a> · <a href="/about.html">关于</a></nav>
+</header>
+
+<main class="container api" id="main">
+  <p>{{SITE_NAME}} 首先是给机器读的。下面五个地址随引擎每轮更新，直接 <code>curl</code> 即可，
+  不需要 key、不需要 UA 伪装。<strong>接口一旦公布就不破坏</strong>：只增字段，要改就开 <code>/api/v2/</code>。</p>
+
+  <h2>五个地址</h2>
+  <table>
+    <tr><th>地址</th><th>是什么</th><th>格式</th></tr>
+    <tr><td><a href="/api/v1/latest.json"><code>/api/v1/latest.json</code></a></td>
+        <td>精选 + 24h 全量，三语标题 / 一句话 / 为什么重要，含抢跑时长与多源簇</td><td>JSON</td></tr>
+    <tr><td><a href="/api/v1/sources.json"><code>/api/v1/sources.json</code></a></td>
+        <td>信源登记表：我们接了哪些源、哪些待接，以及与对标清单的当日差别</td><td>JSON</td></tr>
+    <tr><td><a href="/api/v1/heartbeat.json"><code>/api/v1/heartbeat.json</code></a></td>
+        <td>引擎心跳：上轮何时跑、成功与否、出了几条精选（判新鲜度看它）</td><td>JSON</td></tr>
+    <tr><td><a href="/feed.xml"><code>/feed.xml</code></a></td>
+        <td>RSS 2.0，中文标题 + 原文链接，三语摘要在 <code>content:encoded</code></td><td>XML</td></tr>
+    <tr><td><a href="/llms.txt"><code>/llms.txt</code></a></td>
+        <td>本页的机器版：字段说明与取数口径</td><td>Markdown</td></tr>
+  </table>
+
+  <h2>一行接入</h2>
+  <p>Claude Code / Codex / Cursor 里直接让它去读：</p>
+  <pre>把 https://{{DOMAIN}}/api/v1/latest.json 拉下来，按 selected 挑今天值得看的 AI 新闻，
+每条给我中文一句话 + 原文链接，再说说为什么重要（字段 why_it_matters.zh）。</pre>
+  <p>命令行：</p>
+  <pre>curl -s https://{{DOMAIN}}/api/v1/latest.json | jq '.selected[] | {title: .title.zh, url, why: .why_it_matters.zh}'
+curl -s https://{{DOMAIN}}/api/v1/heartbeat.json | jq '{when, status, selected}'
+curl -s https://{{DOMAIN}}/feed.xml | head -40</pre>
+  <p>MCP / RSS 阅读器：把 <code>https://{{DOMAIN}}/feed.xml</code> 加进订阅即可，
+  <code>&lt;category&gt;精选&lt;/category&gt;</code> 是我们当轮挑出来的那几条。</p>
+
+  <h2>字段口径</h2>
+  <table>
+    <tr><th>字段</th><th>含义</th></tr>
+    <tr><td><code>title.{zh,en,de}</code> / <code>one_liner.*</code> / <code>why_it_matters.*</code></td>
+        <td>三语标题、一句话摘要、为什么重要。AI 生成，可能有误。</td></tr>
+    <tr><td><code>quote_en</code></td><td>英文原文引句，用来核对我们有没有写歪。</td></tr>
+    <tr><td><code>scoop_hours</code></td><td>我们比同题报道早多少小时发现；负数表示落后。</td></tr>
+    <tr><td><code>n_sources</code> / <code>also_reported_by</code></td><td>同一事件有几家在报、分别是谁。</td></tr>
+    <tr><td><code>published_utc</code> / <code>first_seen_utc</code></td><td>原文发布时间 / 我们首次捕获时间，均为 UTC。</td></tr>
+    <tr><td><code>source.tier</code></td><td>信源等级：T1 一手官方 / T2 专业媒体 / T3 聚合。</td></tr>
+  </table>
+
+  <h2>更新频率与许可</h2>
+  <p>{{UPDATE_NOTE}}</p>
+  <p>{{LICENSE_NOTE}}</p>
+  <p style="margin-top:30px"><a href="/">← 回到时间线</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="links">{{SITE_NAME}} · <a href="/">时间线</a> · <a href="/about.html">关于</a> · <a href="/llms.txt">llms.txt</a></div>
+  </div>
+</footer>
+</body>
+</html>
+"""
+
+
 def main(argv):
     here = pathlib.Path(__file__).resolve().parent        # .../发布/generator
     repo = here.parent                                     # .../发布
@@ -953,15 +1264,20 @@ def main(argv):
         "TITLE": hesc(CONFIG["SITE_NAME"] + " · " + CONFIG["SITE_TAGLINE"]),
         "SEED_JSON": json_island(seed),
         "HOTBOX_HTML": hotbox_html or "",
+        "UPDATE_NOTE": hesc(UPDATE_NOTE),
+        "LICENSE_NOTE": hesc(LICENSE_NOTE),
     }
 
     pages = {
         "index.html": tmpl(INDEX_TMPL, m),
         "about.html": tmpl(ABOUT_TMPL, m),
         "404.html": tmpl(NOT_FOUND_TMPL, m),
+        "agents/index.html": tmpl(AGENTS_TMPL, m),
     }
     (out_dir / "assets").mkdir(parents=True, exist_ok=True)
     (out_dir / "data").mkdir(parents=True, exist_ok=True)
+    (out_dir / "agents").mkdir(parents=True, exist_ok=True)
+    (out_dir / "api" / API_VERSION).mkdir(parents=True, exist_ok=True)
 
     written = []
     for name, body in pages.items():
@@ -969,6 +1285,39 @@ def main(argv):
         p.write_text(body, encoding="utf-8")
         written.append((p, len(body)))
     for name, body in (("assets/style.css", CSS), ("assets/app.js", JS)):
+        p = out_dir / name
+        p.write_text(body, encoding="utf-8")
+        written.append((p, len(body)))
+
+    # 2026-09-22 P1：agent 可接入层。数据同源（同一份精选库 + 同目录的心跳/信源登记），
+    # 三个旁料读不到就如实降级（status=pending），绝不为了「好看」编数。
+    def _side(name):
+        f = data_path.parent / name
+        if not f.is_file():
+            sys.stderr.write("[build] 提示：%s 不存在，相关接口降级\n" % f)
+            return None
+        try:
+            return json.loads(f.read_text(encoding="utf-8"))
+        except (ValueError, OSError) as e:
+            sys.stderr.write("[build] 警告：%s 不可解析（%s），相关接口降级\n" % (f, e))
+            return None
+
+    heartbeat = _side("引擎心跳.json")
+    registry = _side("信源登记.json")
+    api_dir = "api/%s/" % API_VERSION
+    machine = {
+        api_dir + "latest.json": json.dumps(build_latest_json(seed, items),
+                                            ensure_ascii=False, indent=1),
+        api_dir + "sources.json": json.dumps(build_sources_json(registry),
+                                             ensure_ascii=False, indent=1),
+        api_dir + "heartbeat.json": json.dumps(
+            heartbeat if isinstance(heartbeat, dict) else
+            {"status": "pending", "note": "引擎心跳暂不可读"},
+            ensure_ascii=False, indent=1),
+        "feed.xml": build_feed_xml(seed, items),
+        "llms.txt": build_llms_txt(seed, items, build_sources_json(registry)),
+    }
+    for name, body in machine.items():
         p = out_dir / name
         p.write_text(body, encoding="utf-8")
         written.append((p, len(body)))

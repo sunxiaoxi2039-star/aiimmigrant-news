@@ -8,6 +8,19 @@
 !/CNAME
 !/README.md
 !/.gitignore
+# 2026-09-22 P1 agent 可接入层（发布链 LIVE_FILES 同步放行；路径即公开契约，改要开 v2）
+!/feed.xml
+!/llms.txt
+!/agents/
+/agents/*
+!/agents/index.html
+!/api/
+/api/*
+!/api/v1/
+/api/v1/*
+!/api/v1/latest.json
+!/api/v1/sources.json
+!/api/v1/heartbeat.json
 !/assets/
 /assets/*
 !/assets/style.css
@@ -50,6 +63,7 @@
 !/引擎/正文抽取器.py
 !/引擎/大厂通道.py
 !/引擎/发布链.py
+!/引擎/信源对账.py
 !/引擎/翻译层.py
 !/引擎/scoring.zh.json
 !/引擎/scoring.de.json

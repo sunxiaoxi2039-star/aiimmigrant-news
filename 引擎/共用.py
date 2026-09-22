@@ -30,7 +30,9 @@ RADAR_DATA = os.environ.get("AI_NEWS_RADAR_DATA", os.path.join(RADAR, "data"))
 # 两档型号实测名单（/models 2026-09-19）：deepseek-v4-pro（旗舰）、deepseek-flash（快档）。
 # 两档同为思考型：max_tokens 须留足思考+正文额度，过小会 content 空（Hy4 同款坑）。
 DEEPSEEK_URL = os.environ.get("AI_NEWS_DEEPSEEK_URL", "https://api.deepseek.com/v1/chat/completions")
-MODEL_FLAGSHIP = "deepseek-v4-pro"   # 五维打分 / 中文加工 / 二遍自查
+# 2026-09-22 小茜军令「V4.1 flash 一定只能用这个」：全线只走 deepseek-flash（弹药库 ledger 实锤 wire 名 deepseek-flash＝DeepSeek-V4.1-Flash）。
+# v4-pro 不再调用；要回退只改这一行。
+MODEL_FLAGSHIP = "deepseek-flash"    # 五维打分 / 中文加工 / 二遍自查（原 deepseek-v4-pro，9-22 起改 flash）
 MODEL_FLASH = "deepseek-flash"       # 预筛（是否 AI 相关）/ 三语翻译
 
 def _deepseek_key():
@@ -46,6 +48,36 @@ def _deepseek_key():
     except Exception:
         pass
     return None
+
+# 2026-09-22 小茜军令「¥49.91 是全部预算」：每轮跑前查余额，低于地板只发心跳不调模型。
+# 钥匙在进程内取（_deepseek_key），余额只记金额不记钥匙——日志/心跳/仓里永不出现 key。
+DEEPSEEK_BALANCE_URL = os.environ.get("AI_NEWS_DEEPSEEK_BALANCE_URL", "https://api.deepseek.com/user/balance")
+BUDGET_FLOOR_CNY = float(os.environ.get("AI_NEWS_BUDGET_FLOOR_CNY", "10"))
+
+
+def deepseek_balance(timeout=20):
+    """查 DeepSeek 账户余额 → (cny: float|None, why: str)。
+    cny=None 表示「查不到」（无钥匙/网络/接口异常）——调用方按未知处理，不当 0 拦停（宁可多跑一轮，
+    也不因一次网络抖动把站点冻住；真没钱时 401/402 熔断仍会兜住）。"""
+    key = _deepseek_key()
+    if not key:
+        return None, "无钥匙（env 与钥匙串 arsenal/deepseek-api 皆空）"
+    try:
+        req = _urlreq.Request(DEEPSEEK_BALANCE_URL, headers={"Authorization": f"Bearer {key}"})
+        with _urlreq.urlopen(req, timeout=timeout) as resp:
+            j = json.loads(resp.read().decode("utf-8"))
+    except _urlerr.HTTPError as e:
+        return None, f"http={e.code}"
+    except Exception as e:
+        return None, f"{type(e).__name__}:{str(e)[:60]}"
+    for info in (j.get("balance_infos") or []):
+        if (info.get("currency") or "").upper() == "CNY":
+            try:
+                return float(info.get("total_balance")), ("可用" if j.get("is_available") else "账户不可用")
+            except (TypeError, ValueError):
+                return None, "余额字段不可解析"
+    return None, "返回无 CNY 余额"
+
 
 CST = timezone(timedelta(hours=8))   # UTC+8 渲染时区（北京时间）
 
@@ -335,6 +367,11 @@ def extract_json(text):
                     break
     return None
 
+# 2026-09-22 Fable 止血：401/402（鉴权/余额）是账户级致命错误，重试和退避只会把整轮拖过 3600s 超时
+# （9-21～22 停摆真根因：DeepSeek 余额 0 → 每批 3 连败×退避 250s → 整轮超时 → 契约不写 → 站点冻结）。
+# 首次命中即熔断：本进程内后续调用不再发网络请求，直接抛 ModelUnavailable 让管线走既有降级路径，一轮 40 分钟内跑完。
+_FUSE = {"why": None}
+
 def call_model(prompt, model=MODEL_FLAGSHIP, effort="low", timeout=300,
                retries=3, use_cache=True, validator=None, max_tokens=None, think=None):
     """调用 DeepSeek。返回纯文本 content。
@@ -352,6 +389,8 @@ def call_model(prompt, model=MODEL_FLAGSHIP, effort="low", timeout=300,
     api_key = _deepseek_key()
     if not api_key:
         raise ModelUnavailable("DEEPSEEK_API_KEY 不在 env 也不在钥匙串 arsenal/deepseek-api")
+    if _FUSE["why"]:
+        raise ModelUnavailable(f"模型熔断中（本进程不再调用）：{_FUSE['why']}")
     if think is None:
         think = os.environ.get("AI_NEWS_THINK", "1") != "0"
     if max_tokens is None:
@@ -387,6 +426,9 @@ def call_model(prompt, model=MODEL_FLAGSHIP, effort="low", timeout=300,
             except Exception:
                 detail = ""
             last_err = f"http={e.code} {detail}"
+            if e.code in (401, 402):
+                _FUSE["why"] = f"http={e.code} {detail[:90]}"
+                raise ModelUnavailable(f"模型调用致命 [{model}] last={last_err}（鉴权/余额类错误：本进程熔断，不再重试）")
         except Exception as e:
             last_err = f"{type(e).__name__}:{str(e)[:120]}"
         time.sleep([10, 60, 180][min(attempt, 2)])
@@ -633,8 +675,9 @@ ENGINE_HEARTBEAT = os.path.join(DATA_DIR, "引擎心跳.json")
 
 def write_engine_heartbeat(job="manual", status="ok", exit_code=0, duration_s=None,
                            pipeline_generated_at=None, selected=None, total=None,
-                           alert=None):
-    """引擎心跳写入（原子写）。status: ok | fail；fail 必带 alert。"""
+                           alert=None, balance_cny=None):
+    """引擎心跳写入（原子写）。status: ok | fail；fail 必带 alert。
+    balance_cny（2026-09-22）：本轮 DeepSeek 余额快照（人民币元，None=本轮没查到）。"""
     now = datetime.now(timezone.utc)
     hb = {
         "when": now.isoformat(timespec="seconds"),
@@ -647,11 +690,25 @@ def write_engine_heartbeat(job="manual", status="ok", exit_code=0, duration_s=No
         "selected": selected,
         "total": total,
         "contract": "data/精选库.json",
+        "balance_cny": balance_cny,
         "alert": alert,
         "note": "引擎心跳（D5 独立于雷达 heartbeat.json）；页脚陈旧判定读 when/status",
     }
     write_json_atomic(ENGINE_HEARTBEAT, hb)
     return hb
+
+def update_engine_heartbeat(**fields):
+    """把附加字段并进现有引擎心跳（原子写）。心跳不存在/不可读时不新建，返回 None。
+    用途：管线自己写完心跳后，无人值守层补记轮后余额等运行期事实。"""
+    try:
+        with open(ENGINE_HEARTBEAT, encoding="utf-8") as f:
+            hb = json.load(f)
+    except Exception:
+        return None
+    hb.update(fields)
+    write_json_atomic(ENGINE_HEARTBEAT, hb)
+    return hb
+
 
 @contextmanager
 def engine_lock(path=LOCK_FILE, blocking=False):
