@@ -90,6 +90,15 @@ RSS_FEEDS = [
     ("404Media", "https://www.404media.co/rss", "AI"),
     ("Newcomer", "https://www.newcomer.co/feed", "AI"),                    # 创投长文
     ("AINews", "https://www.artificialintelligence-news.com/feed/", "AI"),  # curl 验证 200/12 条；该站 TLS 偶发拒握手，失手就跳过
+    # —— 9-22 欧洲一手源第一小批（章程「不可变初衷」：在对标底盘上加欧洲一手源做差异化，
+    #    不求全）。逐条 curl 实测 200 且能解析出条目才进表；非 AI 垂直的条目由管线 §7.4
+    #    AI 实体出站闸挡下，不靠源头降等级换量。
+    #    实测接不上、登记「待接/不可接」的：BNetzA RSS 404（官网已撤 newsfeed）、
+    #    Euractiv Digital 403（Cloudflare）。
+    ("EU数字战略", "https://digital-strategy.ec.europa.eu/en/rss.xml", "AI"),  # 欧盟委员会官方：AI Act / AI Office 一手口径
+    ("netzpolitik", "https://netzpolitik.org/feed/", "AI"),                  # 德语数字政策一手，25 条
+    ("LeMonde-Pixels", "https://www.lemonde.fr/pixels/rss_full.xml", "AI"),  # 法语科技，全文 feed，20 条
+    ("AlgorithmWatch", "https://algorithmwatch.org/en/feed/", "AI"),         # 欧洲算法问责一手研究
 ]
 HTML_CHANNELS = [  # (名字, URL, 卡片链接正则)
     ("Anthropic", "https://www.anthropic.com/news", r'href="(/news/[a-z0-9-]+)"'),
