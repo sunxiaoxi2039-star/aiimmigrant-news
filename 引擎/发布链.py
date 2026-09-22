@@ -492,35 +492,48 @@ def run(job, contract_path=None, dry_run=False):
                          set(LIVE_FILES) | {"data/精选库.json", "data/引擎心跳.json"} | set(CI_STATE_PATHS))]
             git_restore_live()
             raise GateFail(f"CI staged 越界：{stray[:4]}（只许站点五件+两契约+CI 状态件）")
+        # 上轮 push 失败会把 commit 留本地（设计如此，「下轮 pull --ff-only 自愈重推」）。但那一轮
+        # 已经把新数据换入过本地，下轮重建 staged 为空 → 旧代码在此直接 return，遗留 commit 永远
+        # 推不出去，站点被钉死在旧版（9-22 实测：36be66b 带今天数据，重跑两次都走 noop）。
+        # 所以「无新数据」与「无待推提交」要分开判：只有两者都成立才是真 noop。
+        pending_ahead = int(sh(["git", "rev-list", "--count", "origin/main..HEAD"],
+                               check=False).stdout.strip() or 0)
         if not staged:
-            print("[发布链] 数据与上轮完全一致，无可提交内容（不产生空提交）")
-            append_pub_ledger({"when_utc": t0.isoformat(timespec="seconds"), "job": job,
-                               "result": "noop", "gates": gate_rows})
-            return 0
-        msg = (f"D6 发布链自动上线：job={job} generated_at={contract.get('generated_at_utc')} "
-               f"精选={n_sel}；门禁全过（{'；'.join(gate_rows[:3])}…；"
-               f"index={sz}B≥{int(INDEX_SIZE_FLOOR*100)}%；无本机路径/密钥）；"
-               f"署名={'github-actions[bot]（CI ' + CI_MODE + '）' if CI_ACTIVE else 'agent-git wrapper'}")
-        if CI_ACTIVE:
-            cm = sh(["git", "-c", f"user.name={CI_BOT_NAME}", "-c", f"user.email={CI_BOT_EMAIL}",
-                     "commit", "-m", msg], check=False)
+            if pending_ahead <= 0:
+                print("[发布链] 数据与上轮完全一致，无可提交内容（不产生空提交）")
+                append_pub_ledger({"when_utc": t0.isoformat(timespec="seconds"), "job": job,
+                                   "result": "noop", "gates": gate_rows})
+                return 0
+            # 不新建空提交，只把遗留提交走同一套 CNAME 硬闸 + ff-only push 推出去
+            gate_rows.append(f"无新数据，补推本地遗留 {pending_ahead} 个提交（不产生空提交）")
+            print(f"[发布链] 数据与上轮一致，但本地领先 origin {pending_ahead} 个提交：只补推不新建提交")
         else:
-            cm = sh(["python3", AGENT_GIT, "zcode", "commit", "-m", msg], check=False)
-        if cm.returncode != 0:
-            git_restore_live()
-            raise GateFail(f"commit 失败（已复位线上文件）：{(cm.stderr or '')[:240]}")
-        sig = sh(["git", "show", "-s", "--format=%an <%ae> | %cn <%ce>", "HEAD"]).stdout.strip()
-        if not sig_ok(sig):
-            git_restore_live()
-            sh(["git", "reset", "--soft", "HEAD~1"], check=False)
-            raise GateFail(f"署名校验失败：{sig}")
+            msg = (f"D6 发布链自动上线：job={job} generated_at={contract.get('generated_at_utc')} "
+                   f"精选={n_sel}；门禁全过（{'；'.join(gate_rows[:3])}…；"
+                   f"index={sz}B≥{int(INDEX_SIZE_FLOOR*100)}%；无本机路径/密钥）；"
+                   f"署名={'github-actions[bot]（CI ' + CI_MODE + '）' if CI_ACTIVE else 'agent-git wrapper'}")
+            if CI_ACTIVE:
+                cm = sh(["git", "-c", f"user.name={CI_BOT_NAME}", "-c", f"user.email={CI_BOT_EMAIL}",
+                         "commit", "-m", msg], check=False)
+            else:
+                cm = sh(["python3", AGENT_GIT, "zcode", "commit", "-m", msg], check=False)
+            if cm.returncode != 0:
+                git_restore_live()
+                raise GateFail(f"commit 失败（已复位线上文件）：{(cm.stderr or '')[:240]}")
+            sig = sh(["git", "show", "-s", "--format=%an <%ae> | %cn <%ce>", "HEAD"]).stdout.strip()
+            if not sig_ok(sig):
+                git_restore_live()
+                sh(["git", "reset", "--soft", "HEAD~1"], check=False)
+                raise GateFail(f"署名校验失败：{sig}")
         # 9.6 M3（Fable 9-21 v2 审）：CNAME 硬闸——push 前断言 HEAD 树 CNAME 在且等于域名常量。
         #     防 9-18 事故的反向形态（checkout 拉错 ref / 影子分支起点异常 / 人手误删后 CI 顺推）。
         #     shadow 与 live、Mac 与 CI 同开；读的是已提交的 HEAD 树，零副作用只读断言。
         r_cname = sh(["git", "show", "HEAD:CNAME"], check=False, timeout=30)
         if not cname_gate_ok(r_cname.stdout if r_cname.returncode == 0 else None):
             git_restore_live()
-            sh(["git", "reset", "--soft", "HEAD~1"], check=False)
+            # 补推路径本轮没建提交，HEAD 是上轮遗留的正经提交——绝不能 reset 掉
+            if staged:
+                sh(["git", "reset", "--soft", "HEAD~1"], check=False)
             raise GateFail(f"CNAME 闸：HEAD 树缺失或值异常（期望 {SITE_DOMAIN}），拦下不推")
         # 10. 推送（ff-only 语义，永禁 --force）。CI shadow=推影子分支+开 PR；CI live/Mac=推 main
         push_ref = ci_branch if ci_branch else "main"
