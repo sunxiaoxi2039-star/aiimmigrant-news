@@ -1,0 +1,18 @@
+{"when_utc": "2026-09-16T19:11:10+00:00", "kind": "pipeline_fail", "detail": "[manual] 管线退出码 1（56s）；契约 generated_at 未更新（旧库保留）"}
+{"when_utc": "2026-09-16T19:13:12+00:00", "kind": "pipeline_fail", "detail": "[manual] 管线退出码 1（54s）；契约 generated_at 未更新（旧库保留）"}
+{"when_utc": "2026-09-16T19:52:31+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：产物闸：本机路径/密钥泄漏 [('index.html', 'sk-[A-Za-z0-9_\\\\-]{16,}', 'sk-of-marginalisation-unless-billions-in-ai-funding-are-comm'), ('精选库.json', 'sk-[A-Za-z0-9_\\\\-]{16,}', 'sk-of-marginalisation-unless-billions-in-ai-funding-are-comm')]"}
+{"when_utc": "2026-09-16T19:53:15+00:00", "kind": "publish_gate_fail", "detail": "[poison-test] 门禁拦下不发布（旧站原样）：品牌闸命中（aihot 字样）——投毒拦截"}
+{"when_utc": "2026-09-16T21:35:23+00:00", "kind": "pipeline_fail", "detail": "[cold] 管线退出码 1（318s）；契约 generated_at 未更新（旧库保留）"}
+{"when_utc": "2026-09-16T22:11:33+00:00", "kind": "publish_gate_fail", "detail": "[poison-verify] 门禁拦下不发布（旧站原样）：品牌闸命中（aihot 字样）——投毒拦截"}
+{"when_utc": "2026-09-17T05:28:13+00:00", "kind": "publish_gate_fail", "detail": "[hot] 门禁拦下不发布（旧站原样）：git fetch 失败（网络/凭据）：命令失败 git fetch origin…: fatal: unable to access 'https://github.com/sunxiaoxi2039-star/aiimmigrant-news.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connec"}
+{"when_utc": "2026-09-17T05:28:13+00:00", "kind": "publish_chain_fail", "detail": "[hot] 发布链退出 1（门禁拦下或推送失败——站点保持旧版，详见发布台账与告警）"}
+{"when_utc": "2026-09-17T05:28:34+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：git fetch 失败（网络/凭据）：命令失败 git fetch origin…: fatal: unable to access 'https://github.com/sunxiaoxi2039-star/aiimmigrant-news.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connec"}
+{"when_utc": "2026-09-17T11:07:17+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：pull --ff-only 失败（本地与远端分叉，需人工裁决）：fatal: unable to access 'https://github.com/sunxiaoxi2039-star/aiimmigrant-news.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n"}
+{"when_utc": "2026-09-17T11:12:52+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：发布仓工作树脏（除 data/ 外须干净）：['M generator/build.py']"}
+{"when_utc": "2026-09-17T11:13:51+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：HEAD 与 origin/main 未对齐且非纯领先（ahead=1 behind=0）"}
+{"when_utc": "2026-09-17T11:14:07+00:00", "kind": "publish_push_fail", "detail": "[manual] push 失败（commit 09cce08 留本地，下轮 pull --ff-only 自愈重推）：fatal: unable to access 'https://github.com/sunxiaoxi2039-star/aiimmigrant-news.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n"}
+{"when_utc": "2026-09-17T13:56:20+00:00", "kind": "publish_gate_fail", "detail": "[hot2] 门禁拦下不发布（旧站原样）：精选 3 < 5（数据不健康不发布）"}
+{"when_utc": "2026-09-17T13:56:20+00:00", "kind": "publish_chain_fail", "detail": "[hot2] 发布链退出 1（门禁拦下或推送失败——站点保持旧版，详见发布台账与告警）"}
+{"when_utc": "2026-09-17T14:01:40+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：精选 3 < 5（数据不健康不发布）"}
+{"when_utc": "2026-09-17T14:07:35+00:00", "kind": "publish_gate_fail", "detail": "[manual] 门禁拦下不发布（旧站原样）：精选 3 < 5（数据不健康不发布）"}
+{"when_utc": "2026-09-18T06:05:22+00:00", "kind": "publish_revert_fail", "detail": "[revert-drill] revert 前 pull --ff-only 失败：fatal: unable to access 'https://github.com/sunxiaoxi2039-star/aiimmigrant-news.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n"}

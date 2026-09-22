@@ -1,4 +1,5 @@
 # 白名单门禁：默认挡住一切，逐个显式放行（建站规格书 v2 §6）
+# 2026-09-21 Actions 云端化 Phase 1（Fable 有条件 GO）：新增 引擎/雷达/CI 状态件 三组放行
 /*
 !/index.html
 !/about.html
@@ -15,9 +16,46 @@
 /data/*
 !/data/精选库.json
 !/data/引擎心跳.json
+# CI 状态件（state-in-repo；雷达输出/大鱼/样本等其余 data/ 内容维持挡住）
+!/data/雷达/
+/data/雷达/*
+!/data/雷达/抢跑台账.json
+!/data/雷达/回填库.json
+!/data/雷达/短链缓存.json
+!/data/引擎产物/
+/data/引擎产物/*
+!/data/引擎产物/摘要缓存.json
+!/data/引擎产物/页面正文缓存.json
+!/data/引擎产物/发布-台账.jsonl
+!/data/引擎产物/告警-日志.jsonl
 !/generator/
 /generator/*
 !/generator/build.py
 !/generator/README.md
+# Actions workflow 与模式开关（M5：默认 shadow；切 live=改一行一个 commit）
+!/.github/
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/news-pipeline.yml
+!/.github/CI_MODE
+# 引擎十件（Mac 原件在 ZCodeProject/AI资讯站/引擎/，改原件必须同步这里的仓内副本——README 纪律）
+!/引擎/
+/引擎/*
+!/引擎/管线.py
+!/引擎/共用.py
+!/引擎/加工层.py
+!/引擎/去重器.py
+!/引擎/摘要抓取器.py
+!/引擎/正文抽取器.py
+!/引擎/大厂通道.py
+!/引擎/发布链.py
+!/引擎/翻译层.py
+!/引擎/scoring.zh.json
+!/引擎/scoring.de.json
+# 雷达 CI 副本（原件 ~/ai-radar/抢跑雷达.py 零触碰；改原件必须重新快照——副本头注有 delta 说明）
+!/雷达/
+/雷达/*
+!/雷达/抢跑雷达.py
 
 # 任何新文件想进仓，必须先在上面加一行白名单并确认无敏感内容

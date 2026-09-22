@@ -1,0 +1,61 @@
+# Actions 云端化 Phase 1（Fable 2026-09-21 v2 审：有条件 GO，M1/M5 落实）
+# 影子纪律：shadow 模式只推 ci/shadow-<ts> 分支 + 开 PR，绝不碰 main。
+name: news-pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'   # 影子期每 6 小时（Fable D 裁）；避开整点
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: news-pipeline
+  cancel-in-progress: false   # 排队不取消（发布链 ff-only 闸自愈）
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      GH_TOKEN: ${{ github.token }}          # 发布链 ci_shadow_pr 用 gh 关旧 PR/开新 PR
+      AI_NEWS_CI: "1"
+      AI_NEWS_TRIGGER: ci                     # 台账与 Mac 三态（calendar/kickstart/manual）不混账
+      AI_NEWS_JOB: ci
+      AI_NEWS_PUB: ${{ github.workspace }}    # 仓根=站点根
+      AI_NEWS_DATA: ${{ github.workspace }}/data/引擎产物/契约   # 契约输出（gitignore 挡住）
+      AI_NEWS_WORK: ${{ github.workspace }}/data/引擎产物
+      AI_NEWS_RADAR_DATA: ${{ github.workspace }}/data/雷达
+      AI_NEWS_PYTHON: python3
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}   # 影子期不配=空 → 引擎层 SKIP 零烧钱
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50    # M5：gate_git 的 rev-list 领先计数在浅克隆上不可靠
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 读 CI_MODE（shadow/live 开关在仓内文件，一个 commit 可审计可回滚）
+        run: echo "AI_NEWS_CI_MODE=$(cat .github/CI_MODE)" >> "$GITHUB_ENV"
+      - name: M1 播种 CI 契约目录（引擎 SKIP 时发布链也要有上轮契约/心跳可读——拷贝而非改指，保住「旧站原样」语义）
+        run: |
+          mkdir -p "$AI_NEWS_DATA"
+          cp data/精选库.json data/引擎心跳.json "$AI_NEWS_DATA/"
+      - name: 雷达层（纯 RSS/HTML 零凭据；X 哨兵/公众号桥样本不存在=天然关；AI_RADAR_CI=1 跳过 Mac 专属子调用）
+        run: AI_RADAR_CI=1 AI_RADAR_DATA="$AI_NEWS_RADAR_DATA" python3 雷达/抢跑雷达.py
+      - name: 摘要层（RSS 条件请求，304 复用）
+        run: python3 引擎/摘要抓取器.py
+      - name: 引擎层（未配 Secret → workflow 级 SKIP 退出 0：DeepSeek 按量付费，影子期零双烧——Fable C 裁）
+        run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo "SKIP：DEEPSEEK_API_KEY 未配，引擎层跳过（零模型花费）。"
+            echo "三步配法：仓库 Settings → Secrets and variables → Actions → New secret，Name=DEEPSEEK_API_KEY，Value=DeepSeek 平台 API key。"
+            echo "注意：Phase 2 切 live 前须按真实账单报价并经站主点头（README「烧钱纪律」）。"
+            exit 0
+          fi
+          echo "AI_NEWS_ENGINE_RAN=1" >> "$GITHUB_ENV"
+          python3 引擎/管线.py --profile zh
+      - name: 发布链（五门禁原样 + M2 staged 范围闸 + M3 CNAME 硬闸；shadow=影子分支+PR，live=推 main）
+        run: python3 引擎/发布链.py --job "$AI_NEWS_JOB"
