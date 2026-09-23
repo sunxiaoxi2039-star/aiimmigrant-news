@@ -616,9 +616,13 @@ ABOUT_TMPL = HEAD_TMPL + """
   <p>运营者：Xiaoxi Sun，Beilstein（德国）<br>邮箱：<a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a></p>
 
   <h2 id="datenschutz">Datenschutz</h2>
-  <p lang="de">Datenschutzerklärung folgt.</p>
-  <p lang="en">Privacy notice to follow.</p>
-  <p>数据保护声明即将补充。</p>
+  <p lang="de"><strong>Verantwortlicher:</strong> Xiaoxi Sun, Beilstein, Deutschland · E-Mail: <a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a></p>
+  <p lang="de"><strong>Hosting:</strong> Diese Seite wird als statische Website über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Beim Aufruf verarbeitet GitHub technisch notwendige Server-Logdaten (IP-Adresse, Zeitpunkt, aufgerufene URL, User-Agent) auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb). Details: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub General Privacy Statement</a>. Wir selbst erhalten und speichern keine dieser Daten.</p>
+  <p lang="de"><strong>Keine Cookies, kein Tracking:</strong> Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und bindet keine Inhalte Dritter ein. Schriften werden lokal ausgeliefert. Die Sprachwahl (DE/EN/ZH) wird ausschließlich in Ihrem Browser gespeichert und nicht übertragen.</p>
+  <p lang="de"><strong>Externe Links:</strong> Verlinkte Quellen unterliegen den Datenschutzbestimmungen der jeweiligen Anbieter.</p>
+  <p lang="de"><strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit (Art. 15–21 DSGVO) sowie Beschwerde bei einer Aufsichtsbehörde, z. B. dem Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg. Stand: 23. September 2026.</p>
+  <p lang="en">Controller: Xiaoxi Sun, Beilstein, Germany, <a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a>. This static site is served via GitHub Pages; GitHub processes technically necessary server logs (IP address, time, URL, user agent) under Art. 6(1)(f) GDPR. No cookies, no analytics, no third-party embeds, fonts served locally; the language choice stays in your browser. You have the rights under Art. 15–21 GDPR and may complain to a supervisory authority. Last updated 23 September 2026.</p>
+  <p>责任人：Xiaoxi Sun，Beilstein（德国），<a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a>。本站为静态站点，经 GitHub Pages 分发；GitHub 会处理技术上必需的服务器日志（IP、时间、URL、浏览器标识），法律依据为 GDPR 第 6 条第 1 款 f 项。本站无 cookie、无统计、无第三方嵌入，字体本地分发；语言选择只保存在你的浏览器里。你享有 GDPR 第 15–21 条的各项权利，并可向监管机构投诉。更新日期：2026 年 9 月 23 日。</p>
 
   <p style="margin-top:30px"><a href="index.html">← 回到时间线</a></p>
 </main>
@@ -1252,7 +1256,7 @@ RUBRIKEN = [
     ("marketing", ["marketing", "seo", " sea ", " geo ", " aeo ", "google ads", "display advertising", " ads ", "adtech",
                    "generative engine optimization", "answer engine optimization", "suchmaschinenwerbung",
                    "onlinemarketing", "performance marketing",
-                   "programmatic", "shopify", "stripe", "checkout", "agentic commerce", "e-commerce", "ecommerce",
+                   "programmatic advertising", "programmatic ad", "programmatische werbung", "shopify", "stripe", "checkout", "agentic commerce", "e-commerce", "ecommerce",
                    "retail", "amazon ads", "meta ads", "tiktok shop", "电商", "跨境", "直播带货", "营销", "广告", "投放"]),
     ("unternehmen", ["mittelstand", "sap", "siemens", "bosch", "telekom", "allianz", "volkswagen", "bmw", "mercedes",
                      "eu ai act", "ki-verordnung", "dsgvo", "gdpr", "enterprise", "企业落地", "欧洲", "europe", "europa",
@@ -1297,6 +1301,18 @@ def rubriken_of(item):
     keys = [key for key, rx in _RUB_RX if rx.search(text)]
     if "robotik" in keys and re.search(r"social.?bot|社交机器人|chatbot|聊天机器人|bot-erkennung|bot detection", text):
         keys.remove("robotik")
+    # 执行单 E（2026-09-23）：marketing 反例收紧——硬件新闻、客户案例不进 marketing
+    if "marketing" in keys:
+        mk_hits = {m.group(0).strip() for m in _RUB_RX[0][1].finditer(text)}
+        if len(mk_hits) < 2 and re.search(
+                r"notebook|tablet|chromebook|googlebook|laptop|smartphone|pixel \d|hardware", text):
+            keys.remove("marketing")
+        elif re.search(r"customer story|case study|kundenbeispiel|客户案例|success story"
+                       r"|turned \d+ \w+ of work into", text):
+            # 例外只看原文标题（译文摘要里的泛化「营销」不算）
+            head = " ".join(str(item.get(f) or "") for f in ("title_src", "title_en")).lower()
+            if not re.search(r"(?<![a-z])ads?(?![a-z])|adtech|e-commerce|checkout|shopify|营销|广告|投放", head):
+                keys.remove("marketing")
     if keys:
         return keys
     cat = item.get("category")
@@ -1351,7 +1367,7 @@ def main(argv):
         "SITE_DESCRIPTION": hesc(CONFIG["SITE_DESCRIPTION"]),
         "DOMAIN": hesc(CONFIG["DOMAIN"]),
         "ISSUES_URL": hesc(CONFIG["ISSUES_URL"]),
-        "TITLE": hesc(CONFIG["SITE_NAME"] + " · " + CONFIG["SITE_TAGLINE"]),
+        "TITLE": hesc("KI-Nachrichten · Was heute in der KI zählt"),  # 静态默认德语，与 app.js DE document.title 一致
         "SEED_JSON": json_island(seed),
         "HOTBOX_HTML": hotbox_html or "",
         "HEATMAP_HTML": heatmap_html or "",
