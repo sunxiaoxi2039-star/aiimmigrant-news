@@ -92,6 +92,7 @@ def ci_guard():
 
 
 # ---------- M2/M3/M4 提取（Fable 9-21 v2 审：纯函数化换单测覆盖） ----------
+# M2 路径比对须关 quotePath：runner git 默认 core.quotePath=true，非 ASCII 路径被输出成带引号八进制转义串，白名单明文比对永不等而误拦（2026-09-23 Fable 诊断）
 def ci_stage_paths():
     """staged 范围计算：LIVE 五件+两契约恒在；CI 再加实际存在的状态文件。"""
     paths = list(LIVE_FILES) + ["data/精选库.json", "data/引擎心跳.json"]
@@ -286,7 +287,7 @@ def gate_git():
         raise GateFail(f"pull --ff-only 失败（本地与远端分叉，需人工裁决）：{(r.stderr or '')[:200]}")
     if "Already up to date" not in (r.stdout or "") and "已经是最新的" not in (r.stdout or ""):
         rows.append("pull=带回远端新提交（ff-only）")
-    status = sh(["git", "status", "--porcelain"]).stdout.strip()
+    status = sh(["git", "-c", "core.quotePath=false", "status", "--porcelain"]).stdout.strip()
     dirty = [l for l in status.splitlines() if l.strip() and "data/" not in l]
     if dirty:
         raise GateFail(f"发布仓工作树脏（除 data/ 外须干净）：{dirty[:4]}")
@@ -506,7 +507,7 @@ def run(job, contract_path=None, dry_run=False):
             if state_leaks:
                 git_restore_live()
                 raise GateFail(f"状态文件密钥泄漏 {state_leaks[:3]}")
-        staged = sh(["git", "diff", "--cached", "--name-only"]).stdout.strip()
+        staged = sh(["git", "-c", "core.quotePath=false", "diff", "--cached", "--name-only"]).stdout.strip()
         # M2（Fable 9-21 v2 审）：CI 下 staged 范围硬闸——只许 LIVE 五件+两契约+CI 状态件，
         # 越界（拉错 ref/起点异常/误删文件被顺推）即拦，不兑现任何「零变化」承诺
         if CI_ACTIVE and not ci_staged_scope_ok(staged.splitlines()):
