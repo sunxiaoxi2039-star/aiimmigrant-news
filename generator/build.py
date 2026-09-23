@@ -611,9 +611,9 @@ ABOUT_TMPL = HEAD_TMPL + """
   <p>本站的<strong>筛选、摘要与翻译由 AI 辅助完成</strong>，人工复核正在进行中。每条卡片附带的英文原文引句用于降低机器转述失真，也欢迎你监督。</p>
 
   <h2 id="impressum">Impressum</h2>
-  <p lang="de">Impressum folgt.</p>
-  <p lang="en">Imprint to follow.</p>
-  <p>Impressum 即将补充。</p>
+  <p lang="de">Angaben gemäß § 5 DDG<br>Xiaoxi Sun<br>Beilstein, Deutschland<br>E-Mail: <a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a><br>Verantwortlich für den Inhalt: Xiaoxi Sun</p>
+  <p lang="en">Operator: Xiaoxi Sun, Beilstein, Germany<br>E-mail: <a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a></p>
+  <p>运营者：Xiaoxi Sun，Beilstein（德国）<br>邮箱：<a href="mailto:sun.xiaoxi2039@gmail.com">sun.xiaoxi2039@gmail.com</a></p>
 
   <h2 id="datenschutz">Datenschutz</h2>
   <p lang="de">Datenschutzerklärung folgt.</p>
@@ -635,8 +635,10 @@ ABOUT_TMPL = HEAD_TMPL + """
 NOT_FOUND_TMPL = HEAD_TMPL + """
 <main class="center-404">
   <div class="code">404</div>
-  <p>这个页面不存在，可能已随时间线翻篇。</p>
-  <p><a href="index.html">← 回到{{SITE_NAME}}首页</a></p>
+  <h1 lang="de" style="font-family:var(--serif);color:var(--brand)">Seite nicht gefunden</h1>
+  <p lang="de">Diese Meldung gibt es nicht oder sie wurde entfernt. <a href="index.html">Zur Startseite</a></p>
+  <p lang="en">Page not found · <a href="index.html">Back to start</a></p>
+  <p>页面不存在 · <a href="index.html">回首页</a></p>
 </main>
 <footer>
   <div class="container">
