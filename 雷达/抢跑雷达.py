@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 【CI 副本】2026-09-22 快照自 ~/ai-radar/抢跑雷达.py（原件零触碰——雷达组地盘纪律）
+# 【CI 副本】2026-09-23 重新快照（执行单 E，含 9-22 B 单与 9-23 E 单扩源）自 ~/ai-radar/抢跑雷达.py（原件零触碰——雷达组地盘纪律）
 # 与原件的 delta（仅 3 处，env 门控/纯路径调整，抓取逻辑零改动）：
 #   ① DATA 支持 AI_RADAR_DATA 覆盖（CI 指到仓内 data/雷达/）
 #   ② OUTDIR 支持 AI_RADAR_OUT 覆盖，缺省挪到 DATA 下（CI 里雷达输出不落仓根碍 git 状态闸）
@@ -99,6 +99,29 @@ RSS_FEEDS = [
     ("netzpolitik", "https://netzpolitik.org/feed/", "AI"),                  # 德语数字政策一手，25 条
     ("LeMonde-Pixels", "https://www.lemonde.fr/pixels/rss_full.xml", "AI"),  # 法语科技，全文 feed，20 条
     ("AlgorithmWatch", "https://algorithmwatch.org/en/feed/", "AI"),         # 欧洲算法问责一手研究
+    # —— 9-22 演示执行单 B：Marketing & Commerce / Unternehmen / China / Robotik 扩源
+    #    （Claude Opus 5.5 逐条 curl 实测 200 且出条目才进表；非 AI 条目交给相关性闸，不放宽）。
+    #    不可接：36kr.com/feed（返回 HTML）、EU news.rss（404 页，已有 rss.xml）、shopify blog.atom（HTML）、
+    #    searchengineland 403、wuv/adzine/internetworld/seroundtable/e-commerce-magazin 404、雨果网 无 RSS。
+    ("OMR", "https://omr.com/de/feed", "Marketing"),                                   # lane=marketing
+    ("Horizont", "https://www.horizont.net/news/feed/", "Marketing"),                  # lane=marketing
+    ("onlinemarketing.de", "https://onlinemarketing.de/feed", "Marketing"),            # lane=marketing
+    ("SearchEngineJournal", "https://www.searchenginejournal.com/feed/", "Marketing"), # lane=marketing
+    ("MarketingDive", "https://www.marketingdive.com/feeds/news/", "Marketing"),       # lane=marketing
+    ("Digiday", "https://digiday.com/feed/", "Marketing"),                             # lane=marketing
+    ("ModernRetail", "https://www.modernretail.co/feed/", "Marketing"),                # lane=marketing
+    ("RetailDive", "https://www.retaildive.com/feeds/news/", "Marketing"),             # lane=marketing
+    ("Stripe博客", "https://stripe.com/blog/feed.rss", "Marketing"),                   # lane=marketing
+    ("GoogleAds&Commerce", "https://blog.google/products/ads-commerce/rss/", "Marketing"),  # lane=marketing
+    # —— 9-23 执行单 E：德语在线营销/SEO 补源（curl -L 实测 200 + rss+xml）；absatzwirtschaft 跳 HTML、internetworld 404 不接
+    ("t3n-Marketing", "https://t3n.de/tag/marketing/rss.xml", "Marketing"),         # lane=marketing
+    ("SISTRIX", "https://www.sistrix.de/news/feed/", "Marketing"),                  # lane=marketing
+    ("Seokratie", "https://www.seokratie.de/feed/", "Marketing"),                   # lane=marketing
+    ("FAZ-Wirtschaft", "https://www.faz.net/rss/aktuell/wirtschaft/", "Unternehmen"),  # lane=unternehmen
+    ("36氪快讯", "https://www.36kr.com/feed-newsflash", "China"),                       # lane=china
+    ("白鲸出海", "https://www.baijing.cn/feed", "China"),                               # lane=china
+    ("霞光社", "https://www.xiaguangshe.com/feed", "China"),                            # lane=china
+    ("TheRobotReport", "https://www.therobotreport.com/feed/", "Robotik"),             # lane=robotik
 ]
 HTML_CHANNELS = [  # (名字, URL, 卡片链接正则)
     ("Anthropic", "https://www.anthropic.com/news", r'href="(/news/[a-z0-9-]+)"'),
