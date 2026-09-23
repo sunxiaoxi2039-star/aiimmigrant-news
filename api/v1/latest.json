@@ -1,6 +1,6 @@
 {
  "api_version": "v1",
- "generated_at_utc": "2026-09-23T15:08:15Z",
+ "generated_at_utc": "2026-09-23T16:08:23Z",
  "site": {
   "name": "AI 资讯时间线",
   "url": "https://news.aiimmigrant.de",
@@ -11,7 +11,7 @@
  "counts": {
   "selected": 3,
   "fresh_24h": 193,
-  "total_pool": 1486
+  "total_pool": 1494
  },
  "categories": [
   "模型",
@@ -83,7 +83,7 @@
    "scoop_hours": 4.0,
    "selected": true,
    "score": 72.0,
-   "heat": 34.6,
+   "heat": 34.3,
    "n_sources": 2,
    "also_reported_by": [
     {
@@ -122,7 +122,7 @@
    "scoop_hours": 1.0,
    "selected": true,
    "score": 75.5,
-   "heat": 28.0,
+   "heat": 27.6,
    "n_sources": 2,
    "also_reported_by": [
     {
@@ -135,10 +135,78 @@
  ],
  "fresh_24h": [
   {
+   "id": "50061fb62abd",
+   "url": "https://drivingbench.com/",
+   "title": {
+    "zh": "",
+    "en": "GPT-6 Astra has gained the ability to drive a car",
+    "de": "GPT-6 Astra hat die Fähigkeit erlangt, ein Auto zu fahren",
+    "src": "GPT-6 Astra has gained the ability to drive a car"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "HN热议",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T16:04:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.5,
+   "heat": 30.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "cd65d3ae79b3",
+   "url": "https://openai.com/index/two-years-of-openai-academy",
+   "title": {
+    "zh": "",
+    "en": "[OpenAI] Two years of OpenAI Academy",
+    "de": "Zwei Jahre OpenAI Academy",
+    "src": "[OpenAI] Two years of OpenAI Academy"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T16:00:00Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.5,
+   "heat": 39.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "5543c7324271",
    "url": "https://www.infoq.cn/article/jJAcfJO5e0ElPhIxwwxo?utm_source=rss&amp;utm_medium=article",
    "title": {
-    "zh": "",
+    "zh": "Dropbox 升级 Riviera 平台，支持 AI 工作负载",
     "en": "Dropbox upgrades Riviera platform to support AI workloads",
     "de": "Dropbox erweitert Riviera-Plattform für KI-Workloads",
     "src": "[InfoQ中国] Dropbox 升级 Riviera 平台，支持 AI 工作负载"
@@ -163,53 +231,19 @@
    "scoop_hours": null,
    "selected": false,
    "score": 47.2,
-   "heat": 47.3,
+   "heat": 47.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "af89be2b1f03",
-   "url": "https://www.theregister.com/security/2026/09/23/sponsored-closing-the-observability-gap-for-the-ai-ready-enterprise/5298070",
+   "id": "f53afce8292e",
+   "url": "https://techcrunch.com/2026/09/23/youtube-music-gets-more-conversational-with-new-ai-features/",
    "title": {
     "zh": "",
-    "en": "[TheRegister] Closing the observability gap for the AI-ready enterprise",
-    "de": "Observability-Lücke für KI-bereite Unternehmen schließen",
-    "src": "[TheRegister] Closing the observability gap for the AI-ready enterprise"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-23T15:00:00Z",
-   "first_seen_utc": "2026-09-23T15:04:33Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.5,
-   "heat": 39.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "2ff5f0bdc37d",
-   "url": "https://www.searchenginejournal.com/ai-agents-will-game-your-seo-metrics-mit-stanford-research-points-to-the-risk/589948/",
-   "title": {
-    "zh": "",
-    "en": "[SearchEngineJournal] AI Agents Will Game Your SEO Metrics, MIT & Stanford Research Points To The Risk via @sejournal, @gregjarboe",
-    "de": "KI-Agenten manipulieren SEO-Metriken, warnen MIT- und Stanford-Forscher",
-    "src": "[SearchEngineJournal] AI Agents Will Game Your SEO Metrics, MIT & Stanford Research Points To The Risk via @sejournal, @gregjarboe"
+    "en": "[TechCrunch-AI] YouTube Music gets more conversational with new AI features",
+    "de": "YouTube Music erhält konversationelle KI-Funktionen",
+    "src": "[TechCrunch-AI] YouTube Music gets more conversational with new AI features"
    },
    "one_liner": {
     "zh": "",
@@ -226,24 +260,58 @@
     "name": "官方RSS",
     "tier": "T2"
    },
-   "published_utc": "2026-09-23T14:30:15Z",
-   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "published_utc": "2026-09-23T15:19:30Z",
+   "first_seen_utc": "2026-09-23T16:04:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 39.1,
+   "score": 41.3,
+   "heat": 41.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "c547c877c02f",
-   "url": "https://techcrunch.com/2026/09/23/strictlyvc-at-techcrunch-disrupt-2026-inside-the-changing-rules-of-venture-capital/",
+   "id": "38b08cec2be5",
+   "url": "https://www.retaildive.com/news/shoppers-burned-bad-ai-purchase-recommendations/831013/",
    "title": {
     "zh": "",
-    "en": "[TechCrunch-AI] StrictlyVC at TechCrunch Disrupt 2026: Inside the changing rules of venture capital",
-    "de": "StrictlyVC bei TechCrunch Disrupt 2026: Wandel der VC-Regeln",
-    "src": "[TechCrunch-AI] StrictlyVC at TechCrunch Disrupt 2026: Inside the changing rules of venture capital"
+    "en": "[RetailDive] Shoppers burned by bad AI recommendations",
+    "de": "Käufer leiden unter schlechten KI-Empfehlungen",
+    "src": "[RetailDive] Shoppers burned by bad AI recommendations"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "RetailDive reports that shoppers are being disappointed by poor AI-driven product recommendations.",
+    "de": "RetailDive berichtet, dass Käufer von schlechten KI-gesteuerten Produktempfehlungen enttäuscht werden."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T15:18:00Z",
+   "first_seen_utc": "2026-09-23T16:04:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.0,
+   "heat": 42.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2327ecd90f8c",
+   "url": "https://the-decoder.com/anthropic-engineer-explains-why-claudes-writing-got-worse-although-the-model-got-smarter/",
+   "title": {
+    "zh": "",
+    "en": "[The Decoder] Anthropic engineer explains why Claude's writing got worse although the model got smarter",
+    "de": "Anthropic-Ingenieur erklärt, warum Claudes Schreiben schlechter wurde, obwohl das Modell klüger wurde",
+    "src": "[The Decoder] Anthropic engineer explains why Claude's writing got worse although the model got smarter"
    },
    "one_liner": {
     "zh": "",
@@ -260,80 +328,182 @@
     "name": "官方RSS",
     "tier": "T2"
    },
-   "published_utc": "2026-09-23T14:30:00Z",
+   "published_utc": "2026-09-23T15:14:34Z",
+   "first_seen_utc": "2026-09-23T16:04:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.5,
+   "heat": 37.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "81c8496069fd",
+   "url": "https://www.golem.de/news/ki-und-rechenzentren-telekom-chef-warnt-vor-abrutschen-zur-kolonie-der-amerikaner-2609-213364.html",
+   "title": {
+    "zh": "",
+    "en": "[Golem] KI und Rechenzentren: Telekom-Chef warnt vor Abrutschen zur \"Kolonie der Amerikaner\"",
+    "de": "KI und Rechenzentren: Telekom-Chef warnt vor Abrutschen zur \"Kolonie der Amerikaner\"",
+    "src": "[Golem] KI und Rechenzentren: Telekom-Chef warnt vor Abrutschen zur \"Kolonie der Amerikaner\""
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T14:52:02Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.3,
+   "heat": 41.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c21929b9e47a",
+   "url": "https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+   "title": {
+    "zh": "AWS CloudWatch：AI 应参与事故调查",
+    "en": "[heise] AWS CloudWatch: KI soll bei Incidents mit ermitteln",
+    "de": "AWS CloudWatch: KI sollte an Incident-Untersuchungen teilnehmen",
+    "src": "[heise] AWS CloudWatch: KI soll bei Incidents mit ermitteln"
+   },
+   "one_liner": {
+    "zh": "AWS推出CloudWatch Omni，为应用和AI Agents监控提供新界面，Agents也协助事件分析。",
+    "en": "AWS launches CloudWatch Omni, offering a new interface for application and AI Agents monitoring, with Agents also assisting incident analysis.",
+    "de": "AWS führt CloudWatch Omni ein und bietet eine neue Oberfläche zur Überwachung von Anwendungen und AI Agents, wobei Agents auch die Incident-Analyse unterstützen."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T14:28:00Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 48.3,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "3d47a1b286ea",
+   "url": "https://www.ithome.com/1/006/483.htm",
+   "title": {
+    "zh": "",
+    "en": "rabbit launches OS3 agent OS with multi-device orchestration",
+    "de": "rabbit startet OS3 Agenten-Betriebssystem mit Multi-Device-Orchestrierung",
+    "src": "[IT之家] rabbit 沉寂许久后发布 OS3 智能体操作系统，支持多设备编排"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T14:26:56Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 36.8,
+   "heat": 36.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "eb2c6e6e0f3b",
+   "url": "https://www.ithome.com/1/006/475.htm",
+   "title": {
+    "zh": "",
+    "en": "SpaceXAI agent Grok Bot tops 400,000 weekly users in first month",
+    "de": "SpaceXAI-Agent Grok Bot erreicht 400.000 wöchentliche Nutzer im ersten Monat",
+    "src": "[IT之家] SpaceXAI 智能体 Grok Bot 上线首月，周用户数突破 40 万"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T14:01:26Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 40.2,
+   "heat": 39.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "8469ab2c9c98",
+   "url": "https://www.theverge.com/tech/999140/made-on-youtube-creator-tools-ai-thumbnails-tests",
+   "title": {
+    "zh": "",
+    "en": "[TheVerge-AI] YouTube is building AI creator tools that do almost everything for them",
+    "de": "YouTube entwickelt KI-Creator-Tools, die fast alles übernehmen",
+    "src": "[TheVerge-AI] YouTube is building AI creator tools that do almost everything for them"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T13:49:24Z",
    "first_seen_utc": "2026-09-23T15:04:33Z",
    "scoop_hours": null,
    "selected": false,
    "score": 41.0,
-   "heat": 40.9,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "0b1fc4244880",
-   "url": "https://github.com/Simreal-AI/Xitadel-QuantBench",
-   "title": {
-    "zh": "",
-    "en": "Simreal-AI/Xitadel-QuantBench",
-    "de": "Simreal-AI/Xitadel-QuantBench",
-    "src": "Simreal-AI/Xitadel-QuantBench"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-23T14:04:22Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 37.5,
-   "heat": 30.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "696ef93e4fdc",
-   "url": "https://the-decoder.com/inside-basecamp-research-the-ai-startup-turning-evolution-into-training-data/",
-   "title": {
-    "zh": "",
-    "en": "[The Decoder] Inside Basecamp Research, the AI startup turning evolution into training data",
-    "de": "Einblick in Basecamp Research, KI-Startup macht Evolution zu Trainingsdaten",
-    "src": "[The Decoder] Inside Basecamp Research, the AI startup turning evolution into training data"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "模型",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-23T13:52:23Z",
-   "first_seen_utc": "2026-09-23T14:04:22Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 53.5,
-   "heat": 53.2,
+   "heat": 40.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -344,7 +514,7 @@
    "title": {
     "zh": "",
     "en": "Report: Americans ask AI what snacks to eat; high-protein and bold flavors rise",
-    "de": "Bericht: Amerikaner fragen KI nach Snacks; Nachfrage nach proteinreichen und intensiven Sorten steigt",
+    "de": "Bericht: Amerikaner fragen KI nach Snacks; Nachfrage nach proteinreichen und würzigen Lebensmitteln steigt",
     "src": "[IT之家] 报告：美国人开始问 AI“吃什么零食”，高蛋白和重口味食品需求增长"
    },
    "one_liner": {
@@ -367,7 +537,41 @@
    "scoop_hours": null,
    "selected": false,
    "score": 43.4,
-   "heat": 43.1,
+   "heat": 42.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "165ac02a206f",
+   "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+   "title": {
+    "zh": "",
+    "en": "Know Who Spoke When: Real-Time Multi-Speaker AI with NVIDIA Nemotron 3 Diarization",
+    "de": "Know Who Spoke When: Echtzeit-Multi-Sprecher-KI mit NVIDIA Nemotron 3 Diarization",
+    "src": "[HuggingFace博客] **Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T13:17:01Z",
+   "first_seen_utc": "2026-09-23T15:04:33Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 40.6,
+   "heat": 40.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -378,7 +582,7 @@
    "title": {
     "zh": "",
     "en": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
-    "de": "Show HN: RxFilm Studio – Produktvideos mit AI-Agent erstellen und bearbeiten",
+    "de": "Show HN: RxFilm Studio – Produktvideos mit KI-Agent erstellen und bearbeiten",
     "src": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent"
    },
    "one_liner": {
@@ -435,7 +639,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.8,
-   "heat": 45.4,
+   "heat": 45.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -445,8 +649,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQU3hRd1dJMml2dUptSFhsamwtcTAtZWNIcHVWYlNQOXVqSHpLTUpzNDJTQ284Ymt2ekN1dWJ6SnhoRnR1ZE41UTlLNWJRVlZ5YmlKMXlEZnpHMlNSaWpTMW9BaEhaeWFCU2lUYTg4eHZGRU1KZU4zREcwcE9vaEFpQk9IYnRLS1Zz?oc=5",
    "title": {
     "zh": "",
-    "en": "Signed by Liang Wenfeng, DeepSeek publishes another new paper",
-    "de": "Von Liang Wenfeng mitgezeichnet: DeepSeek veröffentlicht neues Paper",
+    "en": "DeepSeek publishes new paper with Liang Wenfeng as co-author",
+    "de": "DeepSeek veröffentlicht neues Paper mit Liang Wenfeng als Co-Autor",
     "src": "[机器之心(gnews桥)] 梁文锋署名，DeepSeek又发新论文了！ - 搜狐网"
    },
    "one_liner": {
@@ -468,8 +672,8 @@
    "first_seen_utc": "2026-09-23T14:04:22Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.0,
-   "heat": 41.6,
+   "score": 38.9,
+   "heat": 38.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -479,8 +683,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNjdhYWlkb1l1dkVhaDB3MUM1RnBUN0lLbXRYZkdaNzNZa2c4blZ2MHZBM0M5SXJyMGoyS2E1dVRwZHFyS0cxWlJVbTlRMG5icmtGRnZTVnFEZVYyV3dmd28wbV9MRkNJT0JTeHJfd2xack9GZjFyTkJ0aExBM1dXVFFyOWo5NU91?oc=5",
    "title": {
     "zh": "",
-    "en": "Beyond GPT-6 Astra tops RoboDojo, 3-month-old Simate teaches robots to design their next self",
-    "de": "Jenseits von GPT-6: Astra an der Spitze von RoboDojo, 3 Monate altes Simate lehrt Roboter, ihr nächstes Ich zu entwerfen",
+    "en": "Astra beats GPT-6 to top RoboDojo; 3-month-old Simate teaches robots self-design",
+    "de": "Astra übertrifft GPT-6 und führt RoboDojo an; 3 Monate altes Simate lehrt Roboter Selbstdesign",
     "src": "[机器之心(gnews桥)] 超越GPT-6 Astra登顶RoboDojo，成立3个月的Simate让机器人学会「设计下一个自己」 - 搜狐网"
    },
    "one_liner": {
@@ -502,8 +706,8 @@
    "first_seen_utc": "2026-09-23T14:04:22Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 48.6,
-   "heat": 48.1,
+   "score": 44.8,
+   "heat": 44.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -513,8 +717,8 @@
    "url": "https://www.ithome.com/1/006/462.htm",
    "title": {
     "zh": "",
-    "en": "Geely Unveils First 2.2 MW Single-Gun AI Charging Tech",
-    "de": "Geely stellt erste KI-Ladetechnik mit 2,2 MW pro Ladegun vor",
+    "en": "Geely launches Geely Smart Charging with 2.2 MW single-gun peak power",
+    "de": "Geely stellt Geely Smart Charging mit 2,2 MW Spitzenladeleistung vor",
     "src": "[IT之家] 行业首个单枪峰值充电功率 2.2 兆瓦，吉利新一代 AI 补能技术“吉利智充”发布"
    },
    "one_liner": {
@@ -537,7 +741,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 36.4,
-   "heat": 36.1,
+   "heat": 35.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -547,8 +751,8 @@
    "url": "https://www.leiphone.com/category/yanxishe/gnzWAPK52Igo0DSk.html",
    "title": {
     "zh": "",
-    "en": "The secret behind GPT-6 Sol's 50% price cut: Terra disappears, model lineup shifts",
-    "de": "Das Geheimnis hinter GPT-6 Sols 50% Preisnachlass: Terra verschwindet, Modellreihen verschieben sich",
+    "en": "GPT-6 Sol price cut 50%: vanishing Terra, a model tier shift",
+    "de": "GPT-6 Sol 50 % günstiger: verschwundene Terra, eine Modell-Tier-Verschiebung",
     "src": "[雷峰网] GPT-6 Sol 降价 50% 的秘密：消失的 Terra，一场模型梯队平移"
    },
    "one_liner": {
@@ -561,7 +765,7 @@
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -570,8 +774,8 @@
    "first_seen_utc": "2026-09-23T15:04:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.9,
-   "heat": 38.5,
+   "score": 37.1,
+   "heat": 36.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -580,9 +784,9 @@
    "id": "c1040457229b",
    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUDctU3MxamlHeWgyMHZ3Vk9ROE9tcDRSRXAxdnUwczJhR2pVdFUyeVF6TEt2NTd0M3BuV3BiczhUNnl5dkxOMHk4aHRzeHV4VUNNdVRaOFJNOFcwV0ZacHM4eE0zZklqejN4TDJuSlUzcUgyeEpKREEyYkItUkVLM0VJMWUzRzVmaGRJVDFDcWVpMm5xUGRsNzh1SnF0ZExiUWJEQnJTZw?oc=5",
    "title": {
-    "zh": "北京第一，杭州深圳进入前三！中国AI行业大洗牌了",
-    "en": "Beijing first, Hangzhou and Shenzhen in top three! China's AI industry reshuffles",
-    "de": "Beijing vorn, Hangzhou und Shenzhen in Top drei! Chinas KI-Branche wird umgeschichtet",
+    "zh": "",
+    "en": "Beijing first, Hangzhou and Shenzhen enter top three in China AI reshuffle",
+    "de": "Peking vorn, Hangzhou und Shenzhen in Top drei bei Chinas KI-Umbruch",
     "src": "[新智元(gnews桥)] 北京第一，杭州深圳进入前三！中国AI行业大洗牌了|Agent|北京市|杭州市|深圳市|OpenAI_手机新浪网 - 新浪财经"
    },
    "one_liner": {
@@ -604,8 +808,8 @@
    "first_seen_utc": "2026-09-23T14:04:22Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 51.1,
-   "heat": 50.6,
+   "score": 36.4,
+   "heat": 35.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -616,7 +820,7 @@
    "title": {
     "zh": "",
     "en": "[FAZ-Wirtschaft] Künstliche Intelligenz: „Firmen müssen dafür haften, was sie an KI-Agenten delegieren“",
-    "de": "KI: Firmen müssen für delegierte KI-Agenten haften",
+    "de": "Künstliche Intelligenz: „Firmen müssen dafür haften, was sie an KI-Agenten delegieren“",
     "src": "[FAZ-Wirtschaft] Künstliche Intelligenz: „Firmen müssen dafür haften, was sie an KI-Agenten delegieren“"
    },
    "one_liner": {
@@ -639,7 +843,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 40.8,
+   "heat": 40.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -741,7 +945,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 49.0,
-   "heat": 48.4,
+   "heat": 48.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Hungarian startup DiffuseDrive is tackling that data gap by generating synthetic training data for physical AI systems, helping companies expose their models to scenarios their existing datasets"
@@ -752,7 +956,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Ema raises $77M as AI starts eating into enterprise software and services",
-    "de": "Ema sammelt 77 Mio. $ ein, da KI Enterprise-Software und -Dienste verdrängt",
+    "de": "Ema sammelt 77 Mio. $ ein, da KI Enterprise-Software und -Services verdrängt",
     "src": "[TechCrunch-AI] Ema raises $77M as AI starts eating into enterprise software and services"
    },
    "one_liner": {
@@ -775,7 +979,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.8,
-   "heat": 38.3,
+   "heat": 38.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -785,8 +989,8 @@
    "url": "https://news.sap.com/2026/09/ai-governance-gap-responsible-ai-drives-adoption/",
    "title": {
     "zh": "",
-    "en": "The AI Governance Gap: Responsible AI Drives Adoption",
-    "de": "Die KI-Governance-Lücke: Verantwortungsvolle KI fördert Akzeptanz",
+    "en": "The AI Governance Gap: Why Responsible AI Drives Adoption",
+    "de": "Die KI-Governance-Lücke: Warum verantwortungsvolle KI die Akzeptanz fördert",
     "src": "[SAP新闻室] The AI Governance Gap: Why Responsible AI Drives Adoption"
    },
    "one_liner": {
@@ -809,7 +1013,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.1,
-   "heat": 36.5,
+   "heat": 36.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -819,8 +1023,8 @@
    "url": "https://36kr.com/newsflashes/3995878451138434?f=rss",
    "title": {
     "zh": "",
-    "en": "Beijing launches \"AI+\" initiative to accelerate manufacturing digital transformation",
-    "de": "Peking startet \"KI+\"-Initiative zur Beschleunigung der digitalen Transformation der Fertigung",
+    "en": "Beijing launches AI+ initiative to accelerate manufacturing digital transformation",
+    "de": "Peking startet KI+-Initiative zur Beschleunigung der digitalen Transformation der Fertigung",
     "src": "[36氪快讯] 北京：实施“人工智能+”行动，加快推进制造业数字化转型"
    },
    "one_liner": {
@@ -853,8 +1057,8 @@
    "url": "https://36kr.com/newsflashes/3995869797601417?f=rss",
    "title": {
     "zh": "",
-    "en": "OpenAI partners with Southeast Asia's Grab on AI skills training",
-    "de": "OpenAI startet mit Südostasien-Grab KI-Kompetenztraining",
+    "en": "OpenAI and Southeast Asia's Grab launch AI skills training program",
+    "de": "OpenAI und Südostasien-Grab starten KI-Kompetenztrainingsprogramm",
     "src": "[36氪快讯] OpenAI与东南亚Grab合作推出人工智能技能培训项目"
    },
    "one_liner": {
@@ -887,8 +1091,8 @@
    "url": "https://www.qbitai.com/2026/09/496609.html",
    "title": {
     "zh": "",
-    "en": "Lenovo at Alibaba Cloud Apsara Conference: Tianxi AI on-device",
-    "de": "Lenovo auf Alibaba Cloud Apsara Conference: Tianxi AI am Endgerät",
+    "en": "Lenovo at Alibaba Cloud Apsara Conference: Tianxi AI brings super organization to edge",
+    "de": "Lenovo auf der Alibaba Cloud Apsara Conference: Tianxi AI bringt Superorganisation an den Edge",
     "src": "[量子位] 联想亮相阿里云栖大会：联想天禧AI把超级组织落地到端侧"
    },
    "one_liner": {
@@ -911,7 +1115,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 40.5,
+   "heat": 40.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -922,7 +1126,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Statt Biowaffen von der KI: Welche Erreger tatsächlich die Menschheit bedrohen",
-    "de": "Statt KI-Biowaffen: Welche Erreger die Menschheit tatsächlich bedrohen",
+    "de": "Statt KI-Biowaffen: Welche Erreger tatsächlich die Menschheit bedrohen",
     "src": "[t3n] Statt Biowaffen von der KI: Welche Erreger tatsächlich die Menschheit bedrohen"
    },
    "one_liner": {
@@ -945,7 +1149,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.5,
-   "heat": 44.6,
+   "heat": 44.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -956,7 +1160,7 @@
    "title": {
     "zh": "",
     "en": "[The Decoder] OpenAI hires Patreon co-founder Sam Yam to lead a new Creator Product division",
-    "de": "OpenAI holt Patreon-Mitgründer Sam Yam für Creator-Product-Sparte",
+    "de": "OpenAI holt Patreon-Mitgründer Sam Yam für Creator Product",
     "src": "[The Decoder] OpenAI hires Patreon co-founder Sam Yam to lead a new Creator Product division"
    },
    "one_liner": {
@@ -979,7 +1183,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 33.2,
-   "heat": 32.5,
+   "heat": 32.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -990,7 +1194,7 @@
    "title": {
     "zh": "",
     "en": "[heise] heise+ | Custom-HBM für KI-Beschleuniger: Nvidias proprietäres NVHBM ist nur der Anfang",
-    "de": "Custom-HBM für KI-Beschleuniger: Nvidias NVHBM nur der Anfang",
+    "de": "Custom-HBM für KI-Beschleuniger: Nvidias proprietäres NVHBM ist nur der Anfang",
     "src": "[heise] heise+ | Custom-HBM für KI-Beschleuniger: Nvidias proprietäres NVHBM ist nur der Anfang"
    },
    "one_liner": {
@@ -1013,7 +1217,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 40.4,
+   "heat": 40.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1023,8 +1227,8 @@
    "url": "https://www.tmtpost.com/8150777.html",
    "title": {
     "zh": "",
-    "en": "[TMTPost] The AI Pharma Fire Has Spread to the \"Industry Midstream\"",
-    "de": "[TMTPost] Das AI-Pharma-Feuer hat die \"industrielle Mitte\" erreicht",
+    "en": "AI drug discovery buzz reaches industry's midstream",
+    "de": "KI-Wirkstoffforschung erreicht die Mitte der Industrie",
     "src": "[钛媒体] AI制药的火，烧到了“产业中游”"
    },
    "one_liner": {
@@ -1047,7 +1251,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.9,
-   "heat": 39.0,
+   "heat": 38.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1058,7 +1262,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Steuerbescheid prüfen: So helfen dir ChatGPT oder Gemini beim Einspruch",
-    "de": "Steuerbescheid prüfen mit ChatGPT oder Gemini",
+    "de": "Steuerbescheid prüfen: Wie ChatGPT oder Gemini beim Einspruch helfen",
     "src": "[t3n] Steuerbescheid prüfen: So helfen dir ChatGPT oder Gemini beim Einspruch"
    },
    "one_liner": {
@@ -1081,7 +1285,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 40.3,
+   "heat": 40.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1091,8 +1295,8 @@
    "url": "https://www.tmtpost.com/8149420.html",
    "title": {
     "zh": "",
-    "en": "From strategic choice to value reshaping: Alibaba's finance AI transformation path",
-    "de": "Von der strategischen Entscheidung zur Wertschöpfung: Alibabas Finanz-KI-Transformation",
+    "en": "Alibaba's financial AI transformation: path and lessons",
+    "de": "Alibabas Finanz-KI-Transformation: Weg und Lehren",
     "src": "[钛媒体] 从战略抉择到价值重塑——阿里巴巴财务AI转型的路径与启示"
    },
    "one_liner": {
@@ -1115,7 +1319,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.1,
-   "heat": 37.2,
+   "heat": 37.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1125,8 +1329,8 @@
    "url": "https://www.tmtpost.com/8150650.html",
    "title": {
     "zh": "",
-    "en": "Wang Hong's AI Ring, Valued at Nearly 100 Billion, Nears IPO",
-    "de": "Wang Hongs KI-Ring, fast 100 Milliarden wert, steht vor IPO",
+    "en": "Valued at Nearly 100 Billion, Wang Hong's AI Ring Nears IPO",
+    "de": "Fast 100 Milliarden Bewertung: Wang Hongs KI-Ring steht kurz vor Börsengang",
     "src": "[钛媒体] 估值近1000亿，王虹手上的AI戒指，要上市了"
    },
    "one_liner": {
@@ -1149,7 +1353,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.7,
-   "heat": 34.8,
+   "heat": 34.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1183,7 +1387,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 49.7,
-   "heat": 48.5,
+   "heat": 48.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "全新的“视频超分辨率”（Video Super Resolution）功能可以直接利用 PC 本地算力，将低分辨率视频提升至最高 4K 分辨率。"
@@ -1194,7 +1398,7 @@
    "title": {
     "zh": "",
     "en": "Physical AI data crowdsourcing platform \"Mifengpai\" launched",
-    "de": "Crowdsourcing-Plattform für physische KI-Daten \"Mifengpai\" veröffentlicht",
+    "de": "Crowdsourcing-Plattform für Physical-AI-Daten \"Mifengpai\" veröffentlicht",
     "src": "[36氪快讯] 物理AI数据众包服务平台“觅蜂派”发布"
    },
    "one_liner": {
@@ -1227,8 +1431,8 @@
    "url": "https://www.qbitai.com/2026/09/496471.html",
    "title": {
     "zh": "",
-    "en": "Zebra Intelligence Releases AutoOmni2.0, Making YuanShen AI Smarter in Minecraft",
-    "de": "Zebra Intelligence veröffentlicht AutoOmni2.0, damit YuanShen AI Minecraft besser versteht",
+    "en": "Zebra Intelligence Releases Edge Model AutoOmni2.0, Making Yuanshen AI Better Understand \"Minecraft\"",
+    "de": "Zebra Intelligence veröffentlicht Edge-Modell AutoOmni2.0, damit Yuanshen AI \"Minecraft\" besser versteht",
     "src": "[量子位] 斑马智能发布端模型AutoOmni2.0，让元神AI更懂“我的世界”"
    },
    "one_liner": {
@@ -1251,7 +1455,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 41.6,
+   "heat": 41.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1261,8 +1465,8 @@
    "url": "https://www.ithome.com/1/006/345.htm",
    "title": {
     "zh": "",
-    "en": "iFlytek launches Spark-ASR-2.0 speech recognition model, coming tomorrow",
-    "de": "iFlytek veröffentlicht Spark-ASR-2.0-Spracherkennungsmodell, morgen verfügbar",
+    "en": "iFlytek Releases New Speech Recognition Model Spark-ASR-2.0, Launching Tomorrow on iFlytek Input",
+    "de": "iFlytek veröffentlicht neues Spracherkennungsmodell Spark-ASR-2.0, morgen in iFlytek Input",
     "src": "[IT之家] 科大讯飞发布全新语音识别大模型 Spark-ASR-2.0，明日上线讯飞输入法"
    },
    "one_liner": {
@@ -1285,7 +1489,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 41.5,
+   "heat": 41.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1296,13 +1500,13 @@
    "title": {
     "zh": "",
     "en": "[GoogleAds&Commerce] We’re bringing AI Brief to more languages and adding a new AI Max reporting feature.",
-    "de": "AI Brief in mehr Sprachen verfügbar, neues AI Max Reporting-Feature",
+    "de": "Google Ads & Commerce erweitert AI Brief um Sprachen, startet AI Max Reporting",
     "src": "[GoogleAds&Commerce] We’re bringing AI Brief to more languages and adding a new AI Max reporting feature."
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Google is expanding AI Brief to more languages and introducing a new AI Max reporting feature.",
+    "de": "Google erweitert AI Brief auf weitere Sprachen und führt ein neues AI Max Reporting-Feature ein."
    },
    "why_it_matters": {
     "zh": "",
@@ -1319,7 +1523,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.4,
-   "heat": 41.2,
+   "heat": 41.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1330,7 +1534,7 @@
    "title": {
     "zh": "",
     "en": "[Horizont] Weitere Ableger geplant: WPP eröffnet zentrales KI-Produktionsstudio in London",
-    "de": "WPP eröffnet zentrales KI-Produktionsstudio in London",
+    "de": "Weitere Ableger geplant: WPP eröffnet zentrales KI-Produktionsstudio in London",
     "src": "[Horizont] Weitere Ableger geplant: WPP eröffnet zentrales KI-Produktionsstudio in London"
    },
    "one_liner": {
@@ -1353,7 +1557,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 41.5,
+   "heat": 41.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1364,7 +1568,7 @@
    "title": {
     "zh": "",
     "en": "[heise] heise-Angebot: iX-Workshop: RAG in der Praxis – KI optimieren mit Retrieval-Architekturen",
-    "de": "heise-Angebot: iX-Workshop zu RAG in der Praxis",
+    "de": "heise-Angebot: iX-Workshop zu RAG in der Praxis mit Retrieval-Architekturen",
     "src": "[heise] heise-Angebot: iX-Workshop: RAG in der Praxis – KI optimieren mit Retrieval-Architekturen"
    },
    "one_liner": {
@@ -1387,7 +1591,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 40.1,
+   "heat": 39.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1398,7 +1602,7 @@
    "title": {
     "zh": "",
     "en": "[heise] Neu von AWS: Weniger Kontextpflege für selbst gebaute KI-Agenten",
-    "de": "AWS: Weniger Kontextpflege für selbstgebaute KI-Agenten",
+    "de": "Neu von AWS: Weniger Kontextpflege für selbst gebaute KI-Agenten",
     "src": "[heise] Neu von AWS: Weniger Kontextpflege für selbst gebaute KI-Agenten"
    },
    "one_liner": {
@@ -1421,7 +1625,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.1,
-   "heat": 36.0,
+   "heat": 35.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1455,7 +1659,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 33.6,
-   "heat": 32.6,
+   "heat": 32.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "在韩国和日本，与 AI 相关的股票大幅上涨使家庭财富膨胀后，富裕消费者仍在购买珠宝、手表和其他奢侈品。"
@@ -1466,7 +1670,7 @@
    "title": {
     "zh": "",
     "en": "[heise] AI Summit Barcelona: Praxis statt Pitches für Europas KI-Zukunft",
-    "de": "AI Summit Barcelona: Praxis statt Pitches für Europas KI-Zukunft",
+    "de": "heise AI Summit Barcelona: Praxis statt Pitches für Europas KI-Zukunft",
     "src": "[heise] AI Summit Barcelona: Praxis statt Pitches für Europas KI-Zukunft"
    },
    "one_liner": {
@@ -1489,7 +1693,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.5,
-   "heat": 37.3,
+   "heat": 37.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1500,7 +1704,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] Shut up and calculate: Jev's new AI primitives for coders",
-    "de": "[TheRegister] Shut Up and Calculate: Jevs neue AI-Primitives für Coder",
+    "de": "Klappe halten und rechnen: Jevs neue AI-Primitives für Coder",
     "src": "[TheRegister] Shut up and calculate: Jev's new AI primitives for coders"
    },
    "one_liner": {
@@ -1523,7 +1727,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.9,
-   "heat": 38.6,
+   "heat": 38.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1534,7 +1738,7 @@
    "title": {
     "zh": "",
     "en": "Alibaba Qwen releases Qwen-Audio-3.1 speech models, cuts prices across lineup",
-    "de": "Alibaba Qwen veröffentlicht Qwen-Audio-3.1-Sprachmodelle und senkt Preise",
+    "de": "Alibaba Qwen veröffentlicht Qwen-Audio-3.1-Sprachmodelle und senkt Preise für alle Produkte",
     "src": "[IT之家] 阿里千问发布 Qwen-Audio-3.1 系列语音大模型，并下调全线产品价格"
    },
    "one_liner": {
@@ -1557,7 +1761,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 34.6,
-   "heat": 33.5,
+   "heat": 33.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1567,8 +1771,8 @@
    "url": "https://36kr.com/newsflashes/3995604866109320?f=rss",
    "title": {
     "zh": "",
-    "en": "AI price war erupts: Microsoft, Amazon, Adobe cut prices to retain enterprise clients",
-    "de": "KI-Preiskrieg entbrennt: Microsoft, Amazon, Adobe senken Preise für Unternehmenskunden",
+    "en": "AI price war erupts: Microsoft, Amazon, Adobe cut prices to retain clients",
+    "de": "AI-Preiskrieg entbrannt: Microsoft, Amazon, Adobe senken Preise",
     "src": "[36氪快讯] AI价格战全面打响：微软、亚马逊、Adobe等集体降价挽留企业客户"
    },
    "one_liner": {
@@ -1602,7 +1806,7 @@
    "title": {
     "zh": "",
     "en": "[Golem] US-Regierung: Finanzminister Bessent gilt als Favorit fr \"KI-Zar\"",
-    "de": "US-Regierung: Finanzminister Bessent gilt als Favorit für KI-Zar",
+    "de": "US-Regierung: Finanzminister Bessent gilt als Favorit für \"KI-Zar\"",
     "src": "[Golem] US-Regierung: Finanzminister Bessent gilt als Favorit fr \"KI-Zar\""
    },
    "one_liner": {
@@ -1625,7 +1829,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.0,
-   "heat": 33.8,
+   "heat": 33.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1635,8 +1839,8 @@
    "url": "https://www.ithome.com/1/006/247.htm",
    "title": {
     "zh": "",
-    "en": "Tesla North America adds Grok Bot for in-car voice orders",
-    "de": "Tesla Nordamerika führt Grok Bot für Sprachbestellungen im Auto ein",
+    "en": "Tesla North America cars get Grok Bot for voice orders and email",
+    "de": "Tesla Nordamerika führt Grok Bot ein: Sprachbestellungen und E-Mails im Auto",
     "src": "[IT之家] 特斯拉北美车机上线 Grok Bot，开车就能语音下单买咖啡、发邮件"
    },
    "one_liner": {
@@ -1659,7 +1863,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.5,
-   "heat": 43.9,
+   "heat": 43.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1669,8 +1873,8 @@
    "url": "https://www.qbitai.com/2026/09/496352.html",
    "title": {
     "zh": "",
-    "en": "Jev vs Decitron: Both decision AI, but why different?",
-    "de": "Jev vs Decitron: Beide Entscheidungs-KI, doch warum verschieden?",
+    "en": "Jev vs Decitron: Both decision AI, but not the same",
+    "de": "Jev vs Decitron: Beide Entscheidungs-KI, doch nicht dasselbe",
     "src": "[量子位] Jev vs Decitron：同为决策AI，为什么不是一回事？"
    },
    "one_liner": {
@@ -1693,7 +1897,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 46.6,
-   "heat": 44.9,
+   "heat": 44.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1703,7 +1907,7 @@
    "url": "https://www.faz.net/aktuell/rhein-main/frankfurt/kuenstliche-intelligenz-studierende-ueber-ihre-angst-dass-sie-ihnen-die-jobs-wegnimmt-accg-201205667.html",
    "title": {
     "zh": "",
-    "en": "AI: Students Fear That AI Will Destroy Their Jobs",
+    "en": "Artificial Intelligence: Students Fear AI Will Destroy Their Jobs",
     "de": "Künstliche Intelligenz: Studenten befürchten, dass KI ihre Jobs vernichtet",
     "src": "[FAZ财经] Künstliche Intelligenz: Studenten befürchten, dass KI ihre Jobs vernichtet"
    },
@@ -1727,7 +1931,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.4,
-   "heat": 40.9,
+   "heat": 40.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1737,8 +1941,8 @@
    "url": "https://www.ithome.com/1/006/234.htm",
    "title": {
     "zh": "",
-    "en": "Lenovo LOQ 15 AI laptop launches: Core 5 205H + RTX 3050, 6629.15 yuan",
-    "de": "Lenovo LOQ 15 AI Laptop startet: Core 5 205H + RTX 3050, 6629,15 Yuan",
+    "en": "Lenovo LOQ 15 AI laptop launches with Core 5 205H and RTX 3050",
+    "de": "Lenovo LOQ 15 AI Laptop startet mit Core 5 205H und RTX 3050",
     "src": "[IT之家] 联想 LOQ 15 AI 全能本发售：酷睿 5 205H + RTX 3050，国补后 6629.15 元"
    },
    "one_liner": {
@@ -1761,7 +1965,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.5,
-   "heat": 31.3,
+   "heat": 31.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1771,8 +1975,8 @@
    "url": "https://36kr.com/newsflashes/3995504344174469?f=rss",
    "title": {
     "zh": "",
-    "en": "Former Hillhouse partner Yan Wentao joins DeepSeek",
-    "de": "Ehemaliger Hillhouse-Partner Yan Wentao tritt DeepSeek bei",
+    "en": "Former Hillhouse Ventures partner Yan Wentao joins DeepSeek",
+    "de": "Ehemaliger Hillhouse-Ventures-Partner Yan Wentao wechselt zu DeepSeek",
     "src": "[36氪快讯] 高瓴创投原合伙人严文韬正式入职DeepSeek"
    },
    "one_liner": {
@@ -1897,7 +2101,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.4,
-   "heat": 40.6,
+   "heat": 40.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1931,7 +2135,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 34.6,
-   "heat": 33.1,
+   "heat": 33.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1942,7 +2146,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] “We’re already fighting yesterday’s battle”: Greece’s prime minister gets candid about AI",
-    "de": "Griechenlands Premierminister spricht offen über KI",
+    "de": "„Wir kämpfen bereits die Schlacht von gestern“: Griechenlands Premier über KI",
     "src": "[TechCrunch-AI] “We’re already fighting yesterday’s battle”: Greece’s prime minister gets candid about AI"
    },
    "one_liner": {
@@ -1965,7 +2169,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.5,
-   "heat": 43.6,
+   "heat": 43.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1999,7 +2203,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 47.9,
-   "heat": 45.8,
+   "heat": 45.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "SpeakON attacks that gap with hardware: a 25 g magnetic button that snaps to the back of an iPhone, carries its own microphone, and writes finished text straight into whatever app is already open."
@@ -2009,7 +2213,7 @@
    "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5FT3lXYi1GeGJVWlRrbDBURE0ydEpQME1KSGFESnRsN0wyLUlMVjNwd1BVM0FTTW5JUjFob2d1YWVONHlUSjZRXw?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI Leak: AI Begins Building AI; Altman Calls for Global Pause",
+    "en": "OpenAI leak: AI begins building AI; Altman urges global pause",
     "de": "OpenAI-Leak: KI beginnt, KI zu bauen; Altman fordert globales Moratorium",
     "src": "[新智元(gnews桥)] OpenAI内部曝光：AI开始自己造AI！奥特曼急发全球暂停令 - 智源社区"
    },
@@ -2033,7 +2237,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.4,
-   "heat": 33.9,
+   "heat": 33.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2043,8 +2247,8 @@
    "url": "https://www.ithome.com/1/006/201.htm",
    "title": {
     "zh": "",
-    "en": "Qualcomm: Phones still central to personal interaction, apps moving to AI agents",
-    "de": "Qualcomm: Smartphones bleiben zentral, Apps entwickeln sich zu KI-Agenten",
+    "en": "Qualcomm: phones still central to personal interaction, apps moving toward AI agent era",
+    "de": "Qualcomm: Smartphones bleiben zentral, Apps bewegen sich toward KI-Agenten-Ära",
     "src": "[IT之家] 高通：手机仍占个人交互 C 位，应用正从 APP 时代迈向 AI 智能体时代"
    },
    "one_liner": {
@@ -2067,7 +2271,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 46.9,
-   "heat": 44.8,
+   "heat": 44.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2077,8 +2281,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUmZQenMwN0NnZDZ0XzNZWXJrQ3FlbEIyR0pfUkxzRmZVVzZSYnpybjNBTi1jeUxFd08yTmxKcVBDN3Q5M19uWHJWa0pVX0FPb3BIQ1l5S3pCVGtnU0FESnNVMXJoODhLQkVIeWF2QXAwbUFQYTlBZC1vVjlBRFFrUjBJQjRyNEtyNnVz?oc=5",
    "title": {
     "zh": "",
-    "en": "Huawei Lingqu Interconnect Powers Series All-in-One Machines",
-    "de": "Huawei Lingqu Interconnect treibt Serie von All-in-One-Maschinen an",
+    "en": "Huawei launches Lingqu interconnected appliance series to ease enterprise AI adoption",
+    "de": "Huawei startet Lingqu-vernetzte Appliance-Serie für einfachere Enterprise-KI-Einführung",
     "src": "[机器之心(gnews桥)] 基于灵衢互联打造华为系列化一体机，破解企业AI落地痛点！ - 搜狐网"
    },
    "one_liner": {
@@ -2101,7 +2305,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.1,
-   "heat": 35.4,
+   "heat": 35.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2111,8 +2315,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMDZoZEt6YkQxQlZRaUlBX0RUMVI2YXM2U0toOTNlM0ctZlhXc3B3T1BZQXVmaERFZG1RdFZ4MUw2dGlBLVhycGFVQlRUZzA1ZnN3aExidEZjZFlUS2tzZm40ZHFQZzdKTGhNRHBJUVpKdnFlY2wtbGhJMkhPR1ZQMGo3RFVSZTlF?oc=5",
    "title": {
     "zh": "",
-    "en": "Post-2000s Chinese prodigy, Bengio protégé, moves from DeepMind to OpenAI",
-    "de": "Chinesisches Ausnahmetalent der 2000er, Bengio-Schützling, wechselt von DeepMind zu OpenAI",
+    "en": "Gen-Z Chinese prodigy, Bengio protégé, moves from DeepMind to OpenAI",
+    "de": "Gen-Z chinesisches Wunderkind, Bengio-Schützling, wechselt von DeepMind zu OpenAI",
     "src": "[新智元(gnews桥)] 00后华人天才少女、Bengio高徒，从DeepMind转会OpenAI！ - sohu.com"
    },
    "one_liner": {
@@ -2135,7 +2339,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.2,
-   "heat": 37.5,
+   "heat": 37.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2145,7 +2349,7 @@
    "url": "https://www.faz.net/aktuell/feuilleton/debatten/die-ki-als-zoegerlicher-auskunftgeberin-a-la-bartleby-201248498.html",
    "title": {
     "zh": "",
-    "en": "Bartleby the chatbot: 'I would prefer not to,' says the AI",
+    "en": "Bartleby the Chatbot: 'I would prefer not to,' says the AI",
     "de": "Bartleby, der Chatbot: „Ich möchte lieber nicht“, sagt die KI",
     "src": "[FAZ财经] Bartleby, der Chatbot: „Ich möchte lieber nicht“, sagt die KI"
    },
@@ -2169,7 +2373,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.5,
-   "heat": 42.5,
+   "heat": 42.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2214,7 +2418,7 @@
    "title": {
     "zh": "",
     "en": "[Digiday] In Graphic Detail: LLMs keep citing YouTube in search results",
-    "de": "In Graphic Detail: LLMs zitieren in Suchergebnissen weiterhin YouTube",
+    "de": "In Graphic Detail: LLMs zitieren zunehmend YouTube in Suchergebnissen",
     "src": "[Digiday] In Graphic Detail: LLMs keep citing YouTube in search results"
    },
    "one_liner": {
@@ -2237,7 +2441,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 40.2,
-   "heat": 38.3,
+   "heat": 38.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2248,7 +2452,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Jobsuche für Berufseinsteiger so schwierig wie nie: Wie Ausbildungen und KI den Markt beeinflussen",
-    "de": "Jobsuche für Berufseinsteiger so schwierig wie nie: Ausbildung und KI verändern Markt",
+    "de": "Jobsuche für Berufseinsteiger so schwierig wie nie: Wie Ausbildungen und KI den Markt beeinflussen",
     "src": "[t3n] Jobsuche für Berufseinsteiger so schwierig wie nie: Wie Ausbildungen und KI den Markt beeinflussen"
    },
    "one_liner": {
@@ -2271,7 +2475,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 46.9,
-   "heat": 44.7,
+   "heat": 44.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2281,8 +2485,8 @@
    "url": "https://www.tmtpost.com/8149725.html",
    "title": {
     "zh": "",
-    "en": "Doubao makes phones, Alibaba builds tablets: AI races for hardware control",
-    "de": "Doubao baut Smartphones, Alibaba Tablets: KI ringt um Hardware-Kontrolle",
+    "en": "Doubao makes phones, Alibaba builds tablets: AI begins fighting for hardware control",
+    "de": "Doubao baut Smartphones, Alibaba Tablets: KI beginnt Kampf um Hardware-Kontrolle",
     "src": "[钛媒体] 豆包做手机、阿里造平板：AI开始争夺硬件控制权"
    },
    "one_liner": {
@@ -2305,7 +2509,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 28.4,
-   "heat": 27.1,
+   "heat": 26.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2315,8 +2519,8 @@
    "url": "https://www.tmtpost.com/8149609.html",
    "title": {
     "zh": "",
-    "en": "Ant Group’s Wei Tao: Enterprise AI blocked from production, not by models",
-    "de": "Ant Group Wei Tao: Enterprise-KI scheitert in Produktion nicht am Modell",
+    "en": "Ant Group's Wei Tao: enterprise AI stalls in production, bottleneck isn't the model",
+    "de": "Ant Group Wei Tao: Enterprise-KI scheitert in Produktion, Engpass ist nicht das Modell",
     "src": "[钛媒体] 蚂蚁密算韦韬：企业AI进不了生产，卡点不在模型"
    },
    "one_liner": {
@@ -2339,7 +2543,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 46.9,
-   "heat": 44.7,
+   "heat": 44.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2349,8 +2553,8 @@
    "url": "https://www.tmtpost.com/8149446.html",
    "title": {
     "zh": "",
-    "en": "AI tablets enter national standard era, Lenovo moves first",
-    "de": "KI-Tablets erreichen nationalen Standard, Lenovo ist Vorreiter",
+    "en": "AI tablets enter national standards era, Lenovo moves first",
+    "de": "AI-Tablets erreichen nationalen Standard, Lenovo handelt zuerst",
     "src": "[钛媒体] AI平板进入国标时代，联想抢先落子"
    },
    "one_liner": {
@@ -2373,7 +2577,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.5,
-   "heat": 42.4,
+   "heat": 42.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2384,13 +2588,13 @@
    "title": {
     "zh": "",
     "en": "[MarkTechPost] SpeakON Ships a MagSafe AI Voice Button With Its Own Microphone: Turning Your Voice into Polished Communication, and Action across Apps",
-    "de": "SpeakON bringt MagSafe-KI-Sprachknopf mit eigenem Mikrofon für polierte Kommunikation",
+    "de": "SpeakON bringt MagSafe-KI-Sprachknopf mit eigenem Mikrofon auf den Markt",
     "src": "[MarkTechPost] SpeakON Ships a MagSafe AI Voice Button With Its Own Microphone: Turning Your Voice into Polished Communication, and Action across Apps"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Turning your voice into polished communication, and action across apps.",
+    "de": "Verwandelt Ihre Stimme in ausgefeilte Kommunikation und Aktionen über Apps hinweg."
    },
    "why_it_matters": {
     "zh": "",
@@ -2407,7 +2611,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.2,
-   "heat": 37.2,
+   "heat": 37.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2417,8 +2621,8 @@
    "url": "https://www.ithome.com/1/006/138.htm",
    "title": {
     "zh": "",
-    "en": "ThundeRobot Teases STATION Mini AI Workstations With AMD Ryzen AI Max+ PRO 495",
-    "de": "ThundeRobot kündigt STATION Mini-KI-Workstations mit AMD Ryzen AI Max+ PRO 495 an",
+    "en": "Thunderobot Teases STATION Mini AI Workstations with AMD Ryzen AI Max+ PRO 495",
+    "de": "Thunderobot kündigt STATION Mini-KI-Workstations mit AMD Ryzen AI Max+ PRO 495 an",
     "src": "[IT之家] 雷神预告 STATION 系列迷你 AI 工作站，至高可选 AMD 锐龙 AI Max+ PRO 495"
    },
    "one_liner": {
@@ -2441,7 +2645,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 36.0,
-   "heat": 34.2,
+   "heat": 34.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2451,8 +2655,8 @@
    "url": "https://www.ifanr.com/1681629?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
    "title": {
     "zh": "",
-    "en": "Claude 5.5 released, performance rivals Fable, price pressure mounts",
-    "de": "Claude 5.5 veröffentlicht, Leistung nahe Fable, Preisdruck steigt",
+    "en": "Claude 5.5 released, performance rivals Fable, with aggressive pricing push",
+    "de": "Claude 5.5 veröffentlicht, Leistung nahe Fable, dazu aggressiver Preisvorstoß",
     "src": "[爱范儿] Claude 5.5 发布，性能直逼 Fable，还要卷价格"
    },
    "one_liner": {
@@ -2475,7 +2679,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 39.1,
+   "heat": 38.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2509,44 +2713,10 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.8,
-   "heat": 35.8,
+   "heat": 35.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
-  },
-  {
-   "id": "c2c41dc7332e",
-   "url": "http://arxiv.org/abs/2609.26781v1",
-   "title": {
-    "zh": "Agensh：将组织智能扩展至1024个智能体",
-    "en": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
-    "de": "Agensh: Skalierung organisatorischer Intelligenz auf 1024 Agenten",
-    "src": "Agensh: Scaling Organizational Intelligence to 1,024 Agents"
-   },
-   "one_liner": {
-    "zh": "Agensh 提出无中央编排器的可扩展自组织多智能体框架",
-    "en": "Agensh proposes a scalable self-organizing multi-agent framework without a central orchestrator.",
-    "de": "Agensh schlägt ein skalierbares selbstorganisierendes Multi-Agenten-Framework ohne zentralen Orchestrator vor."
-   },
-   "why_it_matters": {
-    "zh": "在 pandoc 上从1个扩展到1024个智能体，最终测试通过率从33.89%升至55.06%",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "arXiv论文",
-    "tier": "T1"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-23T02:12:45Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 67.0,
-   "heat": 53.6,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Scaling from 1 to 128 agents raises the mean final test-pass rate from 19.31% to 28.78%, an approximately 49% relative improvement."
   },
   {
    "id": "75450c8635cc",
@@ -2622,7 +2792,7 @@
    "title": {
     "zh": "扩散诱导的空间注意力重叠社区检测",
     "en": "Diffusion-Induced Spatial Attention Overlapping Community Detection",
-    "de": "Diffusionsinduzierte räumliche Aufmerksamkeit zur Erkennung überlappender Communities",
+    "de": "Diffusionsinduzierte räumliche Attention zur Erkennung überlappender Communities",
     "src": "Diffusion-Induced Spatial Attention Overlapping Community Detection"
    },
    "one_liner": {
@@ -3028,18 +3198,18 @@
    "id": "a99b768a266d",
    "url": "http://arxiv.org/abs/2609.26617v1",
    "title": {
-    "zh": "MMAP：用于纵向阿尔茨海默病预测的多模态缺失感知预训练",
+    "zh": "MMAP：面向阿尔茨海默病纵向预测的多模态预训练",
     "en": "MMAP: Multimodal Missing-Aware Pretraining for Longitudinal Alzheimer's Prediction",
-    "de": "MMAP: Multimodales Missing-Aware-Pretraining für longitudinale Alzheimer-Vorhersage",
+    "de": "MMAP: Multimodales Vortraining zur longitudinalen Alzheimer-Vorhersage",
     "src": "MMAP: Multimodal Missing-Aware Pretraining for Longitudinal Alzheimer's Prediction"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "MMAP提出多模态缺失感知对齐预训练方法，从不完整数据学习图像-表格表征。",
+    "en": "MMAP proposes a multimodal missingness-aware alignment pretraining method to learn image-tabular representations from incomplete data.",
+    "de": "MMAP schlägt eine multimodale, fehlende Modalitäten berücksichtigende Alignment-Vortrainingsmethode vor, um Bild-Tabellen-Repräsentationen aus unvollständigen Daten zu lernen."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "该方法在阿尔茨海默病两个纵向临床任务上优于强多模态和单模态基线。",
     "en": "",
     "de": ""
    },
@@ -3056,7 +3226,7 @@
    "heat": 42.0,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Here, we present MMAP, a novel Multimodal Missing-aware Alignment Pretraining method for learning image-tabular representations from incomplete data."
   },
   {
    "id": "02b2562ac8f2",
@@ -3302,7 +3472,7 @@
    "title": {
     "zh": "",
     "en": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation",
-    "de": "Unvollkommenheit für Präzision: Imperfekte Daten für Robotermanipulation nutzen",
+    "de": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation",
     "src": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation"
    },
    "one_liner": {
@@ -3336,7 +3506,7 @@
    "title": {
     "zh": "",
     "en": "Tsinghua professor Li Ning on Tencent, ByteDance, Alibaba AI office battle",
-    "de": "Tsinghua-Professor Li Ning über KI-Büro-Wettkampf von Tencent, ByteDance, Alibaba",
+    "de": "Tsinghua-Professor Li Ning zum AI-Büro-Wettkampf von Tencent, ByteDance, Alibaba",
     "src": "[钛媒体] 对话清华教授李宁：腾讯字节阿里激战AI办公，但这个问题谁也没解决"
    },
    "one_liner": {
@@ -3359,7 +3529,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.5,
-   "heat": 30.7,
+   "heat": 30.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3369,8 +3539,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQT3c5TE8wSGNxNHV5U3FmQUxEakVBLVpCMUZ1STNKNWJkbXoxaUFxRXZMVVY4RzRkRjhzSUQ4RkpVLXlka3p5d0hIakprcUlFdHVDMXhCdV9TdUswVDZrWVBJZ0RMeFptdVI3M25OclU4VEpLT0h6NFpzN1FSWUVhWlEtT1J2aDVq?oc=5",
    "title": {
     "zh": "",
-    "en": "Meta tops charts, Qwen already delivers personal AI assistant",
-    "de": "Meta an der Spitze, Qwen liefert schon persönlichen KI-Assistenten",
+    "en": "Meta just topped charts, Qwen responds: personal AI assistant for 300M users coming",
+    "de": "Meta gerade an der Spitze, Qwen kontert: persönlicher KI-Assistent für 300 Mio. Nutzer kommt",
     "src": "[新智元(gnews桥)] Meta刚登顶，千问就交卷！3亿人的个人AI助理要来了 - 搜狐网"
    },
    "one_liner": {
@@ -3393,7 +3563,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.5,
-   "heat": 42.1,
+   "heat": 41.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3403,8 +3573,8 @@
    "url": "https://www.faz.net/aktuell/politik/inland/andrea-lindholz-warnt-vor-ki-reden-im-bundestag-accg-201253807.html",
    "title": {
     "zh": "",
-    "en": "\"Citizens have a right\": warning against AI-generated speeches in Bundestag",
-    "de": "„Bürger haben Anspruch“: Warnung vor KI-generierten Reden im Bundestag",
+    "en": "German warning against AI-generated speeches in the Bundestag",
+    "de": "Warnung vor KI-generierten Reden im Bundestag",
     "src": "[FAZ财经] „Bürger haben Anspruch“: Warnung vor KI-generierten Reden im Bundestag"
    },
    "one_liner": {
@@ -3427,7 +3597,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.2,
-   "heat": 30.4,
+   "heat": 30.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3437,8 +3607,8 @@
    "url": "https://www.tmtpost.com/8149345.html",
    "title": {
     "zh": "",
-    "en": "Zuckerberg's All-In on AI Finally Pays Off",
-    "de": "Zuckerbergs All-in auf KI zahlt sich endlich aus",
+    "en": "All-in on AI Zuckerberg can finally breathe easier",
+    "de": "All-in auf KI: Zuckerberg kann endlich aufatmen",
     "src": "[钛媒体] AII IN AI的扎克伯格，终于松口气了"
    },
    "one_liner": {
@@ -3461,7 +3631,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 36.4,
-   "heat": 34.4,
+   "heat": 34.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3471,8 +3641,8 @@
    "url": "https://www.tmtpost.com/8149163.html",
    "title": {
     "zh": "",
-    "en": "From Mixue Bingcheng to DeepSeek, Hillhouse ties as big-tech exec standard",
-    "de": "Von Mixue Bingcheng bis DeepSeek: Hillhouse-Verbindungen als Big-Tech-Executive-Standard",
+    "en": "From Mixue to DeepSeek: Hillhouse alumni becoming big tech execs?",
+    "de": "Von Mixue bis DeepSeek: Hillhouse-Absolventen als Big-Tech-Manager?",
     "src": "[钛媒体] 从蜜雪冰城到DeepSeek，高瓴系成大厂高管标配？"
    },
    "one_liner": {
@@ -3495,7 +3665,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.1,
-   "heat": 35.0,
+   "heat": 34.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3505,8 +3675,8 @@
    "url": "https://www.ithome.com/1/006/065.htm",
    "title": {
     "zh": "",
-    "en": "Shokz debuts first AI earbuds OpenFit 2 AI at Yunqi Conference 2026",
-    "de": "Shokz zeigt erste KI-Ohrhörer OpenFit 2 AI auf Yunqi-Konferenz 2026",
+    "en": "Shokz unveils first AI earbuds OpenFit 2 AI at 2026 Yunqi Conference",
+    "de": "Shokz zeigt erste AI-Ohrhörer OpenFit 2 AI auf der Yunqi-Konferenz 2026",
     "src": "[IT之家] 韶音旗下首款 AI 耳机 OpenFit 2 AI 亮相 2026 云栖大会，AI 实验室新功能首发"
    },
    "one_liner": {
@@ -3529,7 +3699,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.2,
-   "heat": 30.4,
+   "heat": 30.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3539,14 +3709,14 @@
    "url": "https://www.tmtpost.com/8149358.html",
    "title": {
     "zh": "",
-    "en": "Inference chip battle: Groq, Cerebras, OpenAI paths and Bill Dally's design philosophy",
-    "de": "Kampf um Inferenz-Chips: Groq, Cerebras, OpenAI-Wege und Bill Dallys Designphilosophie",
+    "en": "Inference chip race: Groq, Cerebras, OpenAI and Bill Dally",
+    "de": "Inferenzchip-Rennen: Groq, Cerebras, OpenAI und Bill Dally",
     "src": "[钛媒体] 推理芯片之战：聊聊Groq、Cerebras与OpenAI三大路径与Bill Dally的设计哲学"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A look at the inference chip battle across Groq, Cerebras and OpenAI, plus Bill Dally's design philosophy.",
+    "de": "Ein Blick auf das Inferenzchip-Rennen von Groq, Cerebras und OpenAI sowie Bill Dallys Designphilosophie."
    },
    "why_it_matters": {
     "zh": "",
@@ -3563,7 +3733,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 40.3,
+   "heat": 40.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3573,7 +3743,7 @@
    "url": "https://www.tmtpost.com/8149352.html",
    "title": {
     "zh": "",
-    "en": "AI Agents Are Driving Up CPU Prices Sharply",
+    "en": "AI agents are driving CPU prices sharply higher",
     "de": "KI-Agenten lassen CPU-Preise stark steigen",
     "src": "[钛媒体] AI智能体，正在让CPU身价暴涨"
    },
@@ -3597,7 +3767,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 36.4,
-   "heat": 34.3,
+   "heat": 34.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4084,7 +4254,7 @@
    "title": {
     "zh": "EADC：大语言模型中高级与深层合规性的评估",
     "en": "EADC: Evaluation of Advanced and Deep-level Compliance in Large Language Models",
-    "de": "EADC: Bewertung hochrangiger und tiefer Compliance in LLMs",
+    "de": "EADC: Bewertung hochgradiger und tiefer Compliance in LLMs",
     "src": "EADC: Evaluation of Advanced and Deep-level Compliance in Large Language Models"
    },
    "one_liner": {
@@ -4218,18 +4388,18 @@
    "id": "8488e1fc5d7c",
    "url": "http://arxiv.org/abs/2609.26029v1",
    "title": {
-    "zh": "CQ4OE：评估LLM辅助从能力问题生成本体论的基准",
+    "zh": "CQ4OE：评估LLM辅助本体生成的基准",
     "en": "CQ4OE: A benchmark for assessing LLM-assisted ontology generation from competency questions",
-    "de": "CQ4OE: Benchmarking der LLM-gestützten Ontologiegenerierung aus Competency Questions",
+    "de": "CQ4OE: Ein Benchmark zur Bewertung LLM-gestützter Ontologiegenerierung",
     "src": "CQ4OE: A benchmark for assessing LLM-assisted ontology generation from competency questions"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "CQ4OE是一个用于系统、可复现评估基于LLM从CQ生成本体的基准。",
+    "en": "CQ4OE is a benchmark for systematic, reproducible evaluation of LLM-based ontology generation from CQs.",
+    "de": "CQ4OE ist ein Benchmark zur systematischen, reproduzierbaren Bewertung LLM-basierter Ontologiegenerierung aus CQs."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "当前评估碎片化，CQ4OE提供带细粒度CQ溯源的金标准OWL本体与两类评估任务。",
     "en": "",
     "de": ""
    },
@@ -4246,7 +4416,7 @@
    "heat": 46.4,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Here, we address these limitations with CQ4OE, a benchmark for the systematic and reproducible evaluation of LLM-based ontology generation from CQs."
   },
   {
    "id": "3f50f7b55460",
@@ -4558,18 +4728,18 @@
    "id": "80ef833ec92e",
    "url": "http://arxiv.org/abs/2609.26399v1",
    "title": {
-    "zh": "结合分层认知过程与过程监督实现可解释的场景安全理解",
+    "zh": "结合层级认知与过程监督理解场景安全",
     "en": "Combining Hierarchical Cognitive Process with Process Supervision for Interpretable Scene Safety Understanding",
-    "de": "Kombination hierarchischer kognitiver Prozesse und Prozessüberwachung für interpretierbares Szenariosicherheitsverständnis",
+    "de": "Verständnis von Szenariosicherheit durch hierarchische Kognition und Prozesssupervision",
     "src": "Combining Hierarchical Cognitive Process with Process Supervision for Interpretable Scene Safety Understanding"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "研究构建层级认知安全结构，并引入基于LLM结合LoRA与MoE的过程监督框架。",
+    "en": "The study builds a hierarchical cognitive safety structure and introduces an LLM-based process supervision framework combining LoRA and MoE.",
+    "de": "Die Studie entwickelt eine hierarchische kognitive Sicherheitsstruktur und führt ein LLM-basiertes Prozesssupervisionsframework mit LoRA und MoE ein."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "该工作构建多步推理过程标签数据集作为基准，并通过信息流与显著性技术分析中间推理步骤。",
     "en": "",
     "de": ""
    },
@@ -4586,7 +4756,7 @@
    "heat": 42.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Building upon this foundation, we introduce a modular and flexible process supervision framework that reflects the hierarchical nature of human cognition."
   },
   {
    "id": "2a9b2b76ea84",
@@ -4798,7 +4968,7 @@
    "title": {
     "zh": "",
     "en": "[TheVerge-AI] OpenAI wants to consult elite mathematicians about how to not fumble again",
-    "de": "OpenAI will Elite-Mathematiker konsultieren, um Fehler zu vermeiden",
+    "de": "OpenAI will Spitzenmathematiker zu Fehlervermeidung konsultieren",
     "src": "[TheVerge-AI] OpenAI wants to consult elite mathematicians about how to not fumble again"
    },
    "one_liner": {
@@ -4821,7 +4991,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.0,
-   "heat": 38.5,
+   "heat": 38.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4831,14 +5001,14 @@
    "url": "https://www.ithome.com/1/006/036.htm",
    "title": {
     "zh": "",
-    "en": "Ex-Google security chief: AI harm to children may exceed social media",
+    "en": "Ex-Google security chief: AI harms to children may exceed social media",
     "de": "Ex-Google-Sicherheitschef: KI-Schäden für Kinder könnten Social Media übertreffen",
     "src": "[IT之家] 谷歌前安全负责人：AI 对儿童的伤害恐超社交媒体"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Google's former security chief warns AI could harm children more severely than social media.",
+    "de": "Googles ehemaliger Sicherheitschef warnt, KI könnte Kindern stärker schaden als soziale Medien."
    },
    "why_it_matters": {
     "zh": "",
@@ -4855,7 +5025,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.0,
-   "heat": 39.4,
+   "heat": 39.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4865,8 +5035,8 @@
    "url": "https://www.ifanr.com/1681566?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
    "title": {
     "zh": "",
-    "en": "GPT-6 Sol released, price halved; Siri AI; OPPO Find X10",
-    "de": "GPT-6 Sol veröffentlicht, Preis halbiert; Siri AI; OPPO Find X10",
+    "en": "GPT-6 Sol launches, price halved; OPPO Find X10 debuts",
+    "de": "GPT-6 Sol startet, Preis halbiert; OPPO Find X10 vorgestellt",
     "src": "[爱范儿] 早报｜GPT-6 Sol发布，价格腰斩/特努斯：Siri AI不应代替人际关系/4999起，OPPO Find X10系列发布"
    },
    "one_liner": {
@@ -4889,7 +5059,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.0,
-   "heat": 38.4,
+   "heat": 38.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4900,7 +5070,7 @@
    "title": {
     "zh": "",
     "en": "Mitsubishi Heavy: US AI data center demand drives gas turbine orders to record high",
-    "de": "Mitsubishi Heavy: US-KI-Rechenzentrumsnachfrage treibt Gasturbinen-Aufträge auf Rekordhoch",
+    "de": "Mitsubishi Heavy: US-KI-Rechenzentrumsnachfrage treibt Gasturbinenaufträge auf Rekordhoch",
     "src": "[IT之家] 三菱重工：美国 AI 数据中心需求推动燃气轮机订单创新高"
    },
    "one_liner": {
@@ -4923,7 +5093,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.2,
-   "heat": 36.7,
+   "heat": 36.6,
    "n_sources": 2,
    "also_reported_by": [
     {
@@ -4937,18 +5107,18 @@
    "id": "7e7cfc5761ee",
    "url": "https://github.com/DaVVinCi/FactorForge",
    "title": {
-    "zh": "DaVVinCi/FactorForge",
+    "zh": "FactorForge：LLM 辅助量化因子研究",
     "en": "DaVVinCi/FactorForge",
-    "de": "DaVVinCi/FactorForge",
+    "de": "FactorForge: LLM-gestützte quantitative Faktorforschung",
     "src": "DaVVinCi/FactorForge"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "FactorForge 支持安全 DSL 校验、基准比较和成本感知 Top-K 回测。",
+    "en": "FactorForge supports secure DSL validation, benchmark comparison, and cost-aware Top-K backtesting.",
+    "de": "FactorForge unterstützt sichere DSL-Validierung, Benchmark-Vergleiche und kostenbewusstes Top-K-Backtesting."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "原文定位为 LLM 辅助量化因子研究，并包含安全 DSL 校验与成本感知回测。",
     "en": "",
     "de": ""
    },
@@ -5245,7 +5415,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] Frontier AI keeps racing despite calls to slow down",
-    "de": "Frontier AI rast trotz Forderungen nach Verlangsamung weiter",
+    "de": "Frontier-KI rast weiter trotz Forderungen nach Entschleunigung",
     "src": "[TheRegister] Frontier AI keeps racing despite calls to slow down"
    },
    "one_liner": {
@@ -5268,7 +5438,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.9,
-   "heat": 36.5,
+   "heat": 36.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5279,13 +5449,13 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-    "de": "TechCrunch Founder Summit Agenda für Boston am 4. November enthüllt",
+    "de": "TechCrunch Founder Summit Agenda für Boston enthüllt",
     "src": "[TechCrunch-AI] TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "TechCrunch reveals the Founder Summit agenda, covering fundraising, hiring, and AI in Boston on November 4.",
+    "de": "TechCrunch enthüllt die Founder-Summit-Agenda zu Fundraising, Hiring und KI am 4. November in Boston."
    },
    "why_it_matters": {
     "zh": "",
@@ -5302,7 +5472,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 39.9,
+   "heat": 39.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5312,8 +5482,8 @@
    "url": "https://www.ithome.com/1/006/026.htm",
    "title": {
     "zh": "",
-    "en": "Fei-Fei Li on AI Safety: Don't Let Developers Alone Evaluate Their Systems",
-    "de": "Fei-Fei Li zur KI-Sicherheit: Entwickler dürfen ihre Systeme nicht allein bewerten",
+    "en": "Fei-Fei Li on AI safety: Don't let developers evaluate their own systems",
+    "de": "Fei-Fei Li zur KI-Sicherheit: Entwickler dürfen ihre Systeme nicht selbst bewerten",
     "src": "[IT之家] 李飞飞谈 AI 安全：不能只让开发者评估自己的系统"
    },
    "one_liner": {
@@ -5336,7 +5506,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.1,
-   "heat": 42.1,
+   "heat": 41.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5346,8 +5516,8 @@
    "url": "https://www.ithome.com/1/006/019.htm",
    "title": {
     "zh": "",
-    "en": "Huawei WATCH 6 HarmonyOS AI watches on sale from 2799 yuan",
-    "de": "Huawei WATCH 6 HarmonyOS KI-Uhren ab 2799 Yuan erhältlich",
+    "en": "Huawei WATCH 6 HarmonyOS AI watches go on sale today from 2799 yuan",
+    "de": "Huawei WATCH 6 HarmonyOS AI-Uhren ab heute ab 2799 Yuan erhältlich",
     "src": "[IT之家] 2799 元起，华为 WATCH 6 系列鸿蒙 AI 手表今日开售"
    },
    "one_liner": {
@@ -5370,7 +5540,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.2,
-   "heat": 36.5,
+   "heat": 36.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5380,8 +5550,8 @@
    "url": "https://www.ithome.com/1/006/017.htm",
    "title": {
     "zh": "",
-    "en": "Apple reportedly shelves AI pendant project meant to extend Siri",
-    "de": "Apple legt Berichten zufolge KI-Anhänger-Projekt zur Siri-Erweiterung auf Eis",
+    "en": "Report: Apple shelves AI pendant that would extend Siri with a camera",
+    "de": "Bericht: Apple legt KI-Anhänger auf Eis, der Siri per Kamera erweitern sollte",
     "src": "[IT之家] 消息称苹果搁置研发 AI 吊坠，曾设想以摄像头拓展 Siri 能力"
    },
    "one_liner": {
@@ -5404,7 +5574,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.9,
-   "heat": 36.2,
+   "heat": 36.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5444,46 +5614,12 @@
    "quote_en": ""
   },
   {
-   "id": "bebbacd1d205",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOck4xZFBiUmxra1FNWUhzbjdjWnA0bUxYQm1SZXRrNndTZkd1NHVVYlB4Q3BXSDM0N3FCTnVaVnNzUWNuWkF4VkVpeEFsbHdmTmFHQVVfemJCX0wybzdaN0trMGtHaTJlUlFZLVdoS01uc2tGZi12YW94T0ZmVTlXbldWNnB5SHlPYTdhQ3Fac1pvdExabW9iOV8yQ2M3dUxFV09SSlJBRQ?oc=5",
-   "title": {
-    "zh": "GPT-6 Sol和Luna发布！价格腰斩 - 新浪财经",
-    "en": "GPT-6 Sol and Luna released! Prices halved",
-    "de": "GPT-6 Sol und Luna veröffentlicht! Preise halbiert",
-    "src": "[新智元(gnews桥)] GPT-6 Sol和Luna震撼发布！价格腰斩 - 新浪财经"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "模型",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-22T21:56:47Z",
-   "first_seen_utc": "2026-09-23T14:04:22Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 51.4,
-   "heat": 47.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
    "id": "0b3c6cf5dcf5",
    "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
-    "de": "Snorkel AI verdreifacht Bewertung auf 3,5 Mrd. $ bei boomender Nachfrage nach KI-Trainingsdaten",
+    "de": "Snorkel AI verdreifacht Bewertung auf 3,5 Mrd. $ im KI-Datenboom",
     "src": "[TechCrunch-AI] Snorkel AI triples valuation to $3.5B as demand for AI training data booms"
    },
    "one_liner": {
@@ -5506,7 +5642,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.8,
-   "heat": 42.5,
+   "heat": 42.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5516,8 +5652,8 @@
    "url": "https://www.ithome.com/1/006/015.htm",
    "title": {
     "zh": "",
-    "en": "Qualcomm CEO Amon: Agent era should make tech more practical",
-    "de": "Qualcomm-CEO Amon: Agenten-Ära soll Technik praktischer machen",
+    "en": "Qualcomm CEO Amon: Agent era isn't about AI doing everything, but making tech more practical",
+    "de": "Qualcomm-CEO Amon: Agenten-Ära heißt nicht, dass KI alles übernimmt, sondern Technik praktischer wird",
     "src": "[IT之家] 高通 CEO 安蒙：智能体时代并不是让 AI 替我们包办一切，而是让技术变得更实用"
    },
    "one_liner": {
@@ -5540,7 +5676,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 38.3,
+   "heat": 38.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5551,7 +5687,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions",
-    "de": "Windows-Malware CLOSEDQUORUM nutzt KI-Modelle zur autonomen Auswahl von Folgeaktionen",
+    "de": "Windows-CLOSEDQUORUM-Malware nutzt KI-Modelle zur autonomen Aktionsauswahl",
     "src": "[TheRegister] Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions"
    },
    "one_liner": {
@@ -5574,7 +5710,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.1,
-   "heat": 41.8,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5585,7 +5721,7 @@
    "title": {
     "zh": "",
     "en": "[TheRobotReport] Intel to discuss the infrastructure needed to scale physical AI at RoboBusiness",
-    "de": "Intel diskutiert Infrastruktur für skalierbare Physical AI bei RoboBusiness",
+    "de": "Intel diskutiert Infrastruktur für Skalierung physischer KI bei RoboBusiness",
     "src": "[TheRobotReport] Intel to discuss the infrastructure needed to scale physical AI at RoboBusiness"
    },
    "one_liner": {
@@ -5608,7 +5744,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 34.0,
-   "heat": 31.5,
+   "heat": 31.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5619,7 +5755,7 @@
    "title": {
     "zh": "",
     "en": "[ArsTechnica-AI] New Anthropic, OpenAI models make same promise: A little more for a lot less money",
-    "de": "Neue Modelle von Anthropic, OpenAI versprechen mehr für weniger",
+    "de": "Neue Modelle von Anthropic und OpenAI versprechen mehr für viel weniger Geld",
     "src": "[ArsTechnica-AI] New Anthropic, OpenAI models make same promise: A little more for a lot less money"
    },
    "one_liner": {
@@ -5642,7 +5778,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.8,
-   "heat": 42.4,
+   "heat": 42.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5676,7 +5812,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 43.4,
-   "heat": 40.1,
+   "heat": 40.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5686,14 +5822,14 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYVQ0azI0cThweXNXRFZNYkdnSVQ0dVZCNGtQNnNXN2JidFNzcmhReFozbWtuNFZ3bVF3N3YyU3RVTkZ5YU5kTllqYlJrVzJJYkg2ZHJmWEo2TXN0TUd5YUt5ZzFpOFdtTjZLZHBRRjZFUmZyc0FhLTJkMnB4ODc4eUJmVkhMSGFT?oc=5",
    "title": {
     "zh": "",
-    "en": "GPT-6 Sol and Luna震撼发布！价格腰斩 - 搜狐网",
-    "de": "GPT-6 Sol und Luna震撼发布！价格腰斩 - 搜狐网",
+    "en": "GPT-6 Sol and Luna launched with halved prices",
+    "de": "GPT-6 Sol und Luna mit halbierten Preisen veröffentlicht",
     "src": "[新智元(gnews桥)] GPT-6 Sol和Luna震撼发布！价格腰斩 - 搜狐网"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "GPT-6 Sol and Luna have been launched, with prices reportedly cut in half.",
+    "de": "GPT-6 Sol und Luna wurden veröffentlicht, die Preise sollen halbiert sein."
    },
    "why_it_matters": {
     "zh": "",
@@ -5710,7 +5846,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 39.5,
+   "heat": 39.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5721,7 +5857,7 @@
    "title": {
     "zh": "",
     "en": "[OpenAI] Better prompt caching for GPT-6",
-    "de": "[OpenAI] Besseres Prompt-Caching für GPT-6",
+    "de": "OpenAI: Besseres Prompt-Caching für GPT-6",
     "src": "[OpenAI] Better prompt caching for GPT-6"
    },
    "one_liner": {
@@ -5744,7 +5880,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.9,
-   "heat": 36.9,
+   "heat": 36.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5754,8 +5890,8 @@
    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY1hlVGtac2gzemF2NDBSdld4aUgyeXVvMjgxdmFLY0lKVWlYMjlQb3J3bjhXRTFtdDZHc29oTnR2TlgwYjhpR25pZHNhTzdRQi1FUWRPZ0J3Qnl0MmlLRjZKZUNvY2JlMFBzWFFudWlJNHVCSG5Hb0tXd215VmQ5LVl1NG9aYUtqS055czhwVWlHaW1RT1NpUVNtRm5Ia25pT2R5SV9YdW43c1hJcnpPTXBR?oc=5",
    "title": {
     "zh": "",
-    "en": "ChatGPT Grok Bot code leaks; OpenAI building always-on AI coworkers",
-    "de": "ChatGPT Grok Bot Code durchgesickert; OpenAI baut rund um die Uhr KI-Kollegen",
+    "en": "ChatGPT Grok Bot code exposed; OpenAI building always-on AI coworker",
+    "de": "ChatGPT-Grok-Bot-Code enthüllt; OpenAI baut ständig verfügbaren KI-Kollegen",
     "src": "[新智元(gnews桥)] ChatGPT版Grok Bot代码曝光！OpenAI也要为你造不下班的AI同事 - 新浪财经_金融信息服务商"
    },
    "one_liner": {
@@ -5778,7 +5914,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 37.1,
-   "heat": 34.3,
+   "heat": 34.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5789,7 +5925,7 @@
    "title": {
     "zh": "",
     "en": "[TheVerge-AI] Rabbit’s new AI agent doesn’t need an R1 to run",
-    "de": "[TheVerge-AI] Rabbits neuer AI-Agent benötigt keinen R1 zum Laufen",
+    "de": "The Verge: Rabbits neuer KI-Agent benötigt kein R1 zum Betrieb",
     "src": "[TheVerge-AI] Rabbit’s new AI agent doesn’t need an R1 to run"
    },
    "one_liner": {
@@ -5812,7 +5948,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.9,
-   "heat": 36.9,
+   "heat": 36.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5846,7 +5982,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.6,
-   "heat": 38.4,
+   "heat": 38.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5857,7 +5993,7 @@
    "title": {
     "zh": "",
     "en": "[The Decoder] OpenAI's GPT-6 Sol and Luna cut prices in half but barely move the needle on performance",
-    "de": "OpenAIs GPT-6 Sol und Luna halbieren Preise, kaum Leistungsverbesserung",
+    "de": "OpenAI GPT-6 Sol und Luna halbieren Preise, kaum Leistungssteigerung",
     "src": "[The Decoder] OpenAI's GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
    },
    "one_liner": {
@@ -5880,7 +6016,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 28.4,
-   "heat": 26.2,
+   "heat": 26.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5891,7 +6027,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Qualcomm launches two new smartphone chips with emphasis on AI",
-    "de": "Qualcomm stellt zwei neue Smartphone-Chips mit KI-Fokus vor",
+    "de": "Qualcomm startet zwei neue Smartphone-Chips mit AI-Fokus",
     "src": "[TechCrunch-AI] Qualcomm launches two new smartphone chips with emphasis on AI"
    },
    "one_liner": {
@@ -5914,7 +6050,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.5,
-   "heat": 29.9,
+   "heat": 29.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5924,8 +6060,8 @@
    "url": "https://www.ithome.com/1/006/003.htm",
    "title": {
     "zh": "",
-    "en": "Qualcomm Snapdragon Chips to Integrate HBC Architecture for Faster, Efficient On-Device AI",
-    "de": "Qualcomm-Snapdragon-Chips integrieren HBC-Architektur für schnelleres, sparsameres On-Device-KI",
+    "en": "Qualcomm Snapdragon chips to integrate HBC architecture for faster on-device AI",
+    "de": "Qualcomm Snapdragon Chips integrieren HBC-Architektur für schnellere lokale KI",
     "src": "[IT之家] 高通骁龙芯片将整合 HBC 架构：手机本地运行 AI 更快、更省电"
    },
    "one_liner": {
@@ -5948,7 +6084,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.8,
-   "heat": 41.2,
+   "heat": 41.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5982,7 +6118,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.9,
-   "heat": 35.8,
+   "heat": 35.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5992,8 +6128,8 @@
    "url": "https://www.ithome.com/1/006/002.htm",
    "title": {
     "zh": "",
-    "en": "Alibaba Qwen Book tablet debuts at Snapdragon Summit 2026 as native AI agent computer",
-    "de": "Alibaba Qwen Book Tablet erscheint auf Snapdragon Summit 2026 als nativer KI-Agent-Computer",
+    "en": "Alibaba Qwen Book tablet debuts at 2026 Snapdragon Summit as native AI agent PC",
+    "de": "Alibaba Qwen Book Tablet erscheint auf 2026 Snapdragon Summit als nativer KI-Agent-PC",
     "src": "[IT之家] 阿里千问平板 Qwen Book 现身 2026 骁龙峰会，定位原生 AI 智能体电脑"
    },
    "one_liner": {
@@ -6016,7 +6152,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 31.1,
-   "heat": 28.6,
+   "heat": 28.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6027,13 +6163,13 @@
    "title": {
     "zh": "",
     "en": "[ArsTechnica-AI] Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting",
-    "de": "Klage fordert OpenAI-Zahlung für neue Schule nach ChatGPT-Nutzung bei Schießerei",
+    "de": "Klage fordert OpenAI-Finanzierung neuer Schule nach ChatGPT-Nutzung bei Schießerei",
     "src": "[ArsTechnica-AI] Lawsuit demands OpenAI pay for new school after ChatGPT used in shooting"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A lawsuit demands OpenAI pay for a new school after ChatGPT was allegedly used in a shooting.",
+    "de": "Eine Klage fordert, dass OpenAI für eine neue Schule zahlt, nachdem ChatGPT mutmaßlich bei einer Schießerei genutzt wurde."
    },
    "why_it_matters": {
     "zh": "",
@@ -6050,7 +6186,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.7,
-   "heat": 38.3,
+   "heat": 38.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6061,7 +6197,7 @@
    "title": {
     "zh": "",
     "en": "OpenAI releases GPT-6 Sol and Luna models, API prices drop 50%",
-    "de": "OpenAI veröffentlicht GPT-6 Sol und Luna, API-Preise fallen 50%",
+    "de": "OpenAI veröffentlicht GPT-6 Sol und Luna, API-Preise fallen um 50%",
     "src": "[IT之家] OpenAI 发布 GPT-6 Sol 和 Luna 模型，API 价格大降 50%"
    },
    "one_liner": {
@@ -6084,7 +6220,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.5,
-   "heat": 36.3,
+   "heat": 36.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6129,13 +6265,13 @@
    "title": {
     "zh": "",
     "en": "[SimonWillison] llm 0.36",
-    "de": "llm 0.36",
+    "de": "Simon Willison veröffentlicht llm 0.36",
     "src": "[SimonWillison] llm 0.36"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Simon Willison releases version 0.36 of his llm command-line tool.",
+    "de": "Simon Willison veröffentlicht Version 0.36 seines llm-Kommandozeilenwerkzeugs."
    },
    "why_it_matters": {
     "zh": "",
@@ -6152,7 +6288,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.3,
-   "heat": 38.7,
+   "heat": 38.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6162,8 +6298,8 @@
    "url": "https://aws.amazon.com/blogs/machine-learning/bring-more-intelligence-to-everyday-work-with-gpt-6-sol-and-gpt-6-luna-on-amazon-bedrock/",
    "title": {
     "zh": "",
-    "en": "AWS-ML Blog: GPT-6 Sol and GPT-6 Luna on Amazon Bedrock",
-    "de": "AWS-ML-Blog: GPT-6 Sol und GPT-6 Luna auf Amazon Bedrock",
+    "en": "Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock",
+    "de": "Mehr Intelligenz für den Alltag mit GPT-6 Sol und GPT-6 Luna auf Amazon Bedrock",
     "src": "[AWS-ML博客] Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock"
    },
    "one_liner": {
@@ -6186,7 +6322,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 26.9,
-   "heat": 24.5,
+   "heat": 24.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6196,8 +6332,8 @@
    "url": "https://xiaguangshe.com/16099/",
    "title": {
     "zh": "",
-    "en": "Huaqin Tech completes bank AI anti-money laundering review project",
-    "de": "Huaqin Tech schließt KI-Projekt zur Geldwäscheprüfung für Banken ab",
+    "en": "Nexthing completes AI anti-money-laundering review project for bank client, fine-tunes small LLM for high accuracy",
+    "de": "Nexthing schließt KI-Projekt zur Geldwäscheprüfung für Bankkunden ab, fine-tuned kleines LLM für hohe Genauigkeit",
     "src": "[霞光社] 华钦科技完成银行客户AI反洗钱辅助审查项目，微调小型大语言模型实现高准确率"
    },
    "one_liner": {
@@ -6220,7 +6356,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.6,
-   "heat": 38.0,
+   "heat": 37.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6254,7 +6390,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 50.8,
-   "heat": 46.3,
+   "heat": 46.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6265,7 +6401,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
-    "de": "OpenAI startet GPT-6 Sol und Luna, günstiger und fehlerärmer",
+    "de": "OpenAI startet GPT-6 Sol und Luna mit geringeren Kosten und weniger Fehlern",
     "src": "[TechCrunch-AI] OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes"
    },
    "one_liner": {
@@ -6288,7 +6424,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.5,
-   "heat": 40.6,
+   "heat": 40.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6299,7 +6435,7 @@
    "title": {
     "zh": "",
     "en": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
-    "de": "Skill-Agenten mit Strands Evals und Amazon Bedrock AgentCore bewerten",
+    "de": "Skill-fähige Agenten mit Strands Evals und Amazon Bedrock AgentCore bewerten",
     "src": "[AWS-ML博客] Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore"
    },
    "one_liner": {
@@ -6322,7 +6458,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.3,
-   "heat": 37.5,
+   "heat": 37.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6333,7 +6469,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] ABBYY gives old-school OCR a job in the AI pipeline",
-    "de": "ABBYY gibt klassischer OCR eine Aufgabe in der KI-Pipeline",
+    "de": "ABBYY bringt klassische OCR in AI-Pipelines",
     "src": "[TheRegister] ABBYY gives old-school OCR a job in the AI pipeline"
    },
    "one_liner": {
@@ -6356,7 +6492,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.5,
-   "heat": 29.5,
+   "heat": 29.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6367,7 +6503,7 @@
    "title": {
     "zh": "",
     "en": "[SimonWillison] llm-anthropic 0.29",
-    "de": "llm-anthropic 0.29",
+    "de": "llm-anthropic 0.29 veröffentlicht",
     "src": "[SimonWillison] llm-anthropic 0.29"
    },
    "one_liner": {
@@ -6390,7 +6526,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 46.2,
-   "heat": 42.0,
+   "heat": 41.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6401,7 +6537,7 @@
    "title": {
     "zh": "",
     "en": "[ArsTechnica-AI] Toyota orders workers to train humanoid robots but says humans won't be replaced",
-    "de": "Toyota lässt Arbeiter humanoide Roboter trainieren, dementiert Ersatz",
+    "de": "Toyota lässt Arbeiter humanoide Roboter trainieren, Menschen bleiben",
     "src": "[ArsTechnica-AI] Toyota orders workers to train humanoid robots but says humans won't be replaced"
    },
    "one_liner": {
@@ -6424,7 +6560,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.1,
-   "heat": 40.1,
+   "heat": 39.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6458,7 +6594,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 32.9,
-   "heat": 29.8,
+   "heat": 29.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6473,12 +6609,12 @@
     "src": "[TheVerge-AI] Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "a16z 创建 academy，获 4200 万美元融资，合作方包括 Palantir、Google、Meta 等。",
+    "en": "a16z creates academy with $42 million in funding, with partners including Palantir, Google, and Meta.",
+    "de": "a16z gründet eine Academy mit 42 Millionen Dollar Finanzierung, Partner sind unter anderem Palantir, Google und Meta."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "原文称该 academy 被定位为年轻人创办或加入硅谷初创公司的通道，但不授予学位或认证。",
     "en": "",
     "de": ""
    },
@@ -6492,10 +6628,10 @@
    "scoop_hours": null,
    "selected": false,
    "score": 47.3,
-   "heat": 42.9,
+   "heat": 42.7,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup."
   },
   {
    "id": "c8b2ba0b2ba6",
@@ -6526,7 +6662,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.9,
-   "heat": 35.2,
+   "heat": 35.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -6560,146 +6696,10 @@
    "scoop_hours": null,
    "selected": false,
    "score": 53.5,
-   "heat": 48.5,
+   "heat": 48.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Opus 5.5 verspricht mehr Effizienz, niedrigere Kosten und Sicherheitsfilter für sensible Anwendungsbereiche."
-  },
-  {
-   "id": "5f301ee8e849",
-   "url": "https://www.theregister.com/legal/2026/09/22/privacy-group-slams-eu-for-changing-the-data-rules-to-cater-to-ai/5298175",
-   "title": {
-    "zh": "",
-    "en": "[TheRegister] Privacy group slams EU for changing the data rules to cater to AI",
-    "de": "Datenschutzgruppe kritisiert EU-Datenregeln für KI",
-    "src": "[TheRegister] Privacy group slams EU for changing the data rules to cater to AI"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T16:03:37Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.5,
-   "heat": 31.6,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "d2787fb5d967",
-   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBabkRPdGZ5UUQtSUxiVkQzbldsVm9sQTg3dGYwRE5hQmVXclRicXgwRGs5YzVOSFk5Uk5CbUFlYko2VjRLNjh4Mg?oc=5",
-   "title": {
-    "zh": "",
-    "en": "OpenAI forms independent math advisory board, 100+ solved open problems to review",
-    "de": "OpenAI gründet unabhängigen Mathe-Beirat, 100+ gelöste offene Probleme zur Prüfung",
-    "src": "[机器之心(gnews桥)] 刚刚，OpenAI成立独立数学顾问团！100+「已攻克」开放问题待审 - 凤凰网"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T16:03:37Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 37.5,
-   "heat": 30.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "0a191152800f",
-   "url": "https://www.theregister.com/security/2026/09/22/zai-says-sorry-for-slurping-up-your-code-open-sources-zcode/5298300",
-   "title": {
-    "zh": "",
-    "en": "[TheRegister] Z.ai says sorry for slurping up your code, open sources ZCode",
-    "de": "Z.ai entschuldigt sich für Code-Scraping, veröffentlicht ZCode als Open Source",
-    "src": "[TheRegister] Z.ai says sorry for slurping up your code, open sources ZCode"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T16:03:37Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 36.8,
-   "heat": 29.4,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "8b967b6ac174",
-   "url": "https://www.golem.de/news/kuenstliche-intelligenz-ki-beschaeftigte-fuerchten-folgen-fuer-die-gesellschaft-und-leiden-psychisch-darunter-2609-213322.html",
-   "title": {
-    "zh": "",
-    "en": "[Golem] (g+) Knstliche Intelligenz: KI-Beschftigte frchten Folgen fr die Gesellschaft - und leiden ...",
-    "de": "KI-Beschäftigte fürchten Folgen für die Gesellschaft und leiden psychisch",
-    "src": "[Golem] (g+) Knstliche Intelligenz: KI-Beschftigte frchten Folgen fr die Gesellschaft - und leiden ..."
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-22T16:00:02Z",
-   "first_seen_utc": null,
-   "scoop_hours": null,
-   "selected": false,
-   "score": 44.8,
-   "heat": 40.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
   }
  ]
 }
