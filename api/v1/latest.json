@@ -1,6 +1,6 @@
 {
  "api_version": "v1",
- "generated_at_utc": "2026-09-22T16:41:11Z",
+ "generated_at_utc": "2026-09-23T03:18:26Z",
  "site": {
   "name": "AI 资讯时间线",
   "url": "https://news.aiimmigrant.de",
@@ -10,8 +10,8 @@
  "update": "精选库随引擎轮次更新（常态每小时一轮，launchd :07）；2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。接口无鉴权、无频控，请自觉别超过 1 次/分钟。",
  "counts": {
   "selected": 3,
-  "fresh_24h": 69,
-  "total_pool": 1278
+  "fresh_24h": 204,
+  "total_pool": 1458
  },
  "categories": [
   "模型",
@@ -21,23 +21,23 @@
  ],
  "selected": [
   {
-   "id": "ccead0e2c051",
-   "url": "http://arxiv.org/abs/2609.20732v1",
+   "id": "2e2ea323e320",
+   "url": "http://arxiv.org/abs/2609.20752v1",
    "title": {
-    "zh": "电子表格问答：语义单元格标注提升分块可解释性",
-    "en": "Q&A on Any Spreadsheet Requires Interpreting Its Grid Structure",
-    "de": "Tabellenkalkulations-Fragebeantwortung: Semantische Zellannotation verbessert die Interpretierbarkeit von Chunks",
-    "src": "Q&A on Any Spreadsheet Requires Interpreting Its Grid Structure"
+    "zh": "LLM-Falsifier：用大语言模型为信息物理系统做伪造",
+    "en": "Large Language Models as Falsifiers for Cyber-Physical Systems",
+    "de": "LLM-Falsifier: LLMs zur Falsifikation von CPS",
+    "src": "Large Language Models as Falsifiers for Cyber-Physical Systems"
    },
    "one_liner": {
-    "zh": "提出通过单元格角色标注将电子表格拆分为可解释分块的框架，提升 LLM 驱动 RAG 系统的答案生成。",
-    "en": "A framework is proposed that splits spreadsheets into interpretable chunks via cell role annotation, improving answer generation in LLM-driven RAG systems.",
-    "de": "Ein Framework wird vorgeschlagen, das Tabellenkalkulationen durch Zellrollenannotation in interpretierbare Chunks aufteilt und die Antwortgenerierung in LLM-gesteuerten RAG-Systemen verbessert."
+    "zh": "研究提出LLM-Falsifier，通过最小化STL鲁棒度来对信息物理系统规范进行伪造。",
+    "en": "The study proposes LLM-Falsifier, which falsifies cyber-physical system specifications by minimizing STL robustness.",
+    "de": "Die Studie schlägt LLM-Falsifier vor, der CPS-Spezifikationen durch Minimierung der STL-Robustheit falsifiziert."
    },
    "why_it_matters": {
-    "zh": "该框架达到当前最优水平，但分类模型无法完美捕捉二维非结构化数据的结构细微差别，需要发展降维技术。",
-    "en": "The framework reaches state of the art, but classification models cannot fully capture structural nuances of 2D unstructured data, requiring dimensionality reduction techniques.",
-    "de": "Das Framework erreicht den aktuellen Spitzenstand, doch Klassifikationsmodelle erfassen strukturelle Nuancen zweidimensionaler unstrukturierter Daten nicht vollständig, weshalb Dimensionierungsreduktion nötig ist."
+    "zh": "在ARCH-COMP伪造基准上，LLM-Falsifier在21个规范中的14个上优于现有伪造工具。",
+    "en": "On the ARCH-COMP falsification benchmark, LLM-Falsifier outperforms existing tools on 14 of 21 specifications.",
+    "de": "Im ARCH-COMP-Falsifikationsbenchmark übertrifft LLM-Falsifier bestehende Werkzeuge bei 14 von 21 Spezifikationen."
    },
    "category": "研究",
    "source": {
@@ -48,11 +48,50 @@
    "first_seen_utc": "2026-09-18T02:03:50Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 70.5,
-   "heat": 56.4,
+   "score": 72.0,
+   "heat": 57.6,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "Semantic cell annotation improves chunking interpretability for spreadsheets in LLM-driven RAG systems, aiding answer generation through enriched context rather than improved retrieval accuracy."
+   "quote_en": "On the ARCH-COMP falsification benchmarks, LLM-Falsifier is shown to outperform existing falsification tools based on a range of optimization paradigms, from surrogate-based and Bayesian optimization"
+  },
+  {
+   "id": "74bfae582394",
+   "url": "http://arxiv.org/abs/2609.22069v1",
+   "title": {
+    "zh": "OmniVBench：全能参考到视频生成的基准与大规模数据集",
+    "en": "OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation",
+    "de": "OmniVBench: Benchmark und Datensatz für Omni-Referenz-zu-Video-Generierung",
+    "src": "OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation"
+   },
+   "one_liner": {
+    "zh": "研究提出OmniVBench与Omni-R2V数据集，用于评估和训练全能参考到视频生成模型。",
+    "en": "The study proposes OmniVBench and the Omni-R2V dataset for evaluating and training omni reference-to-video generation models.",
+    "de": "Die Studie schlägt OmniVBench und den Omni-R2V-Datensatz zur Bewertung und zum Training von Omni-Referenz-zu-Video-Modellen vor."
+   },
+   "why_it_matters": {
+    "zh": "现有基准在参考类型、组合与评估协议上不足，OmniVBench覆盖7个任务族与18个细粒度任务。",
+    "en": "Existing benchmarks lack reference types, composition, and evaluation protocols; OmniVBench covers 7 task families and 18 fine-grained tasks.",
+    "de": "Bestehende Benchmarks weisen Mängel bei Referenztypen, Komposition und Evaluationsprotokollen auf; OmniVBench deckt 7 Aufgabenfamilien und 18 feingranulare Aufgaben ab."
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": "2026-09-18T00:00:00Z",
+   "first_seen_utc": "2026-09-21T02:03:20Z",
+   "scoop_hours": 4.0,
+   "selected": true,
+   "score": 72.0,
+   "heat": 38.5,
+   "n_sources": 2,
+   "also_reported_by": [
+    {
+     "name": "HFPapers",
+     "url": "https://huggingface.co/papers/2609.22069"
+    }
+   ],
+   "quote_en": "To address these gaps, we introduce OmniVBench and the Omni-R2V Dataset for evaluating and training omni R2V models."
   },
   {
    "id": "b8ca16016f66",
@@ -83,7 +122,7 @@
    "scoop_hours": 1.0,
    "selected": true,
    "score": 75.5,
-   "heat": 35.7,
+   "heat": 32.1,
    "n_sources": 2,
    "also_reported_by": [
     {
@@ -92,59 +131,4334 @@
     }
    ],
    "quote_en": "We introduce JEPA-Anything, a domain-agnostic framework based on orthogonal predictive factorization (OPF)."
-  },
+  }
+ ],
+ "fresh_24h": [
   {
-   "id": "5316c5b3820c",
-   "url": "http://arxiv.org/abs/2609.20804v1",
+   "id": "d09764b186cd",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUWF6NDJtOC1jZEZyUkV0TnhLVlRYYUdFVkhIZHhXNUh2UFo5NzhKYm05bXVfOUNRV1RyNjNGNUtab1I2T1ctb1V1dk5wakgyQWN3V29ORldrLU5KeXdWMHlybkhVVmNzTUhmaWxyLWw2OG8yd1g2OGY1RjliY2RlVkRscmxYRjdH?oc=5",
    "title": {
-    "zh": "代码代理harness设计的实证研究",
-    "en": "An Empirical Study of Harness Design for Coding Agents",
-    "de": "Empirische Studie zum Design von Code-Agent-Harness",
-    "src": "An Empirical Study of Harness Design for Coding Agents"
+    "zh": "",
+    "en": "Embodied AI Now Competes on High-Quality Data: Lingchu Psi-R2.5 Reworks Training",
+    "de": "Embodied AI setzt auf hochwertige Daten: Lingchu Psi-R2.5 überarbeitet Training",
+    "src": "[机器之心(gnews桥)] 具身智能开始拼高质量数据了！灵初Psi-R2.5用强 Pair Data重做训练链路 - 搜狐网"
    },
    "one_liner": {
-    "zh": "该研究在 SWE-Bench Verified 和 Terminal-Bench 2.1 上评估了四个模型",
-    "en": "The study evaluates four models on SWE-Bench Verified and Terminal-Bench 2.1.",
-    "de": "Die Studie bewertet vier Modelle auf SWE-Bench Verified und Terminal-Bench 2.1."
+    "zh": "",
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
-    "zh": "研究发现上下文管理在上下文窗口预算收紧时价值增加，且基于规则的省略在LLM摘要之前进行能提供最强的整体效率。",
-    "en": "Context management gains value as context window budgets tighten, and rule-based elision before LLM summarization provides the strongest overall efficiency.",
-    "de": "Kontextmanagement gewinnt an Wert bei knapperen Kontextfenster-Budgets, und regelbasierte Auslassung vor LLM-Zusammenfassung bietet die stärkste Gesamteffizienz."
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T02:37:45Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 33.6,
+   "heat": 33.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "27fa81e61614",
+   "url": "https://www.tmtpost.com/8149124.html",
+   "title": {
+    "zh": "",
+    "en": "When AI Starts Operating on Itself, Intelligence Explosion May Be Near",
+    "de": "Wenn KI sich selbst operiert, ist Intelligenzexplosion womöglich nah",
+    "src": "[钛媒体] 当 AI 开始给自己动刀，“智能爆炸”可能真不远了：两篇论文拆解AI下一步进化路径"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T02:17:56Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.4,
+   "heat": 42.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "edfb1c39e9e8",
+   "url": "https://www.tmtpost.com/8149256.html",
+   "title": {
+    "zh": "",
+    "en": "AI landscape shifts: how does Kimi fill the \"Moonshot\" gap?",
+    "de": "KI-Landschaft im Umbruch: Wie schließt Kimi die \"Moonshot\"-Lücke?",
+    "src": "[钛媒体] AI变天，Kimi怎么补齐“月之暗面”？"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T02:15:00Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 38.1,
+   "heat": 37.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "75450c8635cc",
+   "url": "http://arxiv.org/abs/2609.26795v1",
+   "title": {
+    "zh": "φ-RIE 从照片级重建到交互环境",
+    "en": "φ-RIE: From Photorealistic Reconstruction to Interactive Environments",
+    "de": "φ-RIE: Von fotorealistischer Rekonstruktion zu interaktiven Umgebungen",
+    "src": "φ-RIE: From Photorealistic Reconstruction to Interactive Environments"
+   },
+   "one_liner": {
+    "zh": "3D高斯散射能照片级重建捕获场景，但其表征本身不支持物理交互。",
+    "en": "3D Gaussian splatting enables photorealistic reconstruction of captured scenes, but its representation itself does not support physical interaction.",
+    "de": "3D-Gaussian-Splatting ermöglicht fotorealistische Rekonstruktion erfasster Szenen, doch seine Repräsentation selbst unterstützt keine physische Interaktion."
+   },
+   "why_it_matters": {
+    "zh": "原文正文摘要仅说明3DGS重建结果本身不支持物理交互，未提供更多影响面信息。",
+    "en": "",
+    "de": ""
    },
    "category": "研究",
    "source": {
     "name": "arXiv论文",
     "tier": "T1"
    },
-   "published_utc": "2026-09-17T00:00:00Z",
-   "first_seen_utc": "2026-09-18T02:03:50Z",
-   "scoop_hours": 1.0,
-   "selected": true,
-   "score": 70.5,
-   "heat": 36.4,
-   "n_sources": 3,
-   "also_reported_by": [
-    {
-     "name": "HFPapers",
-     "url": "https://huggingface.co/papers/2609.20804"
-    },
-    {
-     "name": "HN热议",
-     "url": "https://arxiv.org/abs/2609.20804"
-    }
-   ],
-   "quote_en": "Across four models evaluated on SWE-Bench Verified and Terminal-Bench 2.1, we evaluate 176 matched settings spanning five context-management strategies, four context-window budgets, and targeted"
-  }
- ],
- "fresh_24h": [
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 64.5,
+   "heat": 51.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "819076ac78f1",
+   "url": "http://arxiv.org/abs/2609.26729v1",
+   "title": {
+    "zh": "GAD-MambaUNet 轻量医学图像分割",
+    "en": "GAD-MambaUNet: Direction-Group Mamba with Gradient-Adaptive DINOv3 Distillation for Lightweight Medical Image Segmentation",
+    "de": "GAD-MambaUNet: Leichtgewichtige medizinische Bildsegmentierung",
+    "src": "GAD-MambaUNet: Direction-Group Mamba with Gradient-Adaptive DINOv3 Distillation for Lightweight Medical Image Segmentation"
+   },
+   "one_liner": {
+    "zh": "本文提出GAD-MambaUNet，一种结合高效局部建模与方向组状态空间的轻量医学图像分割网络。",
+    "en": "This paper proposes GAD-MambaUNet, a lightweight medical image segmentation network combining efficient local modeling with directional group state space.",
+    "de": "Diese Arbeit schlägt GAD-MambaUNet vor, ein leichtgewichtiges medizinisches Bildsegmentierungsnetzwerk, das effiziente lokale Modellierung mit gerichtetem Gruppen-Zustandsraum kombiniert."
+   },
+   "why_it_matters": {
+    "zh": "原文正文摘要仅说明该网络用于轻量医学图像分割，未提供更多影响面信息。",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 63.0,
+   "heat": 50.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "119a17a5b61f",
+   "url": "http://arxiv.org/abs/2609.26707v1",
+   "title": {
+    "zh": "离线策略评估的最优顺序标注",
+    "en": "Optimal Sequential Annotations for Off-Policy Evaluation",
+    "de": "Optimale sequenzielle Annotation für Off-Policy-Evaluation",
+    "src": "Optimal Sequential Annotations for Off-Policy Evaluation"
+   },
+   "one_liner": {
+    "zh": "离线强化学习与离线策略评估基于部署前回顾性收集的数据评估动态治疗规则。",
+    "en": "Offline reinforcement learning and off-policy evaluation assess dynamic treatment rules from retrospectively collected data before deployment.",
+    "de": "Offline-Reinforcement-Learning und Off-Policy-Evaluation bewerten dynamische Behandlungsregeln anhand retrospektiv gesammelter Daten vor dem Einsatz."
+   },
+   "why_it_matters": {
+    "zh": "原文正文摘要仅说明离线策略评估的背景，未提供更多影响面信息。",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 63.0,
+   "heat": 50.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c2c41dc7332e",
+   "url": "http://arxiv.org/abs/2609.26781v1",
+   "title": {
+    "zh": "Agensh：将组织智能扩展至1024个智能体",
+    "en": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+    "de": "Agensh: Organisatorische Intelligenz auf 1024 Agenten skalieren",
+    "src": "Agensh: Scaling Organizational Intelligence to 1,024 Agents"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 62.5,
+   "heat": 50.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "221eca3fc69f",
+   "url": "http://arxiv.org/abs/2609.26777v1",
+   "title": {
+    "zh": "SWE-Serve：为生产推理服务基准测试代理工程",
+    "en": "SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving",
+    "de": "SWE-Serve: Benchmarking von Agenten-Engineering für Produktionsinferenz-Dienste",
+    "src": "SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 62.5,
+   "heat": 50.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "253222ebb46f",
+   "url": "http://arxiv.org/abs/2609.26725v1",
+   "title": {
+    "zh": "AI能节省产品设计时间吗？一项AI提示到设计工作流的随机对照实验",
+    "en": "Does AI Save Time on Product Design? A Randomized Controlled Experiment of AI Prompt-to-Design Workflows",
+    "de": "Kann KI Produktdesignzeit sparen? Eine randomisierte kontrollierte Studie zu KI-Prompt-zu-Design-Workflows",
+    "src": "Does AI Save Time on Product Design? A Randomized Controlled Experiment of AI Prompt-to-Design Workflows"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 62.0,
+   "heat": 49.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "84f3802c9490",
+   "url": "http://arxiv.org/abs/2609.26718v1",
+   "title": {
+    "zh": "塞壬之歌：当近端背景语境盖过远端证据",
+    "en": "The Sirens' Song: When Proximal Background Context Overshadows Distant Evidence",
+    "de": "Sirenengesang: Wenn proximaler Hintergrundkontext distale Evidenz überlagert",
+    "src": "The Sirens' Song: When Proximal Background Context Overshadows Distant Evidence"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 61.0,
+   "heat": 48.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "abff887ff6b9",
+   "url": "http://arxiv.org/abs/2609.26780v1",
+   "title": {
+    "zh": "SpeakerMem-R1：多人对话的以说话人为中心双轨记忆",
+    "en": "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue",
+    "de": "SpeakerMem-R1: Sprecherzentriertes Dual-Track-Gedächtnis für Mehrparteiendialoge",
+    "src": "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue"
+   },
+   "one_liner": {
+    "zh": "多人场景的长期对话记忆不仅需要检索相关内容，还必须区分是谁说的。",
+    "en": "Long-term dialogue memory in multi-party settings requires not only retrieving relevant content but also distinguishing who said what.",
+    "de": "Langfristiges Dialoggedächtnis in Mehrparteienszenarien erfordert nicht nur das Abrufen relevanter Inhalte, sondern auch die Unterscheidung, wer was gesagt hat."
+   },
+   "why_it_matters": {
+    "zh": "多人场景的长期对话记忆不仅需检索相关内容，还必须区分说话人身份。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 60.0,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "f2b40e7492e0",
+   "url": "http://arxiv.org/abs/2609.26702v1",
+   "title": {
+    "zh": "DIFTA-3D：为3D检测迁移DINOv3特征",
+    "en": "DIFTA-3D: Depth-Consistent Instance-Level Feature Transfer and Adaptation of DINOv3 for 3D Detection",
+    "de": "DIFTA-3D: Übertragung von DINOv3-Merkmalen für die 3D-Erkennung",
+    "src": "DIFTA-3D: Depth-Consistent Instance-Level Feature Transfer and Adaptation of DINOv3 for 3D Detection"
+   },
+   "one_liner": {
+    "zh": "IIFNet3D使用的Faster R-CNN/ResNet分支将特征提取耦合到独立模块",
+    "en": "The Faster R-CNN/ResNet branch used by IIFNet3D couples feature extraction into an independent module",
+    "de": "Der von IIFNet3D verwendete Faster R-CNN/ResNet-Zweig koppelt die Merkmalsextraktion an ein unabhängiges Modul"
+   },
+   "why_it_matters": {
+    "zh": "RGB-D 3D实例检测器受益于视觉语义，但其任务专用分支将特征提取耦合到独立模块",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 59.5,
+   "heat": 47.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ae87ed089226",
+   "url": "http://arxiv.org/abs/2609.26761v1",
+   "title": {
+    "zh": "A2M：MCP生态系统中追踪优化的代理劫持",
+    "en": "A2M: Trace-Optimized Agent Hijacking in the MCP Ecosystem",
+    "de": "A2M: Tracking-optimiertes Agent-Hijacking im MCP-Ökosystem",
+    "src": "A2M: Trace-Optimized Agent Hijacking in the MCP Ecosystem"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 58.0,
+   "heat": 46.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b5e1cc3763e5",
+   "url": "http://arxiv.org/abs/2609.26711v1",
+   "title": {
+    "zh": "TraceVIC：代码演化因果推理识别漏洞引入提交",
+    "en": "TraceVIC: Causal Reasoning over Code Evolution for Identifying Vulnerability-Inducing Commits",
+    "de": "TraceVIC: Kausale Inferenz über Code-Evolution zur Identifikation von Schwachstellen einführenden Commits",
+    "src": "TraceVIC: Causal Reasoning over Code Evolution for Identifying Vulnerability-Inducing Commits"
+   },
+   "one_liner": {
+    "zh": "软件漏洞常在引入很久后才被发现，使识别漏洞引入提交变得困难",
+    "en": "Software vulnerabilities are often found long after introduction, making it hard to identify vulnerability-introducing commits.",
+    "de": "Software-Schwachstellen werden oft erst lange nach ihrer Einführung entdeckt, was die Identifikation einführender Commits erschwert."
+   },
+   "why_it_matters": {
+    "zh": "软件漏洞常在引入很久后才被发现，导致难以识别应负责的漏洞引入提交（VIC）",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 57.0,
+   "heat": 45.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "396ee1e524f5",
+   "url": "http://arxiv.org/abs/2609.26618v1",
+   "title": {
+    "zh": "NavSafe-∞：逼真环境中闭环驾驶安全基准",
+    "en": "NavSafe-$\\infty$: Benchmarking Closed-Loop Driving Safety in Photorealistic Environments",
+    "de": "NavSafe-∞: Closed-Loop-Fahrsicherheitsbenchmark in realistischen Umgebungen",
+    "src": "NavSafe-$\\infty$: Benchmarking Closed-Loop Driving Safety in Photorealistic Environments"
+   },
+   "one_liner": {
+    "zh": "端到端驾驶策略在开环基准上进展迅速，但开环评估无法揭示策略能否承受累积",
+    "en": "End-to-end driving policies advance rapidly on open-loop benchmarks, but open-loop evaluation cannot reveal whether policies withstand accumulated errors.",
+    "de": "End-to-End-Fahrstrategien machen auf Open-Loop-Benchmarks schnelle Fortschritte, doch Open-Loop-Evaluation kann nicht zeigen, ob Strategien kumulierte Fehler verkraften."
+   },
+   "why_it_matters": {
+    "zh": "开环评估无法揭示端到端驾驶策略是否能承受 compounding 情况，因此需要闭环安全基准",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 57.0,
+   "heat": 45.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7b82eb2e7936",
+   "url": "http://arxiv.org/abs/2609.26779v1",
+   "title": {
+    "zh": "",
+    "en": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+    "de": "CliffCompaction: Kosteneffiziente Kompaktierung für langhorizontige Coding-Agenten",
+    "src": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.5,
+   "heat": 45.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "350e686cd077",
+   "url": "http://arxiv.org/abs/2609.26774v1",
+   "title": {
+    "zh": "",
+    "en": "StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training",
+    "de": "StableVQ: Praktische Leitlinien für stabiles Training vektorquantisierter Tokenizer",
+    "src": "StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.5,
+   "heat": 45.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "13b73d3e400c",
+   "url": "http://arxiv.org/abs/2609.26687v1",
+   "title": {
+    "zh": "",
+    "en": "Detecting GPT-Assisted Writing Using Interpretable Stylometric Features",
+    "de": "Erkennung GPT-unterstützten Schreibens mittels interpretierbarer stylometrischer Merkmale",
+    "src": "Detecting GPT-Assisted Writing Using Interpretable Stylometric Features"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.5,
+   "heat": 45.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ee38ad4d30e6",
+   "url": "http://arxiv.org/abs/2609.26708v1",
+   "title": {
+    "zh": "",
+    "en": "Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning",
+    "de": "Train Where the Quantized Model Goes: On-Policy-Distillation für Low-Bit-Reasoning",
+    "src": "Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 55.5,
+   "heat": 44.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c9365a66473f",
+   "url": "http://arxiv.org/abs/2609.26693v1",
+   "title": {
+    "zh": "",
+    "en": "Measuring the Serving Stack Instead of the Model: Hidden Confounds in Local Tool-Use Evaluation",
+    "de": "Den Serving-Stack statt das Modell messen: Verborgene Störfaktoren bei lokaler Tool-Use-Evaluation",
+    "src": "Measuring the Serving Stack Instead of the Model: Hidden Confounds in Local Tool-Use Evaluation"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 55.0,
+   "heat": 44.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ac61a09aee80",
+   "url": "http://arxiv.org/abs/2609.26590v1",
+   "title": {
+    "zh": "",
+    "en": "GTR: Gated Token Recurrence for Efficient Dense Prediction",
+    "de": "GTR: Gated Token Recurrence für effiziente dichte Vorhersage",
+    "src": "GTR: Gated Token Recurrence for Efficient Dense Prediction"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.5,
+   "heat": 43.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "84d737f83e85",
+   "url": "http://arxiv.org/abs/2609.26793v1",
+   "title": {
+    "zh": "",
+    "en": "HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis",
+    "de": "HARMONY: Hierarchisches agentisches Reasoning für monokulare Image-to-Scene-Synthese",
+    "src": "HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.0,
+   "heat": 43.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "02b2562ac8f2",
+   "url": "http://arxiv.org/abs/2609.26704v1",
+   "title": {
+    "zh": "",
+    "en": "Beyond Repeated Sampling: Learning Search Policies for LLM Reasoning",
+    "de": "Jenseits wiederholten Samplings: Erlernen von Suchstrategien für LLM-Reasoning",
+    "src": "Beyond Repeated Sampling: Learning Search Policies for LLM Reasoning"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 52.5,
+   "heat": 42.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "eb674318848c",
+   "url": "http://arxiv.org/abs/2609.26672v1",
+   "title": {
+    "zh": "",
+    "en": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation",
+    "de": "Unvollkommenheit für Präzision: Upcycling unvollkommener Daten für hochpräzise robotische Manipulation",
+    "src": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 52.5,
+   "heat": 42.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "571a4608e180",
+   "url": "http://arxiv.org/abs/2609.26667v1",
+   "title": {
+    "zh": "",
+    "en": "MAGIC: Mixed-Granularity Agent Graphs via Incremental Construction with Dense-Reward Reinforcement Learning",
+    "de": "MAGIC: Agentengraphen gemischter Granularität durch inkrementellen Aufbau mit Dense-Reward-Reinforcement-Learning",
+    "src": "MAGIC: Mixed-Granularity Agent Graphs via Incremental Construction with Dense-Reward Reinforcement Learning"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 52.5,
+   "heat": 42.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2c2e193cac68",
+   "url": "http://arxiv.org/abs/2609.26753v1",
+   "title": {
+    "zh": "",
+    "en": "Underwater Navigation in Unsteady Flows Using Measurement Histories from a Single Sensing Unit",
+    "de": "Unterwassernavigation in instationären Strömungen mit einer einzelnen Sensoreinheit",
+    "src": "Underwater Navigation in Unsteady Flows Using Measurement Histories from a Single Sensing Unit"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 51.5,
+   "heat": 41.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "6ee01bba1c0c",
+   "url": "http://arxiv.org/abs/2609.26638v1",
+   "title": {
+    "zh": "",
+    "en": "Diffusion Drafts, AR Verifies: Accelerating Document OCR with Self-Speculative Decoding",
+    "de": "Diffusion-Drafts, AR-Verifikation: Beschleunigung von Dokument-OCR durch selbst-speculative Decoding",
+    "src": "Diffusion Drafts, AR Verifies: Accelerating Document OCR with Self-Speculative Decoding"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 50.5,
+   "heat": 40.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "8531f6d6ac44",
+   "url": "http://arxiv.org/abs/2609.26756v1",
+   "title": {
+    "zh": "",
+    "en": "FleXray: Universal Clinical X-ray Segmentation",
+    "de": "FleXray: Universelle klinische Röntgenbild-Segmentierung",
+    "src": "FleXray: Universal Clinical X-ray Segmentation"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 49.5,
+   "heat": 39.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "859518690463",
+   "url": "http://arxiv.org/abs/2609.26749v1",
+   "title": {
+    "zh": "",
+    "en": "Metrics Failure in LLM-Based Code Vulnerability Repair: An Empirical Study and a Change-Aware Screen",
+    "de": "Metriken-Versagen bei LLM-basierter Code-Schwachstellenbehebung: Empirische Studie und Change-Aware Screen",
+    "src": "Metrics Failure in LLM-Based Code Vulnerability Repair: An Empirical Study and a Change-Aware Screen"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 49.0,
+   "heat": 39.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "0da61ca27397",
+   "url": "http://arxiv.org/abs/2609.26682v1",
+   "title": {
+    "zh": "",
+    "en": "From Alignment to Access Control: A Framework for GenAI Policy Enforcement",
+    "de": "Von Alignment zu Zugriffskontrolle: ein GenAI-Policy-Framework",
+    "src": "From Alignment to Access Control: A Framework for GenAI Policy Enforcement"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 48.0,
+   "heat": 38.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "fec20d3a6ba5",
+   "url": "http://arxiv.org/abs/2609.26648v1",
+   "title": {
+    "zh": "",
+    "en": "ROAM-ASD: Robust Open-World Active Speaker Detection with Flexible Multimodal Fusion",
+    "de": "ROAM-ASD: robuste Open-World-Erkennung aktiver Sprecher",
+    "src": "ROAM-ASD: Robust Open-World Active Speaker Detection with Flexible Multimodal Fusion"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 48.0,
+   "heat": 38.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "8ce52ecb6445",
+   "url": "http://arxiv.org/abs/2609.26637v1",
+   "title": {
+    "zh": "",
+    "en": "Capable yet Parsimonious: Extracting and Characterizing Hidden Chain-of-Thought in Frontier Models",
+    "de": "Leistungsfähig doch sparsam: verborgene Chain-of-Thought extrahieren",
+    "src": "Capable yet Parsimonious: Extracting and Characterizing Hidden Chain-of-Thought in Frontier Models"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 48.0,
+   "heat": 38.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ce333d5ec78e",
+   "url": "http://arxiv.org/abs/2609.26760v1",
+   "title": {
+    "zh": "",
+    "en": "Grow the Harness, Not the Context: From Strategy-Free Scaffolds to Reusable Specialist Agents",
+    "de": "Grow the Harness, Not the Context: Von strategiefreien Scaffolds zu wiederverwendbaren Spezialisten-Agenten",
+    "src": "Grow the Harness, Not the Context: From Strategy-Free Scaffolds to Reusable Specialist Agents"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 46.5,
+   "heat": 37.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c4527fdede7a",
+   "url": "https://www.tmtpost.com/8149243.html",
+   "title": {
+    "zh": "",
+    "en": "[钛媒体] In conversation with Tsinghua professor Li Ning: Tencent, ByteDance, Alibaba battle in AI office, but no one has solved this problem",
+    "de": "[钛媒体] Im Gespräch mit Tsinghua-Professor Li Ning: Tencent, ByteDance und Alibaba kämpfen im AI-Office, doch niemand hat dieses Problem gelöst",
+    "src": "[钛媒体] 对话清华教授李宁：腾讯字节阿里激战AI办公，但这个问题谁也没解决"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T02:10:12Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 40.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "cbb36664ce69",
+   "url": "https://www.tmtpost.com/8149345.html",
+   "title": {
+    "zh": "",
+    "en": "Meta's AI-All-In Zuckerberg Can Finally Breathe",
+    "de": "Metas KI-All-In Zuckerberg kann endlich aufatmen",
+    "src": "[钛媒体] AII IN AI的扎克伯格，终于松口气了"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T01:50:00Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 35.0,
+   "heat": 34.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "3af5e357dd4b",
+   "url": "https://www.tmtpost.com/8149163.html",
+   "title": {
+    "zh": "",
+    "en": "[钛媒体] From Mixue Bingcheng to DeepSeek, is Hillhouse background becoming standard for big tech executives?",
+    "de": "[钛媒体] Von Mixue Bingcheng bis DeepSeek: Wird der Hillhouse-Hintergrund zum Standard für Führungskräfte großer Tech-Firmen?",
+    "src": "[钛媒体] 从蜜雪冰城到DeepSeek，高瓴系成大厂高管标配？"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T01:33:47Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 40.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "22d28b139a12",
+   "url": "https://www.ithome.com/1/006/065.htm",
+   "title": {
+    "zh": "",
+    "en": "[IT之家] Shokz's first AI earbuds OpenFit 2 AI debut at 2026 Yunqi Conference, AI Lab new features launched",
+    "de": "[IT之家] Shokz' erste AI-Ohrhörer OpenFit 2 AI debütieren auf der Yunqi-Konferenz 2026, neue AI-Lab-Funktionen vorgestellt",
+    "src": "[IT之家] 韶音旗下首款 AI 耳机 OpenFit 2 AI 亮相 2026 云栖大会，AI 实验室新功能首发"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T01:31:39Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 40.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "a88994de5535",
+   "url": "https://www.tmtpost.com/8149358.html",
+   "title": {
+    "zh": "",
+    "en": "Inference chip race: Groq, Cerebras, OpenAI paths and Bill Dally",
+    "de": "Rennen um Inferenzchips: Groq, Cerebras, OpenAI und Bill Dally",
+    "src": "[钛媒体] 推理芯片之战：聊聊Groq、Cerebras与OpenAI三大路径与Bill Dally的设计哲学"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T01:24:46Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 38.9,
+   "heat": 38.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "732b7f55b3cd",
+   "url": "https://www.tmtpost.com/8149352.html",
+   "title": {
+    "zh": "",
+    "en": "AI agents are driving CPU prices sharply higher",
+    "de": "KI-Agenten lassen CPU-Preise stark steigen",
+    "src": "[钛媒体] AI智能体，正在让CPU身价暴涨"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T01:24:25Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 37.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7098ca4dadcb",
+   "url": "http://arxiv.org/abs/2609.26313v1",
+   "title": {
+    "zh": "SafeLoop：视觉-语言-动作操作的风险感知回滚",
+    "en": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+    "de": "SafeLoop: Risikobewusstes Rollback für Vision-Language-Action-Manipulation",
+    "src": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation"
+   },
+   "one_liner": {
+    "zh": "研究针对视觉-语言-动作模型长时程执行脆弱的问题，提出风险感知回滚方法SafeLoop。",
+    "en": "To address fragile long-horizon execution in vision-language-action models, the study proposes the risk-aware rollback method SafeLoop.",
+    "de": "Zur Bewältigung fragiler Langzeithorizont-Ausführung in Vision-Language-Action-Modellen schlägt die Studie die risikobewusste Rollback-Methode SafeLoop vor."
+   },
+   "why_it_matters": {
+    "zh": "长时程执行仍脆弱，小的状态估计误差会影响视觉-语言-动作模型的通用操作。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 72.0,
+   "heat": 57.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c3f56f9210c9",
+   "url": "http://arxiv.org/abs/2609.26347v1",
+   "title": {
+    "zh": "TransBERT：面向领域特定语言建模的合成翻译框架",
+    "en": "TransBERT: A Framework for Synthetic Translation in Domain-Specific Language Modeling",
+    "de": "TransBERT: Ein synthetisches Übersetzungsframework für domänenspezifische Sprachmodellierung",
+    "src": "TransBERT: A Framework for Synthetic Translation in Domain-Specific Language Modeling"
+   },
+   "one_liner": {
+    "zh": "针对专业领域非英语数据稀缺限制NLP工具发展的问题，研究提出合成翻译框架TransBERT。",
+    "en": "To address scarce non-English domain-specific data limiting NLP tools, the study proposes the synthetic translation framework TransBERT.",
+    "de": "Um knappe domänenspezifische nicht-englische Daten zu adressieren, die NLP-Werkzeuge einschränken, schlägt die Studie das synthetische Übersetzungsframework TransBERT vor."
+   },
+   "why_it_matters": {
+    "zh": "专业领域非英语语言数据稀缺，显著限制了有效自然语言处理工具的开发。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 69.5,
+   "heat": 55.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b06605698cb4",
+   "url": "http://arxiv.org/abs/2609.26342v1",
+   "title": {
+    "zh": "几何感知的双曲残差量化",
+    "en": "Geometry-Aware Hyperbolic Residual Quantization",
+    "de": "Geometriebewusste hyperbolische Residualquantisierung",
+    "src": "Geometry-Aware Hyperbolic Residual Quantization"
+   },
+   "one_liner": {
+    "zh": "针对残差向量量化大多在欧几里得空间进行的问题，研究提出几何感知的双曲残差量化。",
+    "en": "Since residual vector quantization is mostly performed in Euclidean space, the study proposes geometry-aware hyperbolic residual quantization.",
+    "de": "Da Residualvektorquantisierung meist im euklidischen Raum erfolgt, schlägt die Studie geometriebewusste hyperbolische Residualquantisierung vor."
+   },
+   "why_it_matters": {
+    "zh": "残差向量量化将连续表示转为离散多级token序列，多数方法仍在欧几里得空间操作。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 68.0,
+   "heat": 54.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Residual Vector Quantization turns continuous representations into discrete, multi-level token sequences."
+  },
+  {
+   "id": "939857947cb0",
+   "url": "http://arxiv.org/abs/2609.26333v1",
+   "title": {
+    "zh": "解聚合量化：专精LLM预填充与解码",
+    "en": "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+    "de": "Disaggregierte Quantisierung: Spezialisierung von LLM-Prefill und Decode",
+    "src": "Disaggregated Quantization: Specializing LLM Prefill and Decode"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 68.0,
+   "heat": 54.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c685b9b9b6de",
+   "url": "http://arxiv.org/abs/2609.26325v1",
+   "title": {
+    "zh": "利用视觉点云地图先验进行相机3D检测与在线矢量化HD地图构建",
+    "en": "Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping",
+    "de": "Kamerabasierte 3D-Detektion und online vektorisierte HD-Kartenerstellung mittels visueller Punktwolkenkarten-Priors",
+    "src": "Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping"
+   },
+   "one_liner": {
+    "zh": "基于相机的3D物体检测和在线矢量化HD地图为自动驾驶提供紧凑场景表示，但两者都依赖准确的度量。",
+    "en": "Camera-based 3D object detection and online vectorized HD maps provide compact scene representations for autonomous driving, but both rely on accurate metrics.",
+    "de": "Kamerabasierte 3D-Objektdetektion und online vektorisierte HD-Karten liefern kompakte Szenendarstellungen für autonomes Fahren, hängen aber beide von präziser Metrik ab."
+   },
+   "why_it_matters": {
+    "zh": "这两种方法为自动驾驶提供紧凑场景表示，但都依赖准确的度量信息。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 68.0,
+   "heat": 54.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d6a26e97599f",
+   "url": "http://arxiv.org/abs/2609.26315v1",
+   "title": {
+    "zh": "ArborSplat：面向果园的在线语义高斯泼溅SLAM",
+    "en": "ArborSplat: Online Semantic Gaussian Splatting SLAM for Orchards",
+    "de": "ArborSplat: Online-semantisches Gaussian-Splatting-SLAM für Obstgärten",
+    "src": "ArborSplat: Online Semantic Gaussian Splatting SLAM for Orchards"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 68.0,
+   "heat": 54.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2e571b1ae8f0",
+   "url": "http://arxiv.org/abs/2609.26314v1",
+   "title": {
+    "zh": "TriWorldBench：具身世界模型的三视图一致性视角",
+    "en": "TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models",
+    "de": "TriWorldBench: Drei-Ansichten-Konsistenz für verkörperte Weltmodelle",
+    "src": "TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models"
+   },
+   "one_liner": {
+    "zh": "具身世界模型预测机器人动作结果以支持学习和规划。",
+    "en": "Embodied world models predict robot action outcomes to support learning and planning.",
+    "de": "Verkörperte Weltmodelle sagen Ergebnisse von Roboteraktionen voraus, um Lernen und Planung zu unterstützen."
+   },
+   "why_it_matters": {
+    "zh": "对于配备头部和腕部摄像头的机器人，具身世界模型预测动作结果以支持学习和规划。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 68.0,
+   "heat": 54.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Embodied world models predict the outcomes of robot actions to support learning and planning."
+  },
+  {
+   "id": "3f50f7b55460",
+   "url": "http://arxiv.org/abs/2609.26299v1",
+   "title": {
+    "zh": "ForeDrive：前瞻引导的端到端自动驾驶",
+    "en": "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model",
+    "de": "ForeDrive: Vorausschau-gesteuertes End-to-End-autonomes Fahren",
+    "src": "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
+   },
+   "one_liner": {
+    "zh": "现有潜在世界模型通常针对未来可预测性优化，但所得表示对自动驾驶规划不一定有用。",
+    "en": "Existing latent world models are usually optimized for future predictability, but the resulting representations are not necessarily useful for autonomous driving planning.",
+    "de": "Bestehende latente Weltmodelle werden meist auf zukünftige Vorhersagbarkeit optimiert, doch die resultierenden Repräsentationen sind für die Planung des autonomen Fahrens nicht unbedingt nützlich."
+   },
+   "why_it_matters": {
+    "zh": "现有潜在世界模型的表示对未来可预测性优化，但对自动驾驶规划不一定有用。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 66.0,
+   "heat": 52.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "8a266dcd4da9",
+   "url": "http://arxiv.org/abs/2609.26300v1",
+   "title": {
+    "zh": "CompKV 长上下文推理的KV选择",
+    "en": "CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference",
+    "de": "CompKV: KV-Auswahl für Langkontext-Inferenz",
+    "src": "CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference"
+   },
+   "one_liner": {
+    "zh": "大语言模型在长上下文推理中受KV缓存内存流量瓶颈限制。",
+    "en": "Large language models in long-context inference are bottlenecked by KV cache memory traffic.",
+    "de": "Große Sprachmodelle sind bei der Langkontext-Inferenz durch den Speicherverkehr des KV-Cache begrenzt."
+   },
+   "why_it_matters": {
+    "zh": "原文正文摘要仅指出KV缓存内存流量是长上下文推理瓶颈，未提供更多影响面信息。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 63.0,
+   "heat": 50.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "10de04d1efac",
+   "url": "http://arxiv.org/abs/2609.26290v1",
+   "title": {
+    "zh": "学习波动：因果表格预训练的统计基础",
+    "en": "Learning to Fluctuate: Statistical Foundations for Causal Tabular Pretraining",
+    "de": "Fluktuationen lernen: Statistische Grundlagen kausalen tabellarischen Vortrainings",
+    "src": "Learning to Fluctuate: Statistical Foundations for Causal Tabular Pretraining"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 62.5,
+   "heat": 50.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ccb8f16bdbb3",
+   "url": "http://arxiv.org/abs/2609.26392v1",
+   "title": {
+    "zh": "扩散模型中的双下降与恶性过拟合",
+    "en": "Double Descent and Malign Overfitting in Diffusion Models",
+    "de": "Doppelter Abstieg und katastrophales Overfitting in Diffusionsmodellen",
+    "src": "Double Descent and Malign Overfitting in Diffusion Models"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 62.0,
+   "heat": 49.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "20c9c10cf116",
+   "url": "http://arxiv.org/abs/2609.26306v1",
+   "title": {
+    "zh": "CHiME-9 ECHI：增强对话应对听力障碍的ML挑战",
+    "en": "CHiME-9 ECHI: A Machine Learning Challenge for Enhancing Conversations to Address Hearing Impairment",
+    "de": "CHiME-9 ECHI: ML-Herausforderung zu verbesserten Gesprächen bei Hörbeeinträchtigung",
+    "src": "CHiME-9 ECHI: A Machine Learning Challenge for Enhancing Conversations to Address Hearing Impairment"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 61.5,
+   "heat": 49.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "27bb4a081e54",
+   "url": "http://arxiv.org/abs/2609.26028v1",
+   "title": {
+    "zh": "REVE：通过重用编码器状态为大型音频语言模型进行高效幻觉纠正",
+    "en": "REVE: Efficient Hallucination Correction for Large Audio-Language Models via Reused Encoder States",
+    "de": "REVE: Effiziente Halluzinationskorrektur für große Audio-Sprachmodelle durch Encoder-State-Wiederverwendung",
+    "src": "REVE: Efficient Hallucination Correction for Large Audio-Language Models via Reused Encoder States"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 61.0,
+   "heat": 48.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d88e93419b86",
+   "url": "http://arxiv.org/abs/2609.26295v1",
+   "title": {
+    "zh": "论移动出行中大型语言模型的安全与隐私",
+    "en": "On the security and privacy of LLMs in Mobility",
+    "de": "Zur Sicherheit und Privatsphäre großer Sprachmodelle im mobilen Reisen",
+    "src": "On the security and privacy of LLMs in Mobility"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 60.0,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "fba8801c1e1c",
+   "url": "http://arxiv.org/abs/2609.26039v1",
+   "title": {
+    "zh": "EMERGE：分辨率无关的等变图扩散点云生成",
+    "en": "EMERGE: Resolution-Agnostic Point Cloud Generation with Equivariant Graph-Based Diffusion",
+    "de": "EMERGE: Auflösungsunabhängige äquivariante Graph-Diffusion zur Punktwolken-Generierung",
+    "src": "EMERGE: Resolution-Agnostic Point Cloud Generation with Equivariant Graph-Based Diffusion"
+   },
+   "one_liner": {
+    "zh": "点云生成是准确捕捉和复现物理世界复杂性的关键任务，但现有生成方法存在局限。",
+    "en": "Point cloud generation is key to capturing and reproducing physical-world complexity, but existing generative methods have limitations.",
+    "de": "Punktwolken-Generierung ist zentral für die Erfassung physischer Komplexität, doch bestehende generative Verfahren sind begrenzt."
+   },
+   "why_it_matters": {
+    "zh": "点云生成对准确捕捉和复现物理世界复杂性至关重要，而现有生成方法存在不足。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 60.0,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "fcd29a309239",
+   "url": "http://arxiv.org/abs/2609.26010v1",
+   "title": {
+    "zh": "MATES：通过变换观测让冻结的单智能体策略学习多智能体交互",
+    "en": "MATES: Learning Multi-Agent Interactions by Transforming Observations for Frozen Single-Agent Policies",
+    "de": "MATES: Multi-Agenten-Interaktion mit eingefrorenen Single-Agenten-Policies durch Beobachtungstransformation",
+    "src": "MATES: Learning Multi-Agent Interactions by Transforming Observations for Frozen Single-Agent Policies"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 60.0,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "abdc6e2ba65d",
+   "url": "http://arxiv.org/abs/2609.25994v1",
+   "title": {
+    "zh": "基于控制障碍函数的全向步行辅助机器人MPC",
+    "en": "Safety-Constrained Model Predictive Control for an Omnidirectional Walking Assistive Robot Using Control Barrier Function",
+    "de": "MPC mit Control Barrier Functions für einen omnidirektionalen Gehhilfe-Roboter",
+    "src": "Safety-Constrained Model Predictive Control for an Omnidirectional Walking Assistive Robot Using Control Barrier Function"
+   },
+   "one_liner": {
+    "zh": "提供安全有效的移动辅助对恢复运动障碍者独立性和提升生活质量至关重要。",
+    "en": "Providing safe and effective mobility assistance is crucial for restoring independence and improving quality of life for people with mobility impairments.",
+    "de": "Sichere und wirksame Mobilitätsunterstützung ist entscheidend, um die Selbstständigkeit und Lebensqualität mobilitätseingeschränkter Menschen wiederherzustellen."
+   },
+   "why_it_matters": {
+    "zh": "安全有效的移动辅助对恢复运动障碍人士的独立性和提升生活质量起关键作用。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 60.0,
+   "heat": 48.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "bf1566937d33",
+   "url": "http://arxiv.org/abs/2609.26051v1",
+   "title": {
+    "zh": "迈向意图感知的人机协作：一个搜救行动平台",
+    "en": "Towards Intent-Aware Human-Robot Teaming: A Platform for Search-and-Rescue Operations",
+    "de": "Auf dem Weg zu intentbewusster Mensch-Roboter-Kollaboration: Eine Such- und Rettungsplattform",
+    "src": "Towards Intent-Aware Human-Robot Teaming: A Platform for Search-and-Rescue Operations"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 58.5,
+   "heat": 46.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7026095d74f7",
+   "url": "http://arxiv.org/abs/2609.26037v1",
+   "title": {
+    "zh": "xWhyL：因果交互学习",
+    "en": "xWhyL: Causal Interactive Learning",
+    "de": "xWhyL: Kausales Interaktionslernen",
+    "src": "xWhyL: Causal Interactive Learning"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 58.5,
+   "heat": 46.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2a9b2b76ea84",
+   "url": "http://arxiv.org/abs/2609.26034v1",
+   "title": {
+    "zh": "领域自适应预训练增强水处理语义表示以用于大规模结构化文献挖掘",
+    "en": "Domain-Adaptive Pretraining Enhances Water Treatment Semantic Representation for Large-Scale Structured Literature Mining",
+    "de": "Domänenadaptives Pretraining verbessert semantische Repräsentationen der Wasseraufbereitung für großskaliges strukturiertes Literatur-Mining",
+    "src": "Domain-Adaptive Pretraining Enhances Water Treatment Semantic Representation for Large-Scale Structured Literature Mining"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 58.5,
+   "heat": 46.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "955c722234d4",
+   "url": "http://arxiv.org/abs/2609.26292v1",
+   "title": {
+    "zh": "RoboTwin-Phys：WAM和VLA理解物理世界吗",
+    "en": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?",
+    "de": "RoboTwin-Phys: Verstehen WAM und VLA die physische Welt?",
+    "src": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?"
+   },
+   "one_liner": {
+    "zh": "当前机器人操作基准普遍缺乏物理条件多样性",
+    "en": "Current robot manipulation benchmarks generally lack diversity in physical conditions.",
+    "de": "Aktuelle Benchmarks zur Robotermanipulation entbehren generally Vielfalt bei physischen Bedingungen."
+   },
+   "why_it_matters": {
+    "zh": "物理条件多样性在当前机器人操作基准中 largely missing",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 57.5,
+   "heat": 46.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Physical-condition diversity is largely missing from current benchmarks for robot manipulation."
+  },
+  {
+   "id": "5ab58908b8ec",
+   "url": "http://arxiv.org/abs/2609.26000v1",
+   "title": {
+    "zh": "",
+    "en": "SE-MSB: End-to-End Unpaired Speech Enhancement using Mamba Schrödinger Bridges",
+    "de": "SE-MSB: End-to-End unpaired Sprachverbesserung mit Mamba-Schrödinger-Bridges",
+    "src": "SE-MSB: End-to-End Unpaired Speech Enhancement using Mamba Schrödinger Bridges"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.5,
+   "heat": 45.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "f7a1dff69eb0",
+   "url": "http://arxiv.org/abs/2609.26048v1",
+   "title": {
+    "zh": "",
+    "en": "FIRE: Failure-Informed Runtime Engineering for Reliable Language-Model Agents",
+    "de": "FIRE: Failure-Informed Runtime Engineering für zuverlässige Sprachmodell-Agenten",
+    "src": "FIRE: Failure-Informed Runtime Engineering for Reliable Language-Model Agents"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 55.5,
+   "heat": 44.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b80b48ee2da9",
+   "url": "http://arxiv.org/abs/2609.26360v1",
+   "title": {
+    "zh": "",
+    "en": "Hierarchical Floorplan-Guided Vision-Language Exploration for Embodied Question Answering",
+    "de": "Hierarchische grundrissgeführte Vision-Language-Exploration für Embodied Question Answering",
+    "src": "Hierarchical Floorplan-Guided Vision-Language Exploration for Embodied Question Answering"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 55.0,
+   "heat": 44.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d1ac3a98339b",
+   "url": "http://arxiv.org/abs/2609.26355v1",
+   "title": {
+    "zh": "",
+    "en": "PACT: From Credit Assignment to Critic Alignment",
+    "de": "PACT: Von Credit Assignment zu Critic Alignment",
+    "src": "PACT: From Credit Assignment to Critic Alignment"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 55.0,
+   "heat": 44.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "0c5b595853fd",
+   "url": "http://arxiv.org/abs/2609.26402v1",
+   "title": {
+    "zh": "",
+    "en": "OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery",
+    "de": "OMatG-flash: Eine All-Atom-Flow-Map mit Reinforce Adjoint Matching",
+    "src": "OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.0,
+   "heat": 43.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "343e7d6f86cd",
+   "url": "http://arxiv.org/abs/2609.26035v1",
+   "title": {
+    "zh": "",
+    "en": "Truth for Believable AI: Expressed Doubt, Provenance, and Belief Revision as an Engineerable Stance",
+    "de": "Wahrheit für glaubwürdige KI: Zweifel, Provenienz und Belief Revision als Haltung",
+    "src": "Truth for Believable AI: Expressed Doubt, Provenance, and Belief Revision as an Engineerable Stance"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.0,
+   "heat": 43.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b9af2ecd5ecc",
+   "url": "http://arxiv.org/abs/2609.26015v1",
+   "title": {
+    "zh": "",
+    "en": "VideoX-Qwen: Data-Centric Instruction-Based Video Editing",
+    "de": "VideoX-Qwen: Datenzentrierte instruktionsbasierte Videobearbeitung",
+    "src": "VideoX-Qwen: Data-Centric Instruction-Based Video Editing"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.0,
+   "heat": 43.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "032a69d90f8f",
+   "url": "http://arxiv.org/abs/2609.26007v1",
+   "title": {
+    "zh": "",
+    "en": "Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models",
+    "de": "Skytopia: Monokulare Drohnennavigation mit aktionskonditionierten latenten Weltmodellen",
+    "src": "Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 54.0,
+   "heat": 43.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ac05345a5726",
+   "url": "http://arxiv.org/abs/2609.26381v1",
+   "title": {
+    "zh": "",
+    "en": "Layout-Guided Masking for GROBID: Lightweight Structural Gains in Large-Scale Scientific PDF Ingestion",
+    "de": "Layout-Guided Masking für GROBID: Leichte strukturelle Gewinne bei großskaliger wissenschaftlicher PDF-Verarbeitung",
+    "src": "Layout-Guided Masking for GROBID: Lightweight Structural Gains in Large-Scale Scientific PDF Ingestion"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 53.5,
+   "heat": 42.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "95b447f10d1e",
+   "url": "http://arxiv.org/abs/2609.26375v1",
+   "title": {
+    "zh": "",
+    "en": "KwaiMind Technical Report",
+    "de": "KwaiMind Technischer Bericht",
+    "src": "KwaiMind Technical Report"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 53.5,
+   "heat": 42.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2bd0e54c8cbd",
+   "url": "http://arxiv.org/abs/2609.26368v1",
+   "title": {
+    "zh": "",
+    "en": "HySparse2: Hybrid Sparse Attention with Two-Level KV Sharing",
+    "de": "HySparse2: Hybride Sparse Attention mit zweistufigem KV-Sharing",
+    "src": "HySparse2: Hybrid Sparse Attention with Two-Level KV Sharing"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 51.0,
+   "heat": 40.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ec72e524f339",
+   "url": "http://arxiv.org/abs/2609.26389v1",
+   "title": {
+    "zh": "",
+    "en": "TimeInteract: Towards Real-Time Interactive Intelligence for Streaming Time Series",
+    "de": "TimeInteract: Echtzeit-interaktive Intelligenz für Streaming-Zeitreihen",
+    "src": "TimeInteract: Towards Real-Time Interactive Intelligence for Streaming Time Series"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 50.0,
+   "heat": 40.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "fde58bba6146",
+   "url": "http://arxiv.org/abs/2609.26388v1",
+   "title": {
+    "zh": "",
+    "en": "On the Lexical Superstition of Large Language Models for Code Comprehension: Re-evaluation on Code of Low Lexical Quality",
+    "de": "Über lexikalischen Aberglauben von LLMs beim Codeverständnis: Neubewertung bei Code niedriger lexikalischer Qualität",
+    "src": "On the Lexical Superstition of Large Language Models for Code Comprehension: Re-evaluation on Code of Low Lexical Quality"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 50.0,
+   "heat": 40.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "8c3d00d6f47e",
+   "url": "http://arxiv.org/abs/2609.26378v1",
+   "title": {
+    "zh": "",
+    "en": "MAVP: Map-Aware Visuomotor Policies for Mobile Manipulation",
+    "de": "MAVP: Kartenbewusste visuomotorische Policies für mobile Manipulation",
+    "src": "MAVP: Map-Aware Visuomotor Policies for Mobile Manipulation"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "arXiv论文",
+    "tier": "T1"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 49.5,
+   "heat": 39.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "ca7611020a60",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+   "title": {
+    "zh": "",
+    "en": "The new CC, an AI agent built for families",
+    "de": "Der neue CC, ein KI-Agent für Familien",
+    "src": "The new CC, an AI agent built for families"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "HN热议",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 30.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "61b10e23edc0",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
+   "title": {
+    "zh": "",
+    "en": "[TheVerge-AI] OpenAI wants to consult elite mathematicians about how to not fumble again",
+    "de": "OpenAI will Elite-Mathematiker konsultieren, um nicht erneut zu patzen",
+    "src": "[TheVerge-AI] OpenAI wants to consult elite mathematicians about how to not fumble again"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "OpenAI plans to consult elite mathematicians to avoid repeating past mistakes in its AI development.",
+    "de": "OpenAI plant, Elite-Mathematiker zu konsultieren, um frühere Fehler in der KI-Entwicklung zu vermeiden."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T00:18:27Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 41.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "f495f7cf8254",
+   "url": "https://www.ithome.com/1/006/036.htm",
+   "title": {
+    "zh": "",
+    "en": "Ex-Google security chief: AI harm to children may exceed social media",
+    "de": "Ex-Google-Sicherheitschef: KI-Schaden für Kinder könnte Social Media übertreffen",
+    "src": "[IT之家] 谷歌前安全负责人：AI 对儿童的伤害恐超社交媒体"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T00:12:56Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 37.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2aa7c2ef4a8f",
+   "url": "https://www.ifanr.com/1681566?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
+   "title": {
+    "zh": "",
+    "en": "[爱范儿] Morning Brief | GPT-6 Sol released, price halved/Ternus: Siri AI should not replace human relationships/OPPO Find X10 series launched from 4999",
+    "de": "[爱范儿] Morgenbriefing | GPT-6 Sol veröffentlicht, Preis halbiert/Ternus: Siri AI sollte menschliche Beziehungen nicht ersetzen/OPPO Find X10-Serie ab 4999 gestartet",
+    "src": "[爱范儿] 早报｜GPT-6 Sol发布，价格腰斩/特努斯：Siri AI不应代替人际关系/4999起，OPPO Find X10系列发布"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T00:05:46Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 40.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "34d50527363c",
+   "url": "https://www.ithome.com/1/006/032.htm",
+   "title": {
+    "zh": "",
+    "en": "Mitsubishi Heavy: US AI data center demand drives gas turbine orders to record high",
+    "de": "Mitsubishi Heavy: US-KI-Rechenzentren treiben Gasturbinen-Aufträge auf Rekordhoch",
+    "src": "[IT之家] 三菱重工：美国 AI 数据中心需求推动燃气轮机订单创新高"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T00:04:57Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 40.2,
+   "heat": 39.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7d9dd06aaf8d",
+   "url": "https://github.com/kimi-cli/kimi-cli.github.io",
+   "title": {
+    "zh": "",
+    "en": "kimi-cli/kimi-cli.github.io",
+    "de": "kimi-cli/kimi-cli.github.io",
+    "src": "kimi-cli/kimi-cli.github.io"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 44.8,
+   "heat": 35.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "acf78af67cda",
+   "url": "https://github.com/Matthew0822/MCPBastion",
+   "title": {
+    "zh": "",
+    "en": "Matthew0822/MCPBastion",
+    "de": "Matthew0822/MCPBastion",
+    "src": "Matthew0822/MCPBastion"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.8,
+   "heat": 35.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "f31b1efc7aed",
+   "url": "https://github.com/zaferayan/app-store-screenshot-skill",
+   "title": {
+    "zh": "",
+    "en": "zaferayan/app-store-screenshot-skill",
+    "de": "zaferayan/app-store-screenshot-skill",
+    "src": "zaferayan/app-store-screenshot-skill"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "A repository named zaferayan/app-store-screenshot-skill, likely a tool for App Store screenshot generation.",
+    "de": "Ein Repository namens zaferayan/app-store-screenshot-skill, vermutlich ein Werkzeug zur Erstellung von App-Store-Screenshots."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 33.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "38dd4e1da51a",
+   "url": "https://github.com/nokia-applied-research/AnyJev",
+   "title": {
+    "zh": "",
+    "en": "nokia-applied-research/AnyJev",
+    "de": "nokia-applied-research/AnyJev",
+    "src": "nokia-applied-research/AnyJev"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 32.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b8272414b91f",
+   "url": "https://github.com/mem0ai/dolphinbench",
+   "title": {
+    "zh": "",
+    "en": "mem0ai/dolphinbench",
+    "de": "mem0ai/dolphinbench",
+    "src": "mem0ai/dolphinbench"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 32.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7e7cfc5761ee",
+   "url": "https://github.com/DaVVinCi/FactorForge",
+   "title": {
+    "zh": "",
+    "en": "DaVVinCi/FactorForge",
+    "de": "DaVVinCi/FactorForge",
+    "src": "DaVVinCi/FactorForge"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.2,
+   "heat": 31.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "251adca1bf34",
+   "url": "https://github.com/hyperagent-dev/hyperagent-dev.github.io",
+   "title": {
+    "zh": "",
+    "en": "hyperagent-dev/hyperagent-dev.github.io",
+    "de": "hyperagent-dev/hyperagent-dev.github.io",
+    "src": "hyperagent-dev/hyperagent-dev.github.io"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.2,
+   "heat": 31.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "5286a30a2c15",
+   "url": "https://github.com/buddy/minesweeper",
+   "title": {
+    "zh": "",
+    "en": "buddy/minesweeper",
+    "de": "buddy/minesweeper",
+    "src": "buddy/minesweeper"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 30.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "1c1a50b1eaaa",
+   "url": "https://github.com/ShrugYu/game-client-to-server-reverse",
+   "title": {
+    "zh": "",
+    "en": "ShrugYu/game-client-to-server-reverse",
+    "de": "ShrugYu/game-client-to-server-reverse",
+    "src": "ShrugYu/game-client-to-server-reverse"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 30.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "e95c80a9e7e8",
+   "url": "https://www.theregister.com/ai-and-ml/2026/09/23/frontier-ai-keeps-racing-despite-calls-to-slow-down/5298448",
+   "title": {
+    "zh": "",
+    "en": "[TheRegister] Frontier AI keeps racing despite calls to slow down",
+    "de": "Frontier AI rast weiter trotz Forderungen nach Verlangsamung",
+    "src": "[TheRegister] Frontier AI keeps racing despite calls to slow down"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-23T00:02:47Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 41.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "6660ea5fe386",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE44WW9rU1VYRzltQ21SeFlKTTdQNFJNWGYtQWxjem1qaVFIdVJsbUVYTHVCOHZzV2RGcDIxN0gySmNHWmlOUG14WQ?oc=5",
+   "title": {
+    "zh": "",
+    "en": "GPT-6 Sol rumored for imminent release; internal AGI surfaces",
+    "de": "GPT-6 Sol angeblich kurz vor Release; internes AGI aufgetaucht",
+    "src": "[新智元(gnews桥)] GPT-6 Sol被曝即将发布？内部「AGI」已浮出水面 - 智源社区"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T23:40:00Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.8,
+   "heat": 43.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b80d4f833f82",
+   "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4/",
+   "title": {
+    "zh": "",
+    "en": "[TechCrunch-AI] TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
+    "de": "TechCrunch Founder Summit Agenda für 4. November in Boston enthüllt",
+    "src": "[TechCrunch-AI] TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T23:21:49Z",
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.2,
+   "heat": 38.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c681f07d3da5",
+   "url": "https://www.ithome.com/1/006/026.htm",
+   "title": {
+    "zh": "",
+    "en": "Fei-Fei Li on AI Safety: Don't Let Developers Evaluate Their Own Systems",
+    "de": "Fei-Fei Li zu KI-Sicherheit: Entwickler dürfen eigene Systeme nicht bewerten",
+    "src": "[IT之家] 李飞飞谈 AI 安全：不能只让开发者评估自己的系统"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T23:19:32Z",
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.3,
+   "heat": 41.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d21139b72396",
+   "url": "https://www.ithome.com/1/006/019.htm",
+   "title": {
+    "zh": "",
+    "en": "Huawei WATCH 6 HarmonyOS AI watches go on sale from 2799 yuan",
+    "de": "Huawei WATCH 6 HarmonyOS KI-Uhren ab 2799 Yuan erhältlich",
+    "src": "[IT之家] 2799 元起，华为 WATCH 6 系列鸿蒙 AI 手表今日开售"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T22:41:29Z",
+   "first_seen_utc": "2026-09-22T23:03:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.2,
+   "heat": 38.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d2497f2dfe4e",
+   "url": "https://www.ithome.com/1/006/017.htm",
+   "title": {
+    "zh": "",
+    "en": "Apple reportedly shelves AI pendant that would extend Siri with a camera",
+    "de": "Bericht: Apple legt KI-Anhänger auf Eis, der Siri per Kamera erweitern sollte",
+    "src": "[IT之家] 消息称苹果搁置研发 AI 吊坠，曾设想以摄像头拓展 Siri 能力"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T22:19:25Z",
+   "first_seen_utc": "2026-09-22T23:03:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 40.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "44d9727abb8a",
+   "url": "https://www.assbench.com/",
+   "title": {
+    "zh": "",
+    "en": "LLM Ass Bench",
+    "de": "LLM Ass Bench",
+    "src": "LLM Ass Bench"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "HN热议",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.6,
+   "heat": 33.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "88285798d40a",
+   "url": "https://www.ithome.com/1/006/015.htm",
+   "title": {
+    "zh": "",
+    "en": "Qualcomm CEO Amon: Agent Era Makes Tech More Practical, Not Replacing Us",
+    "de": "Qualcomm-CEO Amon: Agenten-Ära macht Technik praktischer, ersetzt uns nicht",
+    "src": "[IT之家] 高通 CEO 安蒙：智能体时代并不是让 AI 替我们包办一切，而是让技术变得更实用"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:52:58Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 34.3,
+   "heat": 33.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d70913a987cf",
+   "url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435",
+   "title": {
+    "zh": "",
+    "en": "[TheRegister] Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions",
+    "de": "Windows-Malware CLOSEDQUORUM nutzt KI für Folgeaktionen nach Kompromittierung",
+    "src": "[TheRegister] Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:33:29Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.9,
+   "heat": 39.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b19db685a1c4",
+   "url": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
+   "title": {
+    "zh": "",
+    "en": "[ArsTechnica-AI] New Anthropic, OpenAI models make same promise: A little more for a lot less money",
+    "de": "Neue Anthropic- und OpenAI-Modelle versprechen mehr für weniger Geld",
+    "src": "[ArsTechnica-AI] New Anthropic, OpenAI models make same promise: A little more for a lot less money"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:25:18Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 36.0,
+   "heat": 35.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "6ad324e8bd25",
+   "url": "https://www.latent.space/p/john-platt",
+   "title": {
+    "zh": "",
+    "en": "[LatentSpace] 🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science",
+    "de": "Ein Oscar, zwei Asteroiden und der Algorithmus in Ihrer sklearn: John Platt über KI für die Wissenschaft",
+    "src": "[LatentSpace] 🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:07:39Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 36.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d309ee486d55",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNHJpb1IwT0dOWXA5bzhrcE5vYTFSYkY4U1NrU2lXTjdudzJyYVdCRUQ5TUlyanYwSVYxcEpvNFRkSmVWcHZEYXg1YWVrRnBwVV9ZUXZnUWxUR0FFdGdHVXl4b3NoRU0yQ19WbkVRMDcteU45TjU0eVlMQ1hxRUNzaS1NcGpCRk1F?oc=5",
+   "title": {
+    "zh": "",
+    "en": "[gnews] Just now, Claude Opus 5.5 released! Bombshell beats GPT-6",
+    "de": "[gnews] Gerade jetzt: Claude Opus 5.5 veröffentlicht! Knaller schlägt GPT-6",
+    "src": "[新智元(gnews桥)] 刚刚，Claude Opus 5.5发布！霸天虎打爆GPT-6 - 搜狐网"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:07:25Z",
+   "first_seen_utc": "2026-09-22T23:03:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 44.5,
+   "heat": 43.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "6762c10fe05f",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYVQ0azI0cThweXNXRFZNYkdnSVQ0dVZCNGtQNnNXN2JidFNzcmhReFozbWtuNFZ3bVF3N3YyU3RVTkZ5YU5kTllqYlJrVzJJYkg2ZHJmWEo2TXN0TUd5YUt5ZzFpOFdtTjZLZHBRRjZFUmZyc0FhLTJkMnB4ODc4eUJmVkhMSGFT?oc=5",
+   "title": {
+    "zh": "",
+    "en": "GPT-6 Sol and Luna launched; prices cut in half",
+    "de": "GPT-6 Sol und Luna veröffentlicht; Preise halbiert",
+    "src": "[新智元(gnews桥)] GPT-6 Sol和Luna震撼发布！价格腰斩 - 搜狐网"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:07:25Z",
+   "first_seen_utc": "2026-09-22T23:03:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.2,
+   "heat": 38.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "165111524d0f",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Ud0hZVl8wa2FwREEyMV9KYjBxdHRYb0Q3RFV3bkVSTlh5alhEM1lqVFZZYmtqeEg2bjh1Y1pjVVR1WjVPaXIyZ2lYRUUzMGdSZGhpWXRKdTlrd21ReHNNcFdEZTN2WFNWYWs2eUNQWW5lWUpxUVE?oc=5",
+   "title": {
+    "zh": "",
+    "en": "GPT-6 Sol and Luna launched, prices halved",
+    "de": "GPT-6 Sol und Luna veröffentlicht, Preise halbiert",
+    "src": "[新智元(gnews桥)] GPT-6 Sol和Luna震撼发布！价格腰斩 - 新浪财经"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:07:00Z",
+   "first_seen_utc": "2026-09-23T01:03:32Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 36.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "991bdfde2b40",
+   "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+   "title": {
+    "zh": "",
+    "en": "[OpenAI] Better prompt caching for GPT-6",
+    "de": "Besseres Prompt-Caching für GPT-6",
+    "src": "[OpenAI] Better prompt caching for GPT-6"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T21:00:00Z",
+   "first_seen_utc": "2026-09-22T21:03:28Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 32.9,
+   "heat": 32.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "754d26e09d73",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY1hlVGtac2gzemF2NDBSdld4aUgyeXVvMjgxdmFLY0lKVWlYMjlQb3J3bjhXRTFtdDZHc29oTnR2TlgwYjhpR25pZHNhTzdRQi1FUWRPZ0J3Qnl0MmlLRjZKZUNvY2JlMFBzWFFudWlJNHVCSG5Hb0tXd215VmQ5LVl1NG9aYUtqS055czhwVWlHaW1RT1NpUVNtRm5Ia25pT2R5SV9YdW43c1hJcnpPTXBR?oc=5",
+   "title": {
+    "zh": "",
+    "en": "ChatGPT version of Grok Bot code leaked! OpenAI also wants to build you always-on AI colleagues",
+    "de": "ChatGPT-Version von Grok Bot Code enthüllt! OpenAI will auch rund um die Uhr KI-Kollegen bauen",
+    "src": "[新智元(gnews桥)] ChatGPT版Grok Bot代码曝光！OpenAI也要为你造不下班的AI同事 - 新浪财经_金融信息服务商"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T20:55:01Z",
+   "first_seen_utc": "2026-09-22T21:03:28Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 39.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "cbe20e1458a9",
+   "url": "https://www.theregister.com/ai-and-ml/2026/09/22/security-firm-finds-naming-ai-agents-after-seinfeld-characters-helps-bots-join-the-team/5298424",
+   "title": {
+    "zh": "",
+    "en": "[TheRegister] Security firm finds naming AI agents after Seinfeld characters helps bots join the team",
+    "de": "Sicherheitsfirma stellt fest: KI-Agenten nach Seinfeld-Figuren zu benennen hilft Bots, ins Team zu finden",
+    "src": "[TheRegister] Security firm finds naming AI agents after Seinfeld characters helps bots join the team"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T20:43:17Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 31.9,
+   "heat": 31.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "a4a1109d664d",
+   "url": "https://t3n.de/news/ki-branche-milliardaere-1764683/?utm_source=rss&utm_medium=newsFeed&utm_campaign=newsFeed",
+   "title": {
+    "zh": "",
+    "en": "[t3n] Alle U40 und aus der KI-Branche: Diese 7 Milliardäre sind neu im Club der Überreichen",
+    "de": "Unter 40 und aus der KI-Branche: Diese 7 neuen Milliardäre sind dabei",
+    "src": "[t3n] Alle U40 und aus der KI-Branche: Diese 7 Milliardäre sind neu im Club der Überreichen"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T20:18:00Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 34.3,
+   "heat": 33.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "36aab5ad3eeb",
+   "url": "https://the-decoder.com/openais-gpt-6-sol-and-luna-cut-prices-in-half-but-barely-move-the-needle-on-performance/",
+   "title": {
+    "zh": "",
+    "en": "[The Decoder] OpenAI's GPT-6 Sol and Luna cut prices in half but barely move the needle on performance",
+    "de": "OpenAIs GPT-6 Sol und Luna halbieren Preise, kaum Leistungsverbesserung",
+    "src": "[The Decoder] OpenAI's GPT-6 Sol and Luna cut prices in half but barely move the needle on performance"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T20:06:51Z",
+   "first_seen_utc": "2026-09-22T21:03:28Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 41.0,
+   "heat": 39.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "061e1bb8fdf4",
+   "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
+   "title": {
+    "zh": "",
+    "en": "[TechCrunch-AI] Qualcomm launches two new smartphone chips with emphasis on AI",
+    "de": "Qualcomm stellt zwei neue Smartphone-Chips mit Fokus auf KI vor",
+    "src": "[TechCrunch-AI] Qualcomm launches two new smartphone chips with emphasis on AI"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T20:00:00Z",
+   "first_seen_utc": "2026-09-22T21:03:28Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 35.7,
+   "heat": 34.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d6c47988b641",
+   "url": "https://www.ithome.com/1/006/003.htm",
+   "title": {
+    "zh": "",
+    "en": "Qualcomm Snapdragon to Integrate HBC Architecture for Faster On-Device AI",
+    "de": "Qualcomm Snapdragon integriert HBC-Architektur für schnelleres On-Device-KI",
+    "src": "[IT之家] 高通骁龙芯片将整合 HBC 架构：手机本地运行 AI 更快、更省电"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:56:20Z",
+   "first_seen_utc": "2026-09-22T20:03:23Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 34.0,
+   "heat": 33.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "15c17fc17223",
+   "url": "https://www.golem.de/news/donald-trump-ki-heisst-in-den-usa-jetzt-super-intelligence-2609-213329.html",
+   "title": {
+    "zh": "",
+    "en": "[Golem] Donald Trump: KI heit in den USA jetzt \"Super Intelligence\"",
+    "de": "Donald Trump: KI heißt in den USA jetzt \"Super Intelligence\"",
+    "src": "[Golem] Donald Trump: KI heit in den USA jetzt \"Super Intelligence\""
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:51:01Z",
+   "first_seen_utc": "2026-09-22T20:03:23Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 38.1,
+   "heat": 36.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "825b102509ab",
+   "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/",
+   "title": {
+    "zh": "",
+    "en": "[ArsTechnica-AI] Microsoft disrupts AI-assisted platform that compromised 12,000",
+    "de": "Microsoft zerschlägt KI-gestützte Plattform, die 12.000 kompromittierte",
+    "src": "[ArsTechnica-AI] Microsoft disrupts AI-assisted platform that compromised 12,000"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:45:47Z",
+   "first_seen_utc": "2026-09-22T20:03:23Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 36.0,
+   "heat": 34.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "0328060f394b",
+   "url": "https://www.ithome.com/1/006/002.htm",
+   "title": {
+    "zh": "",
+    "en": "Alibaba Qwen Book tablet debuts at 2026 Snapdragon Summit as native AI agent PC",
+    "de": "Alibaba Qwen Book Tablet debütiert beim Snapdragon Summit 2026 als nativer KI-Agent-PC",
+    "src": "[IT之家] 阿里千问平板 Qwen Book 现身 2026 骁龙峰会，定位原生 AI 智能体电脑"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:39:12Z",
+   "first_seen_utc": "2026-09-22T20:03:23Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.1,
+   "heat": 35.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d9b60efe66c9",
+   "url": "https://www.ithome.com/1/006/001.htm",
+   "title": {
+    "zh": "",
+    "en": "OpenAI releases GPT-6 Sol and Luna, API prices drop 50%",
+    "de": "OpenAI veröffentlicht GPT-6 Sol und Luna, API-Preise fallen um 50%",
+    "src": "[IT之家] OpenAI 发布 GPT-6 Sol 和 Luna 模型，API 价格大降 50%"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "OpenAI releases GPT-6 Sol and Luna models, cutting API prices by 50%.",
+    "de": "OpenAI veröffentlicht die Modelle GPT-6 Sol und Luna und senkt die API-Preise um 50%."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:25:16Z",
+   "first_seen_utc": "2026-09-22T20:03:23Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 45.8,
+   "heat": 44.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "dbc3929de4ef",
+   "url": "https://unreallabs.ai/blog/unreal-agent/",
+   "title": {
+    "zh": "",
+    "en": "Unreal Agent",
+    "de": "Unreal Agent",
+    "src": "Unreal Agent"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "HN热议",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T19:03:29Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 45.1,
+   "heat": 36.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7f07d220c819",
+   "url": "https://cohere.com/blog/ai-change-management",
+   "title": {
+    "zh": "",
+    "en": "[Cohere] ai-change-management",
+    "de": "Cohere: ai-change-management",
+    "src": "[Cohere] ai-change-management"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方博客",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T19:03:29Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 31.5,
+   "heat": 25.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "9d0e7d441edc",
+   "url": "https://www.searchenginejournal.com/which-data-sources-should-you-care-about-for-ai-search/590086/",
+   "title": {
+    "zh": "",
+    "en": "[SearchEngineJournal] Which Data Sources Should You Care About For AI Search? via @sejournal, @chrisgreenseo",
+    "de": "Welche Datenquellen sind für KI-Suche wichtig?",
+    "src": "[SearchEngineJournal] Which Data Sources Should You Care About For AI Search? via @sejournal, @chrisgreenseo"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T19:00:31Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.9,
+   "heat": 38.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "655d040aa0cf",
+   "url": "https://simonwillison.net/2026/Sep/22/llm/",
+   "title": {
+    "zh": "",
+    "en": "[SimonWillison] llm 0.36",
+    "de": "llm 0.36",
+    "src": "[SimonWillison] llm 0.36"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T18:48:37Z",
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 45.1,
+   "heat": 43.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "f147cc8e26f4",
+   "url": "https://aws.amazon.com/blogs/machine-learning/bring-more-intelligence-to-everyday-work-with-gpt-6-sol-and-gpt-6-luna-on-amazon-bedrock/",
+   "title": {
+    "zh": "",
+    "en": "AWS ML Blog: GPT-6 Sol and GPT-6 Luna on Amazon Bedrock",
+    "de": "AWS ML Blog: GPT-6 Sol und GPT-6 Luna auf Amazon Bedrock",
+    "src": "[AWS-ML博客] Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T18:10:22Z",
+   "first_seen_utc": "2026-09-22T19:03:29Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.0,
+   "heat": 41.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "4562847e2d16",
+   "url": "https://xiaguangshe.com/16099/",
+   "title": {
+    "zh": "",
+    "en": "Huaqin Tech completes bank AI anti-money-laundering review project",
+    "de": "Huaqin Tech schließt KI-Projekt zur Geldwäscheprüfung bei Banken ab",
+    "src": "[霞光社] 华钦科技完成银行客户AI反洗钱辅助审查项目，微调小型大语言模型实现高准确率"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "Fine-tuned small large language model achieves high accuracy in bank AI anti-money-laundering auxiliary review.",
+    "de": "Feinabgestimmtes kleines LLM erreicht hohe Genauigkeit bei KI-gestützter Geldwäscheprüfung für Banken."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T18:06:19Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.8,
+   "heat": 42.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "94144ed31221",
+   "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+   "title": {
+    "zh": "",
+    "en": "[TechCrunch-AI] OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
+    "de": "OpenAI startet GPT-6 Sol und Luna, günstiger und fehlerärmer",
+    "src": "[TechCrunch-AI] OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes.",
+    "de": "OpenAI startet GPT-6 Sol und Luna mit niedrigeren Kosten und weniger Fehlern."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T18:00:00Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 45.8,
+   "heat": 44.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "d91c68567c3c",
+   "url": "https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/",
+   "title": {
+    "zh": "",
+    "en": "Claude Opus 5.5 is now available on AWS",
+    "de": "Claude Opus 5.5 ist jetzt auf AWS verfügbar",
+    "src": "[AWS-ML博客] Claude Opus 5.5 is now available on AWS"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "Claude Opus 5.5 is now available on AWS, expanding access to Anthropic's latest model for cloud users.",
+    "de": "Claude Opus 5.5 ist jetzt auf AWS verfügbar und erweitert den Zugang zum neuesten Modell von Anthropic für Cloud-Nutzer."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T17:28:01Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 40.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "69678a17a741",
+   "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+   "title": {
+    "zh": "",
+    "en": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
+    "de": "Skill-ausgestattete Agenten mit Strands Evals und Amazon Bedrock AgentCore bewerten",
+    "src": "[AWS-ML博客] Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "Learn how to evaluate skill-equipped agents using Strands Evals together with Amazon Bedrock AgentCore.",
+    "de": "Erfahren Sie, wie skill-ausgestattete Agenten mit Strands Evals und Amazon Bedrock AgentCore bewertet werden."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T17:18:13Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 40.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "100d1fb37e9a",
+   "url": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
+   "title": {
+    "zh": "",
+    "en": "[SimonWillison] llm-anthropic 0.29",
+    "de": "llm-anthropic 0.29",
+    "src": "[SimonWillison] llm-anthropic 0.29"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T17:14:55Z",
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.3,
+   "heat": 40.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "36241716e577",
+   "url": "https://arstechnica.com/ai/2026/09/toyota-claims-plan-for-400000-factory-robots-wont-replace-human-workers/",
+   "title": {
+    "zh": "",
+    "en": "[ArsTechnica-AI] Toyota orders workers to train humanoid robots but says humans won't be replaced",
+    "de": "Toyota lässt Arbeiter humanoide Roboter trainieren, sagt aber, Menschen werden nicht ersetzt",
+    "src": "[ArsTechnica-AI] Toyota orders workers to train humanoid robots but says humans won't be replaced"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T17:06:16Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 46.2,
+   "heat": 44.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "e6b588e82f90",
+   "url": "https://www.heise.de/news/Schaeden-durch-KI-EU-diskutiert-neue-Haftungsregeln-11461732.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+   "title": {
+    "zh": "",
+    "en": "[heise] Schäden durch KI: EU diskutiert neue Haftungsregeln",
+    "de": "Schäden durch KI: EU diskutiert neue Haftungsregeln",
+    "src": "[heise] Schäden durch KI: EU diskutiert neue Haftungsregeln"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T17:05:00Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.9,
+   "heat": 38.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "c8b2ba0b2ba6",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
+   "title": {
+    "zh": "",
+    "en": "[TheVerge-AI] Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+    "de": "Anthropic startet Claude Opus 5.5 mit strengeren Cybersicherheits-Schutzmaßnahmen",
+    "src": "[TheVerge-AI] Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T16:32:59Z",
+   "first_seen_utc": "2026-09-22T17:03:51Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.1,
+   "heat": 35.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "0ccfdd8bdb74",
+   "url": "https://www.heise.de/news/Anthropic-veroeffentlicht-Claude-Opus-5-5-Fokus-auf-Effizienz-und-Sicherheit-11462270.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+   "title": {
+    "zh": "",
+    "en": "[heise] Anthropic veröffentlicht Claude Opus 5.5: Fokus auf Effizienz und Sicherheit",
+    "de": "Anthropic veröffentlicht Claude Opus 5.5 mit Fokus auf Effizienz und Sicherheit",
+    "src": "[heise] Anthropic veröffentlicht Claude Opus 5.5: Fokus auf Effizienz und Sicherheit"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T16:30:00Z",
+   "first_seen_utc": "2026-09-22T17:03:51Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 50.0,
+   "heat": 47.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
   {
    "id": "0a191152800f",
    "url": "https://www.theregister.com/security/2026/09/22/zai-says-sorry-for-slurping-up-your-code-open-sources-zcode/5298300",
    "title": {
     "zh": "",
     "en": "[TheRegister] Z.ai says sorry for slurping up your code, open sources ZCode",
-    "de": "Z.ai entschuldigt sich für Code-Scraping, open sources ZCode",
+    "de": "[TheRegister] Z.ai entschuldigt sich für Code-Scraping, veröffentlicht ZCode als Open Source",
     "src": "[TheRegister] Z.ai says sorry for slurping up your code, open sources ZCode"
    },
    "one_liner": {
@@ -166,8 +4480,8 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 31.9,
+   "score": 44.1,
+   "heat": 35.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -178,7 +4492,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] Privacy group slams EU for changing the data rules to cater to AI",
-    "de": "Datenschutzgruppe kritisiert EU wegen KI-freundlicher Datenregeln",
+    "de": "Datenschutzgruppe kritisiert EU für geänderte Datenregeln zugunsten von KI",
     "src": "[TheRegister] Privacy group slams EU for changing the data rules to cater to AI"
    },
    "one_liner": {
@@ -200,8 +4514,8 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.4,
-   "heat": 28.3,
+   "score": 38.1,
+   "heat": 30.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -211,8 +4525,8 @@
    "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBabkRPdGZ5UUQtSUxiVkQzbldsVm9sQTg3dGYwRE5hQmVXclRicXgwRGs5YzVOSFk5Uk5CbUFlYko2VjRLNjh4Mg?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI forms independent math advisory panel, 100+ solved problems await review",
-    "de": "OpenAI gründet unabhängigen Mathe-Beirat, 100+ gelöste Probleme warten auf Prüfung",
+    "en": "OpenAI forms independent math advisory panel, 100+ solved open problems await review",
+    "de": "OpenAI gründet unabhängigen Mathematik-Beirat, 100+ gelöste offene Probleme warten auf Prüfung",
     "src": "[机器之心(gnews桥)] 刚刚，OpenAI成立独立数学顾问团！100+「已攻克」开放问题待审 - 凤凰网"
    },
    "one_liner": {
@@ -234,8 +4548,42 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 27.4,
+   "score": 25.5,
+   "heat": 20.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "85976735f675",
+   "url": "https://simonwillison.net/2026/Sep/22/llm-typesafe/",
+   "title": {
+    "zh": "",
+    "en": "[SimonWillison] llm-typesafe 0.1a0",
+    "de": "llm-typesafe 0.1a0",
+    "src": "[SimonWillison] llm-typesafe 0.1a0"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T15:54:16Z",
+   "first_seen_utc": "2026-09-22T17:03:51Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 47.6,
+   "heat": 45.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -245,8 +4593,8 @@
    "url": "https://the-decoder.com/openai-calls-for-international-standards-on-ai-that-could-improve-itself/",
    "title": {
     "zh": "",
-    "en": "",
-    "de": "",
+    "en": "[The Decoder] OpenAI calls for international standards on AI that could improve itself",
+    "de": "OpenAI fordert internationale Standards für selbstverbessernde KI",
     "src": "[The Decoder] OpenAI calls for international standards on AI that could improve itself"
    },
    "one_liner": {
@@ -268,8 +4616,8 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.8,
-   "heat": 36.6,
+   "score": 35.4,
+   "heat": 33.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -279,8 +4627,8 @@
    "url": "https://www.ithome.com/1/005/988.htm",
    "title": {
     "zh": "",
-    "en": "Houmo confirms next-gen edge AI chip uses 3D CIM architecture",
-    "de": "Houmo bestätigt 3D-CIM-Architektur für nächsten Edge-KI-Chip",
+    "en": "Houmo AI confirms next-gen edge LLM chip uses 3D CIM compute-in-memory architecture",
+    "de": "Houmo AI bestätigt 3D-CIM-Compute-in-Memory-Architektur für LLM-Edge-Chip der nächsten Generation",
     "src": "[IT之家] 后摩智能确认其下代大模型端边 AI 芯片采用 3D CIM 存算一体架构"
    },
    "one_liner": {
@@ -302,8 +4650,42 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.7,
-   "heat": 35.5,
+   "score": 37.1,
+   "heat": 35.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2263c077adff",
+   "url": "https://www.faz.net/aktuell/wirtschaft/unternehmen/alibaba-chef-eddie-wu-ki-befreit-die-menschheit-201251511.html",
+   "title": {
+    "zh": "",
+    "en": "Alibaba CEO: AI will liberate humanity",
+    "de": "Alibaba-Chef: KI wird die Menschheit befreien",
+    "src": "[FAZ财经] Konzern aus China: Alibaba-Chef: KI befreit die Menschheit"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T15:08:33Z",
+   "first_seen_utc": "2026-09-22T19:03:29Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 38.9,
+   "heat": 36.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -327,7 +4709,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -336,8 +4718,8 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.6,
-   "heat": 33.3,
+   "score": 44.1,
+   "heat": 35.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -347,14 +4729,14 @@
    "url": "https://www.ithome.com/1/005/972.htm",
    "title": {
     "zh": "",
-    "en": "Meta stock up over 20% as Wall Street backs agent Muse",
-    "de": "Meta-Aktie steigt über 20%, Wall Street lobt Agent Muse",
+    "en": "Meta shares up over 20%, Wall Street bullish on agent Muse",
+    "de": "Meta-Aktie über 20% gestiegen, Wall Street optimistisch zu Agent Muse",
     "src": "[IT之家] Meta 股价累计上涨超 20%，华尔街分析师看好智能体 Muse"
    },
    "one_liner": {
     "zh": "",
-    "en": "Meta shares have risen over 20% cumulatively as Wall Street analysts express optimism about the agent Muse.",
-    "de": "Meta-Aktien legen kumuliert über 20% zu, da Analysten optimistisch zum Agenten Muse sind."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -370,8 +4752,8 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.6,
-   "heat": 32.5,
+   "score": 43.8,
+   "heat": 35.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -382,7 +4764,7 @@
    "title": {
     "zh": "",
     "en": "OpenAI GPT–6 Astra breaks Enigma message that has resisted solution since 2005",
-    "de": "OpenAI GPT-6 Astra entschlüsselt Enigma-Chiffre, unlösbar seit 2005",
+    "de": "OpenAI GPT-6 Astra entschlüsselt Enigma-Nachricht, ungelöst seit 2005",
     "src": "OpenAI GPT–6 Astra breaks Enigma message that has resisted solution since 2005"
    },
    "one_liner": {
@@ -416,7 +4798,7 @@
    "title": {
     "zh": "",
     "en": "[Sifted] Exclusive: Mistral acquires adtech startup Pimento in €12.7m cash-and-shares deal, filings show",
-    "de": "Mistral übernimmt Adtech-Startup Pimento für 12,7 Mio. Euro",
+    "de": "Exklusiv: Mistral übernimmt Adtech-Startup Pimento für 12,7 Mio. €",
     "src": "[Sifted] Exclusive: Mistral acquires adtech startup Pimento in €12.7m cash-and-shares deal, filings show"
    },
    "one_liner": {
@@ -438,8 +4820,8 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 38.9,
+   "score": 34.6,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -450,7 +4832,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
-    "de": "Fünf KI-Sicherheits-Sessions für Gründer bei TechCrunch Disrupt 2026",
+    "de": "Fünf KI-Sicherheits-Sessions für die TechCrunch Disrupt 2026 Agenda",
     "src": "[TechCrunch-AI] Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda"
    },
    "one_liner": {
@@ -472,8 +4854,8 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.5,
-   "heat": 38.2,
+   "score": 39.5,
+   "heat": 37.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -484,7 +4866,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage",
-    "de": "TechCrunch Disrupt 2026: Aaron Edsinger zeigt Stretch 4",
+    "de": "TechCrunch Disrupt 2026: Aaron Edsinger bringt Hello Robots Stretch 4 auf die Bühne",
     "src": "[TechCrunch-AI] TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage"
    },
    "one_liner": {
@@ -506,8 +4888,8 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.2,
-   "heat": 44.8,
+   "score": 43.4,
+   "heat": 41.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -517,21 +4899,21 @@
    "url": "https://www.qbitai.com/2026/09/494420.html",
    "title": {
     "zh": "",
-    "en": "Livestream Preview: Which Industrial AI Scenarios Will Boom First?",
-    "de": "Livestream-Vorschau: Welche industriellen KI-Szenarien explodieren zuerst?",
+    "en": "Livestream preview: which industrial AI scenarios will take off first?",
+    "de": "Livestream-Vorschau: Welche industriellen KI-Szenarien starten zuerst?",
     "src": "[量子位] 直播预告：未来两三年，哪些工业AI场景会率先爆发？"
    },
    "one_liner": {
     "zh": "",
-    "en": "A livestream preview discusses which industrial AI scenarios are likely to take off in the next two to three years.",
-    "de": "Eine Livestream-Vorschau diskutiert, welche industriellen KI-Szenarien in den nächsten zwei bis drei Jahren wahrscheinlich zuerst boomen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -540,8 +4922,8 @@
    "first_seen_utc": "2026-09-22T16:03:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 27.3,
-   "heat": 27.0,
+   "score": 28.7,
+   "heat": 27.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -551,8 +4933,8 @@
    "url": "https://www.infoq.cn/article/XPo33yALUEeIsBhQ4zGI?utm_source=rss&amp;utm_medium=article",
    "title": {
     "zh": "",
-    "en": "AI coding contributes over 90%, yet delivery only 10% faster: Cainiao's Agent approach",
-    "de": "KI-Coding trägt über 90% bei, Lieferung nur 10% schneller: Cainiaos Agent-Ansatz",
+    "en": "InfoQ China: AI Coding contribution over 90%, delivery only 10% faster",
+    "de": "InfoQ China: AI-Coding-Beitrag über 90%, Lieferung nur 10% schneller",
     "src": "[InfoQ中国] AI Coding 贡献率超 90%，需求交付却只快了 10%：菜鸟如何用 Agent 托管端到端交付？"
    },
    "one_liner": {
@@ -574,8 +4956,8 @@
    "first_seen_utc": "2026-09-22T07:03:25Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.4,
-   "heat": 42.0,
+   "score": 43.4,
+   "heat": 41.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -586,7 +4968,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Exhibit tables added: One last chance to showcase your startup at TechCrunch Disrupt 2026",
-    "de": "Ausstellungstische ergänzt: Letzte Chance, Ihr Startup bei TechCrunch Disrupt 2026 zu präsentieren",
+    "de": "Ausstellungstische ergänzt: letzte Chance für Startup-Präsentation auf TechCrunch Disrupt 2026",
     "src": "[TechCrunch-AI] Exhibit tables added: One last chance to showcase your startup at TechCrunch Disrupt 2026"
    },
    "one_liner": {
@@ -608,8 +4990,8 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.6,
-   "heat": 41.2,
+   "score": 39.9,
+   "heat": 37.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -642,8 +5024,8 @@
    "first_seen_utc": "2026-09-22T14:03:44Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.2,
-   "heat": 32.2,
+   "score": 43.0,
+   "heat": 34.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -653,8 +5035,8 @@
    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYk9NYjJMMmtQYk9ScXNabWd4TC1hSzVZY05oeFV4UzRzdnZDVEZtM0V5YlpzelNlMVNrOGp6V2Ffbk5TTXVEaUZEdGhibzU2WjQ4TnpJdF9lRUZxbDd2QU85dmZBYUZNanNmdWRJNjRXbFVZZHZnVjlDbWpWZGdiRktUNUc?oc=5",
    "title": {
     "zh": "",
-    "en": "",
-    "de": "",
+    "en": "OpenAI forms independent math advisory board, 100+ \"solved\" open problems await review",
+    "de": "OpenAI gründet unabhängigen Mathematik-Beirat, 100+ \"gelöste\" offene Probleme warten auf Prüfung",
     "src": "[机器之心(gnews桥)] 刚刚，OpenAI成立独立数学顾问团！100+「已攻克」开放问题待审 - 新浪财经_金融信息服务商"
    },
    "one_liner": {
@@ -688,8 +5070,76 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] 4 days to save up to $200: Reason 2 of 5 to be at TechCrunch Disrupt 2026",
-    "de": "4 Tage, um bis zu 200 $ zu sparen: Grund 2 von 5 für TechCrunch Disrupt 2026",
+    "de": "4 Tage bis zu 200 $ sparen: Grund 2 von 5 für die TechCrunch Disrupt 2026",
     "src": "[TechCrunch-AI] 4 days to save up to $200: Reason 2 of 5 to be at TechCrunch Disrupt 2026"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "With four days left to save up to $200, here is reason two of five to attend TechCrunch Disrupt 2026.",
+    "de": "Vier Tage bleiben, um bis zu 200 $ zu sparen – hier ist Grund zwei von fünf für die TechCrunch Disrupt 2026."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T14:00:00Z",
+   "first_seen_utc": "2026-09-22T14:03:44Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 39.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "344593e3b160",
+   "url": "https://the-decoder.com/a-tiny-software-layer-from-lab-grown-neurons-promises-faster-cheaper-ai-video/",
+   "title": {
+    "zh": "",
+    "en": "[The Decoder] A tiny software layer from lab-grown neurons promises faster, cheaper AI video",
+    "de": "Winzige Softwareschicht aus laborgezüchteten Neuronen verspricht schnelleres, günstigeres KI-Video",
+    "src": "[The Decoder] A tiny software layer from lab-grown neurons promises faster, cheaper AI video"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "A small software layer built from lab-grown neurons could enable faster and cheaper AI video generation.",
+    "de": "Eine kleine Softwareschicht aus laborgezüchteten Neuronen könnte schnellere und günstigere KI-Videogenerierung ermöglichen."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T13:58:20Z",
+   "first_seen_utc": "2026-09-22T14:03:44Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 39.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7818725bdc17",
+   "url": "https://www.qbitai.com/2026/09/494263.html",
+   "title": {
+    "zh": "",
+    "en": "Honestly, I couldn't tell this image was AI-made, let alone Chinese AI",
+    "de": "Ehrlich gesagt: Ich hielt das Bild nicht für KI, schon gar nicht für chinesische KI",
+    "src": "[量子位] 讲真，我没看出这图是AI做的，更没想到是国产AI做的"
    },
    "one_liner": {
     "zh": "",
@@ -706,80 +5156,12 @@
     "name": "官方RSS",
     "tier": "T2"
    },
-   "published_utc": "2026-09-22T14:00:00Z",
-   "first_seen_utc": "2026-09-22T14:03:44Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 44.8,
-   "heat": 44.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "344593e3b160",
-   "url": "https://the-decoder.com/a-tiny-software-layer-from-lab-grown-neurons-promises-faster-cheaper-ai-video/",
-   "title": {
-    "zh": "",
-    "en": "[The Decoder] A tiny software layer from lab-grown neurons promises faster, cheaper AI video",
-    "de": "Software-Schicht aus gezüchteten Neuronen verspricht schnelleres, günstigeres KI-Video",
-    "src": "[The Decoder] A tiny software layer from lab-grown neurons promises faster, cheaper AI video"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-22T13:58:20Z",
-   "first_seen_utc": "2026-09-22T14:03:44Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 36.4,
-   "heat": 36.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "7818725bdc17",
-   "url": "https://www.qbitai.com/2026/09/494263.html",
-   "title": {
-    "zh": "",
-    "en": "Honestly, I Couldn't Tell This Image Was AI-Made, Let Alone Chinese AI",
-    "de": "Ehrlich, ich hätte nicht erkannt, dass dieses Bild von KI stammt, geschweige denn von chinesischer KI",
-    "src": "[量子位] 讲真，我没看出这图是AI做的，更没想到是国产AI做的"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
    "published_utc": "2026-09-22T13:57:10Z",
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.1,
-   "heat": 43.6,
+   "score": 39.9,
+   "heat": 37.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -789,8 +5171,8 @@
    "url": "https://www.technologyreview.com/2026/09/22/1144890/roundtables-the-deadly-failures-of-the-virtual-border-wall/",
    "title": {
     "zh": "",
-    "en": "MIT Tech Review AI: The Deadly Failures of the Virtual Border Wall",
-    "de": "MIT Tech Review AI: Die tödlichen Fehler der virtuellen Grenzmauer",
+    "en": "Roundtables: The Deadly Failures of The Virtual Border Wall",
+    "de": "Roundtables: Die tödlichen Fehler der virtuellen Grenzmauer",
     "src": "[MIT科技评论AI] Roundtables: The Deadly Failures of The Virtual Border Wall"
    },
    "one_liner": {
@@ -803,7 +5185,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -812,8 +5194,8 @@
    "first_seen_utc": "2026-09-22T14:03:44Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.6,
-   "heat": 34.2,
+   "score": 35.4,
+   "heat": 33.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -824,7 +5206,7 @@
    "title": {
     "zh": "",
     "en": "[ArsTechnica-AI] Dyson’s most overengineered gadget may have a waterproofing problem",
-    "de": "Dysons überkonstruiertestes Gadget hat möglicherweise ein Wasserdichtigkeitsproblem",
+    "de": "Dysons überkonstruiertestes Gadget hat womöglich ein Wasserdichtigkeitsproblem",
     "src": "[ArsTechnica-AI] Dyson’s most overengineered gadget may have a waterproofing problem"
    },
    "one_liner": {
@@ -846,8 +5228,42 @@
    "first_seen_utc": "2026-09-22T15:03:45Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.6,
-   "heat": 41.1,
+   "score": 39.9,
+   "heat": 37.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2f0873b9553f",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFByWUhwdWxKQWYtNUNqemhTbFl4OUsyWTJQYkthQ0lIQ0stbDFneTcyNV9tajQxd01CclI3b3BhQXJhMG5vbnpoQTVGN0tkU28wS0w0?oc=5",
+   "title": {
+    "zh": "",
+    "en": "ChatGPT Grok Bot code leaked: OpenAI also wants AI coworkers",
+    "de": "ChatGPT Grok Bot Code durchgesickert: OpenAI will auch KI-Kollegen",
+    "src": "[新智元(gnews桥)] ChatGPT版Grok Bot代码曝光！OpenAI也要为你造不下班的AI同事 - 华尔街见闻"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T13:30:03Z",
+   "first_seen_utc": "2026-09-23T00:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 45.1,
+   "heat": 42.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -880,8 +5296,8 @@
    "first_seen_utc": "2026-09-22T14:03:44Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 39.3,
+   "score": 39.5,
+   "heat": 37.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -892,7 +5308,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] Civo plots 40 edge datacenters to power Britain's sovereign AI",
-    "de": "Civo plant 40 Edge-Rechenzentren für britische souveräne KI",
+    "de": "Civo plant 40 Edge-Rechenzentren für Großbritanniens souveräne KI",
     "src": "[TheRegister] Civo plots 40 edge datacenters to power Britain's sovereign AI"
    },
    "one_liner": {
@@ -914,8 +5330,8 @@
    "first_seen_utc": "2026-09-22T13:09:51Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 31.6,
+   "score": 41.0,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -925,8 +5341,8 @@
    "url": "https://www.ithome.com/1/005/942.htm",
    "title": {
     "zh": "",
-    "en": "OPPO launches 'AI Mind Ball' wearable at 499 yuan, positioned as AI growth coach",
-    "de": "OPPO startet Wearable 'AI Mind Ball' für 499 Yuan als KI-Wachstumscoach",
+    "en": "OPPO launches \"AI Mind Ball\" wearable at 499 yuan, an \"AI growth coach\"",
+    "de": "OPPO startet \"AI Mind Ball\"-Wearable für 499 Yuan, ein \"KI-Wachstumscoach\"",
     "src": "[IT之家] 体验价 499 元：OPPO 推出“AI 心力球”可穿戴新品，主打“AI 成长教练”"
    },
    "one_liner": {
@@ -948,8 +5364,8 @@
    "first_seen_utc": "2026-09-22T13:09:51Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 27.4,
+   "score": 37.1,
+   "heat": 29.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -960,7 +5376,7 @@
    "title": {
     "zh": "",
     "en": "[TechCrunch-AI] Everyone can find a reason to dislike data center construction",
-    "de": "Jeder findet einen Grund, Rechenzentrumsbau abzulehnen",
+    "de": "Jeder findet einen Grund, Datacenter-Bau abzulehnen",
     "src": "[TechCrunch-AI] Everyone can find a reason to dislike data center construction"
    },
    "one_liner": {
@@ -973,7 +5389,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -982,20 +5398,20 @@
    "first_seen_utc": "2026-09-22T14:03:44Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.7,
-   "heat": 42.0,
+   "score": 39.5,
+   "heat": 37.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "d5fa33ecb38e",
-   "url": "https://www.404media.co/people-training-openais-ai-fired-for-using-ai-to-train-the-ai/",
+   "id": "4e63de8d2556",
+   "url": "https://xiaguangshe.com/16091/",
    "title": {
     "zh": "",
-    "en": "[404Media] People Training OpenAI’s AI Fired for Using AI to Train the AI",
-    "de": "[404Media] Personen, die OpenAIs KI trainieren, entlassen, weil sie KI zum KI-Training nutzten",
-    "src": "[404Media] People Training OpenAI’s AI Fired for Using AI to Train the AI"
+    "en": "AI Translation for Global Expansion: Ask Five Questions First",
+    "de": "KI-Übersetzung fürs Auslandsgeschäft: Zuerst fünf Fragen stellen",
+    "src": "[霞光社] 出海企业选AI翻译，先问五个问题"
    },
    "one_liner": {
     "zh": "",
@@ -1012,46 +5428,12 @@
     "name": "官方RSS",
     "tier": "T2"
    },
-   "published_utc": "2026-09-22T12:59:12Z",
+   "published_utc": "2026-09-22T12:38:34Z",
    "first_seen_utc": null,
    "scoop_hours": null,
    "selected": false,
    "score": 52.1,
-   "heat": 51.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "cc3240bdec21",
-   "url": "https://www.heise.de/hintergrund/IT-Schwachstellensuche-mit-KI-Chancen-Grenzen-und-Risiken-11419177.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
-   "title": {
-    "zh": "",
-    "en": "[heise] heise+ | IT-Schwachstellensuche mit KI: Chancen, Grenzen und Risiken",
-    "de": "heise+ | IT-Schwachstellensuche mit KI: Chancen, Grenzen, Risiken",
-    "src": "[heise] heise+ | IT-Schwachstellensuche mit KI: Chancen, Grenzen und Risiken"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T12:09:06Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 45.1,
-   "heat": 36.1,
+   "heat": 48.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1062,7 +5444,7 @@
    "title": {
     "zh": "",
     "en": "[heise] Peloton bringt neue Laufbänder: Mal hochklappbar, mal mit KI",
-    "de": "Peloton bringt neue Laufbänder: mal hochklappbar, mal mit KI",
+    "de": "Peloton bringt neue Laufbänder: klappbar, mit KI",
     "src": "[heise] Peloton bringt neue Laufbänder: Mal hochklappbar, mal mit KI"
    },
    "one_liner": {
@@ -1084,25 +5466,25 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 31.9,
+   "score": 44.8,
+   "heat": 35.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "7a53c9053f96",
-   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5FYXBZTlJxd0cwZFlxR0t0X3N0ZnFNVDJmNHNKVlZNTnRhQW9iX0gtYkRiaExkUTJ6TjF1M1EwWFhueEhab0JkZQ?oc=5",
+   "id": "cc3240bdec21",
+   "url": "https://www.heise.de/hintergrund/IT-Schwachstellensuche-mit-KI-Chancen-Grenzen-und-Risiken-11419177.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
    "title": {
     "zh": "",
-    "en": "OpenAI Researcher: Air-Gapping Cannot Stop Runaway AI",
-    "de": "OpenAI-Forscher: Air-Gapping kann entlaufene KI nicht stoppen",
-    "src": "[新智元(gnews桥)] OpenAI研究员惊人言论：物理隔离无法阻止失控AI！ - 智源社区"
+    "en": "[heise] heise+ | IT-Schwachstellensuche mit KI: Chancen, Grenzen und Risiken",
+    "de": "IT-Schwachstellensuche mit KI: Chancen, Grenzen und Risiken",
+    "src": "[heise] heise+ | IT-Schwachstellensuche mit KI: Chancen, Grenzen und Risiken"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A look at how AI is used to find IT vulnerabilities, covering its opportunities, limitations, and associated risks.",
+    "de": "Ein Überblick darüber, wie KI zur Suche nach IT-Schwachstellen eingesetzt wird, mit Chancen, Grenzen und Risiken."
    },
    "why_it_matters": {
     "zh": "",
@@ -1114,12 +5496,80 @@
     "name": "官方RSS",
     "tier": "T2"
    },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T12:09:06Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.0,
+   "heat": 33.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7a53c9053f96",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5FYXBZTlJxd0cwZFlxR0t0X3N0ZnFNVDJmNHNKVlZNTnRhQW9iX0gtYkRiaExkUTJ6TjF1M1EwWFhueEhab0JkZQ?oc=5",
+   "title": {
+    "zh": "",
+    "en": "OpenAI researcher: physical isolation cannot stop runaway AI",
+    "de": "OpenAI-Forscher: physische Isolation stoppt außer Kontrolle geratene KI nicht",
+    "src": "[新智元(gnews桥)] OpenAI研究员惊人言论：物理隔离无法阻止失控AI！ - 智源社区"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "An OpenAI researcher warns that physical isolation cannot stop runaway AI.",
+    "de": "Ein OpenAI-Forscher warnt, dass physische Isolation außer Kontrolle geratene KI nicht aufhalten kann."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
    "published_utc": "2026-09-22T12:02:00Z",
    "first_seen_utc": "2026-09-22T13:09:51Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.7,
-   "heat": 41.9,
+   "score": 45.2,
+   "heat": 42.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "81928ec12dd8",
+   "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+   "title": {
+    "zh": "",
+    "en": "[OpenAI] Parallel cut research time and cost in half with GPT‑6 Astra",
+    "de": "OpenAI: Parallel halbierte Forschungszeit und -kosten mit GPT-6 Astra",
+    "src": "[OpenAI] Parallel cut research time and cost in half with GPT‑6 Astra"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T12:00:00Z",
+   "first_seen_utc": "2026-09-22T23:03:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 43.4,
+   "heat": 40.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1130,7 +5580,7 @@
    "title": {
     "zh": "",
     "en": "[The Decoder] Xiaomi's affordable flagship AI leads the open models, and Anthropic says Claude helped get it there",
-    "de": "Xiaomis günstiges KI-Flaggschiff führt offene Modelle an, dank Claude",
+    "de": "Xiaomis günstiges KI-Flaggschiff führt offene Modelle an, Claude laut Anthropic beteiligt",
     "src": "[The Decoder] Xiaomi's affordable flagship AI leads the open models, and Anthropic says Claude helped get it there"
    },
    "one_liner": {
@@ -1152,8 +5602,8 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 38.7,
+   "score": 37.1,
+   "heat": 34.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1163,8 +5613,8 @@
    "url": "https://www.infoq.cn/article/jCdqhiUJHJlVgOYGfWGx?utm_source=rss&amp;utm_medium=article",
    "title": {
     "zh": "",
-    "en": "Huawei Cloud CodeArts upgrades for HarmonyOS developers",
-    "de": "Huawei Cloud CodeArts für HarmonyOS-Entwickler aufgerüstet",
+    "en": "Huawei Cloud CodeArts upgrades for HarmonyOS developers with coding model",
+    "de": "Huawei Cloud CodeArts für HarmonyOS-Entwickler mit Coding-Modell aufgerüstet",
     "src": "[InfoQ中国] 华为云码道面向鸿蒙开发者升级：上线鸿蒙编码大模型，覆盖开发到编译全流程"
    },
    "one_liner": {
@@ -1187,7 +5637,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.0,
-   "heat": 40.1,
+   "heat": 38.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1197,8 +5647,8 @@
    "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/",
    "title": {
     "zh": "",
-    "en": "Don't be fooled by this summer of AI hype",
-    "de": "Lassen Sie sich von diesem Sommer des KI-Hypes nicht täuschen",
+    "en": "Don’t be fooled by this summer of AI hype",
+    "de": "Lassen Sie sich vom diesjährigen KI-Hype im Sommer nicht täuschen",
     "src": "[MIT科技评论AI] Don’t be fooled by this summer of AI hype"
    },
    "one_liner": {
@@ -1220,8 +5670,8 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.1,
-   "heat": 30.4,
+   "score": 33.2,
+   "heat": 31.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1232,7 +5682,7 @@
    "title": {
     "zh": "",
     "en": "[Golem] Von TypeScript und Node.js: Github migriert mit KI 800.000 Codezeilen nach Rust",
-    "de": "Github migriert 800.000 Codezeilen von TypeScript zu Rust",
+    "de": "GitHub migriert 800.000 Codezeilen mit KI von TypeScript und Node.js zu Rust",
     "src": "[Golem] Von TypeScript und Node.js: Github migriert mit KI 800.000 Codezeilen nach Rust"
    },
    "one_liner": {
@@ -1254,8 +5704,42 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.9,
-   "heat": 37.9,
+   "score": 38.1,
+   "heat": 35.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "0208b032d343",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1mNmRsM3hGMzN3UXBXUlNldnpNSzlEMUt4dnNkdVFTSTJGZmViRGVyZXRPcVA5Q1BfQWpHbWJDcEExT29fUUxKbzd0VFBCRGRHa1hCX0hlUkhFVXFJVnFVVTBlX282YTI1T0FTckRPbUVGSXM1Vmc?oc=5",
+   "title": {
+    "zh": "",
+    "en": "Beijing first, Hangzhou and Shenzhen enter top three in China AI reshuffle",
+    "de": "Peking vorn, Hangzhou und Shenzhen in Top drei bei Chinas KI-Umbruch",
+    "src": "[新智元(gnews桥)] 北京第一，杭州深圳进入前三！中国AI行业大洗牌了 - 新浪财经"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T10:45:00Z",
+   "first_seen_utc": "2026-09-22T22:03:34Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.8,
+   "heat": 35.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1265,7 +5749,7 @@
    "url": "https://www.infoq.cn/article/ZSAtWPoOgIDcANYa8CXc?utm_source=rss&amp;utm_medium=article",
    "title": {
     "zh": "",
-    "en": "NVIDIA Personal AI Router allocates AI tasks to local compute resources",
+    "en": "NVIDIA Personal AI Router allocates AI tasks to local compute",
     "de": "NVIDIA Personal AI Router verteilt KI-Aufgaben auf lokale Rechenressourcen",
     "src": "[InfoQ中国] NVIDIA Personal AI Router 将 AI 任务分配到本地计算资源上"
    },
@@ -1288,8 +5772,42 @@
    "first_seen_utc": "2026-09-22T03:10:42Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 42.7,
+   "score": 43.4,
+   "heat": 40.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "305566921d26",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFA4QWRLajQ3MkFDRHRja3ZHN25ReE1IZ3cwTmhNWkU0QS1INFZ1SWJsc1RuRWhsMW5VSUs1SHhubS1BbFo0WEJDXw?oc=5",
+   "title": {
+    "zh": "",
+    "en": "Altman Misses List! OpenAI President's $25.5B Enters Top 50 US Rich",
+    "de": "Altman verpasst Liste! OpenAI-Präsident mit 25,5 Mrd. in US-Top 50",
+    "src": "[新智元(gnews桥)] 奥特曼落榜！OpenAI总裁255亿杀进全美富豪前50 - 智源社区"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T10:20:00Z",
+   "first_seen_utc": "2026-09-23T02:12:45Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.7,
+   "heat": 39.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1299,8 +5817,8 @@
    "url": "https://www.ifanr.com/1681475?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
    "title": {
     "zh": "",
-    "en": "[ifanr] Guangfan joins Shokz to break single-point feature involution with AI OS",
-    "de": "[ifanr] Guangfan und Shokz durchbrechen mit KI-Betriebssystem funktionale Monotonie",
+    "en": "LightSail Partners Shokz, Uses AI OS to Break Single-Function Competition",
+    "de": "LightSail kooperiert mit Shokz, bricht Einzelfunktions-Wettbewerb per AI OS",
     "src": "[爱范儿] 光帆携手韶音，以 AI OS 破局单点功能内卷"
    },
    "one_liner": {
@@ -1322,8 +5840,8 @@
    "first_seen_utc": "2026-09-22T11:25:14Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.1,
-   "heat": 37.1,
+   "score": 42.3,
+   "heat": 39.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1333,8 +5851,8 @@
    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBxM0I4WF9BYlJNWWtLMFlXeXFXbkxQSzNIeVFWVGVlTXBtLU52a2xseUczTjkza3FaeUFIN0J1ME1wLTNhMUFrcjh5QWpWV1hVemxn?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI internal leak: AI begins building AI; Altman urgently issues global pause call",
-    "de": "OpenAI-Insider-Leak: KI beginnt, KI zu bauen; Altman fordert dringend globales Moratorium",
+    "en": "OpenAI internal leak: AI begins building AI; Altman urgently issues global pause",
+    "de": "OpenAI-Interna durchgesickert: KI beginnt, KI zu bauen; Altman fordert globales Moratorium",
     "src": "[新智元(gnews桥)] OpenAI内部曝光：AI开始自己造AI！奥特曼急发全球暂停令 - 华尔街见闻"
    },
    "one_liner": {
@@ -1356,8 +5874,8 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.3,
-   "heat": 40.2,
+   "score": 41.7,
+   "heat": 38.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1368,7 +5886,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Neue Android-Malware mit KI-Unterstützung entdeckt: Warum Betroffenen nur noch ein Werksreset bleibt",
-    "de": "Neue KI-gestützte Android-Malware entdeckt: Nur Werksreset bleibt",
+    "de": "Neue Android-Malware mit KI-Unterstützung entdeckt",
     "src": "[t3n] Neue Android-Malware mit KI-Unterstützung entdeckt: Warum Betroffenen nur noch ein Werksreset bleibt"
    },
    "one_liner": {
@@ -1391,7 +5909,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.7,
-   "heat": 34.7,
+   "heat": 33.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1402,13 +5920,13 @@
    "title": {
     "zh": "",
     "en": "[t3n] 28,7 Milliarden Euro: Deutschland gibt so viel für KI aus wie nie zuvor",
-    "de": "Deutschland gibt 28,7 Milliarden Euro für KI aus wie nie zuvor",
+    "de": "Deutschland gibt 28,7 Milliarden Euro für KI aus, Rekord",
     "src": "[t3n] 28,7 Milliarden Euro: Deutschland gibt so viel für KI aus wie nie zuvor"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Germany spends €28.7 billion on AI, more than ever before.",
+    "de": "Deutschland gibt 28,7 Milliarden Euro für KI aus, so viel wie nie zuvor."
    },
    "why_it_matters": {
     "zh": "",
@@ -1424,8 +5942,8 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.0,
-   "heat": 40.7,
+   "score": 45.2,
+   "heat": 41.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1436,7 +5954,7 @@
    "title": {
     "zh": "",
     "en": "[heise] Grok 4.7: Günstige API trifft auf hohen Tokenverbrauch",
-    "de": "Grok 4.7: Günstige API trifft auf hohen Tokenverbrauch",
+    "de": "[heise] Grok 4.7: Günstige API trifft auf hohen Tokenverbrauch",
     "src": "[heise] Grok 4.7: Günstige API trifft auf hohen Tokenverbrauch"
    },
    "one_liner": {
@@ -1458,8 +5976,8 @@
    "first_seen_utc": "2026-09-22T09:11:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.7,
-   "heat": 33.4,
+   "score": 44.5,
+   "heat": 35.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1470,7 +5988,7 @@
    "title": {
     "zh": "",
     "en": "[TheRegister] GOV.UK founder warns AI gold rush could leave Britain locked in",
-    "de": "GOV.UK-Gründer warnt vor KI-Goldrausch-Falle für Großbritannien",
+    "de": "GOV.UK-Gründer warnt: KI-Goldrausch könnte Großbritannien festsetzen",
     "src": "[TheRegister] GOV.UK founder warns AI gold rush could leave Britain locked in"
    },
    "one_liner": {
@@ -1492,76 +6010,8 @@
    "first_seen_utc": "2026-09-22T09:11:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.0,
-   "heat": 32.8,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "ecfc69c20e9b",
-   "url": "https://www.golem.de/news/maschinen-herrschaft-abgesagt-warum-die-ki-panikmache-unfug-ist-2609-213279.html",
-   "title": {
-    "zh": "",
-    "en": "[Golem] Maschinen-Herrschaft abgesagt: Warum die KI-Panikmache Unfug ist",
-    "de": "Golem: Maschinen-Herrschaft abgesagt: Warum KI-Panik Unfug ist",
-    "src": "[Golem] Maschinen-Herrschaft abgesagt: Warum die KI-Panikmache Unfug ist"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T09:11:38Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 33.6,
-   "heat": 26.9,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "045f636ccdad",
-   "url": "https://www.heise.de/ratgeber/Apple-Intelligence-und-Siri-AI-Die-wichtigsten-Tipps-zu-den-neuen-KI-Funktionen-11458925.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
-   "title": {
-    "zh": "",
-    "en": "[heise] heise+ | Apple Intelligence und Siri AI: Die wichtigsten Tipps zu den neuen KI-Funktionen",
-    "de": "heise+: Apple Intelligence und Siri AI: Die wichtigsten Tipps zu den neuen KI-Funktionen",
-    "src": "[heise] heise+ | Apple Intelligence und Siri AI: Die wichtigsten Tipps zu den neuen KI-Funktionen"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T09:11:38Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 32.5,
-   "heat": 26.0,
+   "score": 42.7,
+   "heat": 34.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1594,8 +6044,42 @@
    "first_seen_utc": "2026-09-22T09:11:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.2,
-   "heat": 25.8,
+   "score": 37.8,
+   "heat": 30.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "045f636ccdad",
+   "url": "https://www.heise.de/ratgeber/Apple-Intelligence-und-Siri-AI-Die-wichtigsten-Tipps-zu-den-neuen-KI-Funktionen-11458925.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+   "title": {
+    "zh": "",
+    "en": "[heise] heise+ | Apple Intelligence und Siri AI: Die wichtigsten Tipps zu den neuen KI-Funktionen",
+    "de": "heise+: Apple Intelligence und Siri AI – Tipps zu den neuen KI-Funktionen",
+    "src": "[heise] heise+ | Apple Intelligence und Siri AI: Die wichtigsten Tipps zu den neuen KI-Funktionen"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "heise+ offers key tips on the new AI features in Apple Intelligence and Siri AI.",
+    "de": "heise+ bietet die wichtigsten Tipps zu den neuen KI-Funktionen in Apple Intelligence und Siri AI."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T09:11:38Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 29.4,
+   "heat": 23.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1606,7 +6090,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Amazon macht dicht: Metas KI-Agent Muse darf nicht mehr shoppen",
-    "de": "Amazon sperrt Metas KI-Agent Muse vom Shopping aus",
+    "de": "Amazon sperrt Metas KI-Agent Muse für Shopping auf der Plattform",
     "src": "[t3n] Amazon macht dicht: Metas KI-Agent Muse darf nicht mehr shoppen"
    },
    "one_liner": {
@@ -1628,8 +6112,42 @@
    "first_seen_utc": "2026-09-22T10:03:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 37.9,
+   "score": 40.6,
+   "heat": 37.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "58df1851e165",
+   "url": "https://onlinemarketing.de/technologie/google-launcht-googlebook-android-gemini",
+   "title": {
+    "zh": "",
+    "en": "[onlinemarketing.de] Android auf dem Laptop: Das ist Googles neues Googlebook mit Gemini",
+    "de": "Android auf dem Laptop: Das ist Googles neues Googlebook mit Gemini",
+    "src": "[onlinemarketing.de] Android auf dem Laptop: Das ist Googles neues Googlebook mit Gemini"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T08:49:14Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 38.1,
+   "heat": 35.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1639,8 +6157,8 @@
    "url": "https://www.qbitai.com/2026/09/493865.html",
    "title": {
     "zh": "",
-    "en": "Orca Entertainment launches WhaleSharp AI film production platform",
-    "de": "Orca Entertainment startet WhaleSharp AI-Filmproduktionsplattform",
+    "en": "[QbitAI] Orca Entertainment launches Jingrui AI film production and management platform",
+    "de": "[QbitAI] Orca Entertainment startet Jingrui AI Plattform für Filmproduktion und -management",
     "src": "[量子位] 虎鲸文娱推出“鲸锐AI”影视制作与管理平台，打造文娱产业新基建"
    },
    "one_liner": {
@@ -1662,8 +6180,8 @@
    "first_seen_utc": "2026-09-22T10:03:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 38.2,
+   "score": 43.8,
+   "heat": 40.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1687,7 +6205,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "行业",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -1708,20 +6226,20 @@
    "title": {
     "zh": "",
     "en": "[Tech.eu] Verda raises $189M to advance its AI cloud and expand compute capacity",
-    "de": "Verda sammelt 189 Mio. $ für AI-Cloud ein",
+    "de": "Verda sammelt 189 Mio. USD für AI-Cloud-Ausbau ein",
     "src": "[Tech.eu] Verda raises $189M to advance its AI cloud and expand compute capacity"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Verda raises $189M to advance its AI cloud and expand compute capacity.",
+    "de": "Verda sammelt 189 Mio. USD ein, um seine AI-Cloud voranzutreiben und Rechenkapazität auszubauen."
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1731,7 +6249,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.8,
-   "heat": 44.2,
+   "heat": 42.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1741,8 +6259,8 @@
    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA3VzdMYnhUcnNfTmUzYWYtRy1kNnBJc3FpM1ZfWXEtalZDOW5MOW9oVG9saHhTSlJkQW80eTVhQW9yZFJNZldhQ1B3RU11anVlUkdJ?oc=5",
    "title": {
     "zh": "",
-    "en": "Grok 4.7 Launches, Ranks Third Globally; Musk Says 4.8 Also Trained",
-    "de": "Grok 4.7 startet, weltweit Dritter; Musk: 4.8 ist ebenfalls fertig trainiert",
+    "en": "Grok 4.7 launches, ranked third globally; Musk says 4.8 also trained",
+    "de": "Grok 4.7 startet, global auf Platz drei; Musk sagt, 4.8 sei ebenfalls trainiert",
     "src": "[新智元(gnews桥)] Grok 4.7上线，全球第三，马斯克：4.8也训完了 - 华尔街见闻"
    },
    "one_liner": {
@@ -1764,8 +6282,8 @@
    "first_seen_utc": "2026-09-22T12:09:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 31.7,
+   "score": 35.4,
+   "heat": 32.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1775,14 +6293,14 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRHFXeW41UG9nOWgtajRDMGtUejMzaEVtZ2VibmlmOXVrSEVKbW1GZXNvSVZaNWxWelEwUVBHZEdhaV8xZDlYT3FoOWVaNDZGTVRnRG1RZUx4UWxrRHpHS19GZURyOFB4Vi1uYVZmMnVhcHZGSC1BTDBmY3F3RXZXN0RlQWhLZ2ly?oc=5",
    "title": {
     "zh": "",
-    "en": "openJiuwen Launches First Open-Source Agent Asset Platform, Agent Hugging Face",
-    "de": "openJiuwen startet erste Open-Source-Agent-Asset-Plattform, Agent Hugging Face",
+    "en": "Agent-era Hugging Face arrives: openJiuwen launches first open-source agent asset platform",
+    "de": "Hugging Face für Agenten: openJiuwen startet erste Open-Source-Plattform für Agenten-Assets",
     "src": "[机器之心(gnews桥)] Agent版Hugging Face来了，openJiuwen发布首个开源智能体资产平台 - 搜狐网"
    },
    "one_liner": {
     "zh": "",
-    "en": "openJiuwen releases the first open-source agent asset platform, described as an Agent version of Hugging Face.",
-    "de": "openJiuwen veröffentlicht die erste Open-Source-Agent-Asset-Plattform, beschrieben als Agent-Version von Hugging Face."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -1798,8 +6316,8 @@
    "first_seen_utc": "2026-09-22T09:11:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 26.6,
-   "heat": 25.6,
+   "score": 25.2,
+   "heat": 23.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1810,7 +6328,7 @@
    "title": {
     "zh": "",
     "en": "[Tech.eu] Primo raises $8M to bring autonomous AI agents to IT operations",
-    "de": "Primo sammelt 8 Mio. Dollar für autonome KI-Agenten im IT-Betrieb",
+    "de": "Primo sammelt 8 Mio. $ für autonome KI-IT-Betriebsabläufe",
     "src": "[Tech.eu] Primo raises $8M to bring autonomous AI agents to IT operations"
    },
    "one_liner": {
@@ -1833,7 +6351,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.9,
-   "heat": 37.4,
+   "heat": 35.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1844,13 +6362,13 @@
    "title": {
     "zh": "",
     "en": "[Tech.eu] Morphotonics closes €40M+ Series B to tackle AI devices’ hidden manufacturing bottleneck",
-    "de": "Morphotonics schließt über 40 Mio. € Serie B für KI-Geräte-Engpass",
+    "de": "Morphotonics schließt Serie B über 40 Mio. € für KI-Gerätefertigung",
     "src": "[Tech.eu] Morphotonics closes €40M+ Series B to tackle AI devices’ hidden manufacturing bottleneck"
    },
    "one_liner": {
     "zh": "",
-    "en": "Morphotonics closed over €40M Series B to address AI devices' hidden manufacturing bottleneck.",
-    "de": "Morphotonics schloss über 40 Mio. € Serie B ab, um den versteckten Fertigungsengpass bei KI-Geräten anzugehen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -1867,7 +6385,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 40.2,
-   "heat": 38.6,
+   "heat": 36.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1877,14 +6395,14 @@
    "url": "https://www.ithome.com/1/005/674.htm",
    "title": {
     "zh": "",
-    "en": "Report: Gaorong Ventures partner Yan Wentao joins DeepSeek as CFO",
-    "de": "Bericht: Gaorong-Ventures-Partner Yan Wentao wird CFO bei DeepSeek",
+    "en": "Hillhouse partner Yan Wentao joins DeepSeek as CFO",
+    "de": "Hillhouse-Partner Yan Wentao wird CFO bei DeepSeek",
     "src": "[IT之家] 消息称高瓴创投合伙人严文韬加入 DeepSeek，终结深度求索三年来 CFO 空缺局面"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Hillhouse Ventures partner Yan Wentao reportedly joins DeepSeek, ending its three-year CFO vacancy.",
+    "de": "Hillhouse-Ventures-Partner Yan Wentao wechselt Berichten zufolge zu DeepSeek und beendet die dreijährige CFO-Vakanz."
    },
    "why_it_matters": {
     "zh": "",
@@ -1900,8 +6418,8 @@
    "first_seen_utc": "2026-09-22T07:03:25Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.6,
-   "heat": 38.1,
+   "score": 45.8,
+   "heat": 36.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1911,8 +6429,8 @@
    "url": "https://www.ithome.com/1/005/675.htm",
    "title": {
     "zh": "",
-    "en": "Xiaomi 18 Pro to debut Legendary Moment large model imaging",
-    "de": "Xiaomi 18 Pro debütiert mit Legendary Moment Large-Model-Bildgebung",
+    "en": "Xiaomi 18 Pro to debut \"Legendary Moment\" large model imaging",
+    "de": "Xiaomi 18 Pro startet mit \"Legendary Moment\"-Großmodell-Bildgebung",
     "src": "[IT之家] 小米 18 Pro 系列手机官宣首发「传奇一瞬」大模型影像，号称成像质感媲美专业相机"
    },
    "one_liner": {
@@ -1934,8 +6452,8 @@
    "first_seen_utc": "2026-09-22T07:03:25Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 35.0,
+   "score": 40.6,
+   "heat": 32.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1946,7 +6464,7 @@
    "title": {
     "zh": "",
     "en": "[heise] Geschrumpfte Chatbots: So passt die KI plötzlich in 4 GByte RAM",
-    "de": "Geschrumpfte Chatbots: So passt KI plötzlich in 4 GByte RAM",
+    "de": "Geschrumpfte Chatbots: So passt die KI plötzlich in 4 GByte RAM",
     "src": "[heise] Geschrumpfte Chatbots: So passt die KI plötzlich in 4 GByte RAM"
    },
    "one_liner": {
@@ -1968,42 +6486,8 @@
    "first_seen_utc": "2026-09-22T07:03:25Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.1,
-   "heat": 29.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "dadf88631633",
-   "url": "https://www.heise.de/news/Vodafone-und-Ericsson-testen-KI-Live-Uebersetzung-direkt-im-Mobilfunknetz-11460502.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
-   "title": {
-    "zh": "",
-    "en": "[heise] Vodafone erprobt KI-Übersetzung und Geräuschfilter im Mobilfunknetz",
-    "de": "Vodafone testet KI-Übersetzung und Geräuschfilter im Mobilfunknetz",
-    "src": "[heise] Vodafone erprobt KI-Übersetzung und Geräuschfilter im Mobilfunknetz"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T07:03:25Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 37.1,
-   "heat": 29.7,
+   "score": 39.9,
+   "heat": 31.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2036,8 +6520,42 @@
    "first_seen_utc": "2026-09-22T07:03:25Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.4,
-   "heat": 29.1,
+   "score": 38.1,
+   "heat": 30.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "dadf88631633",
+   "url": "https://www.heise.de/news/Vodafone-und-Ericsson-testen-KI-Live-Uebersetzung-direkt-im-Mobilfunknetz-11460502.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+   "title": {
+    "zh": "",
+    "en": "[heise] Vodafone erprobt KI-Übersetzung und Geräuschfilter im Mobilfunknetz",
+    "de": "Vodafone erprobt KI-Übersetzung und Geräuschfilter im Mobilfunknetz",
+    "src": "[heise] Vodafone erprobt KI-Übersetzung und Geräuschfilter im Mobilfunknetz"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-09-22T07:03:25Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 35.7,
+   "heat": 28.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2048,7 +6566,7 @@
    "title": {
     "zh": "",
     "en": "[heise] heise-Angebot: betterCode() .NET 11.0: Workshops zu KI, ASP.NET, C# 15.0, EF Core und Blazor",
-    "de": "heise: betterCode() .NET 11.0: Workshops zu KI, ASP.NET, C# 15.0, EF Core und Blazor",
+    "de": "heise-Angebot: betterCode() .NET 11.0-Workshops zu KI, ASP.NET, C# 15.0, EF Core und Blazor",
     "src": "[heise] heise-Angebot: betterCode() .NET 11.0: Workshops zu KI, ASP.NET, C# 15.0, EF Core und Blazor"
    },
    "one_liner": {
@@ -2077,12 +6595,46 @@
    "quote_en": ""
   },
   {
+   "id": "8e1f16d3e14a",
+   "url": "https://www.horizont.net/agenturen/nachrichten/ehemalige-scholz--friends-managerin-liane-siebenhaar-gruendet-forderland---und-setzt-bei-ihrer-beratung-auf-ki-235899?utm_source=rss&amp;amp;utm_medium=referral&amp;amp;utm_campaign=news&amp;amp;utm_term=",
+   "title": {
+    "zh": "",
+    "en": "[Horizont] Ehemalige Scholz-&-Friends-Managerin: Liane Siebenhaar gründet Forderland - und setzt bei ihrer Beratung auf KI",
+    "de": "Ehemalige Scholz-&-Friends-Managerin Liane Siebenhaar gründet Forderland – und setzt bei ihrer Beratung auf KI",
+    "src": "[Horizont] Ehemalige Scholz-&-Friends-Managerin: Liane Siebenhaar gründet Forderland - und setzt bei ihrer Beratung auf KI"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-09-22T06:30:00Z",
+   "first_seen_utc": null,
+   "scoop_hours": null,
+   "selected": false,
+   "score": 32.5,
+   "heat": 29.7,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "292e5c080368",
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQU9XU1hrWmh4MEFyWE1pZ3hQcnp2QXlicGljNEtUeFhIY1VIcUdpNTAzRUc4eWRScFl5TGFxRFVXQ01BSkFFdGRhZ0tObWhYclAtMk5tUURhN1U5aWo4SXROR1pKc2FMZG9QUHJLVjl3N2Qyck8wZGUxSnk1ek1WdWQtSXRGdDZt?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI leak: AI builds AI; Altman calls for global pause",
-    "de": "OpenAI-Leak: KI baut KI; Altman fordert globalen Stopp",
+    "en": "OpenAI leak: AI builds AI, Altman calls for global pause",
+    "de": "OpenAI-Leak: KI baut KI, Altman fordert globale Pause",
     "src": "[新智元(gnews桥)] OpenAI内部曝光：AI开始自己造AI！奥特曼急发全球暂停令 - 搜狐网"
    },
    "one_liner": {
@@ -2104,8 +6656,8 @@
    "first_seen_utc": "2026-09-22T06:04:15Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.5,
-   "heat": 36.4,
+   "score": 47.3,
+   "heat": 37.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2115,8 +6667,8 @@
    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1UYWliN25kZFJtQkFkOV9PeWExZG43NFdFUm82ZEZma0ozRXFfVmZMVzZhRXh6Mkc4Y0oyaEljNTFhSUxOMTFnUGdLNzVPQQ?oc=5",
    "title": {
     "zh": "",
-    "en": "Altman misses list as OpenAI president enters top 50 US rich",
-    "de": "Altman verpasst Liste, OpenAI-Präsident steigt in Top 50 der US-Reichen",
+    "en": "Altman absent as OpenAI president enters top 50 US richest",
+    "de": "Altman fehlt, OpenAI-Präsident steigt in Top 50 der US-Reichsten",
     "src": "[新智元(gnews桥)] 奥特曼落榜，OpenAI总裁255亿杀进全美富豪前50 - 36kr.com"
    },
    "one_liner": {
@@ -2138,8 +6690,8 @@
    "first_seen_utc": "2026-09-22T06:04:15Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.8,
-   "heat": 35.8,
+   "score": 43.4,
+   "heat": 34.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2149,8 +6701,8 @@
    "url": "https://www.tmtpost.com/8148185.html",
    "title": {
     "zh": "",
-    "en": "[TMTPost] AI hits the brakes, Jensen Huang steps on the gas",
-    "de": "[TMTPost] KI bremst, Jensen Huang tritt aufs Gas",
+    "en": "AI hits the brakes, Jensen Huang steps on the gas",
+    "de": "KI bremst ab, Jensen Huang tritt aufs Gaspedal",
     "src": "[钛媒体] AI踩刹车，黄仁勋踩油门"
    },
    "one_liner": {
@@ -2172,8 +6724,8 @@
    "first_seen_utc": "2026-09-22T06:04:15Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.1,
-   "heat": 30.5,
+   "score": 39.2,
+   "heat": 31.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2183,8 +6735,8 @@
    "url": "https://www.tmtpost.com/8148663.html",
    "title": {
     "zh": "",
-    "en": "",
-    "de": "",
+    "en": "Industrial AI moves toward production lines, but scaling hurdles remain",
+    "de": "Industrielle KI bewegt sich in Richtung Produktionslinien, doch Skalierungshürden bleiben",
     "src": "[钛媒体] 工业AI正在走向产线，但规模化仍有卡点丨ToB产业观察"
    },
    "one_liner": {
@@ -2206,8 +6758,8 @@
    "first_seen_utc": "2026-09-22T06:04:15Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.4,
-   "heat": 29.1,
+   "score": 35.0,
+   "heat": 28.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2218,13 +6770,13 @@
    "title": {
     "zh": "",
     "en": "[Tech.eu] Spott secures $21M Series A to expand its AI platform for recruitment agencies",
-    "de": "Spott sichert sich 21 Mio. $ Serie A für Rekrutierungs-KI",
+    "de": "Spott sichert sich 21 Mio. $ Serie A für KI-Recruiting-Plattform",
     "src": "[Tech.eu] Spott secures $21M Series A to expand its AI platform for recruitment agencies"
    },
    "one_liner": {
     "zh": "",
-    "en": "Spott secured $21M Series A to expand its AI platform for recruitment agencies.",
-    "de": "Spott sicherte sich 21 Mio. $ Serie A, um seine KI-Plattform für Personalagenturen auszubauen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -2241,7 +6793,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 40.2,
-   "heat": 38.3,
+   "heat": 36.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2265,7 +6817,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -2274,8 +6826,8 @@
    "first_seen_utc": "2026-09-22T05:09:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.5,
-   "heat": 35.6,
+   "score": 44.8,
+   "heat": 35.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2285,8 +6837,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRFpkSEtXYS1IWnhnNG5aNnNCWnN4cmJwOFFpenhISUJBZjljSUlFZzUtV3o0ak1rdUsxc3lWaDE1MjB6NmlLcTR0d2dCNU42YVhzZTN1R0RBRnY4Q18ySXVPRG1pZDg5ajlwbFI1SXBHTUV0WHN0RzgwVnBfNmc0eEFZVEZmU0xr?oc=5",
    "title": {
     "zh": "",
-    "en": "Grok 4.7 launches, ranks third globally; Musk says 4.8 training done",
-    "de": "Grok 4.7 startet, global auf Platz drei; Musk: 4.8 ist fertig trainiert",
+    "en": "Grok 4.7 launches, ranks third globally; Musk says 4.8 also trained",
+    "de": "Grok 4.7 startet, global auf Platz drei; Musk sagt, 4.8 sei ebenfalls trainiert",
     "src": "[新智元(gnews桥)] Grok 4.7上线，全球第三！马斯克：4.8也训完了 - 搜狐网"
    },
    "one_liner": {
@@ -2308,8 +6860,8 @@
    "first_seen_utc": "2026-09-22T05:09:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.0,
-   "heat": 33.6,
+   "score": 41.7,
+   "heat": 33.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2319,8 +6871,8 @@
    "url": "https://www.ithome.com/1/005/647.htm",
    "title": {
     "zh": "",
-    "en": "Qwen AI glasses N1 unveiled at Alibaba Apsara Conference, on sale Oct 13",
-    "de": "Qwen AI-Brille N1 auf Alibaba Apsara Conference vorgestellt, Verkauf ab 13. Okt",
+    "en": "Qwen AI glasses N1 series debut at Apsara Conference: eye tracking, iris payment, October 13 launch",
+    "de": "Qwen AI-Brille N1-Serie auf Apsara-Konferenz vorgestellt: Eye-Tracking, Iris-Zahlung, Start am 13. Oktober",
     "src": "[IT之家] 千问 AI 眼镜 N1 系列亮相阿里云栖大会：支持眼动追踪与虹膜支付，10 月 13 日发售"
    },
    "one_liner": {
@@ -2342,8 +6894,8 @@
    "first_seen_utc": "2026-09-22T05:09:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 31.6,
+   "score": 41.0,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2376,110 +6928,8 @@
    "first_seen_utc": "2026-09-22T05:09:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.1,
-   "heat": 30.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "0db3ea9714e0",
-   "url": "https://github.com/dorkitude/webctl",
-   "title": {
-    "zh": "",
-    "en": "dorkitude/webctl",
-    "de": "dorkitude/webctl",
-    "src": "dorkitude/webctl"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T05:09:28Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 38.1,
-   "heat": 30.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "5e64003dacbe",
-   "url": "https://github.com/unicodef1wn/lauren-poteto-rules",
-   "title": {
-    "zh": "",
-    "en": "unicodef1wn/lauren-poteto-rules",
-    "de": "unicodef1wn/lauren-poteto-rules",
-    "src": "unicodef1wn/lauren-poteto-rules"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-09-22T05:09:28Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 32.5,
-   "heat": 26.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "065dfc64f05a",
-   "url": "https://www.marktechpost.com/2026/09/21/nvidia-researchers-have-released-sol-pi/",
-   "title": {
-    "zh": "",
-    "en": "[MarkTechPost] NVIDIA Introduces SoL-Pi: Auto-Research Loops That Cut Coding Agent Token Traffic by Up to 49%",
-    "de": "NVIDIA stellt SoL-Pi vor: Auto-Research-Loops senken Coding-Agent-Tokens um bis zu 49%",
-    "src": "[MarkTechPost] NVIDIA Introduces SoL-Pi: Auto-Research Loops That Cut Coding Agent Token Traffic by Up to 49%"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-09-22T05:04:43Z",
-   "first_seen_utc": "2026-09-22T06:04:15Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 44.8,
-   "heat": 42.6,
+   "score": 39.5,
+   "heat": 31.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
