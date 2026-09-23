@@ -1249,7 +1249,9 @@ curl -s https://{{DOMAIN}}/feed.xml | head -40</pre>
 # 2026-09-22 演示换皮：六个 Rubriken，规则打标，零模型；一条可多标
 # ---------------------------------------------------------------------------
 RUBRIKEN = [
-    ("marketing", ["marketing", "seo", "sea", "geo", "aeo", "google ads", "display advertising", "ads", "adtech",
+    ("marketing", ["marketing", "seo", " sea ", " geo ", " aeo ", "google ads", "display advertising", " ads ", "adtech",
+                   "generative engine optimization", "answer engine optimization", "suchmaschinenwerbung",
+                   "onlinemarketing", "performance marketing",
                    "programmatic", "shopify", "stripe", "checkout", "agentic commerce", "e-commerce", "ecommerce",
                    "retail", "amazon ads", "meta ads", "tiktok shop", "电商", "跨境", "直播带货", "营销", "广告", "投放"]),
     ("unternehmen", ["mittelstand", "sap", "siemens", "bosch", "telekom", "allianz", "volkswagen", "bmw", "mercedes",
@@ -1293,6 +1295,8 @@ def rubriken_of(item):
                     ("title_src", "title_en", "title_zh", "one_liner_en", "source_name")) + " " + host
     text = text.lower()
     keys = [key for key, rx in _RUB_RX if rx.search(text)]
+    if "robotik" in keys and re.search(r"social.?bot|社交机器人|chatbot|聊天机器人|bot-erkennung|bot detection", text):
+        keys.remove("robotik")
     if keys:
         return keys
     cat = item.get("category")
