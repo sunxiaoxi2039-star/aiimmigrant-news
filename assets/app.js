@@ -10,6 +10,7 @@
              modelle: "Modelle & Infrastruktur", robotik: "Robotik", forschung: "Forschung & Tools" },
       cat: { "模型": "Modelle", "产品": "Produkte", "研究": "Forschung", "行业": "Branche" },
       top: "Top-Themen", timeline: "Chronik", empty: "Noch keine Meldungen heute",
+      xnav: "Stimmen von X", xchip: "Stimme von X", off: "Offiziell", xempty: "Noch keine Stimmen heute",
       today: "Heute", yesterday: "Gestern", more: "Ältere Meldungen laden", heat: "Hitze",
       expand: "Mehr", why: "Warum es zählt", nsrc: "{n} Quellen berichten", single: "Einzelquelle",
       pub: "Veröffentlicht", origTitle: "Originaltitel", orig: "Original",
@@ -25,6 +26,7 @@
              modelle: "Models & Infrastructure", robotik: "Robotics", forschung: "Research & Tools" },
       cat: { "模型": "Models", "产品": "Products", "研究": "Research", "行业": "Industry" },
       top: "Top stories", timeline: "Timeline", empty: "No stories yet today",
+      xnav: "Voices from X", xchip: "Voice from X", off: "Official", xempty: "No voices yet today",
       today: "Today", yesterday: "Yesterday", more: "Load older stories", heat: "Heat",
       expand: "More", why: "Why it matters", nsrc: "{n} sources reporting", single: "Single source",
       pub: "Published", origTitle: "Original title", orig: "Original",
@@ -40,6 +42,7 @@
              modelle: "大模型与基建", robotik: "具身智能", forschung: "论文与工具" },
       cat: { "模型": "模型", "产品": "产品", "研究": "研究", "行业": "行业" },
       top: "要闻", timeline: "时间线", empty: "今天暂无消息",
+      xnav: "X 风向", xchip: "X 观点", off: "官方", xempty: "今天暂无 X 声音",
       today: "今天", yesterday: "昨天", more: "加载更早的消息", heat: "热度",
       expand: "展开", why: "值得细看", nsrc: "共 {n} 家报道", single: "单一信源",
       pub: "发布时间", origTitle: "原文题", orig: "原文",
@@ -60,6 +63,9 @@
 
   var seed = readJSON("seed-data") || { items: [] };
   var rubMap = readJSON("rubriken-data") || {};
+  var kindMap = readJSON("kind-data") || {};
+  var xOnly = false;
+  try { xOnly = new URL(location.href).searchParams.get("kind") === "x"; } catch (e) {}
   var lang = pickLang();
   var T = I18N[lang];
 
@@ -106,6 +112,13 @@
     return s;
   }
   function rubsOf(it) { return rubMap[it.id || it.url] || ["forschung"]; }
+  function kindOf(it) { return kindMap[it.id || it.url] || { k: "medien" }; }
+  function isX(x) { return kindOf(x.it).k === "x"; }
+  // arXiv/GitHub 单源：簇里只有 HF Papers 等论文镜像也算单源
+  function paper(x) {
+    if (kindOf(x.it).k !== "forschung") return false;
+    return (x.it.clusters || []).every(function (c) { return /arxiv\.org|github\.com|huggingface\.co/.test(c.url || ""); });
+  }
 
   function timeStr(d) {
     var diff = (Date.now() - d.getTime()) / 60000;
@@ -128,9 +141,19 @@
   var todayKey = dayKey(new Date());
   var yKey = dayKey(new Date(Date.now() - 864e5));
 
-  function dach(x) { var r = rubsOf(x.it)[0]; return esc(T.rub[r] + " · " + srcName(x.it)); }
+  function dach(x) {
+    var r = rubsOf(x.it)[0], k = kindOf(x.it);
+    if (k.k === "x") return esc(T.rub[r] + " · X" + (k.h ? " · @" + k.h : ""));
+    return esc(T.rub[r] + " · " + srcName(x.it));
+  }
+  function chip(x) {
+    var k = kindOf(x.it).k;
+    if (k === "x") return '<span class="chip">' + esc(T.xchip) + "</span>";
+    if (k === "offiziell") return '<span class="chip">' + esc(T.off) + "</span>";
+    return "";
+  }
   function hlHTML(x, tag) {
-    return "<" + tag + ' class="hl"><a href="' + esc(x.it.url) + '" target="_blank" rel="noopener">' + esc(x.tt.t) + "</a>" +
+    return "<" + tag + ' class="hl">' + chip(x) + '<a href="' + esc(x.it.url) + '" target="_blank" rel="noopener">' + esc(x.tt.t) + "</a>" +
       (x.tt.orig && lang === "zh" ? '<span class="orig">' + esc(T.orig) + "</span>" : "") + "</" + tag + ">";
   }
   function card(x) {
@@ -165,13 +188,15 @@
     var pool = all.filter(function (x) { return x.day === todayKey; });
     if (!pool.length) pool = all.filter(function (x) { return x.day === (days.indexOf(yKey) >= 0 ? yKey : days[0]); });
     var two = all.filter(function (x) { return x.day === days[0] || x.day === days[1]; });
-    var rank = function (a, b) { return (nSrc(b.it) > 1) - (nSrc(a.it) > 1) || (!!liner(b.it)) - (!!liner(a.it)) || heat(b.it) - heat(a.it); };
+    var rank = function (a, b) { return paper(a) - paper(b) || (nSrc(b.it) > 1) - (nSrc(a.it) > 1) || (!!liner(b.it)) - (!!liner(a.it)) || heat(b.it) - heat(a.it); };
     pool = pool.slice().sort(rank);
     var lead = pool[0];
     if (!lead) { $("lead").innerHTML = '<p class="empty">' + esc(T.empty) + "</p>"; return null; }
     var l = liner(lead.it);
+    var nPaper = 0;
     var top = two.filter(function (x) { return x !== lead; })
-      .sort(function (a, b) { return heat(b.it) * nSrc(b.it) - heat(a.it) * nSrc(a.it); }).slice(0, 5);
+      .sort(function (a, b) { return paper(a) - paper(b) || heat(b.it) * nSrc(b.it) - heat(a.it) * nSrc(a.it); })
+      .filter(function (x) { if (!paper(x)) return true; return nPaper++ < 1; }).slice(0, 5);
     $("lead").innerHTML = '<div class="aufm"><p class="dach">' + dach(lead) + "</p>" + hlHTML(lead, "h1") +
       (l ? '<p class="vor">' + esc(l) + "</p>" : "") +
       '<div class="meta">' + esc(timeStr(lead.d)) + " · " + esc(nSrc(lead.it) > 1 ? fmt(T.nsrc, nSrc(lead.it)) : T.single) + "</div></div>" +
@@ -233,10 +258,31 @@
     location.reload();
   }
 
+  function renderX() {
+    var list = all.filter(isX);
+    $("lead").innerHTML = "";
+    $("rubrics").innerHTML = '<section class="block" id="rub-x"><h2>' + esc(T.xnav) + "</h2>" +
+      (list.length ? list.map(row).join("") : '<p class="empty">' + esc(T.xempty) + "</p>") + "</section>";
+    $("tl-title").parentNode.hidden = true;
+  }
+  function xToggle() {
+    var a = document.createElement("a");
+    a.href = xOnly ? "?" : "?kind=x"; a.className = "xtog" + (xOnly ? " on" : ""); a.textContent = T.xnav;
+    a.setAttribute("aria-pressed", String(xOnly));
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      try { var u = new URL(location.href); if (xOnly) u.searchParams.delete("kind"); else u.searchParams.set("kind", "x"); location.href = u.toString(); } catch (err) {}
+    });
+    $("rubnav-in").appendChild(a);
+  }
+
   renderStatic();
+  xToggle();
+  if (xOnly) renderX(); else {
   renderLead();
   renderBlocks();
   renderTimeline();
+  }
   $("more").addEventListener("click", function () {
     if (shown < days.length) renderDay(days[shown++]);
     this.hidden = shown >= days.length;

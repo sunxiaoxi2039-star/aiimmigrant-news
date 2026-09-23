@@ -86,6 +86,8 @@ header.site { border-bottom: 1px solid var(--line); padding: 0; }
 .rubnav a { font-size: 14px; font-weight: 600; padding: 11px 0 9px; border-bottom: 3px solid transparent; white-space: nowrap; }
 .rubnav a:hover { text-decoration: none; color: var(--brand); }
 .rubnav a.on { border-bottom-color: var(--brand); color: var(--brand); }
+.rubnav a.xtog { margin-left: auto; font-weight: 500; }
+.chip { display: inline-block; font: 600 10px/1.4 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; border: 1px solid currentColor; padding: 0 5px; margin-right: 7px; vertical-align: middle; color: var(--brand); }
 
 /* 通用条目 */
 .dach { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); margin: 0 0 4px; }
@@ -202,6 +204,7 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
              modelle: "Modelle & Infrastruktur", robotik: "Robotik", forschung: "Forschung & Tools" },
       cat: { "模型": "Modelle", "产品": "Produkte", "研究": "Forschung", "行业": "Branche" },
       top: "Top-Themen", timeline: "Chronik", empty: "Noch keine Meldungen heute",
+      xnav: "Stimmen von X", xchip: "Stimme von X", off: "Offiziell", xempty: "Noch keine Stimmen heute",
       today: "Heute", yesterday: "Gestern", more: "Ältere Meldungen laden", heat: "Hitze",
       expand: "Mehr", why: "Warum es zählt", nsrc: "{n} Quellen berichten", single: "Einzelquelle",
       pub: "Veröffentlicht", origTitle: "Originaltitel", orig: "Original",
@@ -217,6 +220,7 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
              modelle: "Models & Infrastructure", robotik: "Robotics", forschung: "Research & Tools" },
       cat: { "模型": "Models", "产品": "Products", "研究": "Research", "行业": "Industry" },
       top: "Top stories", timeline: "Timeline", empty: "No stories yet today",
+      xnav: "Voices from X", xchip: "Voice from X", off: "Official", xempty: "No voices yet today",
       today: "Today", yesterday: "Yesterday", more: "Load older stories", heat: "Heat",
       expand: "More", why: "Why it matters", nsrc: "{n} sources reporting", single: "Single source",
       pub: "Published", origTitle: "Original title", orig: "Original",
@@ -232,6 +236,7 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
              modelle: "大模型与基建", robotik: "具身智能", forschung: "论文与工具" },
       cat: { "模型": "模型", "产品": "产品", "研究": "研究", "行业": "行业" },
       top: "要闻", timeline: "时间线", empty: "今天暂无消息",
+      xnav: "X 风向", xchip: "X 观点", off: "官方", xempty: "今天暂无 X 声音",
       today: "今天", yesterday: "昨天", more: "加载更早的消息", heat: "热度",
       expand: "展开", why: "值得细看", nsrc: "共 {n} 家报道", single: "单一信源",
       pub: "发布时间", origTitle: "原文题", orig: "原文",
@@ -252,6 +257,9 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
 
   var seed = readJSON("seed-data") || { items: [] };
   var rubMap = readJSON("rubriken-data") || {};
+  var kindMap = readJSON("kind-data") || {};
+  var xOnly = false;
+  try { xOnly = new URL(location.href).searchParams.get("kind") === "x"; } catch (e) {}
   var lang = pickLang();
   var T = I18N[lang];
 
@@ -298,6 +306,13 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     return s;
   }
   function rubsOf(it) { return rubMap[it.id || it.url] || ["forschung"]; }
+  function kindOf(it) { return kindMap[it.id || it.url] || { k: "medien" }; }
+  function isX(x) { return kindOf(x.it).k === "x"; }
+  // arXiv/GitHub 单源：簇里只有 HF Papers 等论文镜像也算单源
+  function paper(x) {
+    if (kindOf(x.it).k !== "forschung") return false;
+    return (x.it.clusters || []).every(function (c) { return /arxiv\.org|github\.com|huggingface\.co/.test(c.url || ""); });
+  }
 
   function timeStr(d) {
     var diff = (Date.now() - d.getTime()) / 60000;
@@ -320,9 +335,19 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   var todayKey = dayKey(new Date());
   var yKey = dayKey(new Date(Date.now() - 864e5));
 
-  function dach(x) { var r = rubsOf(x.it)[0]; return esc(T.rub[r] + " · " + srcName(x.it)); }
+  function dach(x) {
+    var r = rubsOf(x.it)[0], k = kindOf(x.it);
+    if (k.k === "x") return esc(T.rub[r] + " · X" + (k.h ? " · @" + k.h : ""));
+    return esc(T.rub[r] + " · " + srcName(x.it));
+  }
+  function chip(x) {
+    var k = kindOf(x.it).k;
+    if (k === "x") return '<span class="chip">' + esc(T.xchip) + "</span>";
+    if (k === "offiziell") return '<span class="chip">' + esc(T.off) + "</span>";
+    return "";
+  }
   function hlHTML(x, tag) {
-    return "<" + tag + ' class="hl"><a href="' + esc(x.it.url) + '" target="_blank" rel="noopener">' + esc(x.tt.t) + "</a>" +
+    return "<" + tag + ' class="hl">' + chip(x) + '<a href="' + esc(x.it.url) + '" target="_blank" rel="noopener">' + esc(x.tt.t) + "</a>" +
       (x.tt.orig && lang === "zh" ? '<span class="orig">' + esc(T.orig) + "</span>" : "") + "</" + tag + ">";
   }
   function card(x) {
@@ -357,13 +382,15 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     var pool = all.filter(function (x) { return x.day === todayKey; });
     if (!pool.length) pool = all.filter(function (x) { return x.day === (days.indexOf(yKey) >= 0 ? yKey : days[0]); });
     var two = all.filter(function (x) { return x.day === days[0] || x.day === days[1]; });
-    var rank = function (a, b) { return (nSrc(b.it) > 1) - (nSrc(a.it) > 1) || (!!liner(b.it)) - (!!liner(a.it)) || heat(b.it) - heat(a.it); };
+    var rank = function (a, b) { return paper(a) - paper(b) || (nSrc(b.it) > 1) - (nSrc(a.it) > 1) || (!!liner(b.it)) - (!!liner(a.it)) || heat(b.it) - heat(a.it); };
     pool = pool.slice().sort(rank);
     var lead = pool[0];
     if (!lead) { $("lead").innerHTML = '<p class="empty">' + esc(T.empty) + "</p>"; return null; }
     var l = liner(lead.it);
+    var nPaper = 0;
     var top = two.filter(function (x) { return x !== lead; })
-      .sort(function (a, b) { return heat(b.it) * nSrc(b.it) - heat(a.it) * nSrc(a.it); }).slice(0, 5);
+      .sort(function (a, b) { return paper(a) - paper(b) || heat(b.it) * nSrc(b.it) - heat(a.it) * nSrc(a.it); })
+      .filter(function (x) { if (!paper(x)) return true; return nPaper++ < 1; }).slice(0, 5);
     $("lead").innerHTML = '<div class="aufm"><p class="dach">' + dach(lead) + "</p>" + hlHTML(lead, "h1") +
       (l ? '<p class="vor">' + esc(l) + "</p>" : "") +
       '<div class="meta">' + esc(timeStr(lead.d)) + " · " + esc(nSrc(lead.it) > 1 ? fmt(T.nsrc, nSrc(lead.it)) : T.single) + "</div></div>" +
@@ -425,10 +452,31 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
     location.reload();
   }
 
+  function renderX() {
+    var list = all.filter(isX);
+    $("lead").innerHTML = "";
+    $("rubrics").innerHTML = '<section class="block" id="rub-x"><h2>' + esc(T.xnav) + "</h2>" +
+      (list.length ? list.map(row).join("") : '<p class="empty">' + esc(T.xempty) + "</p>") + "</section>";
+    $("tl-title").parentNode.hidden = true;
+  }
+  function xToggle() {
+    var a = document.createElement("a");
+    a.href = xOnly ? "?" : "?kind=x"; a.className = "xtog" + (xOnly ? " on" : ""); a.textContent = T.xnav;
+    a.setAttribute("aria-pressed", String(xOnly));
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      try { var u = new URL(location.href); if (xOnly) u.searchParams.delete("kind"); else u.searchParams.set("kind", "x"); location.href = u.toString(); } catch (err) {}
+    });
+    $("rubnav-in").appendChild(a);
+  }
+
   renderStatic();
+  xToggle();
+  if (xOnly) renderX(); else {
   renderLead();
   renderBlocks();
   renderTimeline();
+  }
   $("more").addEventListener("click", function () {
     if (shown < days.length) renderDay(days[shown++]);
     this.hidden = shown >= days.length;
@@ -500,6 +548,7 @@ INDEX_TMPL = HEAD_TMPL.replace('<html lang="zh-CN">', '<html lang="de">') + """
 
 <script type="application/json" id="seed-data">{{SEED_JSON}}</script>
 <script type="application/json" id="rubriken-data">{{RUBRIKEN_JSON}}</script>
+<script type="application/json" id="kind-data">{{KIND_JSON}}</script>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
@@ -515,8 +564,34 @@ ABOUT_TMPL = HEAD_TMPL + """
 </header>
 
 <main class="prose">
+  <section id="fuer-wen">
+  <h2 lang="de">Für wen</h2>
+  <ol lang="de">
+    <li>Für Content-Schaffende in Europa, die hier jeden Tag ihre Themen finden und keinen Trend verpassen wollen – inklusive der Stimmung bei großen Accounts und offiziellen Kanälen auf X.</li>
+    <li>Für Kundinnen und Kunden der Brücke nach China: europäische Investoren mit Interesse an chinesischer KI sowie chinesische Investoren und Praktiker, die sich für KI-Rechenleistung und Content-Export nach Europa interessieren.</li>
+    <li>Für KI-Praktiker, die es genauer wissen wollen: Erstquellen, Originaltexte und eine eigene Datenpipeline über <a href="agents/">/agents/</a>.</li>
+  </ol>
+  <p lang="de">Wie ein gutes chinesisches KI-Briefing, nur europäischer: dreisprachig, europäische Zeitzone, europäische Erstquellen, ruhige Typografie.</p>
+
+  <h2>给谁看</h2>
+  <ol>
+    <li>欧洲内容工作者：每天靠这站选题、不漏趋势，包括 X 上大 V 和官方号的风向。</li>
+    <li>商桥的潜在客户：对中国 AI 感兴趣的欧洲投资者；对 AI 算力服务和内容出海感兴趣的中国投资者与从业者。</li>
+    <li>稍硬核的 AI 从业者：要一手源、要原文、要能自己接管道（见 <a href="agents/">/agents/</a>）。</li>
+  </ol>
+  <p>像一份好的中文 AI 简报，只是更欧洲：三语、欧洲时区、欧洲一手源、安静的排版。</p>
+
+  <h2 lang="en">Who this is for</h2>
+  <ol lang="en">
+    <li>Content creators in Europe who pick their daily topics here and don't want to miss a trend — including the mood among big accounts and official channels on X.</li>
+    <li>Prospective clients of our China bridge: European investors interested in Chinese AI, and Chinese investors and practitioners interested in AI compute services and taking content abroad.</li>
+    <li>Hands-on AI practitioners who want primary sources, original texts and their own pipeline via <a href="agents/">/agents/</a>.</li>
+  </ol>
+  <p lang="en">Like a good Chinese AI briefing, only more European: trilingual, European time zone, European primary sources, calm typography.</p>
+  </section>
+
   <h2>这是什么</h2>
-  <p>这是一张给中文读者的 AI 时间线。每天从上百条原始信号里，按一套固定的打分规则做筛选，只留下真正值得看的几条，按<strong>柏林时间</strong>（Europe/Berlin，含夏令时）排列成按天分组的时间线。覆盖四个分类：<strong>模型、产品、研究、行业</strong>。</p>
+  <p>这是一张三语 AI 时间线。每天从上百条原始信号里，按一套固定的打分规则做筛选，只留下真正值得看的几条，按<strong>柏林时间</strong>（Europe/Berlin，含夏令时）排列成按天分组的时间线。覆盖四个分类：<strong>模型、产品、研究、行业</strong>。</p>
   <ul>
     <li><strong>三语界面</strong>：德语 / 英语 / 中文，标题与摘要按所选语言显示，缺译时回退到原文标题。</li>
     <li><strong>六个栏目</strong>：营销与电商、欧洲企业 AI 应用、中国 AI 出海、大模型与基建、具身智能、论文与工具。</li>
@@ -1183,7 +1258,7 @@ RUBRIKEN = [
     ("modelle", ["gpt", "claude", "gemini", "llama", "mistral", "grok", "opus", "sonnet", "gpu", "nvidia", "tpu",
                  "数据中心", "data center", "datacenter", "api 定价", "pricing", "inference", "推理", "训练", "training run"]),
     ("robotik", ["robot", "robotic", "humanoid", "figure ai", "unitree", "具身", "机器人", "boston dynamics",
-                 "tesla optimus", "1x"]),
+                 "tesla optimus", "1x technologies", " 1x "]),
     ("forschung", ["arxiv", "paper", "论文", "benchmark", "github", "open source", "开源", "skill", "mcp",
                    "hugging face", "dataset", "实验室", "lab", "发布", "release notes"]),
 ]
@@ -1226,6 +1301,26 @@ def rubriken_of(item):
     return ["modelle"] if re.search(r"model|llm|模型|(?<![a-z])ai(?![a-z])", text) else ["unternehmen"]
 
 
+def kind_of(item):
+    """X 双标签：x / offiziell / medien / forschung，并带 X handle。"""
+    import re
+    from urllib.parse import urlparse
+    url = item.get("url") or ""
+    name = item.get("source_name") or ""
+    host = ""
+    try:
+        host = (urlparse(url).hostname or "").lower()
+    except ValueError:
+        pass
+    if host.endswith("x.com") or host.endswith("twitter.com") or name.startswith("X"):
+        m = re.match(r"\s*@([A-Za-z0-9_]{1,30})\s*:", item.get("title_src") or "") or \
+            re.search(r"(?:x|twitter)\.com/([A-Za-z0-9_]{1,30})", url)
+        return {"k": "x", "h": m.group(1) if m else ""}
+    if host.endswith("arxiv.org") or host.endswith("github.com"):
+        return {"k": "forschung"}
+    return {"k": "offiziell" if item.get("source_tier") == "T1" else "medien"}
+
+
 def main(argv):
     here = pathlib.Path(__file__).resolve().parent        # .../发布/generator
     repo = here.parent                                     # .../发布
@@ -1255,6 +1350,7 @@ def main(argv):
         "HOTBOX_HTML": hotbox_html or "",
         "HEATMAP_HTML": heatmap_html or "",
         "RUBRIKEN_JSON": json_island({(it.get("id") or it.get("url")): rubriken_of(it) for it in items}),
+        "KIND_JSON": json_island({(it.get("id") or it.get("url")): kind_of(it) for it in items}),
         "UPDATE_NOTE": hesc(UPDATE_NOTE),
         "LICENSE_NOTE": hesc(LICENSE_NOTE),
     }
