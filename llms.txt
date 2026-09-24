@@ -6,12 +6,12 @@
 
 ## 接口（版本号进路径，公布即不破坏）
 
-- [https://news.aiimmigrant.de/api/v1/latest.json](https://news.aiimmigrant.de/api/v1/latest.json)：精选 3 条 + 24h 全量 193 条。
+- [https://news.aiimmigrant.de/api/v1/latest.json](https://news.aiimmigrant.de/api/v1/latest.json)：精选 3 条 + 24h 全量 25 条。
   每条含 id、url、三语标题 title.{zh,en,de}、三语一句话 one_liner.{zh,en,de}、
   三语「为什么重要」why_it_matters.{zh,en,de}、category、source.{name,tier}、
   published_utc、first_seen_utc、scoop_hours（抢跑时长）、score/heat、
   n_sources 与 also_reported_by（多源报道簇）、quote_en（英文原文引句）。
-- [https://news.aiimmigrant.de/api/v1/sources.json](https://news.aiimmigrant.de/api/v1/sources.json)：信源登记表 —— 已接 76 / 待接 22 / 不可接 0（共 98 项对标信源）。
+- [https://news.aiimmigrant.de/api/v1/sources.json](https://news.aiimmigrant.de/api/v1/sources.json)：信源登记表 —— 登记表生成中。
 - [https://news.aiimmigrant.de/api/v1/heartbeat.json](https://news.aiimmigrant.de/api/v1/heartbeat.json)：引擎心跳（when/status/selected/total），
   判断数据是否新鲜先看这个。
 - [https://news.aiimmigrant.de/feed.xml](https://news.aiimmigrant.de/feed.xml)：RSS 2.0，中文标题 + 原文链接，三语摘要在 content:encoded；
