@@ -294,4 +294,35 @@
   });
   var hw = $("heat");
   if (hw && window.matchMedia && window.matchMedia("(min-width: 700px)").matches) hw.open = true;
+
+  // —— 左侧手指目录（宽屏）：列出各节，手指跟着滚动指向正在读的那一节 ——
+  (function rail() {
+    if (xOnly) return;
+    var HEAD = { de: "Aufmacher", en: "Top story", zh: "头条" };
+    var items = [{ id: "lead", t: HEAD[lang] || HEAD.en }]
+      .concat(RUBS.map(function (r) { return { id: "rub-" + r, t: T.rub[r] }; }))
+      .concat([{ id: "tl-sec", t: T.timeline, gap: true }, { id: "heat", t: T.heatTitle }]);
+    var tl = $("tl-title").parentNode; tl.id = "tl-sec";
+    var nav = document.createElement("aside");
+    nav.className = "rail"; nav.setAttribute("aria-label", "Inhalt");
+    nav.innerHTML = '<span class="hand" aria-hidden="true"><img src="assets/god-hand.webp" alt=""></span><ol>' + items.map(function (it) {
+      return '<li' + (it.gap ? ' class="gap"' : "") + '><a href="#' + it.id + '">' + esc(it.t) + "</a></li>"; }).join("") + "</ol>";
+    document.body.appendChild(nav);
+    var links = [].slice.call(nav.querySelectorAll("a")), hand = nav.querySelector(".hand");
+    var secs = items.map(function (it) { return document.getElementById(it.id); });
+    var cur = -1, ticking = false;
+    function point() {
+      ticking = false;
+      var i = 0, y = window.innerHeight * 0.3;
+      secs.forEach(function (s, k) { if (s && s.getBoundingClientRect().top <= y) i = k; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) i = secs.length - 1;
+      if (i === cur) return; cur = i;
+      links.forEach(function (a, k) { a.classList.toggle("on", k === i); });
+      var a = links[i];
+      hand.style.transform = "translateY(" + (a.offsetTop + a.offsetHeight / 2 - hand.offsetHeight / 2) + "px)";
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(point); } }, { passive: true });
+    window.addEventListener("resize", function () { cur = -1; point(); });
+    point();
+  })();
 })();

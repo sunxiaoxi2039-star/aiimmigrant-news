@@ -187,6 +187,81 @@ header.site nav a { color: var(--brand); }
   .lead .aufm .hl { font-size: 25px; }
   .lead .vor { font-size: 16px; }
 }
+
+/* ============ 白版 · 左侧手指目录（试做，2026-10-12）============ */
+:root {
+  --brand: #171717; --ink: #171717; --sub: #8f8f8f; --line: #e9e9e9; --bg: #fafafa; --soft: #f0f0f0;
+  --idx: Georgia, "Times New Roman", "Songti SC", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --brand: #ededed; --ink: #ededed; --sub: #8a8a8a; --line: #2a2a2a; --bg: #111; --soft: #1b1b1b; }
+}
+body { font-size: 15px; }
+.wordmark { font-size: 26px; font-weight: 600; letter-spacing: 0; }
+header.site { border-bottom-color: transparent; }
+.top { padding-top: 22px; padding-bottom: 18px; }
+.langs button { font-weight: 500; color: var(--sub); }
+.langs button[aria-pressed="true"] { color: var(--ink); border-bottom-color: transparent; }
+
+/* 窄屏横向目录：灰字，当前项变黑，不要粗下划线 */
+.rubnav { border-bottom-color: var(--line); }
+.rubnav a { font-weight: 450; color: var(--sub); border-bottom: 0; padding: 10px 0; }
+.rubnav a:hover, .rubnav a.on { color: var(--ink); }
+
+/* 小字一律灰，只留标题是黑的 */
+.dach { color: var(--sub); font-weight: 500; letter-spacing: .04em; font-size: 11px; }
+.meta { color: var(--sub); font-size: 12px; }
+.hl { font-weight: 600; }
+.lead { border-bottom: 0; padding-bottom: 8px; }
+.lead > .aufm { border-right-color: var(--line); }
+.top5 li { border-bottom-color: var(--line); padding: 11px 0; }
+.top5 li::before { font: italic 400 17px var(--idx); color: var(--sub); }
+
+/* 章节标题：名字 —— 细线 —— 斜体编号（同原站 01 02） */
+#main { counter-reset: sec; }
+.top5 h2, .block h2, .tl h2 {
+  display: flex; align-items: center; gap: 14px;
+  font: 600 15px var(--sans); border-bottom: 0; padding: 0; margin: 0 0 14px;
+}
+.top5 h2::before, .block h2::before, .tl h2::before { content: ""; order: 1; flex: 1; height: 1px; background: var(--line); }
+.block h2, .tl h2 { counter-increment: sec; }
+.block h2::after, .tl h2::after { content: counter(sec, decimal-leading-zero); order: 2; font: italic 400 16px var(--idx); color: var(--sub); }
+.heatwrap summary { font: 600 15px var(--sans); border-bottom: 0; padding: 0; }
+.block { padding: 52px 0 6px; scroll-margin-top: 30px; }
+.tl { padding-top: 52px; scroll-margin-top: 30px; }
+.card { padding: 16px 0; border-bottom-color: var(--line); }
+.card .vor { color: var(--sub); }
+.row { border-bottom-color: var(--line); padding: 16px 0; }
+.day { border-bottom-color: var(--line); color: var(--sub); font-weight: 600; }
+.more { border-color: var(--line); color: var(--ink); font-weight: 500; }
+footer { border-top: 1px solid var(--line); }
+.chip { color: var(--sub); }
+.hm-1 { background: rgba(23,23,23,.10); } .hm-2 { background: rgba(23,23,23,.22); }
+.hm-3 { background: rgba(23,23,23,.40); } .hm-4 { background: rgba(23,23,23,.60); } .hm-5 { background: rgba(23,23,23,.82); }
+
+/* 宽屏：左边一条目录，手指指着「正在读的那一节」 */
+.rail { display: none; }
+@media (min-width: 1280px) {
+  .wrap { margin-left: max(320px, calc((100vw - 1180px) / 2 + 190px)); margin-right: auto; max-width: min(1180px, calc(100vw - max(320px, calc((100vw - 1180px) / 2 + 190px)) - 56px)); }
+  .rubnav { display: none; }
+  .rail {
+    display: block; position: fixed; top: 96px; width: 170px;
+    left: max(128px, calc((100vw - 1180px) / 2));
+  }
+  .rail ol { list-style: none; margin: 0; padding: 0; }
+  .rail li + li { margin-top: 6px; }
+  .rail .gap { margin-top: 26px; }
+  .rail a { display: block; font-size: 14px; line-height: 20px; color: var(--sub); }
+  .rail a:hover { color: var(--ink); text-decoration: none; }
+  .rail a.on { color: var(--ink); }
+  .rail .hand {
+    position: absolute; left: -138px; top: 4px; width: 136px; height: 77px;
+    transition: transform .45s cubic-bezier(.3, .7, .2, 1);
+  }
+  .rail .hand img { width: 100%; height: 100%; display: block; }
+}
+@media (prefers-color-scheme: dark) { .rail .hand img { opacity: .85; } }
+@media (prefers-reduced-motion: reduce) { .rail .hand { transition: none; } }
 """
 
 # ---------------------------------------------------------------------------
@@ -488,6 +563,37 @@ JS = r"""/* AI 资讯时间线 · 前端（原生 JS，无框架；生成器产�
   });
   var hw = $("heat");
   if (hw && window.matchMedia && window.matchMedia("(min-width: 700px)").matches) hw.open = true;
+
+  // —— 左侧手指目录（宽屏）：列出各节，手指跟着滚动指向正在读的那一节 ——
+  (function rail() {
+    if (xOnly) return;
+    var HEAD = { de: "Aufmacher", en: "Top story", zh: "头条" };
+    var items = [{ id: "lead", t: HEAD[lang] || HEAD.en }]
+      .concat(RUBS.map(function (r) { return { id: "rub-" + r, t: T.rub[r] }; }))
+      .concat([{ id: "tl-sec", t: T.timeline, gap: true }, { id: "heat", t: T.heatTitle }]);
+    var tl = $("tl-title").parentNode; tl.id = "tl-sec";
+    var nav = document.createElement("aside");
+    nav.className = "rail"; nav.setAttribute("aria-label", "Inhalt");
+    nav.innerHTML = '<span class="hand" aria-hidden="true"><img src="assets/god-hand.webp" alt=""></span><ol>' + items.map(function (it) {
+      return '<li' + (it.gap ? ' class="gap"' : "") + '><a href="#' + it.id + '">' + esc(it.t) + "</a></li>"; }).join("") + "</ol>";
+    document.body.appendChild(nav);
+    var links = [].slice.call(nav.querySelectorAll("a")), hand = nav.querySelector(".hand");
+    var secs = items.map(function (it) { return document.getElementById(it.id); });
+    var cur = -1, ticking = false;
+    function point() {
+      ticking = false;
+      var i = 0, y = window.innerHeight * 0.3;
+      secs.forEach(function (s, k) { if (s && s.getBoundingClientRect().top <= y) i = k; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) i = secs.length - 1;
+      if (i === cur) return; cur = i;
+      links.forEach(function (a, k) { a.classList.toggle("on", k === i); });
+      var a = links[i];
+      hand.style.transform = "translateY(" + (a.offsetTop + a.offsetHeight / 2 - hand.offsetHeight / 2) + "px)";
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(point); } }, { passive: true });
+    window.addEventListener("resize", function () { cur = -1; point(); });
+    point();
+  })();
 })();
 """
 
