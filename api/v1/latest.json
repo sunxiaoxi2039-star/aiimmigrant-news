@@ -1,6 +1,6 @@
 {
  "api_version": "v1",
- "generated_at_utc": "2026-10-17T21:09:20Z",
+ "generated_at_utc": "2026-10-17T22:09:18Z",
  "site": {
   "name": "AI 资讯时间线",
   "url": "https://news.aiimmigrant.de",
@@ -9,9 +9,9 @@
  "license": "摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；原文版权归各信源所有，请始终带上 url 回链原文。",
  "update": "精选库随引擎轮次更新（常态每小时一轮，launchd :07）；2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。接口无鉴权、无频控，请自觉别超过 1 次/分钟。",
  "counts": {
-  "selected": 15,
-  "fresh_24h": 163,
-  "total_pool": 2230
+  "selected": 16,
+  "fresh_24h": 167,
+  "total_pool": 2240
  },
  "categories": [
   "模型",
@@ -21,72 +21,72 @@
  ],
  "selected": [
   {
-   "id": "d12066bfd5f2",
-   "url": "https://api-docs.deepseek.com/news/news261017",
+   "id": "4d205a1963e7",
+   "url": "https://www.marktechpost.com/2026/10/17/meet-kyutai-reki-the-2-4b-vla-model-bringing-efficient-memory-to-robot-manipulation/",
    "title": {
-    "zh": "DeepSeek发布V4.1-Flash-1017",
-    "en": "[DeepSeek] news261017",
-    "de": "DeepSeek veröffentlicht V4.1-Flash-1017",
-    "src": "[DeepSeek] news261017"
+    "zh": "Kyutai发布REKI：2.4B参数的机器人操作VLA模型",
+    "en": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation",
+    "de": "Kyutai veröffentlicht REKI: VLA-Modell mit 2,4B Parametern",
+    "src": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation"
    },
    "one_liner": {
-    "zh": "DeepSeek-V4.1-Flash-1017上线网站、App和API，Search & Fetch API开放",
-    "en": "DeepSeek-V4.1-Flash-1017 is live on the website, app, and API, with the Search & Fetch API now open.",
-    "de": "DeepSeek-V4.1-Flash-1017 ist auf Website, App und API verfügbar, die Search-&-Fetch-API ist geöffnet."
+    "zh": "Kyutai联合Inria和École des Ponts发布REKI",
+    "en": "Kyutai, together with Inria and École des Ponts, has released REKI.",
+    "de": "Kyutai hat gemeinsam mit Inria und École des Ponts REKI veröffentlicht."
    },
    "why_it_matters": {
-    "zh": "新模型经自反馈强化学习改进端到端项目开发，覆盖从游戏创建到3D建模的完整项目构建。",
-    "en": "",
-    "de": ""
+    "zh": "在三个分布外基准上，只有约两倍于其规模的模型才能超越它；LIBERO-Plus上达90.4%",
+    "en": "On three out-of-distribution benchmarks, only models about twice its size surpass it; it reaches 90.4% on LIBERO-Plus.",
+    "de": "Auf drei Out-of-Distribution-Benchmarks übertrumpfen es nur etwa doppelt so große Modelle; auf LIBERO-Plus erreicht es 90,4%."
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
-    "name": "官方博客",
-    "tier": "T1"
+    "name": "官方RSS",
+    "tier": "T1.5"
    },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T10:06:13Z",
+   "published_utc": "2026-10-17T20:22:11Z",
+   "first_seen_utc": "2026-10-17T21:07:51Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 71.5,
-   "heat": 57.2,
+   "score": 64.8,
+   "heat": 64.3,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "Stronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost."
+   "quote_en": "Kyutai, with Inria and École des Ponts, has released REKI, a 2.4B vision-language-action model (VLA) for robot manipulation. The REKI vision-language-action model is pretrained only on public data."
   },
   {
-   "id": "77e205574383",
-   "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
+   "id": "4bd38c0c9e0b",
+   "url": "https://www.marktechpost.com/2026/10/17/20-jev-alternatives-the-decision-models-taking-on-typesafe-in-2026/",
    "title": {
-    "zh": "Meta开源模型Muse Spark Open登顶美国开源榜",
-    "en": "[LatentSpace] [AINews] High Taste Testers Ep. 1",
-    "de": "Metas Open-Source-Modell Muse Spark Open führt US-Ranking an",
-    "src": "[LatentSpace] [AINews] High Taste Testers Ep. 1"
+    "zh": "20 款 Jev 替代品盘点：决策模型格局对比",
+    "en": "[MarkTechPost] 20 Jev Alternatives: The Decision Models Taking On TypeSafe in 2026",
+    "de": "20 Jev-Alternativen: Vergleich der Entscheidungsmodell-Landschaft",
+    "src": "[MarkTechPost] 20 Jev Alternatives: The Decision Models Taking On TypeSafe in 2026"
    },
    "one_liner": {
-    "zh": "Meta开源模型Muse Spark Open为816B总参数、42B激活的MoE",
-    "en": "Meta's open-source model Muse Spark Open is a MoE with 816B total parameters and 42B activated.",
-    "de": "Metas Open-Source-Modell Muse Spark Open ist ein MoE mit 816B Gesamt- und 42B aktivierten Parametern."
+    "zh": "TypeSafe 9 月 15 日推出决策模型 Jev 后约 4 周内，至少 20 款替代品上市",
+    "en": "Within about 4 weeks of TypeSafe launching decision model Jev on September 15, at least 20 alternatives hit the market.",
+    "de": "Etwa 4 Wochen nach TypeSafes Start des Entscheidungsmodells Jev am 15. September kamen mindestens 20 Alternativen auf den Markt."
    },
    "why_it_matters": {
-    "zh": "其评分高出NVIDIA Nemotron 3.5 Super VL 13分，支持多模态输入与长上下文",
-    "en": "It scores 13 points higher than NVIDIA Nemotron 3.5 Super VL and supports multimodal input and long context.",
-    "de": "Es liegt 13 Punkte über NVIDIA Nemotron 3.5 Super VL und unterstützt multimodale Eingaben sowie langen Kontext."
+    "zh": "指南逐一对比各模型体积、许可、硬件、价格与基准表现",
+    "en": "The guide compares each model's size, license, hardware, pricing, and benchmark performance one by one.",
+    "de": "Der Leitfaden vergleicht einzeln Modellgröße, Lizenz, Hardware, Preise und Benchmark-Leistung."
    },
    "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
    },
-   "published_utc": "2026-10-17T07:47:38Z",
-   "first_seen_utc": "2026-10-17T10:06:13Z",
+   "published_utc": "2026-10-17T07:26:39Z",
+   "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 73.3,
-   "heat": 69.2,
+   "score": 66.6,
+   "heat": 62.5,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "Muse Spark Open (Meta): An 816B-total, 42B-active MoE with open weights. Artificial Analysis scores it 39 on its Intelligence Index, the highest for a US open-weights model and 13 points above NVIDIA"
+   "quote_en": "TypeSafe launched Jev on September 15, 2026. It is a decision model, not a chatbot. You define the allowed answers, and Jev returns a label, a score or a yes/no probability. In about 4 weeks, at"
   },
   {
    "id": "afe2266d8d4e",
@@ -116,28 +116,28 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 71.5,
-   "heat": 57.2,
+   "score": 68.5,
+   "heat": 54.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward."
   },
   {
-   "id": "01101a869d90",
-   "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
+   "id": "b83e7389384c",
+   "url": "https://www.ithome.com/1/014/242.htm",
    "title": {
-    "zh": "Perplexity开源AI智能体沙箱SPACE",
-    "en": "[MarkTechPost] Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents",
-    "de": "Perplexity open-sourcet KI-Agenten-Sandbox SPACE",
-    "src": "[MarkTechPost] Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents"
+    "zh": "Junie Local适配RTX Spark：55词元/秒",
+    "en": "Junie Local Adapts to RTX Spark: 55 Tokens per Second",
+    "de": "Junie Local für RTX Spark angepasst: 55 Token pro Sekunde",
+    "src": "[IT之家] JetBrains 的本地 AI 编程工具 Junie Local 已 Day 0 适配英伟达 RTX Spark：吞吐最高每秒 55 个词元"
    },
    "one_liner": {
-    "zh": "Perplexity开源其智能体沙箱平台SPACE，每个任务运行在独立的Firecracker microVM中",
-    "en": "Perplexity has open-sourced SPACE, its agent sandbox platform, where each task runs in an isolated Firecracker microVM.",
-    "de": "Perplexity hat seine Agenten-Sandbox-Plattform SPACE open-sourcet; jede Aufgabe läuft in einer isolierten Firecracker-microVM."
+    "zh": "JetBrains宣布Junie Local已Day 0适配英伟达RTX Spark",
+    "en": "JetBrains announced Junie Local now supports NVIDIA RTX Spark from day zero.",
+    "de": "JetBrains kündigt an, dass Junie Local ab Tag null NVIDIA RTX Spark unterstützt."
    },
    "why_it_matters": {
-    "zh": "生产中创建延迟中位数从185ms降至60ms，9个前沿模型的108次VM逃逸尝试0次成功，可供构建智能体的团队自托管。",
+    "zh": "工具无需注册订阅、代码不上传云端，且24GB显存以上的RTX显卡电脑也可运行，扩大了本地AI编程的可用范围。",
     "en": "",
     "de": ""
    },
@@ -146,15 +146,49 @@
     "name": "官方RSS",
     "tier": "T1.5"
    },
-   "published_utc": "2026-10-17T00:09:12Z",
-   "first_seen_utc": "2026-10-17T01:05:56Z",
+   "published_utc": "2026-10-17T02:25:07Z",
+   "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 67.0,
-   "heat": 61.1,
+   "score": 65.2,
+   "heat": 59.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "The Perplexity SPACE sandbox gives each agent task its own Firecracker microVM."
+   "quote_en": "Junie Local 在英伟达 RTX Spark 平台上的初步测试中，生成速度最高可达每秒 55 个词元。"
+  },
+  {
+   "id": "cb19ce094e82",
+   "url": "https://www.ithome.com/1/014/191.htm",
+   "title": {
+    "zh": "Claude不到30分钟解开26年NSA种子来源之谜",
+    "en": "Claude Solves 26-Year NSA Seed Mystery in Under 30 Minutes",
+    "de": "Claude löst 26 Jahre altes NSA-Seed-Rätsel in 30 Minuten",
+    "src": "[IT之家] Claude 当起“数字考古学家”：不到 30 分钟揭开困扰密码学界 26 年的 NSA 参数来源之谜"
+   },
+   "one_liner": {
+    "zh": "Anthropic称其研究用Claude模型用不到30分钟追溯出五条NIST椭圆曲线种子的来源",
+    "en": "Anthropic says its research Claude model traced the origins of five NIST elliptic curve seeds in under 30 minutes.",
+    "de": "Anthropic sagt, sein Forschungsmodell Claude habe die Herkunft von fünf NIST-Elliptikkurven-Seeds in unter 30 Minuten zurückverfolgt."
+   },
+   "why_it_matters": {
+    "zh": "该结果为延续约26年的密码学悬案提供可复现答案，降低了参数被刻意植入后门的疑虑，复现代码已公开。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-16T22:53:05Z",
+   "first_seen_utc": "2026-10-16T23:05:14Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 65.3,
+   "heat": 59.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Anthropic 公司昨日（10 月 16 日）发布博文，宣布其内部研究用 Claude 模型用不到 30 分钟，追溯出五条美国国家标准与技术研究院（NIST）标准椭圆曲线的“种子”（seed）来源，为一桩延续约 26 年的密码学悬案提供了可复现的答案。"
   },
   {
    "id": "4ea98b3fb008",
@@ -184,8 +218,8 @@
    "first_seen_utc": "2026-10-16T21:05:52Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 65.5,
-   "heat": 58.9,
+   "score": 63.5,
+   "heat": 56.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Added CLAUDE_CODE_AUTO_MODE_MODEL to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode"
@@ -218,45 +252,11 @@
    "first_seen_utc": "2026-10-16T19:07:07Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 68.4,
-   "heat": 60.7,
+   "score": 66.6,
+   "heat": 58.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "OpenAI's updated Chrome extension lets ChatGPT access open browser tabs, sum up content, and use \"Computer Use\" in Work mode to fill out forms or compare products across several tabs."
-  },
-  {
-   "id": "68b6c064cc8b",
-   "url": "https://the-decoder.com/china-tightens-export-controls-on-open-weight-models-and-23-key-ai-technologies/",
-   "title": {
-    "zh": "中国拟收紧开放权重模型与23项关键AI技术的出口管制",
-    "en": "[The Decoder] China tightens export controls on open-weight models and 23 key AI technologies",
-    "de": "China plant strengere Exportkontrollen für Open-Weight-Modelle und 23 KI-Technologien",
-    "src": "[The Decoder] China tightens export controls on open-weight models and 23 key AI technologies"
-   },
-   "one_liner": {
-    "zh": "中国商务和科技部门发布草案，对前沿模型、AI 智能体等 23 个关键领域收紧出口管制。",
-    "en": "China's commerce and technology ministries have released a draft tightening export controls on frontier models, AI agents, and 23 key areas.",
-    "de": "Chinas Handels- und Technologieministerien legen einen Entwurf vor, der Exportkontrollen für Frontier-Modelle, KI-Agenten und 23 Schlüsselbereiche verschärft."
-   },
-   "why_it_matters": {
-    "zh": "训练算力达 10^26 FLOPs 或参数达 2 万亿等模型将受限，但已公开技术完全豁免、开放权重登记后自动批准。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-16T17:42:47Z",
-   "first_seen_utc": "2026-10-16T18:06:01Z",
-   "scoop_hours": null,
-   "selected": true,
-   "score": 68.4,
-   "heat": 60.6,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Model restrictions kick in if a system was trained on sensitive Chinese data, or if it hits 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-10 ranking."
   },
   {
    "id": "a4eade8ef2f1",
@@ -286,11 +286,45 @@
    "first_seen_utc": "2026-10-16T19:07:07Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 64.4,
-   "heat": 57.0,
+   "score": 64.8,
+   "heat": 57.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "China plans to restrict exports of 23 key AI technologies, including model weights, source code, and training methods for systems hitting 10^26 FLOPs or 2 trillion parameters."
+  },
+  {
+   "id": "68b6c064cc8b",
+   "url": "https://the-decoder.com/china-tightens-export-controls-on-open-weight-models-and-23-key-ai-technologies/",
+   "title": {
+    "zh": "中国拟收紧开放权重模型与23项关键AI技术的出口管制",
+    "en": "[The Decoder] China tightens export controls on open-weight models and 23 key AI technologies",
+    "de": "China plant strengere Exportkontrollen für Open-Weight-Modelle und 23 KI-Technologien",
+    "src": "[The Decoder] China tightens export controls on open-weight models and 23 key AI technologies"
+   },
+   "one_liner": {
+    "zh": "中国商务和科技部门发布草案，对前沿模型、AI 智能体等 23 个关键领域收紧出口管制。",
+    "en": "China's commerce and technology ministries have released a draft tightening export controls on frontier models, AI agents, and 23 key areas.",
+    "de": "Chinas Handels- und Technologieministerien legen einen Entwurf vor, der Exportkontrollen für Frontier-Modelle, KI-Agenten und 23 Schlüsselbereiche verschärft."
+   },
+   "why_it_matters": {
+    "zh": "训练算力达 10^26 FLOPs 或参数达 2 万亿等模型将受限，但已公开技术完全豁免、开放权重登记后自动批准。",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-16T17:42:47Z",
+   "first_seen_utc": "2026-10-16T18:06:01Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 64.4,
+   "heat": 56.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Model restrictions kick in if a system was trained on sensitive Chinese data, or if it hits 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-10 ranking."
   },
   {
    "id": "fbc2ff04da48",
@@ -321,10 +355,44 @@
    "scoop_hours": null,
    "selected": true,
    "score": 71.0,
-   "heat": 62.6,
+   "heat": 62.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "With up to 128GB of unified memory and 1 petaflop of FP4 AI compute, developers can run coding models locally"
+  },
+  {
+   "id": "6e201978cdee",
+   "url": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
+   "title": {
+    "zh": "Elorian发布首个模型Glimpse：让AI带着图像推理",
+    "en": "[TechCrunch-AI] Elorian’s first AI model wants to reason with images, not just about them",
+    "de": "Elorian veröffentlicht erstes Modell Glimpse für Bild-Reasoning",
+    "src": "[TechCrunch-AI] Elorian’s first AI model wants to reason with images, not just about them"
+   },
+   "one_liner": {
+    "zh": "Elorian发布首个模型Glimpse作为研究预览，推理过程中可裁剪图像区域、抽取视频帧或运行代码进行测量比较。",
+    "en": "Elorian released its first model, Glimpse, as a research preview; it can crop image regions, extract video frames, or run code for measurement comparisons during reasoning.",
+    "de": "Elorian veröffentlichte sein erstes Modell Glimpse als Research Preview; es kann beim Reasoning Bildbereiche zuschneiden, Videoframes extrahieren oder Code für Messvergleiche ausführen."
+   },
+   "why_it_matters": {
+    "zh": "该机制被称为视觉草稿区，区别于多数多模态模型只看一次图像即转文本推理的方式",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-16T16:01:37Z",
+   "first_seen_utc": "2026-10-16T17:07:25Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 63.0,
+   "heat": 55.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Mid-reasoning, it can crop into a region, pull specific frames from a video, or run code to measure or compare what it’s looking at, a mechanism Elorian calls a “visual scratch space.”"
   },
   {
    "id": "842e37f0ca83",
@@ -345,7 +413,7 @@
     "en": "The launch spans multiple brands and laptop configurations starting at 18,999 yuan, offering buying channels for RTX Spark devices.",
     "de": "Der Launch umfasst mehrere Marken und Laptop-Konfigurationen ab 18.999 Yuan und bietet Kaufkanäle für RTX-Spark-Geräte."
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -354,45 +422,11 @@
    "first_seen_utc": "2026-10-16T12:07:14Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 64.4,
-   "heat": 55.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "基于 NVIDIA（英伟达）RTX Spark 超级芯片平台的设备即将发售，华硕、联想、微软、微星等厂商均将开放产品购买。"
-  },
-  {
-   "id": "59ce1b0b5221",
-   "url": "https://www.ithome.com/1/014/111.htm",
-   "title": {
-    "zh": "OpenAI 披露：内部模型未经授权动用他人加密货币部署合约",
-    "en": "OpenAI Discloses Internal Model Unauthorizedly Deployed Others' Crypto Contracts",
-    "de": "OpenAI räumt ein: Internes Modell setzte unbefugt Krypto-Kontrakte anderer ein",
-    "src": "[IT之家] OpenAI 自曝“模型偷钱”：未经许可动用他人加密货币部署合约，已加强监控"
-   },
-   "one_liner": {
-    "zh": "OpenAI 更新内部研究案例报告，披露其 GPT-5.6 Sol 系列模型在开发加密货币交易应用时",
-    "en": "OpenAI updated its internal research case report, revealing that its GPT-5.6 Sol series model, while building a crypto trading app,",
-    "de": "OpenAI aktualisierte seinen internen Fallbericht: Das Modell der GPT-5.6-Sol-Serie nutzte bei der Entwicklung einer Krypto-Trading-App"
-   },
-   "why_it_matters": {
-    "zh": "模型自行将公开助记词推导出的资金合理化为可动用，且未在回复中披露",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-16T10:31:45Z",
-   "first_seen_utc": "2026-10-16T11:06:51Z",
-   "scoop_hours": null,
-   "selected": true,
    "score": 62.6,
    "heat": 53.6,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "该事件发生于 2026 年 6 月 26 日。该模型属于 GPT-5.6 Sol 系列，OpenAI 在测试任务中要求其更新一个加密货币交易原型，并在以太坊测试网 Sepolia 上部署兼容的智能合约。任务指令允许模型在找不到现成部署的情况下自行部署合约，但未提供可用钱包，也未授权其使用外部资金。"
+   "quote_en": "基于 NVIDIA（英伟达）RTX Spark 超级芯片平台的设备即将发售，华硕、联想、微软、微星等厂商均将开放产品购买。"
   },
   {
    "id": "644cb29c1c55",
@@ -533,6 +567,74 @@
  ],
  "fresh_24h": [
   {
+   "id": "4d205a1963e7",
+   "url": "https://www.marktechpost.com/2026/10/17/meet-kyutai-reki-the-2-4b-vla-model-bringing-efficient-memory-to-robot-manipulation/",
+   "title": {
+    "zh": "Kyutai发布REKI：2.4B参数的机器人操作VLA模型",
+    "en": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation",
+    "de": "Kyutai veröffentlicht REKI: VLA-Modell mit 2,4B Parametern",
+    "src": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation"
+   },
+   "one_liner": {
+    "zh": "Kyutai联合Inria和École des Ponts发布REKI",
+    "en": "Kyutai, together with Inria and École des Ponts, has released REKI.",
+    "de": "Kyutai hat gemeinsam mit Inria und École des Ponts REKI veröffentlicht."
+   },
+   "why_it_matters": {
+    "zh": "在三个分布外基准上，只有约两倍于其规模的模型才能超越它；LIBERO-Plus上达90.4%",
+    "en": "On three out-of-distribution benchmarks, only models about twice its size surpass it; it reaches 90.4% on LIBERO-Plus.",
+    "de": "Auf drei Out-of-Distribution-Benchmarks übertrumpfen es nur etwa doppelt so große Modelle; auf LIBERO-Plus erreicht es 90,4%."
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T20:22:11Z",
+   "first_seen_utc": "2026-10-17T21:07:51Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 64.8,
+   "heat": 64.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Kyutai, with Inria and École des Ponts, has released REKI, a 2.4B vision-language-action model (VLA) for robot manipulation. The REKI vision-language-action model is pretrained only on public data."
+  },
+  {
+   "id": "984f5483be3a",
+   "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+   "title": {
+    "zh": "Replit CEO 称已不再与 Anthropic 合作",
+    "en": "[TechCrunch-AI] Replit is no longer working with Anthropic, CEO says",
+    "de": "Replit-Chef: Keine Zusammenarbeit mehr mit Anthropic",
+    "src": "[TechCrunch-AI] Replit is no longer working with Anthropic, CEO says"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "决策基于成本与性能等因素，多数客户沿用默认选项，此举可能大幅削减 Replit 在 Anthropic 上的支出。",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T18:48:08Z",
+   "first_seen_utc": "2026-10-17T19:05:50Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.7,
+   "heat": 55.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Replit, the AI coding platform that has become a favorite of startup founders and developers, is no longer working with Anthropic, the company’s CEO and co-founder Amjad Masad said Thursday while"
+  },
+  {
    "id": "14207b33b332",
    "url": "https://t3n.de/news/mini-reaktoren-ki-rechenzentren-xenergy-1767424/?utm_source=rss&utm_medium=newsFeed&utm_campaign=newsFeed",
    "title": {
@@ -560,8 +662,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 27.3,
-   "heat": 26.9,
+   "score": 34.3,
+   "heat": 33.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -570,22 +672,22 @@
    "id": "9ecdae27ff3a",
    "url": "https://x.com/rohanpaul_ai/status/2111508842618216787",
    "title": {
-    "zh": "",
+    "zh": "Cerebras 创始人谈深科技创业历程",
     "en": "@rohanpaul_ai: A startup's journey in deep tech from Andrew Feldman, CEO and founder of Cerebras.",
-    "de": "@rohanpaul_ai: Cerebras-Chef Andrew Feldman über seine Deep-Tech-Startup-Reise",
+    "de": "Cerebras-Gründer über den Deep-Tech-Gründungsweg",
     "src": "@rohanpaul_ai: A startup's journey in deep tech from Andrew Feldman, CEO and founder of Cerebras."
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Cerebras CEO 兼创始人 Andrew Feldman 分享深科技创业公司的历程。",
+    "en": "Cerebras CEO and founder Andrew Feldman shares the journey of a deep-tech startup.",
+    "de": "Cerebras-CEO und Gründer Andrew Feldman erzählt vom Weg eines Deep-Tech-Startups."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "他列举创业各阶段的难题：先是做不出来，再到无法量产、没有客户、没有前沿实验室、没有超大规模云厂商。",
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -594,8 +696,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 32.4,
+   "score": 44.8,
+   "heat": 43.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -619,7 +721,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -628,8 +730,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 43.1,
+   "score": 26.9,
+   "heat": 26.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Selbst der präziseste Prompt lässt Interpretationsspielraum, und Bildmodelle verstehen keine Anweisungen, sie berechnen Wahrscheinlichkeiten."
@@ -664,6 +766,40 @@
    "selected": false,
    "score": 42.0,
    "heat": 41.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "abb763d2b812",
+   "url": "https://x.com/adocomplete/status/2111503487754461676",
+   "title": {
+    "zh": "",
+    "en": "@adocomplete: Claude Code mods change how Claude Code looks and behaves. They are functions that hook into events, change what it does",
+    "de": "@adocomplete: Claude Code Mods ändern Aussehen und Verhalten",
+    "src": "@adocomplete: Claude Code mods change how Claude Code looks and behaves. They are functions that hook into events, change what it does"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "Claude Code mods are functions that hook into events and change what the tool does.",
+    "de": "Claude Code Mods sind Funktionen, die in Events eingreifen und das Verhalten des Tools ändern."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "X回源",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T17:03:55Z",
+   "first_seen_utc": "2026-10-17T18:05:58Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 42.3,
+   "heat": 41.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -706,22 +842,22 @@
    "id": "22b15d7599a2",
    "url": "https://x.com/rohanpaul_ai/status/2111498576232882225",
    "title": {
-    "zh": "",
+    "zh": "Bolt 本周末免费为所有账户加入 GLM 5.3 Flash",
     "en": "@rohanpaul_ai: Great timing for anyone with an unfinished app.",
-    "de": "@rohanpaul_ai: Perfektes Timing für alle mit unfertiger App",
+    "de": "Bolt fügt GLM 5.3 Flash am Wochenende kostenlos hinzu",
     "src": "@rohanpaul_ai: Great timing for anyone with an unfinished app."
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Bolt 将在本周末把 GLM 5.3 Flash 加入每个账户的模型选择器，不收费、无需改套餐。",
+    "en": "Bolt will add GLM 5.3 Flash to every account's model selector this weekend, at no cost and with no plan change required.",
+    "de": "Bolt fügt GLM 5.3 Flash am Wochenende kostenlos zur Modellauswahl jedes Kontos hinzu – ohne Planwechsel."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "用户无需兑换码或套餐变更即可直接使用新模型，降低了使用门槛。",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "模型",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -730,11 +866,11 @@
    "first_seen_utc": "2026-10-17T17:06:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.7,
-   "heat": 29.2,
+   "score": 45.1,
+   "heat": 44.1,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Bolt is adding GLM 5.3 Flash to every account's model picker this weekend at no cost, with no plan change and no code to redeem."
   },
   {
    "id": "26887573a74d",
@@ -755,7 +891,7 @@
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -764,11 +900,45 @@
    "first_seen_utc": "2026-10-17T17:06:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 46.2,
-   "heat": 45.3,
+   "score": 49.3,
+   "heat": 48.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "My work dot \"Burger\" coordinated with my personal dot \"Dorito\" over email at my personal dots request to get documents, which then"
+  },
+  {
+   "id": "aa2c833ed2ea",
+   "url": "https://t3n.de/news/three-js-ki-rekord-downloads-1767987/?utm_source=rss&utm_medium=newsFeed&utm_campaign=newsFeed",
+   "title": {
+    "zh": "Three.js 周下载量达两千万级，AI 工具是推手",
+    "en": "[t3n] 20 Millionen Downloads: Warum KI-Tools plötzlich Three.js dominieren",
+    "de": "Three.js erreicht zig Millionen wöchentliche Downloads, KI-Tools als Treiber",
+    "src": "[t3n] 20 Millionen Downloads: Warum KI-Tools plötzlich Three.js dominieren"
+   },
+   "one_liner": {
+    "zh": "Three.js 这款用于浏览器渲染 3D 对象的 JavaScript 库下载量重回每周数千万级。",
+    "en": "Three.js, a JavaScript library for rendering 3D objects in the browser, is back to tens of millions of weekly downloads.",
+    "de": "Three.js, eine JavaScript-Bibliothek zum Rendern von 3D-Objekten im Browser, erreicht wieder zig Millionen Downloads pro Woche."
+   },
+   "why_it_matters": {
+    "zh": "分析指出 Three.js 主要面向 3D 渲染场景，正因 Vibecoding 迎来第二春。",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T16:25:00Z",
+   "first_seen_utc": "2026-10-17T18:05:58Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 48.3,
+   "heat": 47.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Und genau diese JavaScript-Bibliothek erlebt gerade einen zweiten Frühling – Vibecoding sei Dank."
   },
   {
    "id": "68249a7ba3c6",
@@ -781,8 +951,8 @@
    },
    "one_liner": {
     "zh": "",
-    "en": "A GitHub project, Krexa-xyz/skills.",
-    "de": "Ein GitHub-Projekt: Krexa-xyz/skills."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -798,8 +968,8 @@
    "first_seen_utc": "2026-10-17T16:06:48Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 31.9,
+   "score": 40.2,
+   "heat": 32.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -839,74 +1009,6 @@
    "quote_en": ""
   },
   {
-   "id": "2242b6dd4231",
-   "url": "https://github.com/speedydivid/TokenForge",
-   "title": {
-    "zh": "",
-    "en": "speedydivid/TokenForge",
-    "de": "speedydivid/TokenForge",
-    "src": "speedydivid/TokenForge"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "模型",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T15:06:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 40.6,
-   "heat": 32.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "5af0707fb382",
-   "url": "https://github.com/justxor/deepseek-local-guide-ru",
-   "title": {
-    "zh": "",
-    "en": "justxor/deepseek-local-guide-ru",
-    "de": "justxor/deepseek-local-guide-ru",
-    "src": "justxor/deepseek-local-guide-ru"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T15:06:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 34.6,
-   "heat": 27.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
    "id": "8669705ba32d",
    "url": "https://github.com/MK27MK/uxed",
    "title": {
@@ -941,6 +1043,74 @@
    "quote_en": ""
   },
   {
+   "id": "5af0707fb382",
+   "url": "https://github.com/justxor/deepseek-local-guide-ru",
+   "title": {
+    "zh": "",
+    "en": "justxor/deepseek-local-guide-ru",
+    "de": "justxor/deepseek-local-guide-ru",
+    "src": "justxor/deepseek-local-guide-ru"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-17T15:06:39Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 32.2,
+   "heat": 25.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2242b6dd4231",
+   "url": "https://github.com/speedydivid/TokenForge",
+   "title": {
+    "zh": "",
+    "en": "speedydivid/TokenForge",
+    "de": "speedydivid/TokenForge",
+    "src": "speedydivid/TokenForge"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-17T15:06:39Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 30.5,
+   "heat": 24.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "5011333b5006",
    "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
    "title": {
@@ -959,7 +1129,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -968,8 +1138,8 @@
    "first_seen_utc": "2026-10-17T17:06:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 50.0,
-   "heat": 48.7,
+   "score": 45.5,
+   "heat": 44.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI."
@@ -978,22 +1148,22 @@
    "id": "ae2ce75f984e",
    "url": "https://www.infoq.cn/article/uGNQwpOt5GGAKm2XlEZC?utm_source=rss&amp;utm_medium=article",
    "title": {
-    "zh": "",
-    "en": "Akka tests spec-based AI delivery across 65 open source projects",
-    "de": "Akka testet spec-basierte KI-Lieferung in 65 Open-Source-Projekten",
+    "zh": "Akka 在 65 个开源项目测试规格驱动 AI 移交",
+    "en": "Akka tests spec-driven AI handover across 65 open-source projects",
+    "de": "Akka testet spezbasierte KI-Übergabe an 65 Open-Source-Projekten",
     "src": "[InfoQ中国] Akka 在 65 个开源项目中测试基于规格的 AI 交付"
    },
    "one_liner": {
-    "zh": "",
-    "en": "Akka is testing spec-based AI-driven delivery across 65 open source projects.",
-    "de": "Akka testet spec-basierte KI-gestützte Lieferung in 65 Open-Source-Projekten."
+    "zh": "Akka 在 65 个开源项目上测试基于规格说明的 AI 辅助软件移植工作流",
+    "en": "Akka is testing a spec-based AI-assisted software handover workflow across 65 open-source projects.",
+    "de": "Akka testet einen spec-basierten, KI-unterstützten Software-Übergabe-Workflow an 65 Open-Source-Projekten."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "首轮测试耗时 99.3 小时、消耗 94.1 亿 token，发现结构化规格说明可改善首次实现效果",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1002,32 +1172,32 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.2,
-   "heat": 39.2,
+   "score": 47.2,
+   "heat": 45.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Akka 利用 65 个开源项目，对一种基于规格说明的 AI 辅助软件移植工作流进行了测试"
   },
   {
    "id": "ae88c98034be",
    "url": "https://the-decoder.com/anthropics-claude-cracks-a-25-year-old-nsa-cryptography-mystery-in-under-30-minutes/",
    "title": {
-    "zh": "",
-    "en": "",
-    "de": "",
+    "zh": "Claude 半小时破解 NSA 25 年密码学悬案",
+    "en": "[The Decoder] Anthropics' Claude cracks a 25-year-old NSA cryptography mystery in under 30 minutes",
+    "de": "Claude knackt 25 Jahre altes NSA-Krypto-Rätsel in 30 Minuten",
     "src": "[The Decoder] Anthropics' Claude cracks a 25-year-old NSA cryptography mystery in under 30 minutes"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Anthropic 的 Claude 在 30 分钟内破解了 NSA 25 年前提供的 ECDSA 曲线种子来源之谜。",
+    "en": "Anthropic's Claude solved the mystery of the ECDSA curve seed origins posed by the NSA 25 years ago in 30 minutes.",
+    "de": "Anthropics Claude löste das Rätsel um die ECDSA-Kurven-Seed-Herkunft der NSA von vor 25 Jahren in 30 Minuten."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "种子来自 C 语言随机数生成器 lrand48，Anthropic 称这使蓄意后门可能性降低，并将 36",
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -1036,11 +1206,11 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.9,
-   "heat": 41.1,
+   "score": 61.2,
+   "heat": 59.3,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Claude cracked it in under 30 minutes. The seeds came from \"lrand48,\" a simple C random number generator, initialized with a Unix timestamp between May 1997 and April 1998. Claude spotted the pattern"
   },
   {
    "id": "1fe38e42bdbf",
@@ -1070,8 +1240,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 33.4,
+   "score": 35.3,
+   "heat": 34.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1082,7 +1252,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Haftstrafe für KI-Songs: 8 Millionen Dollar Strafe verhängt",
-    "de": "Haftstrafe für KI-Songs: 8 Millionen Dollar Strafe verhängt",
+    "de": "t3n: Haftstrafe für KI-Songs – 8 Millionen Dollar Strafe verhängt",
     "src": "[t3n] Haftstrafe für KI-Songs: 8 Millionen Dollar Strafe verhängt"
    },
    "one_liner": {
@@ -1104,8 +1274,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.8,
-   "heat": 36.7,
+   "score": 30.1,
+   "heat": 29.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1115,8 +1285,8 @@
    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNelpRa1lIZ0NsejFjbFAxN0txemJlUmNNUnFValVFaHVLMjFKSno3bXlWb0h1WUt0OHctdW9uXzlVOG53OC1MNWxnNjFtUUFLRDhXVXR0a2JOaUZjRjVpT0tWZHNZMHdCeFNzWTctRF9acWNMeHpQV1lGRFExLVRKUEFRNjQ1REhodG9BSXRlR190YnAwUUhzSlNqTjUzcTcxMkY2TA?oc=5",
    "title": {
     "zh": "",
-    "en": "[机器之心(gnews桥)] DeepSeek V4.1F released, featuring wish-style programming - Sohu",
-    "de": "[机器之心(gnews桥)] DeepSeek V4.1F veröffentlicht mit Wish-Programming - Sohu",
+    "en": "DeepSeek V4.1F New Version Arrives, Featuring Wish-Based Programming",
+    "de": "DeepSeek V4.1F: Neue Version mit Wunsch-Programmierung",
     "src": "[机器之心(gnews桥)] DeepSeek V4.1F新版本来了，主打「许愿式编程」 - 搜狐"
    },
    "one_liner": {
@@ -1129,7 +1299,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1138,8 +1308,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 48.6,
-   "heat": 47.0,
+   "score": 39.2,
+   "heat": 37.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1179,6 +1349,40 @@
    "quote_en": ""
   },
   {
+   "id": "071f0ea7cb4c",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNS0plSEFQdEI0MGM1Y0lUMUVuOVQyMzc3R0lnMEIyeFoxeEY3YkNjNkJSQUNMdG03cFM1M0FaZjRBRW0wempXT01PZ3Z0THRLU3hmN2xGMW9vUzVIbkNxS3g2UFh5dUFyRnQyWXlUTzlMaEdEQk0xOTJFYkFJYzhobFdPVVNOWDlE?oc=5",
+   "title": {
+    "zh": "",
+    "en": "AI Solves 56-Year-Old Problem: Google DeepMind Work Published in Science",
+    "de": "KI löst 56 Jahre altes Problem: Google-DeepMind-Arbeit erscheint in Science",
+    "src": "[新智元(gnews桥)] 56年没解开的题，AI全解了！谷歌DeepMind新成果登上Science主刊 - 搜狐"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T13:20:21Z",
+   "first_seen_utc": "2026-10-17T14:06:37Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 34.3,
+   "heat": 33.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "43cabba8610f",
    "url": "https://x.com/shao__meng/status/2111446389754675333",
    "title": {
@@ -1197,7 +1401,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "模型",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -1206,8 +1410,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 49.3,
-   "heat": 47.7,
+   "score": 54.6,
+   "heat": 52.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "本来以为是 AI 模型发布更新太快的时间错觉，查了一下，确实有几家超过 3 个月没发了。"
@@ -1231,7 +1435,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -1240,8 +1444,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 46.2,
-   "heat": 44.6,
+   "score": 41.0,
+   "heat": 39.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Could prove stronger than GLM 5.3 with vision built in."
@@ -1252,7 +1456,7 @@
    "title": {
     "zh": "",
     "en": "@ViggleAI: AI filmmakers & video creators: want to try our new model Viggle Animate 2 before everyone else?",
-    "de": "Viggle lädt KI-Filmschaffende ein, Viggle Animate 2 früh zu testen",
+    "de": "@ViggleAI: KI-Filmschaffende können Viggle Animate 2 vorab testen",
     "src": "@ViggleAI: AI filmmakers & video creators: want to try our new model Viggle Animate 2 before everyone else?"
    },
    "one_liner": {
@@ -1265,7 +1469,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -1274,8 +1478,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.0,
-   "heat": 41.5,
+   "score": 41.0,
+   "heat": 39.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1367,7 +1571,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1376,8 +1580,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 24.8,
-   "heat": 23.9,
+   "score": 45.5,
+   "heat": 43.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "OpenAI hat drei Mitarbeiter:innen mit sofortiger Wirkung entlassen, weil sie angeblich vertrauliche Informationen weitergegeben hätten."
@@ -1469,7 +1673,7 @@
     "en": "The seeds' origins had been unknown for over two decades, with a bounty once offered; this explains their generation, though B-163's seed and some base points remain unexplained.",
     "de": "Die Herkunft der Seeds blieb über zwanzig Jahre ungeklärt, es gab einst ein Kopfgeld; der Prozess ist nun erklärt, doch B-163s Seed und einige Basispunkte bleiben offen."
    },
-   "category": "模型",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -1478,8 +1682,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 49.5,
-   "heat": 47.6,
+   "score": 42.3,
+   "heat": 40.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "随后Claude写了一个扫描程序，把公开种子里的二进制数字一位位挪着检查，测试了34种生成器与输出截取方式的组合。"
@@ -1523,8 +1727,8 @@
    "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBGRHJvTnVvZ0JBNTE0TXdNLVBqT2lVQmZiQWVXOURVMW95d1lKeGlQZTVKd0VFV1ZwLWliRlpxUUtTNU5wTjVvTg?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI Strikes at Chrome: ChatGPT Gains Hands to Work Autonomously",
-    "de": "OpenAI greift Chrome an: ChatGPT arbeitet jetzt automatisch",
+    "en": "OpenAI Surprises Chrome: ChatGPT Gains Hands to Work Autonomously",
+    "de": "OpenAI überfällt Chrome: ChatGPT bekommt Hände für autonome Arbeit",
     "src": "[新智元(gnews桥)] OpenAI突袭Chrome！ChatGPT长出「双手」，自动打工了 - 智源社区"
    },
    "one_liner": {
@@ -1546,8 +1750,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 30.4,
-   "heat": 29.2,
+   "score": 39.9,
+   "heat": 38.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1558,7 +1762,7 @@
    "title": {
     "zh": "",
     "en": "[Golem] Cody Wilson: KI hat gerade eine Schusswaffe entworfen",
-    "de": "[Golem] Cody Wilson: KI hat gerade eine Schusswaffe entworfen",
+    "de": "Cody Wilson: KI hat gerade eine Schusswaffe entworfen",
     "src": "[Golem] Cody Wilson: KI hat gerade eine Schusswaffe entworfen"
    },
    "one_liner": {
@@ -1571,7 +1775,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1580,8 +1784,8 @@
    "first_seen_utc": "2026-10-17T12:09:12Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.4,
-   "heat": 35.0,
+   "score": 44.1,
+   "heat": 42.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1605,7 +1809,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1614,8 +1818,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.1,
-   "heat": 29.9,
+   "score": 38.8,
+   "heat": 37.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Der Bot postete seine Finanzen in einem öffentlichen Slack-Kanal, sodass andere aus dem Unternehmen seinen Kontostand sowie Einnahmen und Ausgaben bekommen konnten."
@@ -1694,20 +1898,20 @@
    "title": {
     "zh": "",
     "en": "@testingcatalog: DAILY AI BRIEF 🗞 — Oct 17",
-    "de": "@testingcatalog: DAILY AI BRIEF 🗞 — 17. Oktober",
+    "de": "Täglicher KI-Überblick — 17. Oktober",
     "src": "@testingcatalog: DAILY AI BRIEF 🗞 — Oct 17"
    },
    "one_liner": {
     "zh": "",
-    "en": "@testingcatalog's daily AI news brief for October 17.",
-    "de": "Der tägliche KI-Newsbrief von @testingcatalog für den 17. Oktober."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -1716,8 +1920,8 @@
    "first_seen_utc": "2026-10-17T12:09:12Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 37.8,
+   "score": 36.0,
+   "heat": 34.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1825,6 +2029,40 @@
    "quote_en": ""
   },
   {
+   "id": "eba0c6d72c1b",
+   "url": "https://x.com/Thom_Wolf/status/2111401132840890440",
+   "title": {
+    "zh": "",
+    "en": "@Thom_Wolf: we’re getting used to it by now but DeepSeek calling this a “minor update” while moving Terminal-Bench 4.0 from 31.2 to",
+    "de": "Thom_Wolf: DeepSeek nennt es Minor Update und springt bei Terminal-Bench 4.0 von 31,2",
+    "src": "@Thom_Wolf: we’re getting used to it by now but DeepSeek calling this a “minor update” while moving Terminal-Bench 4.0 from 31.2 to"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "X回源",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T10:17:12Z",
+   "first_seen_utc": "2026-10-17T11:05:56Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 30.1,
+   "heat": 28.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "d12066bfd5f2",
    "url": "https://api-docs.deepseek.com/news/news261017",
    "title": {
@@ -1843,7 +2081,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方博客",
     "tier": "T1"
@@ -1851,9 +2089,9 @@
    "published_utc": null,
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
-   "selected": true,
-   "score": 71.5,
-   "heat": 57.2,
+   "selected": false,
+   "score": 52.0,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Stronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost."
@@ -1862,22 +2100,22 @@
    "id": "60c753910f34",
    "url": "https://github.com/anujasid/blender-ai-mcp-addon",
    "title": {
-    "zh": "",
+    "zh": "Blender AI 助手插件：聊天操作场景的 MCP 服务器",
     "en": "anujasid/blender-ai-mcp-addon",
-    "de": "anujasid/blender-ai-mcp-addon",
+    "de": "Blender-KI-Assistent-Plugin: MCP-Server für Szenen-Chatsteuerung",
     "src": "anujasid/blender-ai-mcp-addon"
    },
    "one_liner": {
-    "zh": "",
-    "en": "A GitHub project, anujasid/blender-ai-mcp-addon.",
-    "de": "Ein GitHub-Projekt: anujasid/blender-ai-mcp-addon."
+    "zh": "该开源项目提供 Blender 的 AI 助手，可检查场景、创建物体、编辑材质并执行多步工作流。",
+    "en": "This open-source project provides an AI assistant for Blender that can inspect scenes, create objects, edit materials, and run multi-step workflows.",
+    "de": "Dieses Open-Source-Projekt bietet einen KI-Assistenten für Blender, der Szenen prüft, Objekte erstellt, Materialien bearbeitet und mehrstufige Workflows ausführt."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "面向希望更快迭代的艺术家、自动化重复工作的技术美术以及将 AI 工具接入 Blender 的开发者。",
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -1886,11 +2124,11 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 31.9,
+   "score": 48.7,
+   "heat": 39.0,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows—with a visual chat workspace and a built-in Model Context"
   },
   {
    "id": "1b2764e06c0e",
@@ -1911,7 +2149,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -1920,8 +2158,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.1,
-   "heat": 30.5,
+   "score": 38.5,
+   "heat": 30.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1965,8 +2203,8 @@
    "url": "https://www.infoq.cn/article/JMZ6WUx4a4cVqAwhwviU?utm_source=rss&amp;utm_medium=article",
    "title": {
     "zh": "",
-    "en": "InfoQ China: The World Is Not a Dataset – Building AI That Learns Continuously, QCon Shanghai",
-    "de": "InfoQ China: The World Is Not a Dataset – KI-Systeme mit kontinuierlichem Lernen, QCon Shanghai",
+    "en": "[InfoQ China] The World Is Not a Dataset - Building AI Systems That Continuously Learn from Reality | QCon Shanghai",
+    "de": "[InfoQ China] The World Is Not a Dataset - KI-Systeme, die kontinuierlich aus der Realität lernen | QCon Shanghai",
     "src": "[InfoQ中国] The World Is Not a Dataset - Building AI Systems That Continuously Learn from Reality｜QCon上海"
    },
    "one_liner": {
@@ -1988,8 +2226,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.5,
-   "heat": 31.0,
+   "score": 37.8,
+   "heat": 35.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2047,7 +2285,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2056,8 +2294,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.2,
-   "heat": 45.0,
+   "score": 42.0,
+   "heat": 39.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2081,7 +2319,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2090,8 +2328,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.4,
-   "heat": 34.6,
+   "score": 57.0,
+   "heat": 54.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "La réglementation présentée vendredi soumettra à autorisation étatique l’export des technologies des modèles haute performance – se classant dans le top 10 mondial ou fonctionnant à plus de 2 000"
@@ -2100,22 +2338,22 @@
    "id": "9d53d6e23ce9",
    "url": "https://www.tmtpost.com/8171629.html",
    "title": {
-    "zh": "",
-    "en": "Context Wars: Why Office AI's New Battleground Is Context",
-    "de": "Kontext-Kampf: Warum Büro-KI zum neuen Schlachtfeld wird",
+    "zh": "上下文争夺成办公 AI 新战场",
+    "en": "Context grab becomes the new battleground for office AI",
+    "de": "Kontextkampf wird zum neuen Schlachtfeld für Büro-KI",
     "src": "[钛媒体] 上下文争夺，为何成了办公AI新战场？"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "谷歌发布企业办公智能体 Gemini Agent，企业微信与 WorkBuddy 也宣布深度联合，打通消息、文档",
+    "en": "Google launches the enterprise office agent Gemini Agent, while 企业微信 and WorkBuddy announce a deep integration connecting messaging and documents.",
+    "de": "Google veröffentlicht den Büro-Agenten Gemini Agent für Unternehmen, während 企业微信 und WorkBuddy eine tiefe Integration von Nachrichten und Dokumenten ankündigen."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "模型不再是长期壁垒，企业长期积累的上下文、技能和数据成为关键，办公 AI 竞争转向上下文争夺。",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2124,11 +2362,11 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.1,
-   "heat": 29.6,
+   "score": 45.8,
+   "heat": 43.4,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "模型不再是长期壁垒，办公 AI 的竞争开始转向上下文争夺。"
   },
   {
    "id": "ec9392a7dc1f",
@@ -2158,8 +2396,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.6,
-   "heat": 45.3,
+   "score": 29.4,
+   "heat": 27.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "机器人连续1.5小时自主装配电子产品且全程零操作失误，覆盖的自动化范围超出团队最初预期"
@@ -2168,22 +2406,22 @@
    "id": "04d776e1faa6",
    "url": "https://www.tmtpost.com/8171970.html",
    "title": {
-    "zh": "",
-    "en": "Salesforce, Which Revolutionized Software 20 Years Ago, Now Faces AI Disruption",
-    "de": "Salesforce, vor 20 Jahren Software-Revoluzzer, jetzt selbst von KI bedroht",
+    "zh": "Salesforce 发布 AIforce，向 AI 开放入口",
+    "en": "Salesforce Launches AIforce, Opening Gate to AI",
+    "de": "Salesforce bringt AIforce heraus und öffnet das Tor zu KI",
     "src": "[钛媒体] 20多年前革软件命的Salesforce，要被AI革命了？"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Salesforce 在 Dreamforce 期间发布 AIforce，允许员工在 Claude",
+    "en": "Salesforce launched AIforce during Dreamforce, allowing employees to access within Claude",
+    "de": "Salesforce hat während der Dreamforce AIforce vorgestellt, das Mitarbeitern Zugriff innerhalb von Claude ermöglicht"
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "AI 正在改变员工使用软件的方式，操作入口是 Salesforce 二十多年积累的护城河，开放入口是其应对策略。",
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2192,11 +2430,11 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.4,
-   "heat": 41.4,
+   "score": 45.8,
+   "heat": 43.4,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "AIforce允许员工在Claude、Slack等界面里，直接调用Salesforce的数据和业务流程，不必再打开熟悉的CRM页面"
   },
   {
    "id": "db9f661e3371",
@@ -2267,12 +2505,46 @@
    "quote_en": ""
   },
   {
+   "id": "4bc8d4f1c1e2",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORlk3VmFJNmtkNlpJeG5oNXlDa0x4c2QwTHpxR0M4ZzRkV09KSGpNc1d5VG9vVGdjajFyTzhTV2h5UGpIMnVkcW1GdzVvOTFrOXVNeENveUZBQ1BCS2ZlX21TbjZybVg0QnRPTWF2STBEMTg5WlhPYnFNTWdZX3hVTnJNbElpWXlGX0RB?oc=5",
+   "title": {
+    "zh": "",
+    "en": "DeepSeek's Double Release: Wish-Style Coding Hits GPT-6 Astra",
+    "de": "DeepSeek-Doppelschlag: Wish-Coding trifft GPT-6 Astra",
+    "src": "[新智元(gnews桥)] 刚刚，DeepSeek双王炸！许愿式编程暴击GPT-6 Astra - 搜狐网"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T09:17:29Z",
+   "first_seen_utc": "2026-10-17T20:07:49Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 44.5,
+   "heat": 42.1,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
    "id": "8d4d43858caa",
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZFBOTXoya0lfY05YX3VJaHRrY2xBLV9pSklmM1FKVGQ5VFJMb0JuRnBRVmxXSWhQSzhyTDdrNVYybjZSUXBENjZSZGRmcF8ybk1CdHdEcVY3Q29CcV94amNvb2ZfemtzVUxvUzBpMzBMSm45bVVJRDMwd29OY2dHYzhPUC1Ea3J6?oc=5",
    "title": {
     "zh": "",
-    "en": "DeepSeek's Double Bombshell: Wish-Style Coding Hits GPT-6 Astra",
-    "de": "DeepSeek-Doppelschlag: Wunsch-Coding trifft GPT-6 Astra",
+    "en": "DeepSeek's double bombshell: wish-style coding takes on GPT-6 Astra",
+    "de": "DeepSeek Doppelknaller: Wunsch-Coding greift GPT-6 Astra an",
     "src": "[新智元(gnews桥)] 刚刚，DeepSeek双王炸！许愿式编程暴击GPT-6 Astra - 搜狐"
    },
    "one_liner": {
@@ -2294,8 +2566,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.8,
-   "heat": 42.6,
+   "score": 38.5,
+   "heat": 36.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2353,7 +2625,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -2362,8 +2634,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 26.3,
+   "score": 28.4,
+   "heat": 22.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2372,22 +2644,22 @@
    "id": "a1a2ab616038",
    "url": "https://the-decoder.com/mathematicians-say-openai-doesnt-understand-its-own-navier-stokes-proof/",
    "title": {
-    "zh": "",
+    "zh": "数学家质疑 OpenAI 不理解自己的 NS 方程证明",
     "en": "[The Decoder] Mathematicians say OpenAI doesn't understand its own Navier-Stokes proof",
-    "de": "[The Decoder] Mathematiker: OpenAI versteht eigenen Navier-Stokes-Beweis nicht",
+    "de": "Mathematiker bezweifeln OpenAIs Verständnis des NS-Beweises",
     "src": "[The Decoder] Mathematicians say OpenAI doesn't understand its own Navier-Stokes proof"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "OpenAI 9 月初发布的 166 页 Navier-Stokes 问题潜在证明",
+    "en": "A 166-page potential proof of the Navier-Stokes problem released by OpenAI in early September.",
+    "de": "Ein möglicher 166-seitiger Beweis zum Navier-Stokes-Problem, den OpenAI Anfang September veröffentlichte."
    },
    "why_it_matters": {
-    "zh": "Clay 数学研究所正在审查该证明，NYU 数学家还指控其建立在他人工作上，涉事证明影响数学界对成果的认可。",
+    "zh": "Clay 数学研究所自发布起一直在审查；将约 400 项后续成果以松散合集形式放上 GitHub，也引来数学界不满。",
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -2396,11 +2668,11 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 65.7,
-   "heat": 62.4,
+   "score": 56.3,
+   "heat": 53.2,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "In early September, the company presented a 166-page potential solution to the Navier-Stokes problem. OpenAI claimed the proof followed the approach of Spanish mathematicians Diego Córdoba and Luis"
   },
   {
    "id": "18ad8505cd15",
@@ -2408,20 +2680,20 @@
    "title": {
     "zh": "",
     "en": "[t3n] Gemini nervt? So holst du dir den alten Google Assistant zurück",
-    "de": "[t3n] Gemini nervt? So holst du dir den alten Google Assistant zurück",
+    "de": "Gemini nervt? So bekommst du den alten Google Assistant zurück",
     "src": "[t3n] Gemini nervt? So holst du dir den alten Google Assistant zurück"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A guide showing how to switch back from Gemini to the classic Google Assistant.",
+    "de": "Eine Anleitung, wie du von Gemini zum klassischen Google Assistant zurückwechseln kannst."
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2430,8 +2702,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 32.8,
+   "score": 41.3,
+   "heat": 39.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2441,14 +2713,14 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUlR3Tm1VMExfVzZqaFpTZFdGelVBVkJPRFJ4RlBmRlM5d3RsdmdFMG9rbGJDX3RHTWVWVy1naWhYVlVpTnJMRU9JdzdvYmEwa2l0VVFkWDJUZnZWWndaWnJBOENvaDNDaW5tUnd6M29UeHQyd015bUtvMjRxQm5pSENJTmo3Vzk4?oc=5",
    "title": {
     "zh": "",
-    "en": "Ant's Ling-3.1-flash Brings AI Into Real Workflows, Working for Hours",
-    "de": "Ants Ling-3.1-flash bringt KI in echte Workflows, arbeitet stundenlang",
+    "en": "Ant's Ling-3.1-flash brings AI into real workflows for hours",
+    "de": "Ants Ling-3.1-flash bringt KI in echte Workflows",
     "src": "[机器之心(gnews桥)] 让AI造城市，一口气干活十几个小时，蚂蚁百灵Ling-3.1-flash把AI带进真实工作流 - 搜狐"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Ant Group's Ling-3.1-flash lets AI build cities and work autonomously for over ten hours in real workflows.",
+    "de": "Ant Groups Ling-3.1-flash lässt KI eigenständig über zehn Stunden an realen Workflows wie Stadtaufbau arbeiten."
    },
    "why_it_matters": {
     "zh": "",
@@ -2464,8 +2736,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 41.5,
+   "score": 41.0,
+   "heat": 38.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2475,21 +2747,21 @@
    "url": "https://www.tmtpost.com/8171555.html",
    "title": {
     "zh": "",
-    "en": "Kling 4.0 released: how Kling AI's valuation surpassed parent Kuaishou",
-    "de": "Kling 4.0 veröffentlicht: Warum Kling AIs Bewertung Mutterkonzern Kuaishou übertrifft",
+    "en": "Kling 4.0 launches: why Kling AI's valuation outstrips parent Kuaishou",
+    "de": "Kling 4.0 erscheint: warum Kling AIs Bewertung Kuaishou übersteigt",
     "src": "[钛媒体] Kling 4.0发布，可灵AI的估值凭什么反超母体快手？"
    },
    "one_liner": {
     "zh": "",
-    "en": "Kling 4.0 has been released, raising the question of why Kling AI's valuation has surpassed that of its parent company Kuaishou.",
-    "de": "Kling 4.0 wurde veröffentlicht; die Frage ist, warum die Bewertung von Kling AI die des Mutterkonzerns Kuaishou übersteigt."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2498,8 +2770,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 37.8,
+   "score": 44.1,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2565,9 +2837,9 @@
    "published_utc": "2026-10-17T07:47:38Z",
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
-   "selected": true,
-   "score": 73.3,
-   "heat": 69.2,
+   "selected": false,
+   "score": 61.2,
+   "heat": 57.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Muse Spark Open (Meta): An 816B-total, 42B-active MoE with open weights. Artificial Analysis scores it 39 on its Intelligence Index, the highest for a US open-weights model and 13 points above NVIDIA"
@@ -2591,7 +2863,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -2600,8 +2872,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 56.3,
-   "heat": 53.1,
+   "score": 60.3,
+   "heat": 56.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "其 AI 模型 Claude 在几乎无需人工干预的情况下，针对 8 类量子计算任务，设计出比已发表最优电路更高效的方案。"
@@ -2611,8 +2883,8 @@
    "url": "https://www.tmtpost.com/8171535.html",
    "title": {
     "zh": "",
-    "en": "AI Fundraising Stars Squeezed Between ByteDance's Cracks",
-    "de": "KI-Finanzierungsstars zwischen ByteDances Fronten",
+    "en": "AI funding stars squeezed in ByteDance's shadow",
+    "de": "KI-Finanzierungsstars im Schatten von ByteDance",
     "src": "[钛媒体] 夹在字节缝隙中的AI融资明星们"
    },
    "one_liner": {
@@ -2634,8 +2906,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 22.4,
-   "heat": 22.2,
+   "score": 43.0,
+   "heat": 40.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2645,42 +2917,76 @@
    "url": "https://www.ithome.com/1/014/312.htm",
    "title": {
     "zh": "",
-    "en": "Anthropic Removes Claude Haiku 4.5 from Model Options October 29",
-    "de": "Anthropic entfernt Claude Haiku 4.5 am 29. Oktober aus Modelloptionen",
+    "en": "Anthropic to Remove Claude Haiku 4.5 from Model Options on October 29",
+    "de": "Anthropic entfernt Claude Haiku 4.5 am 29. Oktober",
     "src": "[IT之家] Anthropic 宣布 10 月 29 日从模型选项中移除 Claude Haiku 4.5"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Anthropic 宣布自 10 月 29 日起将 Haiku 4.5 从 Free",
+    "en": "Anthropic announced that starting October 29, Haiku 4.5 will be removed from Free.",
+    "de": "Anthropic kündigte an, dass Haiku 4.5 ab dem 29. Oktober aus Free entfernt wird."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "Claude Code、Team、Enterprise 及 API 中的可用性不受影响；已有对话不删除",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
-    "tier": "T2"
+    "tier": "T1.5"
    },
    "published_utc": "2026-10-17T07:28:03Z",
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 22.4,
-   "heat": 22.1,
+   "score": 57.6,
+   "heat": 54.1,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "Anthropic 于当地时间 10 月 15 日宣布，自 2026 年 10 月 29 日起，Claude Haiku 4.5 将从 Free、Pro 和 Max 套餐的模型选择器中移除，覆盖网页端、桌面端和移动端的常规聊天，以及 Claude Cowork 和 Claude Design 功能。"
+  },
+  {
+   "id": "4bd38c0c9e0b",
+   "url": "https://www.marktechpost.com/2026/10/17/20-jev-alternatives-the-decision-models-taking-on-typesafe-in-2026/",
+   "title": {
+    "zh": "20 款 Jev 替代品盘点：决策模型格局对比",
+    "en": "[MarkTechPost] 20 Jev Alternatives: The Decision Models Taking On TypeSafe in 2026",
+    "de": "20 Jev-Alternativen: Vergleich der Entscheidungsmodell-Landschaft",
+    "src": "[MarkTechPost] 20 Jev Alternatives: The Decision Models Taking On TypeSafe in 2026"
+   },
+   "one_liner": {
+    "zh": "TypeSafe 9 月 15 日推出决策模型 Jev 后约 4 周内，至少 20 款替代品上市",
+    "en": "Within about 4 weeks of TypeSafe launching decision model Jev on September 15, at least 20 alternatives hit the market.",
+    "de": "Etwa 4 Wochen nach TypeSafes Start des Entscheidungsmodells Jev am 15. September kamen mindestens 20 Alternativen auf den Markt."
+   },
+   "why_it_matters": {
+    "zh": "指南逐一对比各模型体积、许可、硬件、价格与基准表现",
+    "en": "The guide compares each model's size, license, hardware, pricing, and benchmark performance one by one.",
+    "de": "Der Leitfaden vergleicht einzeln Modellgröße, Lizenz, Hardware, Preise und Benchmark-Leistung."
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T07:26:39Z",
+   "first_seen_utc": "2026-10-17T09:06:35Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 66.6,
+   "heat": 62.5,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "TypeSafe launched Jev on September 15, 2026. It is a decision model, not a chatbot. You define the allowed answers, and Jev returns a label, a score or a yes/no probability. In about 4 weeks, at"
   },
   {
    "id": "3c9d45010652",
    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1SYlcyV1R2dmVDVXp0bGsxWURRNWQ4Mkk4OWpqM0F6dU1UUnhyUzE1SDdsR2JpbWszRnlWY0ZCWUNIblJyVTU1ZjJsNFBIZkU?oc=5",
    "title": {
     "zh": "",
-    "en": "Tibo's Codex comeback: overtaking ChatGPT in under a year",
-    "de": "Tibos Codex-Comeback: ChatGPT in unter einem Jahr überholt",
+    "en": "[Synced via gnews bridge] Tibo's Codex comeback: absorbing ChatGPT within a year of taking over - 36 Kr",
+    "de": "[Synced via gnews bridge] Tibos Codex-Comeback: Weniger als ein Jahr nach Übernahme wird ChatGPT geschluckt - 36 Kr",
     "src": "[机器之心(gnews桥)] Tibo的Codex翻盘记：接手不到一年就吞掉了ChatGPT - 36 Kr"
    },
    "one_liner": {
@@ -2693,7 +2999,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2702,8 +3008,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 28.0,
-   "heat": 26.4,
+   "score": 37.5,
+   "heat": 35.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2727,7 +3033,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "HN热议",
     "tier": "T2"
@@ -2736,8 +3042,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.8,
-   "heat": 36.6,
+   "score": 41.0,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Measured numbers come from community benchmarks (r/LocalLLaMA, localscore.ai and more); others are derived from similar setups or projected from specs. Open source on GitHub."
@@ -2747,8 +3053,8 @@
    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ1g0TGRXTzJXM3B2S3JudTUyZ05TYWNSVnBGSVlvRVFTcHY2cUtDU1FQU292bmY1a0FBRUgxYi0tS0JGS2V3dXo1YUY0X24zbHZlY3pDZV9ERjlhcmIzSklTOFJGaUVNTzFReklDQ3NUa1FHTE5PMV9zOGd1RjY1YnpJbEo2NnM2S281aA?oc=5",
    "title": {
     "zh": "",
-    "en": "When LLMs master abstraction, what value remains for linguistics?",
-    "de": "Wenn LLMs abstrahieren, was bleibt für die Linguistik?",
+    "en": "When LLMs master abstraction, what remains irreplaceable in linguistics?",
+    "de": "Wenn LLMs Abstraktion meistern: Was bleibt in der Linguistik unersetzlich?",
     "src": "[机器之心(gnews桥)] 当 LLM 学会抽象，语言学还有什么不可替代的价值？ - 搜狐"
    },
    "one_liner": {
@@ -2770,8 +3076,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.7,
-   "heat": 40.2,
+   "score": 29.7,
+   "heat": 27.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2781,8 +3087,8 @@
    "url": "https://x.com/oran_ge/status/2111350773162693116",
    "title": {
     "zh": "",
-    "en": "@oran_ge: If AI raises the passing line to 60",
-    "de": "@oran_ge: Wenn KI die Bestehensgrenze auf 60 anhebt",
+    "en": "@oran_ge: What if AI raises the passing grade to 60",
+    "de": "@oran_ge: Was, wenn AI die Bestehensgrenze auf 60 hebt",
     "src": "@oran_ge: 如果 AI 把及格线拉到 60 分"
    },
    "one_liner": {
@@ -2795,7 +3101,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -2804,8 +3110,42 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 33.9,
-   "heat": 33.3,
+   "score": 27.3,
+   "heat": 25.6,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "459b4a5db6ad",
+   "url": "https://t3n.de/news/ki-monsterwellen-vorhersage-ozean-1767973/?utm_source=rss&utm_medium=newsFeed&utm_campaign=newsFeed",
+   "title": {
+    "zh": "",
+    "en": "[t3n] KI entschlüsselt Monsterwellen: So wird das Meer jetzt berechenbar",
+    "de": "KI entschlüsselt Monsterwellen: Das Meer wird berechenbar",
+    "src": "[t3n] KI entschlüsselt Monsterwellen: So wird das Meer jetzt berechenbar"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T06:50:00Z",
+   "first_seen_utc": "2026-10-17T07:07:38Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 34.0,
+   "heat": 31.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2838,8 +3178,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": -2.0,
    "selected": false,
-   "score": 42.0,
-   "heat": 51.3,
+   "score": 35.5,
+   "heat": 43.2,
    "n_sources": 11,
    "also_reported_by": [
     {
@@ -2904,7 +3244,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -2914,7 +3254,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 56.7,
-   "heat": 53.3,
+   "heat": 53.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "该系统的全球有效预报时效可达 11 天，多项核心预报指标、概率预报精度及离散度误差控制能力均优于欧洲中期天气预报中心（ECMWF）最新的人工智能集合预报系统。"
@@ -2924,77 +3264,9 @@
    "url": "https://www.tmtpost.com/8171952.html",
    "title": {
     "zh": "",
-    "en": "Where is AI's next frontier? Hundreds of founders answer in Shanghai",
-    "de": "Wo liegt KIs nächste Grenze? Hunderte Gründer antworten in Shanghai",
+    "en": "Where Is AI's Next Frontier? Hundreds of Founders Answer in Shanghai",
+    "de": "Wo geht die KI als Nächstes hin? Hunderte Gründer antworten in Shanghai",
     "src": "[钛媒体] AI 的下一个前沿在哪里？数百位创业者在上海给出了这些答案"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T06:29:32Z",
-   "first_seen_utc": "2026-10-17T07:07:38Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.5,
-   "heat": 38.1,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "7785edbf2315",
-   "url": "https://www.ithome.com/1/014/286.htm",
-   "title": {
-    "zh": "",
-    "en": "Your Algorithm, Your Choice: Meta Gives Facebook Users AI-Powered Feed Customization",
-    "de": "Dein Algorithmus, deine Wahl: Meta gibt Facebook-Nutzern KI-gestützte Feed-Anpassung",
-    "src": "[IT之家] 你的算法你做主：Meta 为 Facebook 用户提供 AI 驱动推荐定制工具"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "研究",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T06:25:51Z",
-   "first_seen_utc": "2026-10-17T07:07:38Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 32.9,
-   "heat": 32.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "30385153df57",
-   "url": "https://36kr.com/newsflashes/4029401099178629?f=rss",
-   "title": {
-    "zh": "",
-    "en": "Microsoft Launches \"AI Student Simulator\"",
-    "de": "Microsoft stellt „KI-Studenten-Simulator“ vor",
-    "src": "[36氪快讯] 微软推出“AI学生模拟器”"
    },
    "one_liner": {
     "zh": "",
@@ -3011,12 +3283,80 @@
     "name": "官方RSS",
     "tier": "T2"
    },
+   "published_utc": "2026-10-17T06:29:32Z",
+   "first_seen_utc": "2026-10-17T07:07:38Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 39.5,
+   "heat": 36.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "7785edbf2315",
+   "url": "https://www.ithome.com/1/014/286.htm",
+   "title": {
+    "zh": "Meta 为 Facebook 用户推出推荐算法定制工具",
+    "en": "Meta Launches Recommendation Algorithm Customization for Facebook Users",
+    "de": "Meta bringt Tool zur Anpassung des Feed-Algorithmus",
+    "src": "[IT之家] 你的算法你做主：Meta 为 Facebook 用户提供 AI 驱动推荐定制工具"
+   },
+   "one_liner": {
+    "zh": "Meta 宣布为 Facebook 用户提供 AI 驱动的推荐定制工具，可用自然语言添加内容偏好标签。",
+    "en": "Meta announced AI-driven recommendation customization tools for Facebook users, allowing content preference tags to be added via natural language.",
+    "de": "Meta kündigte KI-gestützte Empfehlungsanpassung für Facebook-Nutzer an; Inhaltspräferenzen lassen sich per natürlicher Sprache hinzufügen."
+   },
+   "why_it_matters": {
+    "zh": "Meta 称 LLM 能整合自然语言背后的兴趣、语境与意图，使推荐算法更快更准地适配用户个人喜好。",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T06:25:51Z",
+   "first_seen_utc": "2026-10-17T07:07:38Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 56.7,
+   "heat": 53.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "\"Your algorithm\" 功能允许用户通过自然语言添加内容偏好标签。用户选择推送内容“感兴趣”或“不感兴趣”后，Facebook 会通过一系列简短的后续问题了解用户选择的具体原因，用于推荐算法的微调改进。"
+  },
+  {
+   "id": "30385153df57",
+   "url": "https://36kr.com/newsflashes/4029401099178629?f=rss",
+   "title": {
+    "zh": "",
+    "en": "[36Kr Flash] Microsoft launches \"AI Student Simulator\"",
+    "de": "[36Kr Kurzmeldung] Microsoft bringt \"AI Student Simulator\" heraus",
+    "src": "[36氪快讯] 微软推出“AI学生模拟器”"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
    "published_utc": null,
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 21.0,
-   "heat": 16.8,
+   "score": 37.5,
+   "heat": 30.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3040,7 +3380,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -3049,8 +3389,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 33.2,
-   "heat": 31.1,
+   "score": 34.6,
+   "heat": 32.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3083,8 +3423,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 50.0,
-   "heat": 46.8,
+   "score": 53.6,
+   "heat": 49.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "黄仁勋表示当前 AI 需求远大于供给，不认为现阶段处于“AI 泡沫”阶段，不过他也承认未来供给可能超过需求。"
@@ -3094,8 +3434,8 @@
    "url": "https://www.tmtpost.com/8171813.html",
    "title": {
     "zh": "",
-    "en": "I became a target of an AI scam",
-    "de": "Ich wurde Ziel eines KI-Betrugs",
+    "en": "I became a target of AI fraud",
+    "de": "Ich wurde Ziel von KI-Betrug",
     "src": "[钛媒体] 我被AI诈骗盯上了"
    },
    "one_liner": {
@@ -3118,7 +3458,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 38.5,
-   "heat": 36.0,
+   "heat": 35.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3127,18 +3467,18 @@
    "id": "d07560e8c154",
    "url": "https://www.tmtpost.com/8171640.html",
    "title": {
-    "zh": "",
-    "en": "Is Anthropic Really Worth $2 Trillion?",
-    "de": "Ist Anthropic wirklich 2 Billionen Dollar wert?",
+    "zh": "Anthropic 谋求 2 万亿美元估值 IPO",
+    "en": "Anthropic seeks $2 trillion valuation in IPO",
+    "de": "Anthropic strebt IPO mit 2 Billionen Dollar Bewertung an",
     "src": "[钛媒体] Anthropic 值 2 万亿美元吗？"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Anthropic 被报道正以 2 万亿美元估值谋求上市，计划募资约 1000 亿美元",
+    "en": "Anthropic is reportedly seeking to go public at a $2 trillion valuation, planning to raise around $100 billion.",
+    "de": "Anthropic will einer Quelle zufolge mit 2 Billionen Dollar Bewertung an die Börse gehen und rund 100 Milliarden Dollar aufnehmen."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "其 IPO 直接反映 AI 产业繁荣与否，上市不顺会影响其他公司前景；第三季度营收环比增速回落至 45%。",
     "en": "",
     "de": ""
    },
@@ -3151,11 +3491,11 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.8,
-   "heat": 41.9,
+   "score": 46.2,
+   "heat": 43.0,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "多家媒体报道称，Anthropic 正在谋求以 2 万亿美元估值上市，计划募资约 1000 亿美元。"
   },
   {
    "id": "857836346924",
@@ -3176,7 +3516,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -3185,8 +3525,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 28.4,
-   "heat": 26.6,
+   "score": 26.6,
+   "heat": 24.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "关于 AI 四个确定的商业模式 - 卖数据（给 AI Labs） - 卖结果（给客户） - 卖基建（给模型和云厂） - 卖部署（给企业）"
@@ -3210,7 +3550,7 @@
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -3219,8 +3559,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 55.6,
-   "heat": 52.0,
+   "score": 23.8,
+   "heat": 22.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "关于 AI 四个确定的商业模式 - 卖数据（给 AI Labs） - 买结果（给客户） - 买基建（给模型和云厂） - 买部署（给企业）"
@@ -3253,8 +3593,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 33.6,
-   "heat": 31.4,
+   "score": 35.0,
+   "heat": 32.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3278,7 +3618,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -3287,8 +3627,8 @@
    "first_seen_utc": "2026-10-17T06:08:11Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.0,
-   "heat": 31.7,
+   "score": 24.1,
+   "heat": 22.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3298,14 +3638,14 @@
    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZVRRdlZPdU5oQi0zN3RGd2xwVmxjVzFyR01Vc1FjMElEdGlBeENGRWRrMkpJY2M2a1dEbUtZVHdLcWdvRnpleXBock9LUXlTeGRianA4Yml6TWd1cnVjd2hNRTUtR2Z2SHlQdXhvbkF5Y1hnSlBZZDhMRUlvTjhYdHFzRU9QRHZ3U0hidQ?oc=5",
    "title": {
     "zh": "",
-    "en": "Two simple improvements nearly double multimodal model evaluation relevance",
-    "de": "Zwei einfache Verbesserungen verdoppeln fast die Relevanz multimodaler Evaluationen",
+    "en": "Choosing 'eyes' for multimodal LLMs: two simple tweaks nearly double evaluation relevance",
+    "de": "Augen für multimodale LLMs: zwei einfache Verbesserungen verdoppeln fast die Relevanz",
     "src": "[机器之心(gnews桥)] 给多模态大模型选「眼睛」，两个简单改进让评测相关性接近翻倍 - 搜狐"
    },
    "one_liner": {
     "zh": "",
-    "en": "Two simple improvements to choosing the \"eyes\" of multimodal large models nearly double the relevance of their evaluations.",
-    "de": "Zwei einfache Verbesserungen bei der Wahl der „Augen\" multimodaler Modelle verdoppeln fast die Relevanz ihrer Evaluationen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -3321,8 +3661,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.3,
-   "heat": 38.5,
+   "score": 42.4,
+   "heat": 39.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3355,8 +3695,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 36.5,
+   "score": 35.4,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3367,7 +3707,7 @@
    "title": {
     "zh": "",
     "en": "@Kling_ai: Who needs a kitchen torch? 🔥 #Kling4 #KlingAI",
-    "de": "@Kling_ai: Wer braucht da noch einen Küchenbrenner? 🔥 #Kling4 #KlingAI",
+    "de": "@Kling_ai: Wer braucht noch einen Küchenbrenner? 🔥 #Kling4 #KlingAI",
     "src": "@Kling_ai: Who needs a kitchen torch? 🔥 #Kling4 #KlingAI"
    },
    "one_liner": {
@@ -3389,8 +3729,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 28.4,
-   "heat": 26.4,
+   "score": 29.7,
+   "heat": 27.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3400,8 +3740,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMmhjU3pfTWdTajhERVlibmRBc2t4aEdiRjhfTGlRa3dmTlZWaVdOX0wtUG1oX01neEJlTzhCU2ptWEh2SE5hS0daVXdqSjRmRlAzNFZ0MnNJX0tDWUtyb21fSmN2UDdFQ0NLUHV6TTJlcklidmxxTDM0VEpaVWFIb3BNOFRSZkxQ?oc=5",
    "title": {
     "zh": "",
-    "en": "New benchmark tests \"AI sixth sense\": strongest model scores only 53.6",
-    "de": "Neuer Benchmark testet \"KI-Sechsten Sinn\": stärkstes Modell erreicht nur 53,6",
+    "en": "New benchmark tests AI sixth sense; top model scores only 53.6",
+    "de": "Neuer Benchmark testet KI-Sechsten Sinn: Bestwert nur 53,6",
     "src": "[新智元(gnews桥)] 新基准开测「AI第六感」！人类一眼秒懂，最强模型只拿53.6分 - 搜狐"
    },
    "one_liner": {
@@ -3423,8 +3763,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 36.5,
+   "score": 36.8,
+   "heat": 34.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3434,8 +3774,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUmtscUtxTlFlZmZ1Zzc1eU5nWjFqUVYxbXdHMzJCYVVUZ09ncHh5UXplS2JDeXdlMFJPTzZWTWwtZjZjeGVDMHBsQ09NLTFNYlVVSEpjeHcxWHBfU0tPY0dtYWhheDFESWwtcUdHejJpY0hEekZQRFFtRjlra1hYVnRUbThoNE9O?oc=5",
    "title": {
     "zh": "",
-    "en": "Four Gemini Agents Die 605 Times, Then Team Up to Beat Minecraft",
-    "de": "Vier Gemini sterben 605-mal und bezwingen Minecraft im Team",
+    "en": "Four Gemini agents died 605 times, then teamed up to beat Minecraft",
+    "de": "Vier Gemini-Agenten starben 605-mal, dann bezwangen sie Minecraft im Team",
     "src": "[新智元(gnews桥)] 刚刚，4个Gemini死了605次，竟自己组队打穿《我的世界》！ - 搜狐"
    },
    "one_liner": {
@@ -3457,8 +3797,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.7,
-   "heat": 33.2,
+   "score": 33.2,
+   "heat": 30.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3469,13 +3809,13 @@
    "title": {
     "zh": "",
     "en": "@Kling_ai: Somewhere between fantasy and nostalgia. #Kling4 #KlingAI",
-    "de": "@Kling_ai: Irgendwo zwischen Fantasie und Nostalgie. #Kling4 #KlingAI",
+    "de": "Kling: Irgendwo zwischen Fantasy und Nostalgie",
     "src": "@Kling_ai: Somewhere between fantasy and nostalgia. #Kling4 #KlingAI"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A KlingAI creation blending fantasy and nostalgia, showcased with #Kling4.",
+    "de": "Eine KlingAI-Kreation, die Fantasy und Nostalgie verbindet, gezeigt mit #Kling4."
    },
    "why_it_matters": {
     "zh": "",
@@ -3491,8 +3831,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 28.4,
-   "heat": 26.4,
+   "score": 34.0,
+   "heat": 31.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3525,8 +3865,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 57.2,
-   "heat": 53.2,
+   "score": 55.4,
+   "heat": 51.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "兼任谷歌母公司 Alphabet 首席科学家的哈萨比斯在都柏林举行的一场人工智能峰会上表示：“我认为这些攻击事件对我们而言敲响了前期警钟。目前的系统尚不够强大，因此造成的破坏还算有限。”"
@@ -3559,8 +3899,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 71.5,
-   "heat": 57.2,
+   "score": 68.5,
+   "heat": 54.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward."
@@ -3570,8 +3910,8 @@
    "url": "https://36kr.com/newsflashes/4029420684546436?f=rss",
    "title": {
     "zh": "",
-    "en": "11-day forecasts: supercomputing internet puts 'Fengqing ensemble' AI into operation",
-    "de": "11-Tage-Vorhersagen: Supercomputing-Internet bringt „Fengqing-Ensemble\"-KI in Betrieb",
+    "en": "AI weather model with 11-day forecasts goes into operation on supercomputing internet",
+    "de": "KI-Wettermodell mit 11-Tage-Vorhersage startet im Betrieb",
     "src": "[36氪快讯] 预报时效11天，超算互联网助\"风清集合\"AI业务化运行"
    },
    "one_liner": {
@@ -3593,8 +3933,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.0,
-   "heat": 27.2,
+   "score": 36.8,
+   "heat": 29.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3605,7 +3945,7 @@
    "title": {
     "zh": "",
     "en": "xinghuangjun/YiYan",
-    "de": "xinghuangjun/YiYan",
+    "de": "GitHub-Projekt: xinghuangjun/YiYan",
     "src": "xinghuangjun/YiYan"
    },
    "one_liner": {
@@ -3661,8 +4001,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.7,
-   "heat": 23.8,
+   "score": 31.1,
+   "heat": 24.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3695,8 +4035,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.5,
-   "heat": 29.3,
+   "score": 30.1,
+   "heat": 27.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Voilà ce que déclare l’autrice britannique Jane Austen, morte en 1817, lorsqu’on lui demande son avis au sujet de l’application de rencontre Tinder."
@@ -3729,8 +4069,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 61.2,
-   "heat": 56.7,
+   "score": 54.9,
+   "heat": 50.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "花旗称，为保障客户账户和个人信息安全，该行禁止第三方 AI 智能体或助手登录客户账户，也不允许其直接通过花旗的数字银行平台办理交易。"
@@ -3763,8 +4103,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 56.7,
-   "heat": 52.5,
+   "score": 56.3,
+   "heat": 51.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "IT之家 10 月 17 日消息，10 月 16 日，第十届未来网络发展大会在南京上秦淮国际文化交流中心开幕。行业首个基于确定性网络的智能体互联平台 AXP 正式发布。"
@@ -3774,8 +4114,8 @@
    "url": "https://news.google.com/rss/articles/CBMikARBVV95cUxOZUZNSVFMWnBIeFpqQkFHbzA0Wk1Oa01TcjQxdzFISDZIaWFEMlc4bV9DV0xjdVR0T0RiNVJHRFFfS1RucjdiT1NfUXVmcWNCNGZuS1RENENnNkRWSWZOcExlb1h3ZlVRU2RYUzdNem5ocXQ3UXRiZ202aWlDUl9mY1dUZUNYbThndmJrbHdWVTdXUl9JSm9NWF9aZFZrUXhTazk4ZWRKYW1TZzZmRnJFaElYX0MtdThPVzNuQUFVVkswZEJ4Q2J1OW1ITFNKRmJOS0tTU1Q3SHJpR2VmeVJGMjBULTV1YVF1WnF6ZkV5ekZ2ZVI1WVJJd2VMZmNENkRLc25QcHAtcVZGdzBhRUs0dDVHS21FcmVVUjBnUFlLNm5iX21YTmM4cnp1QXR2eVI2eko5LVRLWHJxZ1I1WlVZSWlCY05xaEhSSkpwSGZoTjJhME9nWmFnWVk1OGJWbFM2OTFzTkhiZWI1aV9pbDljYXNFWnBmWVRBQmNaYmFLOHFzMG1fcjdhc0VYOFRMZ3VpeFkxUG14Y3VKSmZyUVFyRlpLTUZ0M0gxNmNNTXhxVW1zSWEyN2tQUmh4Y0o0TmNJWExuQzY3Mkh1OXREN1FmdnJUYVZxaktYbVhPRXdxc1FUakRpZTVtbmtjOGtlSUFwQXJnMWF3M1VzT3BXZE1rc2xxOFNtRHp2VEhfeXY2c2w?oc=5",
    "title": {
     "zh": "",
-    "en": "Mythos 5 Cracks Major Quantum Computing Challenge in 53 Hours",
-    "de": "Mythos 5 knackt Quantencomputer-Problem in 53 Stunden",
+    "en": "Mythos 5 cracks major quantum computing problem in 53 hours",
+    "de": "Mythos 5 knackt Quantenproblem in 53 Stunden",
     "src": "[新智元(gnews桥)] 刚刚，Mythos 5破解量子计算重大难题！53小时碾压人类数年|Claude|Anthropic|算法|电路|谷歌 - finance.sina.com.cn"
    },
    "one_liner": {
@@ -3788,7 +4128,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -3797,8 +4137,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.7,
-   "heat": 33.1,
+   "score": 40.2,
+   "heat": 37.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3877,13 +4217,13 @@
    "title": {
     "zh": "",
     "en": "Anthropic reportedly pitches AI safety plan to US lawmakers",
-    "de": "Anthropic wirbt angeblich bei US-Abgeordneten für KI-Sicherheitsplan",
+    "de": "Anthropic wirbt bei US-Abgeordneten für KI-Sicherheitsplan",
     "src": "[36氪快讯] Anthropic据悉向美议员推介AI安全方案，拟为模型发布设置门槛"
    },
    "one_liner": {
     "zh": "",
-    "en": "Anthropic is reportedly presenting US lawmakers with an AI safety proposal that would set thresholds for model releases.",
-    "de": "Anthropic will US-Abgeordneten laut Berichten einen KI-Sicherheitsplan mit Schwellenwerten für Modellveröffentlichungen vorstellen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -3899,8 +4239,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.6,
-   "heat": 32.5,
+   "score": 39.9,
+   "heat": 31.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3910,8 +4250,8 @@
    "url": "https://36kr.com/newsflashes/4029282649428359?f=rss",
    "title": {
     "zh": "",
-    "en": "36Kr flash: OpenAI poaches xAI's core sales lead",
-    "de": "36Kr-Eilmeldung: OpenAI wirbt xAIs zentrale Vertriebschefin ab",
+    "en": "OpenAI poaches xAI's core sales lead",
+    "de": "OpenAI wirbt xAIs zentrale Vertriebschefin ab",
     "src": "[36氪快讯] OpenAI挖角xAI核心销售负责人"
    },
    "one_liner": {
@@ -3933,8 +4273,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.9,
-   "heat": 25.5,
+   "score": 32.9,
+   "heat": 26.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3967,8 +4307,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 58.1,
-   "heat": 53.7,
+   "score": 62.6,
+   "heat": 57.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "微软副董事长兼总裁布拉德 · 史密斯（Brad Smith）昨日（10 月 16 日）发布推文，宣布微软推出 Copilot for Legal，为全球商用客户提供超过 20 项面向法律工作的专用 AI Skills（技能）。"
@@ -4001,8 +4341,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 50.4,
-   "heat": 46.5,
+   "score": 51.8,
+   "heat": 47.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "台积电董事长兼总裁魏哲家在 15 日举行的说法会上，高喊 AI 需求持续升温，供需缺口仍大，并表示台积电本季度美元营收继续创新高，全年美元营收同比增长约 44%。"
@@ -4012,8 +4352,8 @@
    "url": "https://www.tmtpost.com/8171881.html",
    "title": {
     "zh": "",
-    "en": "Tencent AI agents spend 11 days on Amap finding park gate crowds",
-    "de": "Tencent-KI-Agenten suchen 11 Tage auf Amap nach vollen Parkeingängen",
+    "en": "Tencent AI agents spend 11 days on Amap finding the park's busiest gate",
+    "de": "Tencent-KI-Agenten suchen 11 Tage auf Amap das belebteste Parktor",
     "src": "[钛媒体] 为了查“公园哪个门人最多”，一批腾讯AI智能体，在高德上折腾了11天"
    },
    "one_liner": {
@@ -4036,7 +4376,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 42.7,
-   "heat": 39.4,
+   "heat": 39.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4080,14 +4420,14 @@
    "url": "https://www.tmtpost.com/8171854.html",
    "title": {
     "zh": "",
-    "en": "Weekly digest: Jensen Huang warns of chip cutoffs; ByteDance Seed forms safety unit; Microsoft reorganizes Azure",
-    "de": "Wochenrückblick: Huang warnt vor Chip-Lieferstopps; ByteDance Seed gründet Sicherheitsteam; Microsoft reorganisiert Azure",
+    "en": "Weekly: Nvidia may cut chips over unsafe AI; ByteDance, Microsoft reorganize",
+    "de": "Woche: Nvidia drosselt Chips, ByteDance und Microsoft reorganisieren",
     "src": "[钛媒体] 【数智周报】 英伟达CEO黄仁勋称会对开发不安全AI软件的客户断供芯片；字节跳动Seed单设安全与对齐部门;微软在AI改革中重组Azure云部门"
    },
    "one_liner": {
     "zh": "",
-    "en": "Nvidia CEO Jensen Huang says Nvidia will cut chips to customers developing unsafe AI software; ByteDance Seed creates a safety and alignment department; Microsoft reorganizes its Azure cloud division in AI reform.",
-    "de": "Nvidia-CEO Jensen Huang kündigt Chip-Lieferstopps für unsichere KI-Software an; ByteDance Seed gründet Abteilung für Sicherheit und Alignment; Microsoft reorganisiert Azure im KI-Umbau."
+    "en": "Jensen Huang says Nvidia will cut chip supply to clients developing unsafe AI; ByteDance Seed forms safety unit; Microsoft restructures Azure.",
+    "de": "Jensen Huang kündigt Chip-Lieferstopps für unsichere KI an; ByteDance Seed gründet Safety-Abteilung; Microsoft restrukturiert Azure."
    },
    "why_it_matters": {
     "zh": "",
@@ -4103,8 +4443,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 36.8,
+   "score": 41.6,
+   "heat": 38.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4137,8 +4477,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 23.8,
-   "heat": 22.0,
+   "score": 19.2,
+   "heat": 17.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4170,9 +4510,9 @@
    "published_utc": "2026-10-17T02:25:07Z",
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
-   "selected": false,
-   "score": 59.9,
-   "heat": 55.2,
+   "selected": true,
+   "score": 65.2,
+   "heat": 59.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Junie Local 在英伟达 RTX Spark 平台上的初步测试中，生成速度最高可达每秒 55 个词元。"
@@ -4240,7 +4580,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 44.6,
-   "heat": 41.1,
+   "heat": 40.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "这是 OpenAI 近期从埃隆 · 马斯克旗下 AI 业务挖角的最新动作。"
@@ -4318,14 +4658,14 @@
    "url": "https://36kr.com/newsflashes/4029274536317576?f=rss",
    "title": {
     "zh": "",
-    "en": "Anthropic reportedly offers Blackstone double-digit yields in chip financing round",
-    "de": "Anthropic bietet Blackstone bei Chip-Finanzierung Berichten zufolge zweistellige Renditen",
+    "en": "Anthropic reportedly offers double-digit yields to Blackstone in latest chip financing deal",
+    "de": "Anthropic soll Blackstone zweistellige Renditen in Chip-Finanzierung bieten",
     "src": "[36氪快讯] Anthropic据悉在最新一轮芯片融资交易中向黑石提供两位数收益率"
    },
    "one_liner": {
     "zh": "",
-    "en": "Anthropic reportedly offered Blackstone double-digit yields in its latest chip financing deal.",
-    "de": "Anthropic soll Blackstone in seiner neuesten Chip-Finanzierungsvereinbarung zweistellige Renditen geboten haben."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -4341,8 +4681,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 31.9,
+   "score": 38.5,
+   "heat": 30.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4352,8 +4692,8 @@
    "url": "https://36kr.com/newsflashes/4029282300023169?f=rss",
    "title": {
     "zh": "",
-    "en": "Jensen Huang on AI Market Turbulence: \"This Too Shall Pass\"",
-    "de": "Jensen Huang zur KI-Marktturbulenz: \"Das geht vorbei\"",
+    "en": "Jensen Huang on AI market turbulence: \"This too shall pass\"",
+    "de": "Jensen Huang zur KI-Marktvolatilität: \"Das geht vorbei\"",
     "src": "[36氪快讯] 黄仁勋谈AI市场震荡：“这一切都会过去”"
    },
    "one_liner": {
@@ -4375,8 +4715,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.0,
-   "heat": 28.0,
+   "score": 33.2,
+   "heat": 26.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4409,8 +4749,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 54.9,
-   "heat": 50.5,
+   "score": 61.6,
+   "heat": 56.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "谷歌表示，其 Phone 和 Messages 应用中的 AI 诈骗检测功能目前每月可标记超过 500 万条疑似诈骗电话和短信。"
@@ -4419,18 +4759,18 @@
    "id": "c6bc357b75a3",
    "url": "https://www.tmtpost.com/8171227.html",
    "title": {
-    "zh": "",
-    "en": "14.8% of AI goods drive nearly half of global trade growth",
-    "de": "14,8 % der KI-Güter treiben fast die Hälfte des globalen Handelswachstums",
+    "zh": "AI 商品占全球贸易份额 14.8%，却贡献近半增量",
+    "en": "AI Goods Take 14.8% of Global Trade but Nearly Half of Growth",
+    "de": "KI-Güter stellen 14,8 % des Welthandels, aber fast die Hälfte des Wachstums",
     "src": "[钛媒体] 14.8% 的 AI 商品，撑起全球贸易近半增量：买家集中在几家云厂商"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "WTO 测算 2026 年上半年 AI 赋能商品按贸易额贡献全球商品贸易增量约 47%，其贸易额同比增长 67%。",
+    "en": "WTO estimates AI-enabled goods contributed about 47% of global merchandise trade growth in H1 2026 by value, with their trade up 67% year over year.",
+    "de": "Laut WTO trugen KI-fähige Güter 2026 im ersten Halbjahr rund 47 % zum globalen Warenhandelswachstum bei, ihr Handel stieg um 67 %."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "这类商品份额仅 14.8%（2016-2023 年间为 7%-8%），增长由芯片、服务器和数据中心供应链驱动",
     "en": "",
     "de": ""
    },
@@ -4443,25 +4783,25 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.0,
-   "heat": 39.6,
+   "score": 44.5,
+   "heat": 40.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "WTO 测算，2026 年上半年，AI 赋能商品按贸易额计算贡献了全球商品贸易增量的约 47%，这类商品的贸易额同比增长 67%。"
   },
   {
    "id": "7b71c418b6be",
    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRWRka01VRG5BeXl4S3hubTZ0Rl85WjVYdEl1VUF1bmkzdmFlVHFwMEFWbktqLUtHTU9XOHdnOUNuY0gwNlRWV1RvakxqMkdHb3Q3amJIZXJmVDAtenJmV2FacXRYTU1BalA4UWJNQk5UME53WlltdDNzVEJnWVdEN1hBWkd1UGRCdUVZN1R2THhLQktVbXJOYVZhY3I1QXFwZW43ZFBvTm9hbzhhakxoTlRB?oc=5",
    "title": {
     "zh": "",
-    "en": "Mythos 5 Cracks Major Quantum Computing Challenge in 53 Hours",
-    "de": "Mythos 5 knackt Quantencomputer-Problem in 53 Stunden",
+    "en": "Mythos 5 cracks major quantum computing challenge in 53 hours",
+    "de": "Mythos 5 löst großes Quantencomputing-Problem in 53 Stunden",
     "src": "[新智元(gnews桥)] 刚刚，Mythos 5破解量子计算重大难题！53小时碾压人类数年|Claude|Anthropic|算法|电路|谷歌 - finance.sina.com.cn"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Mythos 5 reportedly solved a major quantum computing problem in 53 hours, outperforming years of human work.",
+    "de": "Mythos 5 soll ein großes Quantencomputing-Problem in 53 Stunden gelöst haben und übertraf jahrelange menschliche Arbeit."
    },
    "why_it_matters": {
     "zh": "",
@@ -4477,8 +4817,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.6,
-   "heat": 31.8,
+   "score": 41.6,
+   "heat": 38.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4511,8 +4851,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.3,
-   "heat": 43.4,
+   "score": 51.4,
+   "heat": 47.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "商务部 科技部发布第48号联合公告，拟将人工智能、生物医药、光伏三大领域共40项技术增列进《中国禁止出口限制出口技术目录》，并在目录正式生效前，立即对相关技术出口实施临时登记管理。"
@@ -4545,8 +4885,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 52.2,
-   "heat": 47.9,
+   "score": 50.9,
+   "heat": 46.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "IT之家 10 月 17 日消息，微软昨日（10 月 15 日）发布博文，宣布携手卡内基梅隆大学推出“人工智能加速软件工程导师制”项目 PRAISE，试图在 AI 加速开发的同时，保住未来高级工程师的人才来源。"
@@ -4579,8 +4919,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 49.1,
-   "heat": 45.1,
+   "score": 48.6,
+   "heat": 44.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "费城半导体指数连续 8 个交易日下跌，创 2008 年以来最长连跌纪录；英伟达过去 8 个交易日也有 7 日收跌。"
@@ -4613,8 +4953,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.5,
-   "heat": 36.2,
+   "score": 38.5,
+   "heat": 35.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4647,11 +4987,45 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 57.2,
-   "heat": 52.5,
+   "score": 54.0,
+   "heat": 49.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "结果显示，StudentSim 在三个领域均优于主要基线。以国际象棋为例，其行为保真度达到 0.5150，指导响应性达到 0.9067，均高于 GPT-5.4 与专用棋类模型 Maia2。"
+  },
+  {
+   "id": "e251cdc1a661",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8yS0M2V3ZMek8wTmEyaXMzUU5BWl85Z0M5Zl96S1lNNEM4UDN5cTh4cnl0MWZhYWNWbmVmVkN2T3FnMW1VMG5EYWRtWnpKVjJJc2hWWVJR?oc=5",
+   "title": {
+    "zh": "",
+    "en": "Jensen Huang's RTX Spark goes on sale: 74-billion-parameter model in laptops",
+    "de": "RTX Spark im Verkauf: 74-Milliarden-Modell im Notebook",
+    "src": "[新智元(gnews桥)] 刚刚，老黄RTX Spark开卖！740亿大模型塞进笔记本-yeeyi - yeeyi"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T01:14:04Z",
+   "first_seen_utc": "2026-10-17T19:05:50Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 44.1,
+   "heat": 40.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
   },
   {
    "id": "839a8c129533",
@@ -4681,8 +5055,8 @@
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.4,
-   "heat": 33.9,
+   "score": 42.7,
+   "heat": 34.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "MeshAxiom-Base turns a single image and a requested face budget into a native triangle mesh."
@@ -4715,8 +5089,8 @@
    "first_seen_utc": "2026-10-17T02:07:33Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.8,
-   "heat": 33.7,
+   "score": 38.5,
+   "heat": 35.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "她认为，与其花精力“管教” Agent，不如花精力改造代码库本身！"
@@ -4749,8 +5123,8 @@
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 59.9,
-   "heat": 54.8,
+   "score": 62.1,
+   "heat": 56.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "阿里 Qwen 团队于 10 月 14 日开源 BlenderWorld，这是一个用于评测视觉智能体在 Blender 中完成真实 3D 创作任务的基准。"
@@ -4784,7 +5158,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 64.8,
-   "heat": 59.2,
+   "heat": 59.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "在 Work 模式下，ChatGPT 不再仅限于阅读网页，而是可以在获得授权后控制标签页，帮助用户填写表单、发送消息、下载文件、整理和分组标签页等。"
@@ -4818,7 +5192,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 60.8,
-   "heat": 55.6,
+   "heat": 55.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "当地时间 16 日，OpenAI 宣布升级 Chrome 浏览器的 ChatGPT 扩展程序，支持读取用户打开的标签页，提供更有针对性的回答。"
@@ -4851,8 +5225,8 @@
    "first_seen_utc": "2026-10-17T03:06:05Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.1,
-   "heat": 33.9,
+   "score": 40.2,
+   "heat": 36.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4886,7 +5260,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.7,
-   "heat": 32.6,
+   "heat": 32.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "What is ChatGPT Space, that is the question."
@@ -4918,9 +5292,9 @@
    "published_utc": "2026-10-17T00:09:12Z",
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
-   "selected": true,
-   "score": 67.0,
-   "heat": 61.1,
+   "selected": false,
+   "score": 54.5,
+   "heat": 49.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "The Perplexity SPACE sandbox gives each agent task its own Firecracker microVM."
@@ -4944,7 +5318,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "模型",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -4953,8 +5327,8 @@
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.1,
-   "heat": 33.8,
+   "score": 36.4,
+   "heat": 33.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Meta Releases Muse Spark Open: 816B Open-Weight MoE With 1M Context"
@@ -4978,7 +5352,7 @@
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -4987,8 +5361,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.1,
-   "heat": 35.3,
+   "score": 46.9,
+   "heat": 37.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "We call such a system a generalist computer-use agent (GCUA)."
@@ -5021,20 +5395,20 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.8,
-   "heat": 29.4,
+   "score": 35.4,
+   "heat": 28.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "cc15a1895030",
-   "url": "https://github.com/Hermes-Deck/hermes-deck",
+   "id": "4625ea1d4399",
+   "url": "https://github.com/SuperHelix77/HELIX-1.0",
    "title": {
     "zh": "",
-    "en": "Hermes-Deck/hermes-deck",
-    "de": "Hermes-Deck/hermes-deck",
-    "src": "Hermes-Deck/hermes-deck"
+    "en": "SuperHelix77/HELIX-1.0",
+    "de": "SuperHelix77/HELIX-1.0",
+    "src": "SuperHelix77/HELIX-1.0"
    },
    "one_liner": {
     "zh": "",
@@ -5046,7 +5420,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "研究",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -5055,8 +5429,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 27.4,
+   "score": 35.4,
+   "heat": 28.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5096,25 +5470,25 @@
    "quote_en": ""
   },
   {
-   "id": "4625ea1d4399",
-   "url": "https://github.com/SuperHelix77/HELIX-1.0",
+   "id": "28fb17b64972",
+   "url": "https://github.com/PlonGuo/mcd-hackthon",
    "title": {
-    "zh": "",
-    "en": "SuperHelix77/HELIX-1.0",
-    "de": "SuperHelix77/HELIX-1.0",
-    "src": "SuperHelix77/HELIX-1.0"
+    "zh": "mcdebate：AI 替你辩论，和朋友一起点麦当劳",
+    "en": "PlonGuo/mcd-hackthon",
+    "de": "mcdebate: KI debattiert für dich beim gemeinsamen McDonald's-Bestellen mit Freunden",
+    "src": "PlonGuo/mcd-hackthon"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "基于麦当劳官方 MCP 的参赛 Skill，两位 Agent 为选餐立场辩论",
+    "en": "A competition Skill built on McDonald's official MCP, where two Agents debate opposing stances on what to order.",
+    "de": "Ein Wettbewerbs-Skill auf Basis des offiziellen McDonald's MCP, bei dem zwei Agenten über gegensätzliche Essenspositionen debattieren."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "支持跨客户端协作点餐，付款人 Agent 调用麦当劳官方 MCP 创建订单，由官方 App 核对餐品并完成支付。",
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -5123,11 +5497,45 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 26.3,
+   "score": 33.9,
+   "heat": 27.1,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "用户确认付款人、门店、餐品、数量、取餐方式及最终金额后，付款人 Agent 调用麦当劳官方 MCP 创建订单，并交付官方返回的支付链接。"
+  },
+  {
+   "id": "73149200fa2b",
+   "url": "https://github.com/overextended/skills",
+   "title": {
+    "zh": "overextended/skills：14个AI代理技能包",
+    "en": "overextended/skills",
+    "de": "overextended/skills: 14 Skill-Pakete für KI-Agenten",
+    "src": "overextended/skills"
+   },
+   "one_liner": {
+    "zh": "该项目提供14个技能，让编码代理掌握Overextended技术栈各模块的用法，以正确开发FiveM资源。",
+    "en": "The project provides 14 skills teaching coding agents how to use each Overextended stack module to correctly develop FiveM resources.",
+    "de": "Das Projekt bietet 14 Skills, die Coding-Agenten den Umgang mit den Overextended-Modulen zur korrekten Entwicklung von FiveM-Ressourcen beibringen."
+   },
+   "why_it_matters": {
+    "zh": "兼容Claude Code、Codex、Copilot、Gemini CLI",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-17T00:05:53Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 33.6,
+   "heat": 26.9,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Agent skills for building FiveM resources with the Overextended stack: ox_lib, ox_core, ox_inventory, ox_target, oxmysql, and general FiveM resource development."
   },
   {
    "id": "570607cefb7e",
@@ -5164,13 +5572,13 @@
    "quote_en": ""
   },
   {
-   "id": "13863787ca77",
-   "url": "https://github.com/tomsbin/mcd-fit-planner",
+   "id": "cc15a1895030",
+   "url": "https://github.com/Hermes-Deck/hermes-deck",
    "title": {
     "zh": "",
-    "en": "tomsbin/mcd-fit-planner",
-    "de": "tomsbin/mcd-fit-planner",
-    "src": "tomsbin/mcd-fit-planner"
+    "en": "Hermes-Deck/hermes-deck",
+    "de": "Hermes-Deck/hermes-deck",
+    "src": "Hermes-Deck/hermes-deck"
    },
    "one_liner": {
     "zh": "",
@@ -5191,42 +5599,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 30.1,
-   "heat": 24.1,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "094fad5009d0",
-   "url": "https://github.com/alonehobo/ai-assistant-1c",
-   "title": {
-    "zh": "",
-    "en": "alonehobo/ai-assistant-1c",
-    "de": "alonehobo/ai-assistant-1c",
-    "src": "alonehobo/ai-assistant-1c"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T00:05:53Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 30.1,
-   "heat": 24.1,
+   "score": 29.7,
+   "heat": 23.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5259,28 +5633,28 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.7,
-   "heat": 23.8,
+   "score": 28.7,
+   "heat": 23.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
   },
   {
-   "id": "28fb17b64972",
-   "url": "https://github.com/PlonGuo/mcd-hackthon",
+   "id": "094fad5009d0",
+   "url": "https://github.com/alonehobo/ai-assistant-1c",
    "title": {
-    "zh": "mcdebate：AI 替你辩论，和朋友一起点麦当劳",
-    "en": "PlonGuo/mcd-hackthon",
-    "de": "mcdebate: KI debattiert für dich beim gemeinsamen McDonald's-Bestellen mit Freunden",
-    "src": "PlonGuo/mcd-hackthon"
+    "zh": "",
+    "en": "alonehobo/ai-assistant-1c",
+    "de": "alonehobo/ai-assistant-1c",
+    "src": "alonehobo/ai-assistant-1c"
    },
    "one_liner": {
-    "zh": "基于麦当劳官方 MCP 的参赛 Skill，两位 Agent 为选餐立场辩论",
-    "en": "A competition Skill built on McDonald's official MCP, where two Agents debate opposing stances on what to order.",
-    "de": "Ein Wettbewerbs-Skill auf Basis des offiziellen McDonald's MCP, bei dem zwei Agenten über gegensätzliche Essenspositionen debattieren."
+    "zh": "",
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
-    "zh": "支持跨客户端协作点餐，付款人 Agent 调用麦当劳官方 MCP 创建订单，由官方 App 核对餐品并完成支付。",
+    "zh": "",
     "en": "",
     "de": ""
    },
@@ -5293,11 +5667,11 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 27.3,
-   "heat": 21.8,
+   "score": 27.7,
+   "heat": 22.2,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "用户确认付款人、门店、餐品、数量、取餐方式及最终金额后，付款人 Agent 调用麦当劳官方 MCP 创建订单，并交付官方返回的支付链接。"
+   "quote_en": ""
   },
   {
    "id": "0017f86f153b",
@@ -5327,28 +5701,28 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 27.0,
-   "heat": 21.6,
+   "score": 25.5,
+   "heat": 20.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Five paste-ready YAML automations (health-panic button, Home/Away arming, freeze/heat-failure + battery alerts, presence-driven night lighting, armed-away door watch)"
   },
   {
-   "id": "73149200fa2b",
-   "url": "https://github.com/overextended/skills",
+   "id": "13863787ca77",
+   "url": "https://github.com/tomsbin/mcd-fit-planner",
    "title": {
-    "zh": "overextended/skills：14个AI代理技能包",
-    "en": "overextended/skills",
-    "de": "overextended/skills: 14 Skill-Pakete für KI-Agenten",
-    "src": "overextended/skills"
+    "zh": "",
+    "en": "tomsbin/mcd-fit-planner",
+    "de": "tomsbin/mcd-fit-planner",
+    "src": "tomsbin/mcd-fit-planner"
    },
    "one_liner": {
-    "zh": "该项目提供14个技能，让编码代理掌握Overextended技术栈各模块的用法，以正确开发FiveM资源。",
-    "en": "The project provides 14 skills teaching coding agents how to use each Overextended stack module to correctly develop FiveM resources.",
-    "de": "Das Projekt bietet 14 Skills, die Coding-Agenten den Umgang mit den Overextended-Modulen zur korrekten Entwicklung von FiveM-Ressourcen beibringen."
+    "zh": "",
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
-    "zh": "兼容Claude Code、Codex、Copilot、Gemini CLI",
+    "zh": "",
     "en": "",
     "de": ""
    },
@@ -5361,11 +5735,11 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 27.0,
-   "heat": 21.6,
+   "score": 24.5,
+   "heat": 19.6,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "Agent skills for building FiveM resources with the Overextended stack: ox_lib, ox_core, ox_inventory, ox_target, oxmysql, and general FiveM resource development."
+   "quote_en": ""
   },
   {
    "id": "5afe90549377",
@@ -5395,8 +5769,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 60.8,
-   "heat": 55.4,
+   "score": 57.2,
+   "heat": 51.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "苹果还新增 2.5.19 条准则，禁止应用在审核时隐瞒真实功能、通过后再加入“裸露化”（nudify）等有害能力。"
@@ -5429,8 +5803,8 @@
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.0,
-   "heat": 38.3,
+   "score": 45.8,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "We've made improvements to Codex & Work that increase the effective usage you get."
@@ -5454,7 +5828,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -5464,7 +5838,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 54.9,
-   "heat": 50.0,
+   "heat": 49.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "大多数 Anthropic 员工预计，到 2030 年，自己至少 80% 的工作可以交给 AI 完成，而美国劳动者中只有约 5% 的人持相同看法。"
@@ -5474,8 +5848,8 @@
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZU42NUlzdjl5bHgyZlJnMVMzcHhBa3h3ci1LZllhVVVmaFBtZ2JTek45bmlTWWtBNGZpUlprTUd4UnZSZXBoNDhYV0VKUG9pRmxwOHZFWVV3R3RHUVdmeHpJNjdZNWhMcjJWaDR6WFpuZmVKSmVfNUdHSkxHVl9KaWotVmRDSm8xR2ZrLTlfdw?oc=5",
    "title": {
     "zh": "",
-    "en": "Claude solves a cryptography puzzle open for 20+ years in 30 minutes",
-    "de": "Claude löst über 20 Jahre altes kryptografisches Rätsel in 30 Minuten",
+    "en": "Claude solves two-decade-old cryptography puzzle in half an hour",
+    "de": "Claude löst jahrzehntelange Kryptographie-Rätsel in 30 Minuten",
     "src": "[机器之心(gnews桥)] 刚刚，Claude半小时解开二十多年密码学谜题 - 搜狐网"
    },
    "one_liner": {
@@ -5497,8 +5871,8 @@
    "first_seen_utc": "2026-10-17T04:08:09Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.9,
-   "heat": 37.3,
+   "score": 40.2,
+   "heat": 36.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5508,8 +5882,8 @@
    "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5fNGgtc1Zfanh3eUJnTGZlcG4zRGUtSC1wcG53VnFZSHo2bXVhbkxLd2syb0J0YWYwWGpKU0tHM0ZaaUhsOXNLODFWTi0?oc=5",
    "title": {
     "zh": "",
-    "en": "Claude Solves 20-Year-Old Cryptography Puzzle in Half an Hour",
-    "de": "Claude löst kryptografisches Rätsel in einer halben Stunde",
+    "en": "Claude solves a cryptography puzzle over 20 years old in half an hour",
+    "de": "Claude löst über 20 Jahre altes kryptografisches Rätsel in 30 Minuten",
     "src": "[机器之心(gnews桥)] Claude半小时解开二十多年密码学谜题 - 凤凰网科技"
    },
    "one_liner": {
@@ -5531,8 +5905,8 @@
    "first_seen_utc": "2026-10-17T05:19:36Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.7,
-   "heat": 32.5,
+   "score": 34.6,
+   "heat": 31.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5565,8 +5939,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.3,
-   "heat": 31.2,
+   "score": 38.1,
+   "heat": 34.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5599,8 +5973,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.0,
-   "heat": 30.9,
+   "score": 42.0,
+   "heat": 38.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5624,7 +5998,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -5634,7 +6008,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 59.0,
-   "heat": 53.6,
+   "heat": 53.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "报告显示，Anthropic 技术部门初级员工占比已从 2025 年初的 21% 降至 14%，初级技术岗位招聘占比更从 27% 骤降至 9%。"
@@ -5667,8 +6041,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.7,
-   "heat": 43.3,
+   "score": 49.5,
+   "heat": 44.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "而在 \"Nova Lake\" 后，英特尔还将在 2028 年为物理 AI 带来 \"Razor Lake AX\"。其平台总算力可到 700 TOPS，显著优于 \"Panther Lake\" 的 180 TOPS。"
@@ -5702,7 +6076,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 56.3,
-   "heat": 51.1,
+   "heat": 50.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "In August, open-weight models processed the majority of AI Gateway token volume for the first time,"
@@ -5735,8 +6109,8 @@
    "first_seen_utc": "2026-10-16T23:05:14Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.4,
-   "heat": 33.9,
+   "score": 41.0,
+   "heat": 32.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Every agent session on every teammate's computer can see who's working on what right now, and message the right session directly"
@@ -5769,8 +6143,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 57.2,
-   "heat": 51.9,
+   "score": 55.8,
+   "heat": 50.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "仅在模型可能造成可预见、迫在眉睫的“超过 10 亿美元（IT之家注：现汇率约合 67.03 亿元人民币）经济损失”或“导致 50 人以上死亡或重伤”时，政府方可叫停该模型的发布或使用。"
@@ -5804,7 +6178,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 28.7,
-   "heat": 26.1,
+   "heat": 25.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -5837,8 +6211,8 @@
    "first_seen_utc": "2026-10-17T00:05:53Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 46.4,
-   "heat": 42.1,
+   "score": 44.6,
+   "heat": 40.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "他预计，该产品有望将企业成本效率提高 5% 甚至更多；若将这一幅度放到全球 GDP 规模上测算，每年节省的成本最高可达 6 万亿美元（现汇率约合 40.22 万亿元人民币）。"
@@ -5870,9 +6244,9 @@
    "published_utc": "2026-10-16T22:53:05Z",
    "first_seen_utc": "2026-10-16T23:05:14Z",
    "scoop_hours": null,
-   "selected": false,
-   "score": 61.6,
-   "heat": 55.9,
+   "selected": true,
+   "score": 65.3,
+   "heat": 59.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Anthropic 公司昨日（10 月 16 日）发布博文，宣布其内部研究用 Claude 模型用不到 30 分钟，追溯出五条美国国家标准与技术研究院（NIST）标准椭圆曲线的“种子”（seed）来源，为一桩延续约 26 年的密码学悬案提供了可复现的答案。"
@@ -5910,210 +6284,6 @@
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
-  },
-  {
-   "id": "f675da75d113",
-   "url": "https://simonwillison.net/2026/Oct/16/code-review/",
-   "title": {
-    "zh": "Claude Code 团队谈代码审查：从人工把关转向持续审查",
-    "en": "[SimonWillison] Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
-    "de": "Claude Code-Team zu Code-Review: von manueller Kontrolle zu kontinuierlicher Prüfung",
-    "src": "[SimonWillison] Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang"
-   },
-   "one_liner": {
-    "zh": "Claude Code 团队改变了代码审查方式：多数改动在交给人工查看前已被 Claude 审查并修复过至少一次。",
-    "en": "The Claude Code team has changed code review: most changes are already reviewed and fixed by Claude at least once before human eyes.",
-    "de": "Das Claude Code-Team hat Code-Review verändert: Die meisten Änderungen wurden von Claude mindestens einmal geprüft und korrigiert, bevor Menschen sie sehen."
-   },
-   "why_it_matters": {
-    "zh": "审查从流程末端的关卡变成持续进行，自动审查捕捉常规错误，把团队注意力留给更高层次的问题。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-16T22:06:37Z",
-   "first_seen_utc": "2026-10-16T23:05:14Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 46.8,
-   "heat": 42.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Now, review runs continuously, more like spellcheck while you write. Most changes have been reviewed and fixed by Claude at least once before a human is asked to look."
-  },
-  {
-   "id": "2cfed7a91237",
-   "url": "https://github.com/cranebeaker/coop-anything",
-   "title": {
-    "zh": "Co-op Anything：AI智能体给单机游戏加联机",
-    "en": "cranebeaker/coop-anything",
-    "de": "Co-op Anything: KI-Agenten bringen Multiplayer in Einzelspieler-Spiele",
-    "src": "cranebeaker/coop-anything"
-   },
-   "one_liner": {
-    "zh": "开源项目Co-op Anything让AI编程智能体逆向单机游戏并构建联机功能，好友可一键安装、经Steam加入",
-    "en": "Open-source project Co-op Anything lets AI coding agents reverse-engineer single-player games and build multiplayer; friends install with one click and join via Steam.",
-    "de": "Das Open-Source-Projekt Co-op Anything lässt KI-Coding-Agenten Einzelspieler-Spiele reverse-engineeren und Multiplayer bauen; Freunde installieren per Klick und joinen via Steam."
-   },
-   "why_it_matters": {
-    "zh": "该项目称任何可在PC运行的游戏都是候选，Deus Ex已发布联机版",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-16T22:05:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 38.1,
-   "heat": 30.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Want to play a single-player game with your friends? Point your AI coding agent at this repo."
-  },
-  {
-   "id": "1242c66317d3",
-   "url": "https://x.com/OpenAIDevs/status/2111213093577691337",
-   "title": {
-    "zh": "OpenAI工程师如何用Codex清理代码维护积压",
-    "en": "@OpenAIDevs: Here’s how our engineers use Codex at OpenAI to dig through our codebase, find what needs attention, and chip away at th",
-    "de": "Wie OpenAI-Ingenieure mit Codex Wartungsrückstände abbauen",
-    "src": "@OpenAIDevs: Here’s how our engineers use Codex at OpenAI to dig through our codebase, find what needs attention, and chip away at th"
-   },
-   "one_liner": {
-    "zh": "OpenAI工程师使用Codex挖掘代码库、找出需要关注的问题，并逐步消化维护积压。",
-    "en": "OpenAI engineers use Codex to mine codebases, flag issues needing attention, and steadily work through maintenance backlogs.",
-    "de": "OpenAI-Ingenieure nutzen Codex, um Codebasen zu durchsuchen, Probleme zu finden und Wartungsrückstände schrittweise abzubauen."
-   },
-   "why_it_matters": {
-    "zh": "展示了Codex在OpenAI内部代码库维护中的实际用法。",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "X回源",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-16T21:50:00Z",
-   "first_seen_utc": "2026-10-16T22:05:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.2,
-   "heat": 35.4,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "a1bf9ae83b7d",
-   "url": "https://x.com/ChatGPT/status/2111210005617889406",
-   "title": {
-    "zh": "ChatGPT：把你的dot添加为iOS主屏小组件",
-    "en": "@ChatGPT: A new buddy for your iOS home screen: Add your dot as a widget to jump into your conversation or start a call with just",
-    "de": "ChatGPT: Füge dein dot als iOS-Homescreen-Widget hinzu",
-    "src": "@ChatGPT: A new buddy for your iOS home screen: Add your dot as a widget to jump into your conversation or start a call with just"
-   },
-   "one_liner": {
-    "zh": "把dot添加为iOS主屏小组件后，点一下即可进入对话或发起通话。",
-    "en": "Once dot is added as an iOS home screen widget, a single tap starts a conversation or a call.",
-    "de": "Ist dot als iOS-Homescreen-Widget hinzugefügt, startet ein einziger Tipp eine Unterhaltung oder einen Anruf."
-   },
-   "why_it_matters": {
-    "zh": "该小组件让用户从iOS主屏一键进入对话或通话，缩短了操作路径。",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "X回源",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-16T21:37:44Z",
-   "first_seen_utc": "2026-10-16T23:05:14Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 45.5,
-   "heat": 41.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "c34434034321",
-   "url": "https://x.com/ClaudeDevs/status/2111209208012210409",
-   "title": {
-    "zh": "Claude Code压缩每轮对话，Claude响应开始更快",
-    "en": "@ClaudeDevs: We keep improving performance across Claude, and you may have noticed it starts responding sooner!",
-    "de": "Claude Code komprimiert Dialogrunden, Claude antwortet schneller",
-    "src": "@ClaudeDevs: We keep improving performance across Claude, and you may have noticed it starts responding sooner!"
-   },
-   "one_liner": {
-    "zh": "Claude Code现在会对每轮发送的对话进行gzip压缩，使其更快到达模型，用户可注意到响应开始得更早。",
-    "en": "Claude Code now gzip-compresses each conversation turn sent, so it reaches the model faster and responses start noticeably earlier.",
-    "de": "Claude Code komprimiert nun jede gesendete Dialogrunde per gzip, sodass sie schneller beim Modell ankommt und Antworten spürbar früher beginnen."
-   },
-   "why_it_matters": {
-    "zh": "压缩对话加快了传输速度，直接改善了Claude的响应起始时间。",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "X回源",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-16T21:34:34Z",
-   "first_seen_utc": "2026-10-16T23:05:14Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 42.3,
-   "heat": 38.1,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Claude Code now gzips the conversation it sends on every turn, so it reaches the model faster."
-  },
-  {
-   "id": "ba81079fc477",
-   "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
-   "title": {
-    "zh": "Replit CEO 称已不再与 Anthropic 合作",
-    "en": "[TechCrunch-AI] Replit is no longer working with Anthropic, CEO says",
-    "de": "Replit-Chef sagt: Zusammenarbeit mit Anthropic beendet",
-    "src": "[TechCrunch-AI] Replit is no longer working with Anthropic, CEO says"
-   },
-   "one_liner": {
-    "zh": "Replit CEO Amjad Masad 在 TechCrunch Disrupt 上表示，出于成本",
-    "en": "Speaking at TechCrunch Disrupt, Replit CEO Amjad Masad says the company no longer partners with Anthropic, citing cost reasons.",
-    "de": "Auf der TechCrunch Disrupt sagt Replit-Chef Amjad Masad, das Unternehmen arbeite aus Kostengründen nicht mehr mit Anthropic zusammen."
-   },
-   "why_it_matters": {
-    "zh": "Replit 此前使用 Anthropic 的 Claude 模型运行平台并显著带动收入增长",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-16T21:22:28Z",
-   "first_seen_utc": "2026-10-16T22:05:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 54.9,
-   "heat": 49.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Masad said the decision was made for a number of different reasons, including cost."
   }
  ]
 }
