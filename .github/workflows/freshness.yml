@@ -1,0 +1,56 @@
+# 新鲜度看门狗（2026-10-17 Claude Mac Mini）：线上数据超过阈值没前进就让本 workflow 失败，
+# 失败即由 GitHub Actions 自带邮件通知站主（不接新服务）。只读线上 heartbeat，零模型花费、不写仓。
+# 起因：09-25 之后站点冻结 21 天，Mac 引擎轮轮超时、CI 影子轮轮报绿，没人收到任何信号。
+name: freshness
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 */6 * * *'   # 每 6 小时；与 news-pipeline 的 :17 错开
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HEARTBEAT_URL: https://news.aiimmigrant.de/api/v1/heartbeat.json
+      MAX_AGE_H: "12"            # 阈值：数据生成时间超过 12 小时未前进即告警
+    steps:
+      - name: 读线上心跳并判定新鲜度
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, time, urllib.request
+          from datetime import datetime, timezone
+          url = os.environ["HEARTBEAT_URL"] + f"?t={int(time.time())}"   # 绕开 CDN 缓存
+          max_h = float(os.environ["MAX_AGE_H"])
+          hb = None
+          for i in range(3):
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as r:
+                      hb = json.load(r)
+                  break
+              except Exception as e:
+                  print(f"第 {i+1} 次读取失败：{e}")
+                  time.sleep(10)
+          if hb is None:
+              print("::error::线上 heartbeat.json 读不到")
+              sys.exit(1)
+          gen = hb.get("pipeline_generated_at_utc")
+          if not gen:
+              print("::error::heartbeat.json 缺 pipeline_generated_at_utc")
+              sys.exit(1)
+          age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(gen.replace("Z", "+00:00"))).total_seconds() / 3600
+          summary = (f"数据生成于 {gen}（{age_h:.1f} 小时前）；上次发布 {hb.get('when')} "
+                     f"status={hb.get('status')} 精选={hb.get('selected')} 总数={hb.get('total')}")
+          print(summary)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
+              f.write(summary + "\n")
+          if age_h > max_h:
+              print(f"::error::站点数据已 {age_h:.1f} 小时未更新（阈值 {max_h:g}h）。"
+                    "先查 Mac 引擎日志 /tmp/ai-news-launchd.log，再看本仓 news-pipeline 的 CI_MODE。")
+              sys.exit(1)
+          print("新鲜度正常")
+          PY

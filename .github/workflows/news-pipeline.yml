@@ -58,4 +58,6 @@ jobs:
           echo "AI_NEWS_ENGINE_RAN=1" >> "$GITHUB_ENV"
           python3 引擎/管线.py --profile zh
       - name: 发布链（五门禁原样 + M2 staged 范围闸 + M3 CNAME 硬闸；shadow=影子分支+PR，live=推 main）
+        # 2026-10-17：影子期引擎被 SKIP 时没有新内容，不再每轮推 ci/shadow-* 分支、开 PR（空转噪音）；live 或引擎真跑了才发布
+        if: env.AI_NEWS_CI_MODE == 'live' || env.AI_NEWS_ENGINE_RAN == '1'
         run: python3 引擎/发布链.py --job "$AI_NEWS_JOB"
