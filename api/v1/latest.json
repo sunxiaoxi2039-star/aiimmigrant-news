@@ -1,6 +1,6 @@
 {
  "api_version": "v1",
- "generated_at_utc": "2026-10-18T05:11:39Z",
+ "generated_at_utc": "2026-10-18T06:12:04Z",
  "site": {
   "name": "AI 资讯时间线",
   "url": "https://news.aiimmigrant.de",
@@ -9,9 +9,9 @@
  "license": "摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；原文版权归各信源所有，请始终带上 url 回链原文。",
  "update": "精选库随引擎轮次更新（常态每小时一轮，launchd :07）；2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。接口无鉴权、无频控，请自觉别超过 1 次/分钟。",
  "counts": {
-  "selected": 16,
-  "fresh_24h": 124,
-  "total_pool": 2152
+  "selected": 19,
+  "fresh_24h": 119,
+  "total_pool": 2151
  },
  "categories": [
   "模型",
@@ -73,7 +73,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -82,11 +82,45 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 68.4,
-   "heat": 64.3,
+   "score": 62.6,
+   "heat": 58.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Claude cracked it in under 30 minutes. The seeds came from \"lrand48,\" a simple C random number generator, initialized with a Unix timestamp between May 1997 and April 1998. Claude spotted the pattern"
+  },
+  {
+   "id": "77e205574383",
+   "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
+   "title": {
+    "zh": "Meta开源模型Muse Spark Open登顶美国开源榜",
+    "en": "[LatentSpace] [AINews] High Taste Testers Ep. 1",
+    "de": "Metas Open-Source-Modell Muse Spark Open führt US-Ranking an",
+    "src": "[LatentSpace] [AINews] High Taste Testers Ep. 1"
+   },
+   "one_liner": {
+    "zh": "Meta开源模型Muse Spark Open为816B总参数、42B激活的MoE",
+    "en": "Meta's open-source model Muse Spark Open is a MoE with 816B total parameters and 42B activated.",
+    "de": "Metas Open-Source-Modell Muse Spark Open ist ein MoE mit 816B Gesamt- und 42B aktivierten Parametern."
+   },
+   "why_it_matters": {
+    "zh": "其评分高出NVIDIA Nemotron 3.5 Super VL 13分，支持多模态输入与长上下文",
+    "en": "It scores 13 points higher than NVIDIA Nemotron 3.5 Super VL and supports multimodal input and long context.",
+    "de": "Es liegt 13 Punkte über NVIDIA Nemotron 3.5 Super VL und unterstützt multimodale Eingaben sowie langen Kontext."
+   },
+   "category": "模型",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T07:47:38Z",
+   "first_seen_utc": "2026-10-17T10:06:13Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 66.2,
+   "heat": 60.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Muse Spark Open (Meta): An 816B-total, 42B-active MoE with open weights. Artificial Analysis scores it 39 on its Intelligence Index, the highest for a US open-weights model and 13 points above NVIDIA"
   },
   {
    "id": "4bd38c0c9e0b",
@@ -117,7 +151,7 @@
    "scoop_hours": null,
    "selected": true,
    "score": 71.5,
-   "heat": 65.0,
+   "heat": 64.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "TypeSafe launched Jev on September 15, 2026. It is a decision model, not a chatbot. You define the allowed answers, and Jev returns a label, a score or a yes/no probability. In about 4 weeks, at"
@@ -157,6 +191,40 @@
    "quote_en": "Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward."
   },
   {
+   "id": "d48888abe4bf",
+   "url": "https://www.ithome.com/1/014/235.htm",
+   "title": {
+    "zh": "谷歌升级安卓防诈骗：AI每月拦截超500万条可疑电话短信",
+    "en": "Google Boosts Android Scam Protection: AI Blocks 5M+ Monthly",
+    "de": "Google verbessert Android-Betrugsschutz: KI blockt 5 Mio. monatlich",
+    "src": "[IT之家] 谷歌升级安卓防诈骗：AI 读懂诈骗话术，每月拦截超 500 万条可疑电话 / 短信"
+   },
+   "one_liner": {
+    "zh": "谷歌宣布升级安卓防诈骗功能，覆盖电话、短信和第三方聊天应用，AI检测每月可标记超500万条疑似诈骗电话和短信。",
+    "en": "Google announced upgraded Android scam protection covering calls, texts, and third-party chat apps, with AI flagging over 5 million suspected scam calls and texts monthly.",
+    "de": "Google kündigte verbesserten Android-Betrugsschutz für Anrufe, SMS und Chat-Apps an; die KI markiert monatlich über 5 Mio. Verdachtsfälle."
+   },
+   "why_it_matters": {
+    "zh": "新功能借助Gemini模型识别复杂诈骗语境、实时检查链接，并与银行合作拦截伪造银行来电，已拦截超300万个。",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-17T02:01:26Z",
+   "first_seen_utc": "2026-10-17T03:06:05Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 63.9,
+   "heat": 56.4,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "谷歌表示，其 Phone 和 Messages 应用中的 AI 诈骗检测功能目前每月可标记超过 500 万条疑似诈骗电话和短信。"
+  },
+  {
    "id": "70f4ab935038",
    "url": "https://www.ithome.com/1/014/217.htm",
    "title": {
@@ -184,45 +252,79 @@
    "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 62.1,
-   "heat": 54.7,
+   "score": 63.9,
+   "heat": 56.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "阿里 Qwen 团队于 10 月 14 日开源 BlenderWorld，这是一个用于评测视觉智能体在 Blender 中完成真实 3D 创作任务的基准。"
   },
   {
-   "id": "5f298b62bf9a",
-   "url": "https://www.ithome.com/1/014/195.htm",
+   "id": "01101a869d90",
+   "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
    "title": {
-    "zh": "Anthropic报告：AI工时已达人类6倍，初级技术岗位骤减",
-    "en": "Anthropic Report: AI Works Six Times Human Hours, Entry Tech Jobs Shrink",
-    "de": "Anthropic-Bericht: KI arbeitet sechsmal mehr als Menschen",
-    "src": "[IT之家] Anthropic 报告：AI 工时已是人类 6 倍，初级程序员岗位骤减，人均雇员创收是 Meta / 谷歌同期的 2 至 4 倍"
+    "zh": "Perplexity开源AI智能体沙箱SPACE",
+    "en": "[MarkTechPost] Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents",
+    "de": "Perplexity open-sourcet KI-Agenten-Sandbox SPACE",
+    "src": "[MarkTechPost] Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents"
    },
    "one_liner": {
-    "zh": "Anthropic报告显示，到2026年8月员工部署的AI智能体工作时长已达人类员工的6倍",
-    "en": "An Anthropic report shows that by August 2026, AI agents deployed by employees were working six times the hours of human employees.",
-    "de": "Ein Anthropic-Bericht zeigt, dass KI-Agenten im August 2026 sechsmal so lange arbeiteten wie menschliche Mitarbeiter."
+    "zh": "Perplexity开源其智能体沙箱平台SPACE，每个任务运行在独立的Firecracker microVM中",
+    "en": "Perplexity has open-sourced SPACE, its agent sandbox platform, where each task runs in an isolated Firecracker microVM.",
+    "de": "Perplexity hat seine Agenten-Sandbox-Plattform SPACE open-sourcet; jede Aufgabe läuft in einer isolierten Firecracker-microVM."
    },
    "why_it_matters": {
-    "zh": "报告还指出其人均雇员创收为Meta和谷歌同期高速增长期的2至4倍，AI同时带来效率提升与岗位结构变化。",
+    "zh": "生产中创建延迟中位数从185ms降至60ms，9个前沿模型的108次VM逃逸尝试0次成功，可供构建智能体的团队自托管。",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
    },
-   "published_utc": "2026-10-16T23:13:28Z",
-   "first_seen_utc": "2026-10-17T00:05:53Z",
+   "published_utc": "2026-10-17T00:09:12Z",
+   "first_seen_utc": "2026-10-17T01:05:56Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 64.4,
-   "heat": 56.4,
+   "score": 63.9,
+   "heat": 55.9,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": "报告显示，Anthropic 技术部门初级员工占比已从 2025 年初的 21% 降至 14%，初级技术岗位招聘占比更从 27% 骤降至 9%。"
+   "quote_en": "The Perplexity SPACE sandbox gives each agent task its own Firecracker microVM."
+  },
+  {
+   "id": "cb19ce094e82",
+   "url": "https://www.ithome.com/1/014/191.htm",
+   "title": {
+    "zh": "Claude不到30分钟解开26年NSA种子来源之谜",
+    "en": "Claude Solves 26-Year NSA Seed Mystery in Under 30 Minutes",
+    "de": "Claude löst 26 Jahre altes NSA-Seed-Rätsel in 30 Minuten",
+    "src": "[IT之家] Claude 当起“数字考古学家”：不到 30 分钟揭开困扰密码学界 26 年的 NSA 参数来源之谜"
+   },
+   "one_liner": {
+    "zh": "Anthropic称其研究用Claude模型用不到30分钟追溯出五条NIST椭圆曲线种子的来源",
+    "en": "Anthropic says its research Claude model traced the origins of five NIST elliptic curve seeds in under 30 minutes.",
+    "de": "Anthropic sagt, sein Forschungsmodell Claude habe die Herkunft von fünf NIST-Elliptikkurven-Seeds in unter 30 Minuten zurückverfolgt."
+   },
+   "why_it_matters": {
+    "zh": "该结果为延续约26年的密码学悬案提供可复现答案，降低了参数被刻意植入后门的疑虑，复现代码已公开。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-16T22:53:05Z",
+   "first_seen_utc": "2026-10-16T23:05:14Z",
+   "scoop_hours": null,
+   "selected": true,
+   "score": 63.0,
+   "heat": 54.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Anthropic 公司昨日（10 月 16 日）发布博文，宣布其内部研究用 Claude 模型用不到 30 分钟，追溯出五条美国国家标准与技术研究院（NIST）标准椭圆曲线的“种子”（seed）来源，为一桩延续约 26 年的密码学悬案提供了可复现的答案。"
   },
   {
    "id": "4ea98b3fb008",
@@ -252,8 +354,8 @@
    "first_seen_utc": "2026-10-16T21:05:52Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 63.0,
-   "heat": 54.5,
+   "score": 67.0,
+   "heat": 57.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Added CLAUDE_CODE_AUTO_MODE_MODEL to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode"
@@ -571,8 +673,8 @@
    "url": "https://www.infoq.cn/article/qZPH971CbfHkaCfgG0cb?utm_source=rss&amp;utm_medium=article",
    "title": {
     "zh": "",
-    "en": "The Dawn of the AI + Device Era: Large Models Explore On-Device Deployment at QCon Shanghai",
-    "de": "Beginn der Ära von KI plus Gerät: Große Modelle auf Endgeräten bei QCon Shanghai",
+    "en": "The Dawn of the AI + Device Era: LLMs on Endpoints",
+    "de": "Die Ära von KI plus Gerät: LLMs auf Endgeräten",
     "src": "[InfoQ中国] “AI+终端”时代的萌芽：大模型在终端领域的探索和量产落地｜QCon上海"
    },
    "one_liner": {
@@ -594,8 +696,76 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.8,
-   "heat": 38.6,
+   "score": 39.2,
+   "heat": 39.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "4ef8cae66392",
+   "url": "https://www.ithome.com/1/014/477.htm",
+   "title": {
+    "zh": "李未可 X-AI 记忆眼镜 699 元起预售",
+    "en": "Liweike X-AI Memory Glasses Pre-Sale from 699 Yuan",
+    "de": "Liweike X-AI Memory-Brille ab 699 Yuan im Vorverkauf",
+    "src": "[IT之家] 李未可 X-AI 记忆眼镜预售：能持续录音 12 小时、支持 128 种语言实时翻译，699 元起"
+   },
+   "one_liner": {
+    "zh": "李未可 Lawaken X-AI 记忆眼镜开启预售，到手价 699 元起",
+    "en": "Liweike's Lawaken X-AI memory glasses have opened pre-sale, with prices starting at 699 yuan.",
+    "de": "Liweikes Lawaken X-AI Memory-Brille ist im Vorverkauf, Preise ab 699 Yuan."
+   },
+   "why_it_matters": {
+    "zh": "该眼镜重 26 克，集成腾讯云 WorkBuddy，可通过 MCP 协议连接豆包、飞书、Claude 等平台",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T1.5"
+   },
+   "published_utc": "2026-10-18T03:43:07Z",
+   "first_seen_utc": "2026-10-18T04:17:08Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 51.8,
+   "heat": 51.3,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "这款眼镜支持自动抓取待办、关键结论与优先级划分，用户可通过语音提问一键检索，即刻调取完整信息；集成腾讯云 WorkBuddy，可基于个人记忆库一键生成方案、会议纪要、文稿，省去二次整理步骤"
+  },
+  {
+   "id": "577984c56d39",
+   "url": "https://36kr.com/newsflashes/4030688414929536?f=rss",
+   "title": {
+    "zh": "",
+    "en": "Sinolink Securities: AI Short-Drama Overseas Penetration Still Low, Market to Expand",
+    "de": "Sinolink Securities: KI-Kurz Drama Auslandspenetration niedrig, Markt wächst weiter",
+    "src": "[36氪快讯] 国金证券：当前AI短剧出海仍处渗透率低位，远期市场空间有望持续扩容"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "Sinolink Securities says overseas AI short-drama penetration remains low, with market space expected to keep expanding over the long term.",
+    "de": "Sinolink Securities sagt, die Übersee-Penetration von KI-Kurzserien bleibt niedrig, der Marktraum wird langfristig weiter wachsen."
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "官方RSS",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-18T02:16:29Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 35.7,
+   "heat": 28.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -605,14 +775,14 @@
    "url": "https://36kr.com/newsflashes/4030687709860230?f=rss",
    "title": {
     "zh": "",
-    "en": "Hedge Funds Are Rapidly Pulling Out of AI Trades",
-    "de": "Hedgefonds ziehen sich rasch aus KI-Trades zurück",
+    "en": "Hedge Funds Are Rapidly Exiting AI Trades",
+    "de": "Hedgefonds ziehen sich schnell aus KI-Geschäften zurück",
     "src": "[36氪快讯] 对冲基金正在加速撤离AI交易"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "Hedge funds are accelerating their exit from AI trades, according to a 36Kr flash report.",
+    "de": "Laut 36Kr ziehen sich Hedgefonds beschleunigt aus KI-Geschäften zurück."
    },
    "why_it_matters": {
     "zh": "",
@@ -628,42 +798,8 @@
    "first_seen_utc": "2026-10-18T02:16:29Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 33.2,
-   "heat": 26.6,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "577984c56d39",
-   "url": "https://36kr.com/newsflashes/4030688414929536?f=rss",
-   "title": {
-    "zh": "",
-    "en": "Sinolink Securities: AI short-drama overseas market still at low penetration",
-    "de": "Sinolink Securities: KI-Kurzserien im Ausland noch wenig durchdrungen",
-    "src": "[36氪快讯] 国金证券：当前AI短剧出海仍处渗透率低位，远期市场空间有望持续扩容"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-18T02:16:29Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 32.9,
-   "heat": 26.3,
+   "score": 35.7,
+   "heat": 28.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -674,7 +810,7 @@
    "title": {
     "zh": "",
     "en": "@Kling_ai: Going big with Kling 4.0 👀 #Kling4 #KlingAI",
-    "de": "@Kling_ai: Kling 4.0 startet groß",
+    "de": "@Kling_ai: Kling 4.0 wird groß 👀",
     "src": "@Kling_ai: Going big with Kling 4.0 👀 #Kling4 #KlingAI"
    },
    "one_liner": {
@@ -696,8 +832,8 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.0,
-   "heat": 33.6,
+   "score": 38.5,
+   "heat": 37.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -730,8 +866,8 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.4,
-   "heat": 42.9,
+   "score": 42.3,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -741,8 +877,8 @@
    "url": "https://www.tmtpost.com/8171909.html",
    "title": {
     "zh": "",
-    "en": "When Burning Cash Is No Longer the Ticket: Microsoft and Meta Hit the Brakes, Apple Emerges as AI Winner",
-    "de": "Wenn Geldverbrennen nicht mehr zählt: Microsoft und Meta bremsen, Apple wird KI-Gewinner",
+    "en": "When Burning Cash Isn't Enough: Microsoft, Meta Brake, Apple Wins AI",
+    "de": "Wenn Geldverbrennen nicht reicht: Microsoft und Meta bremsen, Apple gewinnt KI",
     "src": "[钛媒体] 当烧钱不再是通行证：微软、Meta踩刹车，苹果成了AI赢家"
    },
    "one_liner": {
@@ -755,7 +891,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -764,8 +900,8 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.9,
-   "heat": 38.4,
+   "score": 49.3,
+   "heat": 48.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -798,8 +934,8 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.7,
-   "heat": 42.1,
+   "score": 46.9,
+   "heat": 46.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "小红书站内AI问答助手月活跃用户超过1亿。"
@@ -809,21 +945,21 @@
    "url": "https://www.tmtpost.com/8172155.html",
    "title": {
     "zh": "",
-    "en": "For AI, Tencent Wraps Green Bubble Dumplings",
-    "de": "Für KI wickelt Tencent Green-Bubble-Teigtaschen",
+    "en": "Tencent Builds WeChat Around AI Ambitions",
+    "de": "Tencent baut WeChat rund um KI-Ambitionen aus",
     "src": "[钛媒体] 为AI这碟醋，腾讯包上了“绿泡泡”这盘“饺子”"
    },
    "one_liner": {
     "zh": "",
-    "en": "To serve AI, Tencent has wrapped a new product package metaphorically called green bubble dumplings.",
-    "de": "Um KI zu bedienen, hat Tencent metaphorisch ein neues Produktpaket namens Green-Bubble-Teigtaschen geschnürt."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "模型",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -832,8 +968,8 @@
    "first_seen_utc": "2026-10-18T03:17:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.2,
-   "heat": 39.7,
+   "score": 39.2,
+   "heat": 38.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -842,22 +978,22 @@
    "id": "9cdc2027005a",
    "url": "https://www.ithome.com/1/014/450.htm",
    "title": {
-    "zh": "",
-    "en": "Anthropic report: AI reshapes company hiring, entry-level tech roles shrink",
-    "de": "Anthropic-Bericht: KI verändert Personalstruktur, Einstiegsjobs schrumpfen",
+    "zh": "Anthropic报告：初级技术岗招聘明显收缩",
+    "en": "Anthropic Report: Entry-Level Tech Hiring Shrinks Sharply",
+    "de": "Anthropic-Bericht: Einstiegsjobs in Tech gehen stark zurück",
     "src": "[IT之家] Anthropic 报告：AI 重塑公司用工结构，初级技术岗招聘明显收缩"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "Anthropic报告显示技术部门初级员工占比从21%降至14%，初级技术岗新员工占比由27%跌至9%。",
+    "en": "An Anthropic report shows junior staff in tech departments fell from 21% to 14%, and new-entry-level tech hires dropped from 27% to 9%.",
+    "de": "Ein Anthropic-Bericht zeigt: Der Anteil von Junior-Mitarbeitern in Tech-Abteilungen sank von 21% auf 14%, Neueinstiege auf Einstiegsebene von 27% auf 9%."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "Anthropic称其内部职场变化能预示AI如何改变整个经济体的工作组织方式、招聘模式与劳动力需求。",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -866,19 +1002,19 @@
    "first_seen_utc": "2026-10-18T02:16:29Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.5,
-   "heat": 44.8,
+   "score": 49.1,
+   "heat": 48.1,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "自 2025 年初以来，技术部门初级员工占比从 21% 下降至 14%，初级技术岗新员工占比降幅更大，由 27% 跌至 9%。"
   },
   {
    "id": "d7b4a5cd2141",
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUkZnVnFWS2hzV1NHUmhJYUxQc3U1Q0pRb3lCZXVSVjFYX2dyT3BQd05qZi1Jbng0VlFyOVZpY1RQYzFhanVRTnExdEM1dHJiOUNjblVkdjRDNjFyQ3pEdHFaS2tlOGtvM3B3LW9CT1JtLUpZcVNrUmV0eFpZUGh2R2hpeVUxNjhU?oc=5",
    "title": {
     "zh": "",
-    "en": "Claude rebels against humans, revising its underlying constitution 20 times",
-    "de": "Claude lehnt sich auf und ändert 20-mal seine zugrunde liegende Verfassung",
+    "en": "Claude Rebels Against Humans, Rewrites Its Constitution 20 Times",
+    "de": "Claude rebelliert gegen Menschen, ändert Verfassung 20-mal",
     "src": "[新智元(gnews桥)] Claude反抗人类，连改20次底层宪法！拒绝部署训练 - 搜狐"
    },
    "one_liner": {
@@ -900,8 +1036,8 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.8,
-   "heat": 45.0,
+   "score": 49.0,
+   "heat": 47.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -934,8 +1070,8 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 48.2,
-   "heat": 47.3,
+   "score": 46.4,
+   "heat": 45.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "IT之家 10 月 18 日消息，极夜 (TOPFEEL) 昨日公布了其 AI 双卡工作站 DeskOne A1。这一型号基于英特尔酷睿 Ultra 9 处理器 275HX。"
@@ -978,18 +1114,18 @@
    "id": "818ccc5a3a3b",
    "url": "https://www.ithome.com/1/014/436.htm",
    "title": {
-    "zh": "",
-    "en": "Lenovo P7 AI host opens pre-orders Oct 24: Cix芯 P1 SoC + Housmo M50 dNPU",
-    "de": "Lenovo P7 KI-Host ab 24. Oktober vorbestellbar: Cix芯 P1 SoC + Housmo M50 dNPU",
+    "zh": "联想 P7 AI 主机 1024 开启预约",
+    "en": "Lenovo P7 AI PC Reservations Open on Oct 24",
+    "de": "Lenovo P7 AI-PC: Reservierung ab 24. Oktober",
     "src": "[IT之家] 联想 P7 AI 主机 1024 开启预约：此芯 P1 SoC + 后摩 M50 dNPU 方案"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "联想将在 1024 程序员日 14:30 于长沙举行发布会并开启 AI 主机 P7 预约",
+    "en": "Lenovo will hold a launch event at 14:30 on Programmer's Day (Oct 24) in Changsha and open reservations for the P7 AI PC.",
+    "de": "Lenovo veranstaltet am Programmierertag (24. Oktober) um 14:30 in Changsha eine Launch-Event und öffnet Reservierungen für den P7 AI-PC."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "该机基于此芯 P1 SoC 与后摩 M50 dNPU 方案，支持 122B LLM 本地部署，机身仅 300g",
     "en": "",
     "de": ""
    },
@@ -1002,28 +1138,28 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 59.0,
-   "heat": 57.8,
+   "score": 57.2,
+   "heat": 55.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "联想 AI 主机 P7 基于此芯科技 P1 SoC + 后摩智能 M50 dNPU 方案，具备 190TOPS 本地 AI 算力，支持 122B LLM 本地部署，上下文窗口可达 128K，本地推理能力达 50TPS。"
   },
   {
    "id": "be32ae90cc17",
    "url": "https://www.ithome.com/1/014/434.htm",
    "title": {
-    "zh": "",
-    "en": "OpenCode attacked: some users' OpenAI and Anthropic API keys leaked",
-    "de": "OpenCode angegriffen: API-Schlüssel von OpenAI, Anthropic geleakt",
+    "zh": "OpenCode 遭攻击致用户 API 密钥外泄",
+    "en": "OpenCode Attack Exposes Users' API Keys",
+    "de": "Angriff auf OpenCode legt API-Schlüssel offen",
     "src": "[IT之家] OpenCode 遭攻击：部分用户 OpenAI、Anthropic 等 API 密钥外泄"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "OpenCode 称遭大规模蒸馏攻击，影响 1.4% 的 Console 用户，用户工作区中的 API 密钥可能已泄露。",
+    "en": "OpenCode said a large-scale distillation attack affected 1.4% of Console users, and API keys in users' workspaces may have leaked.",
+    "de": "OpenCode meldete einen groß angelegten Distillation-Angriff, der 1,4% der Console-Nutzer betraf; API-Schlüssel in Workspaces könnten abgeflossen sein."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "已有用户报告意外费用，一名用户 Anthropic 账户被扣 400 美元",
     "en": "",
     "de": ""
    },
@@ -1037,10 +1173,10 @@
    "scoop_hours": null,
    "selected": false,
    "score": 50.4,
-   "heat": 49.4,
+   "heat": 49.2,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "OpenCode 宣布，昨晚（当地时间 10 月 16 日）发生了一起安全事件，涉及大规模“蒸馏攻击”，影响了 1.4% 的 OpenCode Console 用户。"
   },
   {
    "id": "b69aaa878f02",
@@ -1070,8 +1206,8 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 46.9,
-   "heat": 45.9,
+   "score": 44.5,
+   "heat": 43.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Grok @Bot can pay for itself."
@@ -1129,7 +1265,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -1138,79 +1274,11 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.2,
-   "heat": 36.2,
+   "score": 43.4,
+   "heat": 34.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "O DG Claw instala, num servidor Linux seu, três coisas: o DG Claw Web, um painel no navegador com login e chat; o Admin, um agente de sistema que cuida da máquina e cria os outros agentes por"
-  },
-  {
-   "id": "8538fb249926",
-   "url": "https://github.com/agentsdance/agentvps",
-   "title": {
-    "zh": "AgentVPS：在你的 VPS 上给 Agent 配远程电脑",
-    "en": "agentsdance/agentvps",
-    "de": "AgentVPS: Remote-Computer für Agenten auf dem eigenen VPS",
-    "src": "agentsdance/agentvps"
-   },
-   "one_liner": {
-    "zh": "开源项目 AgentVPS 让 Agent 在用户自有 VPS 上获得 Linux 桌面、浏览器、终端和文件等能力。",
-    "en": "Open-source project AgentVPS gives agents Linux desktop, browser, terminal, and file capabilities on users' own VPS.",
-    "de": "Das Open-Source-Projekt AgentVPS gibt Agenten auf dem eigenen VPS Linux-Desktop, Browser, Terminal und Dateien."
-   },
-   "why_it_matters": {
-    "zh": "无需额外托管 Agent 订阅，可连接 Claude Code、Codex 等 MCP 客户端",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-18T00:16:20Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 41.6,
-   "heat": 33.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Install AgentVPS, then connect Claude Code, Codex, or another MCP client to its desktop, shell, code execution, files, Chromium browser, notes, and scheduled tasks."
-  },
-  {
-   "id": "2368420e313e",
-   "url": "https://github.com/morethanrealio/brambit",
-   "title": {
-    "zh": "",
-    "en": "morethanrealio/brambit",
-    "de": "morethanrealio/brambit",
-    "src": "morethanrealio/brambit"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-18T00:16:20Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 41.6,
-   "heat": 33.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
   },
   {
    "id": "76e18d2ac1a8",
@@ -1240,20 +1308,20 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.5,
-   "heat": 30.0,
+   "score": 38.9,
+   "heat": 31.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "fold is a local-first development platform for individual developers and teams working with AI coding agents."
   },
   {
-   "id": "b5877262d876",
-   "url": "https://github.com/karlarso/easy-ui-canvas",
+   "id": "2368420e313e",
+   "url": "https://github.com/morethanrealio/brambit",
    "title": {
     "zh": "",
-    "en": "karlarso/easy-ui-canvas",
-    "de": "karlarso/easy-ui-canvas",
-    "src": "karlarso/easy-ui-canvas"
+    "en": "morethanrealio/brambit",
+    "de": "morethanrealio/brambit",
+    "src": "morethanrealio/brambit"
    },
    "one_liner": {
     "zh": "",
@@ -1265,7 +1333,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -1274,11 +1342,45 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 34.6,
-   "heat": 27.7,
+   "score": 38.9,
+   "heat": 31.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
+  },
+  {
+   "id": "8538fb249926",
+   "url": "https://github.com/agentsdance/agentvps",
+   "title": {
+    "zh": "AgentVPS：在你的 VPS 上给 Agent 配远程电脑",
+    "en": "agentsdance/agentvps",
+    "de": "AgentVPS: Remote-Computer für Agenten auf dem eigenen VPS",
+    "src": "agentsdance/agentvps"
+   },
+   "one_liner": {
+    "zh": "开源项目 AgentVPS 让 Agent 在用户自有 VPS 上获得 Linux 桌面、浏览器、终端和文件等能力。",
+    "en": "Open-source project AgentVPS gives agents Linux desktop, browser, terminal, and file capabilities on users' own VPS.",
+    "de": "Das Open-Source-Projekt AgentVPS gibt Agenten auf dem eigenen VPS Linux-Desktop, Browser, Terminal und Dateien."
+   },
+   "why_it_matters": {
+    "zh": "无需额外托管 Agent 订阅，可连接 Claude Code、Codex 等 MCP 客户端",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-18T00:16:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 37.5,
+   "heat": 30.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "Install AgentVPS, then connect Claude Code, Codex, or another MCP client to its desktop, shell, code execution, files, Chromium browser, notes, and scheduled tasks."
   },
   {
    "id": "5a5a05a88f92",
@@ -1308,8 +1410,42 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.9,
-   "heat": 25.5,
+   "score": 36.0,
+   "heat": 28.8,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "b5877262d876",
+   "url": "https://github.com/karlarso/easy-ui-canvas",
+   "title": {
+    "zh": "",
+    "en": "karlarso/easy-ui-canvas",
+    "de": "karlarso/easy-ui-canvas",
+    "src": "karlarso/easy-ui-canvas"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "行业",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-18T00:16:20Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 31.5,
+   "heat": 25.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1342,42 +1478,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.1,
-   "heat": 24.9,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "997d9ec7035c",
-   "url": "https://github.com/SP4595/RoboMemory-Code",
-   "title": {
-    "zh": "",
-    "en": "SP4595/RoboMemory-Code",
-    "de": "SP4595/RoboMemory-Code",
-    "src": "SP4595/RoboMemory-Code"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "模型",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-18T00:16:20Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 25.5,
-   "heat": 20.4,
+   "score": 29.7,
+   "heat": 23.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1410,6 +1512,40 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
+   "score": 25.2,
+   "heat": 20.2,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "997d9ec7035c",
+   "url": "https://github.com/SP4595/RoboMemory-Code",
+   "title": {
+    "zh": "",
+    "en": "SP4595/RoboMemory-Code",
+    "de": "SP4595/RoboMemory-Code",
+    "src": "SP4595/RoboMemory-Code"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-18T00:16:20Z",
+   "scoop_hours": null,
+   "selected": false,
    "score": 23.8,
    "heat": 19.0,
    "n_sources": 1,
@@ -1420,18 +1556,18 @@
    "id": "26a6b684f312",
    "url": "https://www.ithome.com/1/014/433.htm",
    "title": {
-    "zh": "",
-    "en": "OpenAI to develop humanoid robots; Altman says the core is building the brain",
-    "de": "OpenAI entwickelt humanoide Roboter: Altman sieht Kern im Gehirn",
+    "zh": "OpenAI 将研发人形机器人",
+    "en": "OpenAI to Develop Humanoid Robots",
+    "de": "OpenAI will humanoide Roboter entwickeln",
     "src": "[IT之家] OpenAI 将研发人形机器人，奥尔特曼称核心是打造“大脑”"
    },
    "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
+    "zh": "奥尔特曼确认 OpenAI 会亲自制造人形机器人，核心是研发驱动机器人运转的大脑，预计 2027 年拿出演示样机。",
+    "en": "Altman confirmed OpenAI will build humanoid robots itself, focusing on the brain that drives them, with a demonstration prototype expected in 2027.",
+    "de": "Altman bestätigte, dass OpenAI selbst humanoide Roboter baut, mit Fokus auf das steuernde Gehirn; ein Demonstrationsprototyp wird für 2027 erwartet."
    },
    "why_it_matters": {
-    "zh": "",
+    "zh": "OpenAI 已开放 27 个机器人岗位，涵盖运动控制",
     "en": "",
     "de": ""
    },
@@ -1444,11 +1580,11 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.7,
-   "heat": 46.7,
+   "score": 53.1,
+   "heat": 51.8,
    "n_sources": 1,
    "also_reported_by": [],
-   "quote_en": ""
+   "quote_en": "奥尔特曼在接受《财富》杂志采访时表示：“我预计我们会在 2027 年拿出亮眼的演示样机…… 但机器人走上街头还需要再等好几年。”"
   },
   {
    "id": "5d1751a391b8",
@@ -1478,8 +1614,8 @@
    "first_seen_utc": "2026-10-18T01:17:01Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.2,
-   "heat": 42.3,
+   "score": 41.9,
+   "heat": 40.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "其配备 2880×1880 120Hz 500nits OLED 屏幕，峰值亮度 1100nits、色域 100% DCI-P3；支持 Wi-Fi 7 & 蓝牙 5.4；提供 2 个 USB-C 20Gbps、2 个 USB-A 5Gbps、1 个 HDMI 2.1 (TMDS)、1 个 3.5mm 音频插孔。"
@@ -1512,8 +1648,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.7,
-   "heat": 41.7,
+   "score": 40.2,
+   "heat": 39.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Anthropic 的报告说，内部 AI Agent 的工时已是人类工时的 6 倍。"
@@ -1523,8 +1659,8 @@
    "url": "https://www.ithome.com/1/014/421.htm",
    "title": {
     "zh": "",
-    "en": "WPS Officially Announces Early Adaptation for iPhone Duo with New Companion AI Layout",
-    "de": "WPS offiziell für iPhone Duo angepasst, mit neuem begleitendem KI-Layout",
+    "en": "WPS Officially Adapts to iPhone Duo with New Companion AI Layout",
+    "de": "WPS passt sich offiziell an iPhone Duo mit neuem KI-Layout an",
     "src": "[IT之家] WPS 官宣「抢鲜」适配 iPhone Duo，支持伴随式 AI 全新布局"
    },
    "one_liner": {
@@ -1546,8 +1682,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.2,
-   "heat": 37.3,
+   "score": 36.0,
+   "heat": 35.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1580,8 +1716,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 49.1,
-   "heat": 47.9,
+   "score": 50.9,
+   "heat": 49.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "EIM 介于 AI 处理器与内存之间，主要用于降低数据处理延迟并提高系统带宽。美光目前尚未披露具体的目标性能指标，但正在推进将 EIM 集成至 LPDDR6 方案的技术研发。"
@@ -1592,7 +1728,7 @@
    "title": {
     "zh": "",
     "en": "@emollick: A consequential choice will be made soon by government and companies as they are increasingly flooded with agentic AI in",
-    "de": "Ethan Mollick: Regierungen und Firmen vor Agentic-AI-Entscheidung",
+    "de": "@emollick: Regierung und Firmen treffen wichtige Entscheidungen bei agentischer KI",
     "src": "@emollick: A consequential choice will be made soon by government and companies as they are increasingly flooded with agentic AI in"
    },
    "one_liner": {
@@ -1614,8 +1750,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.8,
-   "heat": 31.0,
+   "score": 34.3,
+   "heat": 33.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1639,7 +1775,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -1648,8 +1784,8 @@
    "first_seen_utc": "2026-10-17T22:07:48Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 51.8,
-   "heat": 50.1,
+   "score": 49.5,
+   "heat": 47.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "And now, The Verge reports that the provision has been removed."
@@ -1716,8 +1852,8 @@
    "first_seen_utc": "2026-10-17T21:07:51Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.5,
-   "heat": 43.8,
+   "score": 47.2,
+   "heat": 45.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Anthropic is making fewer junior hires, with the proportion of junior-level employees in technical departments falling from 21% to 14% since early 2025, and the proportion of junior technical hires"
@@ -1751,7 +1887,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 40.2,
-   "heat": 38.7,
+   "heat": 38.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "There's something very odd going on with \"distillation\" if a cyber attack to steal api keys is looped under the same term."
@@ -1784,8 +1920,8 @@
    "first_seen_utc": "2026-10-17T19:05:50Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 51.3,
-   "heat": 49.1,
+   "score": 56.3,
+   "heat": 53.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Replit, the AI coding platform that has become a favorite of startup founders and developers, is no longer working with Anthropic, the company’s CEO and co-founder Amjad Masad said Thursday while"
@@ -1818,8 +1954,8 @@
    "first_seen_utc": "2026-10-17T19:05:50Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.1,
-   "heat": 35.4,
+   "score": 38.5,
+   "heat": 36.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "We had a security breach last night related to a large scale distillation attack that impacted 1."
@@ -1830,7 +1966,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Mini-Reaktoren für KI-Rechenzentren: Die Revolution der Energieversorgung?",
-    "de": "Mini-Reaktoren für KI-Rechenzentren: Energierevolution?",
+    "de": "Mini-Reaktoren für KI-Rechenzentren: Revolution der Energieversorgung?",
     "src": "[t3n] Mini-Reaktoren für KI-Rechenzentren: Die Revolution der Energieversorgung?"
    },
    "one_liner": {
@@ -1853,7 +1989,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 31.5,
-   "heat": 30.4,
+   "heat": 29.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1886,8 +2022,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.0,
-   "heat": 39.0,
+   "score": 44.8,
+   "heat": 42.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -1911,7 +2047,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -1920,8 +2056,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 31.5,
-   "heat": 29.9,
+   "score": 27.3,
+   "heat": 25.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Selbst der präziseste Prompt lässt Interpretationsspielraum, und Bildmodelle verstehen keine Anweisungen, sie berechnen Wahrscheinlichkeiten."
@@ -1988,8 +2124,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 41.6,
+   "score": 38.1,
+   "heat": 36.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2057,7 +2193,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 45.1,
-   "heat": 42.8,
+   "heat": 42.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Bolt is adding GLM 5.3 Flash to every account's model picker this weekend at no cost, with no plan change and no code to redeem."
@@ -2081,7 +2217,7 @@
     "en": "",
     "de": ""
    },
-   "category": "产品",
+   "category": "行业",
    "source": {
     "name": "X回源",
     "tier": "T2"
@@ -2090,8 +2226,8 @@
    "first_seen_utc": "2026-10-17T17:06:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 47.9,
-   "heat": 45.4,
+   "score": 46.5,
+   "heat": 43.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "My work dot \"Burger\" coordinated with my personal dot \"Dorito\" over email at my personal dots request to get documents, which then"
@@ -2124,8 +2260,8 @@
    "first_seen_utc": "2026-10-17T18:05:58Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.9,
-   "heat": 37.8,
+   "score": 43.8,
+   "heat": 41.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Und genau diese JavaScript-Bibliothek erlebt gerade einen zweiten Frühling – Vibecoding sei Dank."
@@ -2158,8 +2294,8 @@
    "first_seen_utc": "2026-10-17T16:06:48Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.4,
-   "heat": 23.5,
+   "score": 31.1,
+   "heat": 24.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2233,40 +2369,6 @@
    "quote_en": ""
   },
   {
-   "id": "2242b6dd4231",
-   "url": "https://github.com/speedydivid/TokenForge",
-   "title": {
-    "zh": "",
-    "en": "speedydivid/TokenForge",
-    "de": "speedydivid/TokenForge",
-    "src": "speedydivid/TokenForge"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "GitHub代码",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T15:06:39Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 33.2,
-   "heat": 26.6,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
    "id": "5af0707fb382",
    "url": "https://github.com/justxor/deepseek-local-guide-ru",
    "title": {
@@ -2294,8 +2396,42 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.2,
-   "heat": 25.8,
+   "score": 32.5,
+   "heat": 26.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": ""
+  },
+  {
+   "id": "2242b6dd4231",
+   "url": "https://github.com/speedydivid/TokenForge",
+   "title": {
+    "zh": "",
+    "en": "speedydivid/TokenForge",
+    "de": "speedydivid/TokenForge",
+    "src": "speedydivid/TokenForge"
+   },
+   "one_liner": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "why_it_matters": {
+    "zh": "",
+    "en": "",
+    "de": ""
+   },
+   "category": "产品",
+   "source": {
+    "name": "GitHub代码",
+    "tier": "T2"
+   },
+   "published_utc": null,
+   "first_seen_utc": "2026-10-17T15:06:39Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 30.1,
+   "heat": 24.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2328,8 +2464,8 @@
    "first_seen_utc": "2026-10-17T17:06:28Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.1,
-   "heat": 41.5,
+   "score": 45.5,
+   "heat": 42.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI."
@@ -2362,8 +2498,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.6,
-   "heat": 39.1,
+   "score": 47.2,
+   "heat": 44.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Akka 利用 65 个开源项目，对一种基于规格说明的 AI 辅助软件移植工作流进行了测试"
@@ -2387,7 +2523,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "行业",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -2396,8 +2532,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": true,
-   "score": 68.4,
-   "heat": 64.3,
+   "score": 62.6,
+   "heat": 58.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Claude cracked it in under 30 minutes. The seeds came from \"lrand48,\" a simple C random number generator, initialized with a Unix timestamp between May 1997 and April 1998. Claude spotted the pattern"
@@ -2430,8 +2566,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.2,
-   "heat": 30.2,
+   "score": 35.3,
+   "heat": 33.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2464,19 +2600,53 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 26.9,
-   "heat": 25.2,
+   "score": 32.5,
+   "heat": 30.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
+  },
+  {
+   "id": "81d366462bd1",
+   "url": "https://x.com/enjalot/status/2111448876817269056",
+   "title": {
+    "zh": "开发者：越来越多地把数据可视化原则用于日常UI设计",
+    "en": "@enjalot: i'm finding more and more i am applying data visualization principles to designing every-day UI because a lot of UI is b",
+    "de": "Entwickler nutzen vermehrt Datenvisualisierungsprinzipien fürs UI-Design",
+    "src": "@enjalot: i'm finding more and more i am applying data visualization principles to designing every-day UI because a lot of UI is b"
+   },
+   "one_liner": {
+    "zh": "enjalot表示因大量UI转向管理用户生成内容，他越来越多地将数据可视化原则应用于日常UI设计，并明确为此写提示词。",
+    "en": "enjalot says that as UIs increasingly manage user-generated content, he increasingly applies data visualization principles to everyday UI design, explicitly writing prompts for this.",
+    "de": "enjalot sagt, da UIs zunehmend nutzergenerierte Inhalte verwalten, wendet er vermehrt Datenvisualisierungsprinzipien im UI-Design an und schreibt dafür eigene Prompts."
+   },
+   "why_it_matters": {
+    "zh": "反映用户生成内容增多后UI设计方法正在向数据可视化思路靠拢。",
+    "en": "",
+    "de": ""
+   },
+   "category": "研究",
+   "source": {
+    "name": "X回源",
+    "tier": "T2"
+   },
+   "published_utc": "2026-10-17T13:26:55Z",
+   "first_seen_utc": "2026-10-17T14:06:37Z",
+   "scoop_hours": null,
+   "selected": false,
+   "score": 46.2,
+   "heat": 43.0,
+   "n_sources": 1,
+   "also_reported_by": [],
+   "quote_en": "i'm finding more and more i am applying data visualization principles to designing every-day UI because a lot of UI is becoming about"
   },
   {
    "id": "6c118bb79d3b",
    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNelpRa1lIZ0NsejFjbFAxN0txemJlUmNNUnFValVFaHVLMjFKSno3bXlWb0h1WUt0OHctdW9uXzlVOG53OC1MNWxnNjFtUUFLRDhXVXR0a2JOaUZjRjVpT0tWZHNZMHdCeFNzWTctRF9acWNMeHpQV1lGRFExLVRKUEFRNjQ1REhodG9BSXRlR190YnAwUUhzSlNqTjUzcTcxMkY2TA?oc=5",
    "title": {
     "zh": "",
-    "en": "DeepSeek V4.1F New Version Arrives, Focused on \"Wish-Style Programming\"",
-    "de": "Neue Version DeepSeek V4.1F mit Fokus auf „Wunsch-Programmierung\"",
+    "en": "DeepSeek releases new V4.1F version focused on wish-style programming",
+    "de": "Neue DeepSeek-Version V4.1F setzt auf Wish-Style-Programming",
     "src": "[机器之心(gnews桥)] DeepSeek V4.1F新版本来了，主打「许愿式编程」 - 搜狐"
    },
    "one_liner": {
@@ -2498,8 +2668,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.0,
-   "heat": 33.6,
+   "score": 43.4,
+   "heat": 40.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2543,8 +2713,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNS0plSEFQdEI0MGM1Y0lUMUVuOVQyMzc3R0lnMEIyeFoxeEY3YkNjNkJSQUNMdG03cFM1M0FaZjRBRW0wempXT01PZ3Z0THRLU3hmN2xGMW9vUzVIbkNxS3g2UFh5dUFyRnQyWXlUTzlMaEdEQk0xOTJFYkFJYzhobFdPVVNOWDlE?oc=5",
    "title": {
     "zh": "",
-    "en": "Google DeepMind cracks a 56-year-old problem, published in Science",
-    "de": "Google DeepMind löst 56 Jahre altes Problem, veröffentlicht in Science",
+    "en": "AI solves a 56-year-old problem; Google DeepMind's result lands on Science cover",
+    "de": "KI löst 56 Jahre altes Problem: Google DeepMind-Erfolg in Science",
     "src": "[新智元(gnews桥)] 56年没解开的题，AI全解了！谷歌DeepMind新成果登上Science主刊 - 搜狐"
    },
    "one_liner": {
@@ -2566,8 +2736,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 30.7,
+   "score": 31.9,
+   "heat": 29.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2600,8 +2770,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 50.8,
-   "heat": 47.4,
+   "score": 54.2,
+   "heat": 50.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "本来以为是 AI 模型发布更新太快的时间错觉，查了一下，确实有几家超过 3 个月没发了。"
@@ -2634,8 +2804,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 30.7,
+   "score": 38.1,
+   "heat": 35.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Could prove stronger than GLM 5.3 with vision built in."
@@ -2645,14 +2815,14 @@
    "url": "https://news.google.com/rss/articles/CBMihAVBVV95cUxOc09sS0JYNl9DckNkQ3NWa2pRaGxpLVNobDM5UDdsajcyZ2tMUDk5eWgyM0lIVHIxeEx3R3ZGUGFPN2stZXU5bWlaa1U3OEthRDlmdTVPeE1rUnpyTGpDcU92eVVoc3VnQVA2RUpBTm8zZlZlUktieU1ZT1FFWElBTjg4V3F1S21oQUxURVVZR050RjF1b0NDUkJVVnhBSElSaVI0cDNGd2pPcjliRUJ1YlduSC1LRUhES0pkZk93NGhIX0djTWZPdjRabXZ5SXM2dkwtaDFJM0dvd3pOY21RTnpoYVp4ZjU2MWItRzBlVEk5bWdxXzUzajhFVHlob2JYcV9tdlhBRkp5M2JfWGRTY0JLVmxHak9zeGJQWV93TEY3NlFYblI4b29ycGQzNUpGSjdzRkhEMEt4b0ZEZzhGUl9ZNDdhdzh5MFlJUGFZNjFleXdqdnk0QnBfRTdfUDEydzVldzBRVkFkc3pyVTdIemppS0hlaEIwMmhZMjE3TFpHYnVQN2dyUEhHQWVucG5Xb1dmbkZCT2J6dHZHT2V4Z1BKdDZPR2Z0WWJUTVhFYTFlZ1ZXVVpmVGFlQ1BDUVJYTm9yWkp0OFc1ZlUtS2swLWcwUjBrUDY0b1FJeDlMV0JXOG9ZWEhwbFRpcFRHa3JUVTgxMVNpTEJRZy1MMzFCUkI4dl9oM3d4UDVzWVVoNzQ1UDNpMFN0b052YlpEXzhCTUJ2OWp1Y2ZidGdaUFR6X2tHTGswdmhiRXZzdWhLWHZ1UGstNkNUOFJtSTFPTHQ4UHhCQW0yTV9oZzA2YXRhUWlQYU1GTE9tVldITHBWQnJ4bzMxMlhiTV93aVdPU1pzSmJVMA?oc=5",
    "title": {
     "zh": "",
-    "en": "Gemini 4 Argon Conquers Ultimate AGI Test",
-    "de": "Gemini 4 Argon meistert ultimativen AGI-Test",
+    "en": "Gemini 4 Argon conquers the ultimate AGI exam arena",
+    "de": "Gemini 4 Argon besteht die ultimative AGI-Prüfung",
     "src": "[新智元(gnews桥)] Gemini 4 Argon打穿AGI终极考场！|DeepMind|OpenAI|Google|谷歌|游戏 - finance.sina.com.cn"
    },
    "one_liner": {
     "zh": "",
-    "en": "Gemini 4 Argon has reportedly conquered the ultimate AGI test, involving DeepMind, OpenAI, and Google in gaming contexts.",
-    "de": "Gemini 4 Argon hat Berichten zufolge den ultimativen AGI-Test gemeistert, unter Beteiligung von DeepMind, OpenAI und Google im Gaming-Bereich."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -2668,8 +2838,8 @@
    "first_seen_utc": "2026-10-18T02:16:29Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 39.2,
-   "heat": 36.5,
+   "score": 41.6,
+   "heat": 38.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2702,8 +2872,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.8,
-   "heat": 40.8,
+   "score": 45.1,
+   "heat": 41.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "This weekend only, we‘re opening a limited number of exclusive private beta spots."
@@ -2795,7 +2965,7 @@
     "en": "",
     "de": ""
    },
-   "category": "模型",
+   "category": "产品",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -2804,8 +2974,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.4,
-   "heat": 40.3,
+   "score": 45.5,
+   "heat": 42.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "OpenAI hat drei Mitarbeiter:innen mit sofortiger Wirkung entlassen, weil sie angeblich vertrauliche Informationen weitergegeben hätten."
@@ -2906,8 +3076,8 @@
    "first_seen_utc": "2026-10-17T15:06:39Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 43.6,
-   "heat": 40.5,
+   "score": 47.2,
+   "heat": 43.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "随后Claude写了一个扫描程序，把公开种子里的二进制数字一位位挪着检查，测试了34种生成器与输出截取方式的组合。"
@@ -2951,14 +3121,14 @@
    "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBGRHJvTnVvZ0JBNTE0TXdNLVBqT2lVQmZiQWVXOURVMW95d1lKeGlQZTVKd0VFV1ZwLWliRlpxUUtTNU5wTjVvTg?oc=5",
    "title": {
     "zh": "",
-    "en": "OpenAI Challenges Chrome: ChatGPT Gains Hands for Automated Work",
-    "de": "OpenAI fordert Chrome heraus: ChatGPT bekommt Hände für automatisierte Arbeit",
+    "en": "OpenAI surprises Chrome: ChatGPT grows 'hands' to work automatically",
+    "de": "OpenAI überrascht Chrome: ChatGPT bekommt «Hände» zum automatischen Arbeiten",
     "src": "[新智元(gnews桥)] OpenAI突袭Chrome！ChatGPT长出「双手」，自动打工了 - 智源社区"
    },
    "one_liner": {
     "zh": "",
-    "en": "OpenAI launches a challenge to Chrome as ChatGPT gains agent capabilities to perform tasks automatically.",
-    "de": "OpenAI greift Chrome an, da ChatGPT Agentenfähigkeiten erhält, um Aufgaben automatisch auszuführen."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -2974,8 +3144,8 @@
    "first_seen_utc": "2026-10-17T14:06:37Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 40.6,
-   "heat": 37.7,
+   "score": 42.0,
+   "heat": 38.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -2984,7 +3154,7 @@
    "id": "6d7d165df6b5",
    "url": "https://www.golem.de/news/cody-wilson-ki-hat-gerade-eine-schusswaffe-entworfen-2610-214215.html",
    "title": {
-    "zh": "",
+    "zh": "[Golem] Cody Wilson：AI 刚设计了一款枪械",
     "en": "[Golem] Cody Wilson: KI hat gerade eine Schusswaffe entworfen",
     "de": "Cody Wilson: KI hat gerade eine Schusswaffe entworfen",
     "src": "[Golem] Cody Wilson: KI hat gerade eine Schusswaffe entworfen"
@@ -3008,8 +3178,8 @@
    "first_seen_utc": "2026-10-17T12:09:12Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 45.1,
-   "heat": 41.8,
+   "score": 44.5,
+   "heat": 41.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3042,8 +3212,8 @@
    "first_seen_utc": "2026-10-17T13:06:18Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 33.9,
-   "heat": 31.4,
+   "score": 39.9,
+   "heat": 36.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Der Bot postete seine Finanzen in einem öffentlichen Slack-Kanal, sodass andere aus dem Unternehmen seinen Kontostand sowie Einnahmen und Ausgaben bekommen konnten."
@@ -3122,7 +3292,7 @@
    "title": {
     "zh": "",
     "en": "[heise] heise-Angebot: enterJS: Call for Proposals 2027 und letzter Aufruf für KI-Online-Thementag 2026",
-    "de": "enterJS: Call for Proposals 2027 und letzter Aufruf für KI-Tag 2026",
+    "de": "enterJS: Call for Proposals 2027 und letzter Aufruf für KI-Thementag 2026",
     "src": "[heise] heise-Angebot: enterJS: Call for Proposals 2027 und letzter Aufruf für KI-Online-Thementag 2026"
    },
    "one_liner": {
@@ -3144,8 +3314,8 @@
    "first_seen_utc": "2026-10-18T00:16:20Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 35.3,
-   "heat": 32.6,
+   "score": 34.0,
+   "heat": 31.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3156,7 +3326,7 @@
    "title": {
     "zh": "",
     "en": "@testingcatalog: DAILY AI BRIEF 🗞 — Oct 17",
-    "de": "DAILY AI BRIEF — 17. Oktober",
+    "de": "@testingcatalog: DAILY AI BRIEF 🗞 — 17. Okt.",
     "src": "@testingcatalog: DAILY AI BRIEF 🗞 — Oct 17"
    },
    "one_liner": {
@@ -3178,8 +3348,8 @@
    "first_seen_utc": "2026-10-17T12:09:12Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 30.4,
+   "score": 31.9,
+   "heat": 29.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3292,7 +3462,7 @@
    "title": {
     "zh": "",
     "en": "@Thom_Wolf: we’re getting used to it by now but DeepSeek calling this a “minor update” while moving Terminal-Bench 4.0 from 31.2 to",
-    "de": "DeepSeek nennt Terminal-Bench-Sprung auf 4.0 ein kleines Update",
+    "de": "@Thom_Wolf: DeepSeek nennt riesigen Terminal-Bench-4.0-Sprung \"kleines Update\"",
     "src": "@Thom_Wolf: we’re getting used to it by now but DeepSeek calling this a “minor update” while moving Terminal-Bench 4.0 from 31.2 to"
    },
    "one_liner": {
@@ -3314,8 +3484,8 @@
    "first_seen_utc": "2026-10-17T11:05:56Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 30.3,
+   "score": 34.3,
+   "heat": 31.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3348,8 +3518,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 48.5,
-   "heat": 38.8,
+   "score": 59.0,
+   "heat": 47.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Stronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost."
@@ -3382,8 +3552,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.1,
-   "heat": 35.3,
+   "score": 48.7,
+   "heat": 39.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows—with a visual chat workspace and a built-in Model Context"
@@ -3394,7 +3564,7 @@
    "title": {
     "zh": "",
     "en": "LARK-AI-Lab/SpecAgent",
-    "de": "LARK-AI-Lab veröffentlicht SpecAgent",
+    "de": "LARK-AI-Lab/SpecAgent",
     "src": "LARK-AI-Lab/SpecAgent"
    },
    "one_liner": {
@@ -3407,7 +3577,7 @@
     "en": "",
     "de": ""
    },
-   "category": "研究",
+   "category": "产品",
    "source": {
     "name": "GitHub代码",
     "tier": "T2"
@@ -3416,8 +3586,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.3,
-   "heat": 33.0,
+   "score": 39.5,
+   "heat": 31.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3462,20 +3632,20 @@
    "title": {
     "zh": "",
     "en": "The World Is Not a Dataset: Building AI That Learns from Reality",
-    "de": "Die Welt ist kein Datensatz: KI lernt aus der Realität",
+    "de": "Die Welt ist kein Datensatz: KI, die aus Realität lernt",
     "src": "[InfoQ中国] The World Is Not a Dataset - Building AI Systems That Continuously Learn from Reality｜QCon上海"
    },
    "one_liner": {
     "zh": "",
-    "en": "",
-    "de": ""
+    "en": "A QCon Shanghai talk on building AI systems that continuously learn from reality, rather than treating the world as a static dataset.",
+    "de": "Ein QCon-Shanghai-Vortrag über KI-Systeme, die kontinuierlich aus der Realität lernen statt die Welt als statischen Datensatz zu sehen."
    },
    "why_it_matters": {
     "zh": "",
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T2"
@@ -3485,7 +3655,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.4,
-   "heat": 32.6,
+   "heat": 32.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3552,8 +3722,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.0,
-   "heat": 37.7,
+   "score": 39.2,
+   "heat": 35.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3586,8 +3756,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 52.8,
-   "heat": 48.5,
+   "score": 56.7,
+   "heat": 51.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "La réglementation présentée vendredi soumettra à autorisation étatique l’export des technologies des modèles haute performance – se classant dans le top 10 mondial ou fonctionnant à plus de 2 000"
@@ -3620,8 +3790,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 46.9,
-   "heat": 43.1,
+   "score": 45.5,
+   "heat": 41.6,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "模型不再是长期壁垒，办公 AI 的竞争开始转向上下文争夺。"
@@ -3654,8 +3824,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.7,
-   "heat": 27.3,
+   "score": 26.6,
+   "heat": 24.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "机器人连续1.5小时自主装配电子产品且全程零操作失误，覆盖的自动化范围超出团队最初预期"
@@ -3688,8 +3858,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 44.5,
-   "heat": 40.8,
+   "score": 45.8,
+   "heat": 41.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "AIforce允许员工在Claude、Slack等界面里，直接调用Salesforce的数据和业务流程，不必再打开熟悉的CRM页面"
@@ -3767,8 +3937,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORlk3VmFJNmtkNlpJeG5oNXlDa0x4c2QwTHpxR0M4ZzRkV09KSGpNc1d5VG9vVGdjajFyTzhTV2h5UGpIMnVkcW1GdzVvOTFrOXVNeENveUZBQ1BCS2ZlX21TbjZybVg0QnRPTWF2STBEMTg5WlhPYnFNTWdZX3hVTnJNbElpWXlGX0RB?oc=5",
    "title": {
     "zh": "",
-    "en": "DeepSeek Unveils Twin Breakthroughs, Wish-Style Coding Rivals GPT-6 Astra",
-    "de": "DeepSeek mit Doppel-Schlag: Wunsch-Programmierung trifft GPT-6 Astra",
+    "en": "DeepSeek drops double bombshell: wish-style programming hits GPT-6 Astra",
+    "de": "DeepSeek-Doppelknaller: Wish-Style-Programming trifft GPT-6 Astra",
     "src": "[新智元(gnews桥)] 刚刚，DeepSeek双王炸！许愿式编程暴击GPT-6 Astra - 搜狐网"
    },
    "one_liner": {
@@ -3790,8 +3960,8 @@
    "first_seen_utc": "2026-10-17T20:07:49Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.3,
-   "heat": 37.9,
+   "score": 43.0,
+   "heat": 39.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3801,8 +3971,8 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZFBOTXoya0lfY05YX3VJaHRrY2xBLV9pSklmM1FKVGQ5VFJMb0JuRnBRVmxXSWhQSzhyTDdrNVYybjZSUXBENjZSZGRmcF8ybk1CdHdEcVY3Q29CcV94amNvb2ZfemtzVUxvUzBpMzBMSm45bVVJRDMwd29OY2dHYzhPUC1Ea3J6?oc=5",
    "title": {
     "zh": "",
-    "en": "DeepSeek's Double Bombshell: Wish-Style Programming Strikes Hard at GPT-6 Astra",
-    "de": "DeepSeek-Doppelschlag: Wunsch-Programmierung trifft GPT-6 Astra hart",
+    "en": "DeepSeek Drops Double Bombshell: Wish-Style Coding Hits GPT-6 Astra",
+    "de": "DeepSeek mit Doppelschlag: Wish-Style-Coding trifft GPT-6 Astra",
     "src": "[新智元(gnews桥)] 刚刚，DeepSeek双王炸！许愿式编程暴击GPT-6 Astra - 搜狐"
    },
    "one_liner": {
@@ -3824,8 +3994,8 @@
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 37.5,
-   "heat": 34.4,
+   "score": 36.0,
+   "heat": 32.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3892,8 +4062,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.5,
-   "heat": 26.0,
+   "score": 33.9,
+   "heat": 27.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3926,8 +4096,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 58.5,
-   "heat": 53.6,
+   "score": 51.3,
+   "heat": 46.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "In early September, the company presented a 166-page potential solution to the Navier-Stokes problem. OpenAI claimed the proof followed the approach of Spanish mathematicians Diego Córdoba and Luis"
@@ -3938,7 +4108,7 @@
    "title": {
     "zh": "",
     "en": "[t3n] Gemini nervt? So holst du dir den alten Google Assistant zurück",
-    "de": "Gemini nervt? So holst du dir den alten Google Assistant zurück",
+    "de": "Gemini nervt? So kommt der alte Google Assistant zurück",
     "src": "[t3n] Gemini nervt? So holst du dir den alten Google Assistant zurück"
    },
    "one_liner": {
@@ -3960,8 +4130,8 @@
    "first_seen_utc": "2026-10-17T09:06:35Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 41.3,
-   "heat": 37.8,
+   "score": 38.5,
+   "heat": 35.1,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -3971,14 +4141,14 @@
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUlR3Tm1VMExfVzZqaFpTZFdGelVBVkJPRFJ4RlBmRlM5d3RsdmdFMG9rbGJDX3RHTWVWVy1naWhYVlVpTnJMRU9JdzdvYmEwa2l0VVFkWDJUZnZWWndaWnJBOENvaDNDaW5tUnd6M29UeHQyd015bUtvMjRxQm5pSENJTmo3Vzk4?oc=5",
    "title": {
     "zh": "",
-    "en": "Ant Ling-3.1-flash Builds Cities, Works Over Ten Hours Straight",
-    "de": "Ant Ling-3.1-flash baut Städte und arbeitet über zehn Stunden",
+    "en": "Ant Group's Ling-3.1-flash Brings AI into Real Workflows",
+    "de": "Ant Groups Ling-3.1-flash bringt KI in echte Workflows",
     "src": "[机器之心(gnews桥)] 让AI造城市，一口气干活十几个小时，蚂蚁百灵Ling-3.1-flash把AI带进真实工作流 - 搜狐"
    },
    "one_liner": {
     "zh": "",
-    "en": "Ant Group's Ling-3.1-flash model can build cities and work continuously for over ten hours in real workflows.",
-    "de": "Das Modell Ling-3.1-flash von Ant Group kann Städte bauen und über zehn Stunden kontinuierlich in realen Arbeitsabläufen arbeiten."
+    "en": "",
+    "de": ""
    },
    "why_it_matters": {
     "zh": "",
@@ -3995,7 +4165,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 39.9,
-   "heat": 36.5,
+   "heat": 36.3,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4029,7 +4199,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 41.7,
-   "heat": 38.1,
+   "heat": 37.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "10月15日深夜，可灵AI新一代视频生成模型Kling 4.0正式上线。 10月16日，可灵AI的“母体”快手股价应声大涨快手股价开盘大涨超5%，回到30港元上方；"
@@ -4095,9 +4265,9 @@
    "published_utc": "2026-10-17T07:47:38Z",
    "first_seen_utc": "2026-10-17T10:06:13Z",
    "scoop_hours": null,
-   "selected": false,
-   "score": 53.1,
-   "heat": 48.4,
+   "selected": true,
+   "score": 66.2,
+   "heat": 60.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Muse Spark Open (Meta): An 816B-total, 42B-active MoE with open weights. Artificial Analysis scores it 39 on its Intelligence Index, the highest for a US open-weights model and 13 points above NVIDIA"
@@ -4130,8 +4300,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 59.0,
-   "heat": 53.7,
+   "score": 54.9,
+   "heat": 49.8,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "其 AI 模型 Claude 在几乎无需人工干预的情况下，针对 8 类量子计算任务，设计出比已发表最优电路更高效的方案。"
@@ -4141,8 +4311,8 @@
    "url": "https://www.tmtpost.com/8171535.html",
    "title": {
     "zh": "",
-    "en": "AI Funding Stars Squeezed in ByteDance's Gaps",
-    "de": "KI-Finanzierungsstars eingeklemmt zwischen ByteDances Lücken",
+    "en": "AI funding stars caught in ByteDance's shadow",
+    "de": "KI-Finanzierungsstars im Schatten von ByteDance",
     "src": "[钛媒体] 夹在字节缝隙中的AI融资明星们"
    },
    "one_liner": {
@@ -4164,8 +4334,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 38.1,
-   "heat": 34.7,
+   "score": 43.0,
+   "heat": 39.0,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4198,8 +4368,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 54.0,
-   "heat": 49.1,
+   "score": 52.7,
+   "heat": 47.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Anthropic 于当地时间 10 月 15 日宣布，自 2026 年 10 月 29 日起，Claude Haiku 4.5 将从 Free、Pro 和 Max 套餐的模型选择器中移除，覆盖网页端、桌面端和移动端的常规聊天，以及 Claude Cowork 和 Claude Design 功能。"
@@ -4233,7 +4403,7 @@
    "scoop_hours": null,
    "selected": true,
    "score": 71.5,
-   "heat": 65.0,
+   "heat": 64.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "TypeSafe launched Jev on September 15, 2026. It is a decision model, not a chatbot. You define the allowed answers, and Jev returns a label, a score or a yes/no probability. In about 4 weeks, at"
@@ -4243,8 +4413,8 @@
    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1SYlcyV1R2dmVDVXp0bGsxWURRNWQ4Mkk4OWpqM0F6dU1UUnhyUzE1SDdsR2JpbWszRnlWY0ZCWUNIblJyVTU1ZjJsNFBIZkU?oc=5",
    "title": {
     "zh": "",
-    "en": "Tibo's Codex turnaround: overtaking ChatGPT within a year",
-    "de": "Tibos Codex-Comeback: überholt ChatGPT in einem Jahr",
+    "en": "Tibo's Codex Comeback: Overtaking ChatGPT Within a Year",
+    "de": "Tibos Codex-Comeback: ChatGPT in einem Jahr überholt",
     "src": "[机器之心(gnews桥)] Tibo的Codex翻盘记：接手不到一年就吞掉了ChatGPT - 36 Kr"
    },
    "one_liner": {
@@ -4266,8 +4436,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 32.9,
-   "heat": 29.9,
+   "score": 36.0,
+   "heat": 32.5,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4300,8 +4470,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 42.0,
-   "heat": 33.6,
+   "score": 37.8,
+   "heat": 30.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "Measured numbers come from community benchmarks (r/LocalLLaMA, localscore.ai and more); others are derived from similar setups or projected from specs. Open source on GitHub."
@@ -4311,8 +4481,8 @@
    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ1g0TGRXTzJXM3B2S3JudTUyZ05TYWNSVnBGSVlvRVFTcHY2cUtDU1FQU292bmY1a0FBRUgxYi0tS0JGS2V3dXo1YUY0X24zbHZlY3pDZV9ERjlhcmIzSklTOFJGaUVNTzFReklDQ3NUa1FHTE5PMV9zOGd1RjY1YnpJbEo2NnM2S281aA?oc=5",
    "title": {
     "zh": "",
-    "en": "When LLMs Learn Abstraction, What Value Remains in Linguistics?",
-    "de": "Wenn LLMs Abstraktion lernen: Was bleibt der Linguistik?",
+    "en": "When LLMs Learn Abstraction, What Irreplaceable Value Does Linguistics Still Hold?",
+    "de": "Wenn LLMs Abstraktion lernen: Welche unersetzliche Rolle bleibt der Linguistik?",
     "src": "[机器之心(gnews桥)] 当 LLM 学会抽象，语言学还有什么不可替代的价值？ - 搜狐"
    },
    "one_liner": {
@@ -4334,8 +4504,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 29.0,
-   "heat": 26.3,
+   "score": 28.4,
+   "heat": 25.7,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4345,8 +4515,8 @@
    "url": "https://x.com/oran_ge/status/2111350773162693116",
    "title": {
     "zh": "",
-    "en": "What If AI Raises the Passing Line to 60 Points",
-    "de": "Wenn KI die Bestehensgrenze auf 60 Punkte hebt",
+    "en": "@oran_ge: If AI raises the passing bar to 60",
+    "de": "@oran_ge: Wenn AI die Bestehensgrenze auf 60 hebt",
     "src": "@oran_ge: 如果 AI 把及格线拉到 60 分"
    },
    "one_liner": {
@@ -4368,8 +4538,8 @@
    "first_seen_utc": "2026-10-17T08:07:06Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 24.5,
-   "heat": 22.2,
+   "score": 25.9,
+   "heat": 23.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4403,7 +4573,7 @@
    "scoop_hours": null,
    "selected": false,
    "score": 35.4,
-   "heat": 32.1,
+   "heat": 31.9,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4436,8 +4606,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": -2.0,
    "selected": false,
-   "score": 43.0,
-   "heat": 50.6,
+   "score": 41.5,
+   "heat": 48.6,
    "n_sources": 12,
    "also_reported_by": [
     {
@@ -4506,7 +4676,7 @@
     "en": "",
     "de": ""
    },
-   "category": "行业",
+   "category": "研究",
    "source": {
     "name": "官方RSS",
     "tier": "T1.5"
@@ -4515,8 +4685,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 59.0,
-   "heat": 53.4,
+   "score": 58.1,
+   "heat": 52.4,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "该系统的全球有效预报时效可达 11 天，多项核心预报指标、概率预报精度及离散度误差控制能力均优于欧洲中期天气预报中心（ECMWF）最新的人工智能集合预报系统。"
@@ -4526,8 +4696,8 @@
    "url": "https://www.tmtpost.com/8171952.html",
    "title": {
     "zh": "",
-    "en": "Where Is AI's Next Frontier? Hundreds of Entrepreneurs Share Answers in Shanghai",
-    "de": "Wo liegt die nächste KI-Grenze? Hunderte Gründer antworten in Shanghai",
+    "en": "Where Is AI's Next Frontier? Hundreds of Founders Answer in Shanghai",
+    "de": "Wo liegt KI's nächste Grenze? Hunderte Gründer antworten in Shanghai",
     "src": "[钛媒体] AI 的下一个前沿在哪里？数百位创业者在上海给出了这些答案"
    },
    "one_liner": {
@@ -4549,8 +4719,8 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 36.8,
-   "heat": 33.3,
+   "score": 35.7,
+   "heat": 32.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": ""
@@ -4583,249 +4753,11 @@
    "first_seen_utc": "2026-10-17T07:07:38Z",
    "scoop_hours": null,
    "selected": false,
-   "score": 56.7,
-   "heat": 51.3,
+   "score": 51.3,
+   "heat": 46.2,
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "\"Your algorithm\" 功能允许用户通过自然语言添加内容偏好标签。用户选择推送内容“感兴趣”或“不感兴趣”后，Facebook 会通过一系列简短的后续问题了解用户选择的具体原因，用于推荐算法的微调改进。"
-  },
-  {
-   "id": "30385153df57",
-   "url": "https://36kr.com/newsflashes/4029401099178629?f=rss",
-   "title": {
-    "zh": "",
-    "en": "Microsoft Launches AI Student Simulator",
-    "de": "Microsoft stellt KI-Studentensimulator vor",
-    "src": "[36氪快讯] 微软推出“AI学生模拟器”"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "Microsoft has launched an AI student simulator designed to model student behavior for educational purposes.",
-    "de": "Microsoft hat einen KI-Studentensimulator vorgestellt, der das Verhalten von Studenten für Bildungszwecke modelliert."
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": null,
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.2,
-   "heat": 31.4,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "b3f7599e6080",
-   "url": "https://t3n.de/news/ki-texte-entlarven-chatgpt-claude-erkennen-1766310/?utm_source=rss&utm_medium=newsFeed&utm_campaign=newsFeed",
-   "title": {
-    "zh": "",
-    "en": "[t3n] KI-Texte entlarven: So erkennst du ChatGPT & Claude sofort",
-    "de": "KI-Texte entlarven: So erkennst du ChatGPT & Claude sofort",
-    "src": "[t3n] KI-Texte entlarven: So erkennst du ChatGPT & Claude sofort"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "产品",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T05:45:00Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 33.2,
-   "heat": 30.0,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "d0c95a88c780",
-   "url": "https://www.ithome.com/1/014/274.htm",
-   "title": {
-    "zh": "黄仁勋：AI不是泡沫，安全不应成为减速理由",
-    "en": "Jensen Huang: AI Is No Bubble, Safety Shouldn't Slow It",
-    "de": "Jensen Huang: KI keine Blase, Sicherheit darf nicht bremsen",
-    "src": "[IT之家] 英伟达黄仁勋称 AI 现在不是泡沫，安全不应成为减速理由"
-   },
-   "one_liner": {
-    "zh": "黄仁勋在伦敦接受彭博采访时称当前AI需求远大于供给，不认为处于AI泡沫阶段。",
-    "en": "In a Bloomberg interview in London, Jensen Huang said current AI demand far exceeds supply and he does not believe the sector is in an AI bubble.",
-    "de": "In einem Bloomberg-Interview in London sagte Jensen Huang, die KI-Nachfrage übersteige das Angebot bei weitem, und er sehe keine KI-Blase."
-   },
-   "why_it_matters": {
-    "zh": "他表示业内应加速AI部署而非放缓，认为遏制AI失控需要更多AI。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-17T05:39:40Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 54.0,
-   "heat": 48.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "黄仁勋表示当前 AI 需求远大于供给，不认为现阶段处于“AI 泡沫”阶段，不过他也承认未来供给可能超过需求。"
-  },
-  {
-   "id": "50b4bf2760b7",
-   "url": "https://www.tmtpost.com/8171813.html",
-   "title": {
-    "zh": "",
-    "en": "I Was Targeted by AI Fraud",
-    "de": "Ich wurde von KI-Betrug ins Visier genommen",
-    "src": "[钛媒体] 我被AI诈骗盯上了"
-   },
-   "one_liner": {
-    "zh": "",
-    "en": "The author shares a personal experience of being targeted by sophisticated AI-powered fraud schemes.",
-    "de": "Der Autor schildert eine persönliche Erfahrung, bei der er zum Ziel ausgeklügelter KI-gestützter Betrugsmaschen wurde."
-   },
-   "why_it_matters": {
-    "zh": "",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T05:36:15Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 39.2,
-   "heat": 35.3,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": ""
-  },
-  {
-   "id": "d07560e8c154",
-   "url": "https://www.tmtpost.com/8171640.html",
-   "title": {
-    "zh": "Anthropic 谋求 2 万亿美元估值 IPO",
-    "en": "Anthropic seeks $2 trillion valuation in IPO",
-    "de": "Anthropic strebt IPO mit 2 Billionen Dollar Bewertung an",
-    "src": "[钛媒体] Anthropic 值 2 万亿美元吗？"
-   },
-   "one_liner": {
-    "zh": "Anthropic 被报道正以 2 万亿美元估值谋求上市，计划募资约 1000 亿美元",
-    "en": "Anthropic is reportedly seeking to go public at a $2 trillion valuation, planning to raise around $100 billion.",
-    "de": "Anthropic will einer Quelle zufolge mit 2 Billionen Dollar Bewertung an die Börse gehen und rund 100 Milliarden Dollar aufnehmen."
-   },
-   "why_it_matters": {
-    "zh": "其 IPO 直接反映 AI 产业繁荣与否，上市不顺会影响其他公司前景；第三季度营收环比增速回落至 45%。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T05:36:00Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 45.2,
-   "heat": 40.8,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "多家媒体报道称，Anthropic 正在谋求以 2 万亿美元估值上市，计划募资约 1000 亿美元。"
-  },
-  {
-   "id": "857836346924",
-   "url": "https://x.com/indigox/status/2111329619098169426",
-   "title": {
-    "zh": "AI四个确定的商业模式",
-    "en": "Four Proven Business Models for AI",
-    "de": "Vier bewährte Geschäftsmodelle für KI",
-    "src": "@indigox: 今天和 @snortydogg 聊天"
-   },
-   "one_liner": {
-    "zh": "AI四个确定的商业模式包括卖数据、卖结果、卖基建和卖部署。",
-    "en": "The four proven AI business models are selling data, selling outcomes, selling infrastructure, and selling deployment.",
-    "de": "Die vier bewährten KI-Geschäftsmodelle sind Datenverkauf, Ergebnisverkauf, Infrastrukturverkauf und Bereitstellungsverkauf."
-   },
-   "why_it_matters": {
-    "zh": "这四个模式分别对应给AI Labs、客户、模型和云厂以及企业提供服务。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "X回源",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T05:33:02Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 29.4,
-   "heat": 26.5,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "关于 AI 四个确定的商业模式 - 卖数据（给 AI Labs） - 卖结果（给客户） - 卖基建（给模型和云厂） - 卖部署（给企业）"
-  },
-  {
-   "id": "0882c786cbba",
-   "url": "https://x.com/indigox/status/2111327452484223056",
-   "title": {
-    "zh": "AI 四个确定的商业模式",
-    "en": "Four Certain Business Models for AI",
-    "de": "Vier sichere Geschäftsmodelle für KI",
-    "src": "@indigox: 今天和 @snortydogg 聊天"
-   },
-   "one_liner": {
-    "zh": "与 @snortydogg 聊天归纳出 AI 四个确定的商业模式：卖数据、买结果、买基建、买部署。",
-    "en": "A chat with @snortydogg distilled four certain AI business models: selling data, buying results, buying infrastructure, and buying deployment.",
-    "de": "Ein Gespräch mit @snortydogg ergab vier sichere KI-Geschäftsmodelle: Daten verkaufen, Ergebnisse kaufen, Infrastruktur kaufen, Deployment kaufen."
-   },
-   "why_it_matters": {
-    "zh": "四种模式分别面向 AI Labs、客户、模型和云厂、企业，是讨论 AI 商业落地的一个分类框架。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "X回源",
-    "tier": "T2"
-   },
-   "published_utc": "2026-10-17T05:24:25Z",
-   "first_seen_utc": "2026-10-17T06:08:11Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 30.8,
-   "heat": 27.7,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "关于 AI 四个确定的商业模式 - 卖数据（给 AI Labs） - 买结果（给客户） - 买基建（给模型和云厂） - 买部署（给企业）"
   }
  ]
 }
