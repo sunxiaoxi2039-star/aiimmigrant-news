@@ -10,7 +10,7 @@
  "update": "精选库随引擎轮次更新（常态每小时一轮，launchd :07）；2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。接口无鉴权、无频控，请自觉别超过 1 次/分钟。",
  "counts": {
   "selected": 19,
-  "fresh_24h": 110,
+  "fresh_24h": 108,
   "total_pool": 2184
  },
  "categories": [
@@ -4344,74 +4344,6 @@
    "n_sources": 1,
    "also_reported_by": [],
    "quote_en": "And now, The Verge reports that the provision has been removed."
-  },
-  {
-   "id": "4d205a1963e7",
-   "url": "https://www.marktechpost.com/2026/10/17/meet-kyutai-reki-the-2-4b-vla-model-bringing-efficient-memory-to-robot-manipulation/",
-   "title": {
-    "zh": "Kyutai发布REKI：2.4B参数的机器人操作VLA模型",
-    "en": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation",
-    "de": "Kyutai veröffentlicht REKI: VLA-Modell mit 2,4B Parametern",
-    "src": "[MarkTechPost] Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation"
-   },
-   "one_liner": {
-    "zh": "Kyutai联合Inria和École des Ponts发布REKI",
-    "en": "Kyutai, together with Inria and École des Ponts, has released REKI.",
-    "de": "Kyutai hat gemeinsam mit Inria und École des Ponts REKI veröffentlicht."
-   },
-   "why_it_matters": {
-    "zh": "在三个分布外基准上，只有约两倍于其规模的模型才能超越它；LIBERO-Plus上达90.4%",
-    "en": "On three out-of-distribution benchmarks, only models about twice its size surpass it; it reaches 90.4% on LIBERO-Plus.",
-    "de": "Auf drei Out-of-Distribution-Benchmarks übertrumpfen es nur etwa doppelt so große Modelle; auf LIBERO-Plus erreicht es 90,4%."
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-17T20:22:11Z",
-   "first_seen_utc": "2026-10-17T21:07:51Z",
-   "scoop_hours": null,
-   "selected": true,
-   "score": 64.8,
-   "heat": 58.9,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Kyutai, with Inria and École des Ponts, has released REKI, a 2.4B vision-language-action model (VLA) for robot manipulation. The REKI vision-language-action model is pretrained only on public data."
-  },
-  {
-   "id": "400761d0ded1",
-   "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
-   "title": {
-    "zh": "Anthropic报告：初级岗位减少，会议时间增加",
-    "en": "[TechCrunch-AI] Anthropic says its workforce has become less junior and is spending more time in meetings",
-    "de": "Anthropic-Bericht: Weniger Juniorstellen, mehr Meeting-Zeit",
-    "src": "[TechCrunch-AI] Anthropic says its workforce has become less junior and is spending more time in meetings"
-   },
-   "one_liner": {
-    "zh": "技术部门初级员工占比从21%降至14%，初级技术新招占比从27%降至9%。",
-    "en": "The share of junior staff in tech departments fell from 21% to 14%, and junior tech hires dropped from 27% to 9%.",
-    "de": "Der Junior-Anteil in Tech-Abteilen sank von 21% auf 14%, Einstellungen von Junior-Techs von 27% auf 9%."
-   },
-   "why_it_matters": {
-    "zh": "Anthropic认为其职场趋势可作为AI改变工作组织、招聘和劳动力需求的指标，技术团队占比也从61%降至56%。",
-    "en": "",
-    "de": ""
-   },
-   "category": "行业",
-   "source": {
-    "name": "官方RSS",
-    "tier": "T1.5"
-   },
-   "published_utc": "2026-10-17T20:21:19Z",
-   "first_seen_utc": "2026-10-17T21:07:51Z",
-   "scoop_hours": null,
-   "selected": false,
-   "score": 60.8,
-   "heat": 54.8,
-   "n_sources": 1,
-   "also_reported_by": [],
-   "quote_en": "Anthropic is making fewer junior hires, with the proportion of junior-level employees in technical departments falling from 21% to 14% since early 2025, and the proportion of junior technical hires"
   }
  ]
 }
