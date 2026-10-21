@@ -1,0 +1,99 @@
+# Pages 改法 A（2026-10-20，小茜批准「这个可以」/「先把这个洞堵上」；Fable 5.1 复核员 10-20 有条件 GO，M1–M3/S2/S8/S9 已落）：
+# GitHub Pages 不再把整个 main 分支端上线，而是由本工作流只打包下面这份白名单（= 发布链 LIVE_FILES
+# + 页面实际引用的 2 个数据件 + 字体/图 + CNAME/.nojekyll），过产物闸后用 Actions 部署。
+# 仓库里其余文件（引擎/、雷达/、generator/、data/引擎产物/、data/雷达/、.github/、.gitignore、README）不再被站点托管；
+# 但仓库本身仍是公开的，github.com / raw / clone / 历史都还能拿到它们——这不是本文件能管的。
+#
+# 回滚（会把上面那些非站点文件重新放回站点域名）：
+#   1. gh api -X PUT repos/sunxiaoxi2039-star/aiimmigrant-news/pages -f build_type=legacy
+#   2. gh workflow disable pages-deploy.yml   ← 必须，否则每次 push 会同时起 legacy 和本工作流两条部署、来回互盖
+#   本文件可留在仓库里（禁用后不再触发）。
+#
+# 白名单有两份：发布链 LIVE_FILES（引擎/发布链.py）和下面的 LIST。新增页面要两处一起改，否则新页面上线即 404。
+name: pages-deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 只装白名单文件进 _site
+        run: |
+          set -euo pipefail
+          test ! -e _site || { echo "::error::_site 已存在（不该出现在干净 checkout 里）"; exit 1; }
+          mkdir _site
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ -f "$f" ] || { echo "::error::白名单文件不存在: $f"; exit 1; }
+            mkdir -p "_site/$(dirname "$f")"
+            cp "$f" "_site/$f"
+          done <<'LIST'
+          index.html
+          about.html
+          404.html
+          assets/style.css
+          assets/app.js
+          assets/god-hand.webp
+          assets/fonts/SourceSerif4.woff2
+          agents/index.html
+          feed.xml
+          llms.txt
+          api/v1/latest.json
+          api/v1/sources.json
+          api/v1/heartbeat.json
+          data/精选库.json
+          data/引擎心跳.json
+          CNAME
+          .nojekyll
+          LIST
+          echo "== _site 文件清单 =="
+          find _site -type f | sort
+          echo "共 $(find _site -type f | wc -l) 个文件，$(du -sk _site | cut -f1) KB"
+
+      - name: 产物闸（越界目录 / 本机路径 / 对标站品牌）
+        run: |
+          set -euo pipefail
+          cd _site
+          for d in 引擎 雷达 generator data/引擎产物 data/雷达 .github .git; do
+            [ -e "$d" ] && { echo "::error::越界目录进了站点: $d"; exit 1; }
+          done
+          # grep 退出码：0=命中（拦）、1=没命中（过）、其他=读错误（也拦，不当作通过）
+          rc=0; grep -rIlE '/Users/[A-Za-z0-9_-]+|/Volumes/|/home/[a-z]' . || rc=$?
+          [ "$rc" -eq 1 ] || { echo "::error::本机路径闸：rc=$rc（0=命中，≥2=读错误）"; exit 1; }
+          # 对标站品牌词本文件不写明文，运行时解码（仓库其他地方的明文是另一件事，见 B 部分 RD-14）
+          brand="$(printf 'YWlob3Q=' | base64 -d)"
+          rc=0; grep -rIil -- "$brand" . || rc=$?
+          [ "$rc" -eq 1 ] || { echo "::error::品牌闸：rc=$rc（0=命中，≥2=读错误）"; exit 1; }
+          echo "闸通过：越界 0 / 本机路径 0 / 品牌 0"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
