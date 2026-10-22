@@ -1678,8 +1678,7 @@ def build_sources_json(registry):
     out = dict(registry)
     out["api_version"] = API_VERSION
     out["license"] = LICENSE_NOTE
-    out["note"] = ("与公开信源清单的逐项对账：status=connected 已接 / pending 待接 / "
-                   "blocked 不可接。若含 diff_vs_benchmark 字段，是当日条目级差别（字段名沿用，不改）。")
+    out["note"] = "信源登记表：status=connected 已接 / pending 待接 / blocked 不可接 / retired 已停用。"
     return out
 
 
