@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var r=document.documentElement;r.className+=" js";try{if(localStorage.getItem("kin-theme")==="dark")r.setAttribute("data-theme","dark")}catch(e){}})();</script>
 <title>Agents / API · AI 资讯时间线</title>
 <meta name="description" content="AI 资讯时间线 给 LLM 与 agent 的接口：RSS、JSON API、llms.txt，无需鉴权。">
 <link rel="canonical" href="https://news.aiimmigrant.de/agents/">
@@ -22,22 +23,24 @@
     <h1>Agents / API</h1>
     <p class="tagline">给机器读者的入口 · 无鉴权 · 版本号进路径</p>
   </div>
-  <nav><a href="/">时间线</a> · <a href="/about.html">关于</a></nav>
+  <nav><a href="/">时间线</a> · <a href="/archive/">往期</a> · <a href="/about.html">关于</a></nav>
 </header>
 
 <main class="container api" id="main">
-  <p>AI 资讯时间线 首先是给机器读的。下面五个地址随引擎每轮更新，直接 <code>curl</code> 即可，
+  <p>AI 资讯时间线 首先是给机器读的。下面六个地址随每次发布更新，直接 <code>curl</code> 即可，
   不需要 key、不需要 UA 伪装。<strong>接口一旦公布就不破坏</strong>：只增字段，要改就开 <code>/api/v2/</code>。</p>
 
-  <h2>五个地址</h2>
+  <h2>六个地址</h2>
   <table>
     <tr><th>地址</th><th>是什么</th><th>格式</th></tr>
     <tr><td><a href="/api/v1/latest.json"><code>/api/v1/latest.json</code></a></td>
         <td>精选 + 24h 全量，三语标题 / 一句话 / 为什么重要，含抢跑时长与多源簇</td><td>JSON</td></tr>
     <tr><td><a href="/api/v1/sources.json"><code>/api/v1/sources.json</code></a></td>
-        <td>信源登记表：我们接了哪些源、哪些待接</td><td>JSON</td></tr>
+        <td>信源登记表：我们接了哪些源、哪些待接，以及与公开信源清单的当日差别</td><td>JSON</td></tr>
     <tr><td><a href="/api/v1/heartbeat.json"><code>/api/v1/heartbeat.json</code></a></td>
         <td>引擎心跳：上轮何时跑、成功与否、出了几条精选（判新鲜度看它）</td><td>JSON</td></tr>
+    <tr><td><a href="/api/v1/archive.json"><code>/api/v1/archive.json</code></a></td>
+        <td>往期：历次精选和营销栏目全部条目，按柏林日分组、只增不减，条目字段同 latest.json 并带 <code>rubriken</code>（<code>selected</code> 表示是否进过精选）；人读版见 <a href="/archive/">/archive/</a></td><td>JSON</td></tr>
     <tr><td><a href="/feed.xml"><code>/feed.xml</code></a></td>
         <td>RSS 2.0，中文标题 + 原文链接，三语摘要在 <code>content:encoded</code></td><td>XML</td></tr>
     <tr><td><a href="/llms.txt"><code>/llms.txt</code></a></td>
@@ -65,17 +68,18 @@ curl -s https://news.aiimmigrant.de/feed.xml | head -40</pre>
     <tr><td><code>n_sources</code> / <code>also_reported_by</code></td><td>同一事件有几家在报、分别是谁。</td></tr>
     <tr><td><code>published_utc</code> / <code>first_seen_utc</code></td><td>原文发布时间 / 我们首次捕获时间，均为 UTC。</td></tr>
     <tr><td><code>source.tier</code></td><td>信源等级：T1 一手官方 / T2 专业媒体 / T3 聚合。</td></tr>
+    <tr><td><code>rubriken</code>（archive.json）</td><td>栏目键：marketing / unternehmen / china / modelle / robotik / forschung，一条可属多个。</td></tr>
   </table>
 
   <h2>更新频率与许可</h2>
-  <p>精选库随引擎轮次更新（常态每小时一轮，launchd :07）；2026-09-22 起为控预算暂停定时器，当前人工触发，恢复定时后本说明同步。接口无鉴权、无频控，请自觉别超过 1 次/分钟。</p>
+  <p>精选库现为人工每天跑一轮、跑完再发布，没有固定时刻；数据新旧以 generated_at_utc 为准。接口无鉴权、无频控，请自觉别超过 1 次/分钟。 / DE: Die Auswahl wird derzeit einmal täglich manuell erstellt und danach veröffentlicht, ohne festen Zeitpunkt; maßgeblich ist generated_at_utc. Bitte höchstens 1 Abruf pro Minute. / EN: The selection is currently built manually once a day and then published, with no fixed time; generated_at_utc tells you how fresh it is. Please keep to at most 1 request per minute.</p>
   <p>摘要、标题翻译与点评由本站 AI 生成，可自由取用（署名 news.aiimmigrant.de 即可）；原文版权归各信源所有，请始终带上 url 回链原文。</p>
   <p style="margin-top:30px"><a href="/">← 回到时间线</a></p>
 </main>
 
 <footer>
   <div class="container">
-    <div class="links">AI 资讯时间线 · <a href="/">时间线</a> · <a href="/about.html">关于</a> · <a href="/llms.txt">llms.txt</a></div>
+    <div class="links">AI 资讯时间线 · <a href="/">时间线</a> · <a href="/archive/">往期</a> · <a href="/about.html">关于</a> · <a href="/llms.txt">llms.txt</a></div>
   </div>
 </footer>
 </body>
