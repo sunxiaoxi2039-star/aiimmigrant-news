@@ -1,15 +1,15 @@
 {
- "generated_at_utc": "2026-10-21T18:13:51Z",
+ "generated_at_utc": "2026-10-26T14:03:05Z",
  "counts": {
-  "total": 254,
+  "total": 270,
   "connected": 42,
-  "pending": 201,
+  "pending": 217,
   "blocked": 0,
   "retired": 11,
   "by_type": {
-   "X": 151,
-   "RSS": 45,
-   "其他": 29,
+   "X": 156,
+   "RSS": 49,
+   "其他": 36,
    "网页差分": 22,
    "公众号": 7
   }
@@ -28,19 +28,13 @@
    "status_zh": "已接"
   },
   {
-   "name": "Hacker News 热门（buzzing.cc 中文翻译）",
-   "type": "其他",
-   "status": "connected",
-   "status_zh": "已接"
-  },
-  {
    "name": "TechCrunch：AI（RSS）",
    "type": "RSS",
    "status": "connected",
    "status_zh": "已接"
   },
   {
-   "name": "Hacker News：AI 热帖",
+   "name": "Hacker News 热门（buzzing.cc 中文翻译）",
    "type": "其他",
    "status": "connected",
    "status_zh": "已接"
@@ -50,6 +44,12 @@
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
+  },
+  {
+   "name": "Hacker News：AI 热帖",
+   "type": "其他",
+   "status": "connected",
+   "status_zh": "已接"
   },
   {
    "name": "The Verge：AI（RSS）",
@@ -76,13 +76,13 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Arena (@arena)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
+   "name": "MarkTechPost（RSS）",
+   "type": "RSS",
+   "status": "connected",
+   "status_zh": "已接"
   },
   {
-   "name": "X：OpenRouter (@OpenRouter)",
+   "name": "X：Arena (@arena)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -94,16 +94,16 @@
    "status_zh": "已接"
   },
   {
-   "name": "X：OpenAI Developers (@OpenAIDevs)",
+   "name": "X：OpenRouter (@OpenRouter)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "MarkTechPost（RSS）",
-   "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
+   "name": "IT之家·人工智能",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
   },
   {
    "name": "Simon Willison 博客",
@@ -118,7 +118,19 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：OpenAI Developers (@OpenAIDevs)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：马东锡 NLP (@dongxi_nlp)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -136,25 +148,25 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Thariq (@trq212)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "IT之家·人工智能",
-   "type": "其他",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)",
+   "name": "X：Dex Horthy（HumanLayer）(@dexhorthy)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
    "name": "X：Tibo (@thsottiaux)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Thariq (@trq212)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Artificial Analysis (@ArtificialAnlys)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -190,19 +202,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Dex Horthy（HumanLayer）(@dexhorthy)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：Claude (@claudeai)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Peter McCrory（Anthropic 首席经济学家，@PeterMcCrory）",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -214,37 +214,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Artificial Analysis (@ArtificialAnlys)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：DAIR.AI (@dair_ai)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：fal (@fal)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "@typesafeai",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Claude Devs (@ClaudeDevs)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Thomas Wolf（Hugging Face 联创/CSO） (@Thom_Wolf)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -256,25 +226,7 @@
    "status_zh": "已接"
   },
   {
-   "name": "X：Peter Steinberger (@steipete)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：邵猛 (@shao__meng)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Cognition (@cognition)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Cohere（@cohere）",
+   "name": "X：Claude Devs (@ClaudeDevs)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -286,7 +238,31 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Higgsfield AI (@higgsfield)",
+   "name": "X：Larsen Cundric（自述加入 SpaceXSI，Grok Bot） (@larsencc)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Peter McCrory（Anthropic 首席经济学家，@PeterMcCrory）",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：邵猛 (@shao__meng)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：DAIR.AI (@dair_ai)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Lauren Tan（SpaceXSI，Grok Bot 工程负责人） (@poteto)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -298,7 +274,31 @@
    "status_zh": "待接"
   },
   {
-   "name": "@mark_k",
+   "name": "@typesafeai",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Thomas Wolf（Hugging Face 联创/CSO） (@Thom_Wolf)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Cohere（@cohere）",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Higgsfield AI (@higgsfield)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Peter Steinberger (@steipete)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -316,7 +316,7 @@
    "status_zh": "已接"
   },
   {
-   "name": "Latent Space（RSS）",
+   "name": "MIT News（RSS）",
    "type": "RSS",
    "status": "connected",
    "status_zh": "已接"
@@ -334,19 +334,55 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：Cognition (@cognition)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Francois Chollet (@fchollet)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：UCSD Hao AI Lab (@haoailab)",
+   "name": "X：OpenClaw (@openclaw)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
    "name": "X：Viggle AI (@ViggleAI)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "@mark_k",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Claude Code：GitHub Releases（RSS）",
+   "type": "RSS",
+   "status": "connected",
+   "status_zh": "已接"
+  },
+  {
+   "name": "Latent Space（RSS）",
+   "type": "RSS",
+   "status": "connected",
+   "status_zh": "已接"
+  },
+  {
+   "name": "X：PixVerse (@PixVerse)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：UCSD Hao AI Lab (@haoailab)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -370,6 +406,12 @@
    "status_zh": "已接"
   },
   {
+   "name": "X：Alex Heath (@alexeheath)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Cursor (@cursor_ai)",
    "type": "X",
    "status": "pending",
@@ -382,7 +424,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：PixVerse (@PixVerse)",
+   "name": "X：OpenAI (@OpenAI)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -400,22 +442,22 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：Vaibhav Srivastav（OpenAI）(@reach_vb)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：小北 (@frxiaobei)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "Claude Code：GitHub Releases（RSS）",
-   "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
-  },
-  {
-   "name": "MIT News（RSS）",
-   "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
+   "name": "Anthropic：Research（发表成果 · 网页）",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
   },
   {
    "name": "X：Ado Kukic（Anthropic 开发者关系，Claude Code） (@adocomplete)",
@@ -430,19 +472,31 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：Greg Brockman (@gdb)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Jason Liu (@jxnlco)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：Larsen Cundric（自述加入 SpaceXSI，Grok Bot） (@larsencc)",
+   "name": "X：Karina Nguyen（@karinanguyen）",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：Lauren Tan（SpaceXSI，Grok Bot 工程负责人） (@poteto)",
+   "name": "X：Krea AI (@krea_ai)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Oran Ge (@oran_ge)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -454,7 +508,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Vaibhav Srivastav（OpenAI）(@reach_vb)",
+   "name": "X：X.PIN (@thexpin)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -466,10 +520,16 @@
    "status_zh": "待接"
   },
   {
-   "name": "Anthropic：Research（发表成果 · 网页）",
-   "type": "其他",
-   "status": "pending",
-   "status_zh": "待接"
+   "name": "404 Media（RSS）",
+   "type": "RSS",
+   "status": "connected",
+   "status_zh": "已接"
+  },
+  {
+   "name": "Claude：Blog（网页）",
+   "type": "网页差分",
+   "status": "connected",
+   "status_zh": "已接"
   },
   {
    "name": "Epoch AI：研究、数据与评测",
@@ -502,31 +562,19 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Alex Heath (@alexeheath)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：Emad Mostaque (@EMostaque)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：Karina Nguyen（@karinanguyen）",
+   "name": "X：Grok Bot (@bot)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：OpenAI (@OpenAI)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：OpenClaw (@openclaw)",
+   "name": "X：Lydia Hallie（Anthropic，Claude Code） (@lydiahallie)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -538,7 +586,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：X.PIN (@thexpin)",
+   "name": "X：indigo (@indigox)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -548,12 +596,6 @@
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
-  },
-  {
-   "name": "404 Media（RSS）",
-   "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
   },
   {
    "name": "Midjourney：Updates（RSS）",
@@ -580,19 +622,37 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Krea AI (@krea_ai)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：Mark Zuckerberg (@finkd)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
+   "name": "X：Matt Palmer（SpaceXSI，Grok Bot） (@mattyp)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：MiniMax Design (H3) (@Hailuo_AI)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Muse（Meta 个人智能体官方号） (@Muse)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Noah Zweben（@noahzweben）",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Odyssey (@odysseyml)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -610,7 +670,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：indigo (@indigox)",
+   "name": "X：Suno (@suno)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -634,6 +694,12 @@
    "status_zh": "待接"
   },
   {
+   "name": "Anthropic：Newsroom（网页）",
+   "type": "网页差分",
+   "status": "connected",
+   "status_zh": "已接"
+  },
+  {
    "name": "Artificial Analysis 完整文章（网页）",
    "type": "网页差分",
    "status": "pending",
@@ -644,12 +710,6 @@
    "type": "其他",
    "status": "pending",
    "status_zh": "待接"
-  },
-  {
-   "name": "Claude：Blog（网页）",
-   "type": "网页差分",
-   "status": "connected",
-   "status_zh": "已接"
   },
   {
    "name": "Fireworks AI（网页）",
@@ -670,6 +730,18 @@
    "status_zh": "已接"
   },
   {
+   "name": "LangChain：Blog（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Modal 官方工程博客（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "NVIDIA Blog（RSS）",
    "type": "RSS",
    "status": "pending",
@@ -682,13 +754,37 @@
    "status_zh": "待接"
   },
   {
+   "name": "Recode China AI（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "Sakana AI：Blog（网页）",
    "type": "网页差分",
    "status": "connected",
    "status_zh": "已接"
   },
   {
+   "name": "Tripo（官方 X）",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Andrew Milich (@milichab)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：ChatGPT (@ChatGPT)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：Chelsea Finn（Stanford 助理教授） (@chelseabfinn)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -712,18 +808,6 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Greg Brockman (@gdb)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Grok Bot (@bot)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：Ian Johnson（Latent Space 联创） (@enjalot)",
    "type": "X",
    "status": "pending",
@@ -736,7 +820,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Lydia Hallie（Anthropic，Claude Code） (@lydiahallie)",
+   "name": "X：Luma AI (@LumaLabsAI)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -754,19 +838,37 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Noah Zweben（@noahzweben）",
+   "name": "X：Noam Brown (@polynoamial)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：Odyssey (@odysseyml)",
+   "name": "X：Satya Nadella (@satyanadella)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "X：Suno (@suno)",
+   "name": "X：baltaaazr（SpaceXSI，Grok Bot 初版作者之一） (@baltaaazr)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：shaoruu（SpaceXSI，Grok Bot 初版作者之一） (@shaoruu)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：（名称略）",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：可灵 Kling AI (@Kling_ai)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -778,14 +880,14 @@
    "status_zh": "待接"
   },
   {
-   "name": "AI as Normal Technology（RSS）",
+   "name": "vLLM 官方博客（RSS）",
    "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
+   "status": "pending",
+   "status_zh": "待接"
   },
   {
-   "name": "Anthropic：Newsroom（网页）",
-   "type": "网页差分",
+   "name": "AI as Normal Technology（RSS）",
+   "type": "RSS",
    "status": "connected",
    "status_zh": "已接"
   },
@@ -797,6 +899,12 @@
   },
   {
    "name": "Claude Platform：开发者版本说明（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Claude：YouTube（RSS）",
    "type": "RSS",
    "status": "pending",
    "status_zh": "待接"
@@ -826,13 +934,31 @@
    "status_zh": "已接"
   },
   {
-   "name": "LangChain：Blog（RSS）",
+   "name": "Nathan Lambert：Interconnects（RSS）",
    "type": "RSS",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "Recode China AI（RSS）",
+   "name": "O'Reilly Radar（热点 RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "PyTorch：Blog（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Redwood Research：Blog（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Replit：Blog（RSS）",
    "type": "RSS",
    "status": "pending",
    "status_zh": "待接"
@@ -850,7 +976,13 @@
    "status_zh": "已停用"
   },
   {
-   "name": "Tripo（官方 X）",
+   "name": "Sierra：Blog（RSS）",
+   "type": "RSS",
+   "status": "connected",
+   "status_zh": "已接"
+  },
+  {
+   "name": "Tomasz Tunguz 博客（VC 分析）",
    "type": "其他",
    "status": "pending",
    "status_zh": "待接"
@@ -874,7 +1006,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：ChatGPT (@ChatGPT)",
+   "name": "X：Dominik Kundel（OpenAI 开发者体验，Codex） (@dkundel)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -898,12 +1030,6 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Luma AI (@LumaLabsAI)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：Mark Chen（OpenAI 首席研究官，@markchen90）",
    "type": "X",
    "status": "pending",
@@ -916,7 +1042,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Muse（Meta 个人智能体官方号） (@Muse)",
+   "name": "X：Michael Truell (@mntruell)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -928,25 +1054,13 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Noam Brown (@polynoamial)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Oran Ge (@oran_ge)",
+   "name": "X：Peng Zheng（SpaceXSI，Grok Bot 设计负责人） (@pengzheng_)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
    "name": "X：Physical Intelligence (@physical_int)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Satya Nadella (@satyanadella)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -982,18 +1096,6 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：（名称略）",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：可灵 Kling AI (@Kling_ai)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "X：商汤 SenseTime",
    "type": "X",
    "status": "pending",
@@ -1006,13 +1108,13 @@
    "status_zh": "待接"
   },
   {
-   "name": "elsewhere：文章（RSS）",
-   "type": "RSS",
+   "name": "X：面壁智能 OpenBMB (@OpenBMB)",
+   "type": "X",
    "status": "pending",
    "status_zh": "待接"
   },
   {
-   "name": "vLLM 官方博客（RSS）",
+   "name": "elsewhere：文章（RSS）",
    "type": "RSS",
    "status": "pending",
    "status_zh": "待接"
@@ -1042,6 +1144,12 @@
    "status_zh": "已停用"
   },
   {
+   "name": "Air Street Press（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "Artificial Intelligence News（网页）",
    "type": "网页差分",
    "status": "retired",
@@ -1054,7 +1162,19 @@
    "status_zh": "已停用"
   },
   {
+   "name": "Big Technology（热点 RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "Browser Use",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Browserbase / Stagehand 工程博客",
    "type": "其他",
    "status": "pending",
    "status_zh": "待接"
@@ -1084,19 +1204,37 @@
    "status_zh": "待接"
   },
   {
-   "name": "Claude：YouTube（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "Comfy Blog",
    "type": "其他",
    "status": "pending",
    "status_zh": "待接"
   },
   {
+   "name": "Conductor 官方更新",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "EleutherAI：Blog",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Epoch AI：Gradient Updates（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "Factory 研究 / 产品（RSS）",
+   "type": "RSS",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "Google AI：DEV 作者专属（RSS）",
    "type": "RSS",
    "status": "pending",
    "status_zh": "待接"
@@ -1126,6 +1264,18 @@
    "status_zh": "待接"
   },
   {
+   "name": "Hugging Face 社区博客（混合发现）",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "HumanLayer Blog",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "Ideogram Blog",
    "type": "其他",
    "status": "pending",
@@ -1136,6 +1286,12 @@
    "type": "RSS",
    "status": "connected",
    "status_zh": "已接"
+  },
+  {
+   "name": "LMSYS Blog",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
   },
   {
    "name": "LMSYS：Blog（Chatbot Arena 团队）",
@@ -1186,24 +1342,6 @@
    "status_zh": "已接"
   },
   {
-   "name": "Modal 官方工程博客（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "Nathan Lambert：Interconnects（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "O'Reilly Radar（热点 RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "Ollama：Blog（RSS）",
    "type": "RSS",
    "status": "pending",
@@ -1228,30 +1366,6 @@
    "status_zh": "待接"
   },
   {
-   "name": "PyTorch：Blog（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "Redwood Research：Blog（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "Replit：Blog（RSS）",
-   "type": "RSS",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "Sierra：Blog（RSS）",
-   "type": "RSS",
-   "status": "connected",
-   "status_zh": "已接"
-  },
-  {
    "name": "Stanford HAI News（网页）",
    "type": "网页差分",
    "status": "pending",
@@ -1274,12 +1388,6 @@
    "type": "RSS",
    "status": "connected",
    "status_zh": "已接"
-  },
-  {
-   "name": "Tomasz Tunguz 博客（VC 分析）",
-   "type": "其他",
-   "status": "pending",
-   "status_zh": "待接"
   },
   {
    "name": "Tomer Tunguz 博客（VC 分析）",
@@ -1342,13 +1450,7 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：Chelsea Finn（Stanford 助理教授） (@chelseabfinn)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Dominik Kundel（OpenAI 开发者体验，Codex） (@dkundel)",
+   "name": "X：Danny Trinh（Meta 产品设计总监，Muse） (@dtrinh)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -1378,19 +1480,13 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：Kimi.ai (@Kimi_Moonshot)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Manus (@ManusAI)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Matt Palmer（SpaceXSI，Grok Bot） (@mattyp)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：Michael Truell (@mntruell)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -1420,7 +1516,19 @@
    "status_zh": "待接"
   },
   {
+   "name": "X：Roshan Sadanani（SpaceXSI，Grok Bot） (@roshan_s)",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
    "name": "X：Sherwin Wu（@sherwinwu）",
+   "type": "X",
+   "status": "pending",
+   "status_zh": "待接"
+  },
+  {
+   "name": "X：SpaceX Super Intelligence (@SpaceXSI)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -1445,18 +1553,6 @@
   },
   {
    "name": "X：World Labs (@theworldlabs)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：baltaaazr（SpaceXSI，Grok Bot 初版作者之一） (@baltaaazr)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
-   "name": "X：shaoruu（SpaceXSI，Grok Bot 初版作者之一） (@shaoruu)",
    "type": "X",
    "status": "pending",
    "status_zh": "待接"
@@ -1504,12 +1600,6 @@
    "status_zh": "待接"
   },
   {
-   "name": "X：面壁智能 OpenBMB (@OpenBMB)",
-   "type": "X",
-   "status": "pending",
-   "status_zh": "待接"
-  },
-  {
    "name": "a16z：News（RSS）",
    "type": "RSS",
    "status": "pending",
@@ -1538,6 +1628,12 @@
    "type": "公众号",
    "status": "retired",
    "status_zh": "已停用"
+  },
+  {
+   "name": "字节 Seed：Research Papers（网页内嵌数据）",
+   "type": "其他",
+   "status": "pending",
+   "status_zh": "待接"
   }
  ],
  "our_inventory": {

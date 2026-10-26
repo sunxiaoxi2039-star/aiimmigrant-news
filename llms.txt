@@ -6,12 +6,12 @@
 
 ## 接口（版本号进路径，公布即不破坏）
 
-- [https://news.aiimmigrant.de/api/v1/latest.json](https://news.aiimmigrant.de/api/v1/latest.json)：精选 51 条 + 24h 全量 0 条。
+- [https://news.aiimmigrant.de/api/v1/latest.json](https://news.aiimmigrant.de/api/v1/latest.json)：精选 56 条 + 24h 全量 207 条。
   每条含 id、url、三语标题 title.{zh,en,de}、三语一句话 one_liner.{zh,en,de}、
   三语「为什么重要」why_it_matters.{zh,en,de}、category、source.{name,tier}、
   published_utc、first_seen_utc、scoop_hours（抢跑时长）、score/heat、
   n_sources 与 also_reported_by（多源报道簇）、quote_en（英文原文引句）。
-- [https://news.aiimmigrant.de/api/v1/sources.json](https://news.aiimmigrant.de/api/v1/sources.json)：信源登记表 —— 已接 42 / 待接 201 / 不可接 0（信源清单共 254 项）。
+- [https://news.aiimmigrant.de/api/v1/sources.json](https://news.aiimmigrant.de/api/v1/sources.json)：信源登记表 —— 已接 42 / 待接 217 / 不可接 0（信源清单共 270 项）。
 - [https://news.aiimmigrant.de/api/v1/heartbeat.json](https://news.aiimmigrant.de/api/v1/heartbeat.json)：引擎心跳（when/status/selected/total），
   判断数据是否新鲜先看这个。
 - [https://news.aiimmigrant.de/api/v1/archive.json](https://news.aiimmigrant.de/api/v1/archive.json)：往期（历次精选 + 营销栏目全部条目），按柏林日分组，只增不减。
